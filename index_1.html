@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Store Performance Dashboard</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#EEF1F5;
+    --surface:#FFFFFF;
+    --ink:#12182B;
+    --ink-soft:#5C6478;
+    --ink-faint:#8B93A6;
+    --line:#E1E5EC;
+    --line-strong:#CBD2DE;
+    --accent:#1F4FD8;
+    --accent-ink:#12318F;
+    --accent-soft:#E7EDFC;
+    --good:#0F8A5F;
+    --good-soft:#E4F5EC;
+    --warn:#B4780A;
+    --warn-soft:#FCF0DC;
+    --bad:#C23B4B;
+    --bad-soft:#FBE7E9;
+    --navy:#0C1730;
+    --navy-soft:#1A2A4D;
+    --radius:10px;
+    --shadow:0 1px 2px rgba(12,23,48,0.06), 0 8px 24px -12px rgba(12,23,48,0.12);
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{
+    background:var(--bg);
+    color:var(--ink);
+    font-family:'Inter',system-ui,sans-serif;
+    font-size:14px;
+    line-height:1.5;
+    -webkit-font-smoothing:antialiased;
+  }
+  .num, .mono{ font-family:'JetBrains Mono', ui-monospace, monospace; font-variant-numeric: tabular-nums; }
+  h1,h2,h3{ font-family:'Space Grotesk', 'Inter', sans-serif; margin:0; letter-spacing:-0.01em;}
+
+  /* ===== HEADER ===== */
+  .topbar{
+    background:var(--navy);
+    color:#fff;
+    padding:22px 32px 26px;
+  }
+  .topbar-inner{
+    max-width:1400px;
+    margin:0 auto;
+    display:flex;
+    align-items:flex-end;
+    justify-content:space-between;
+    gap:24px;
+    flex-wrap:wrap;
+  }
+  .brand-eyebrow{
+    font-size:11px;
+    letter-spacing:0.14em;
+    text-transform:uppercase;
+    color:#8EA3D8;
+    font-weight:600;
+    margin-bottom:6px;
+  }
+  .brand-title{ font-size:26px; font-weight:700; color:#fff; }
+  .brand-sub{ font-size:13px; color:#A9B4CC; margin-top:4px; }
+
+  .pace{
+    display:flex;
+    align-items:center;
+    gap:14px;
+    background:rgba(255,255,255,0.06);
+    border:1px solid rgba(255,255,255,0.12);
+    border-radius:12px;
+    padding:10px 18px 10px 14px;
+  }
+  .pace-ring{ position:relative; width:52px; height:52px; flex:none; }
+  .pace-ring svg{ transform:rotate(-90deg); }
+  .pace-ring-track{ fill:none; stroke:rgba(255,255,255,0.15); stroke-width:5; }
+  .pace-ring-fill{ fill:none; stroke:#5B8CFF; stroke-width:5; stroke-linecap:round; transition:stroke-dashoffset 0.6s ease; }
+  .pace-ring-label{
+    position:absolute; inset:0; display:flex; align-items:center; justify-content:center;
+    font-family:'JetBrains Mono',monospace; font-size:11px; font-weight:600; color:#fff;
+  }
+  .pace-text{ font-size:12px; color:#C4CDE3; line-height:1.4; }
+  .pace-text b{ color:#fff; }
+
+  /* ===== LAYOUT ===== */
+  .wrap{ max-width:1400px; margin:0 auto; padding:28px 32px 64px; }
+
+  /* ===== KPI CARDS ===== */
+  .kpi-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(200px,1fr));
+    gap:14px;
+    margin-bottom:28px;
+  }
+  .kpi-card{
+    background:var(--surface);
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    padding:18px 20px;
+    box-shadow:var(--shadow);
+  }
+  .kpi-label{ font-size:11.5px; text-transform:uppercase; letter-spacing:0.07em; color:var(--ink-faint); font-weight:600; margin-bottom:10px; }
+  .kpi-value{ font-size:26px; font-weight:700; font-family:'Space Grotesk',sans-serif; }
+  .kpi-sub{ font-size:12.5px; color:var(--ink-soft); margin-top:6px; }
+  .kpi-value.good{ color:var(--good); }
+  .kpi-value.bad{ color:var(--bad); }
+  .kpi-value.warn{ color:var(--warn); }
+  .tag{
+    display:inline-flex; align-items:center; gap:5px;
+    font-size:11.5px; font-weight:600; padding:3px 9px; border-radius:100px;
+  }
+  .tag.good{ background:var(--good-soft); color:var(--good); }
+  .tag.warn{ background:var(--warn-soft); color:var(--warn); }
+  .tag.bad{ background:var(--bad-soft); color:var(--bad); }
+
+  /* ===== SECTION HEAD ===== */
+  .section-head{
+    display:flex; align-items:baseline; justify-content:space-between; gap:16px;
+    margin:36px 0 14px;
+    flex-wrap:wrap;
+  }
+  .section-head h2{ font-size:18px; font-weight:700; }
+  .section-head .hint{ font-size:12.5px; color:var(--ink-faint); }
+
+  /* ===== TOOLBAR ===== */
+  .toolbar{
+    display:flex; gap:10px; align-items:center; flex-wrap:wrap;
+    margin-bottom:14px;
+  }
+  .search-box{
+    position:relative; flex:1; min-width:220px; max-width:340px;
+  }
+  .search-box input{
+    width:100%; padding:9px 12px 9px 34px; border-radius:8px; border:1px solid var(--line-strong);
+    background:var(--surface); font-family:inherit; font-size:13.5px; color:var(--ink);
+  }
+  .search-box input:focus{ outline:2px solid var(--accent); outline-offset:1px; border-color:var(--accent); }
+  .search-box::before{
+    content:"⌕"; position:absolute; left:11px; top:50%; transform:translateY(-50%);
+    color:var(--ink-faint); font-size:15px; font-weight:700;
+  }
+  .chip-row{ display:flex; gap:7px; flex-wrap:wrap; }
+  .chip{
+    padding:7px 13px; border-radius:100px; border:1px solid var(--line-strong);
+    background:var(--surface); font-size:12.5px; font-weight:600; color:var(--ink-soft);
+    cursor:pointer; user-select:none; transition:all .12s ease;
+  }
+  .chip:hover{ border-color:var(--accent); color:var(--accent-ink); }
+  .chip.active{ background:var(--accent); border-color:var(--accent); color:#fff; }
+
+  /* ===== TABLE ===== */
+  .table-card{
+    background:var(--surface); border:1px solid var(--line); border-radius:var(--radius);
+    overflow:hidden; box-shadow:var(--shadow);
+  }
+  table{ width:100%; border-collapse:collapse; }
+  thead th{
+    text-align:left; font-size:11px; text-transform:uppercase; letter-spacing:0.06em;
+    color:var(--ink-faint); font-weight:700; padding:12px 14px; border-bottom:1px solid var(--line);
+    background:#FAFBFC; cursor:pointer; white-space:nowrap;
+  }
+  thead th:hover{ color:var(--accent-ink); }
+  thead th.sorted::after{ content:" ▾"; font-size:9px; }
+  tbody td{ padding:11px 14px; border-bottom:1px solid var(--line); font-size:13.5px; vertical-align:middle; }
+  tbody tr.store-row{ cursor:pointer; transition:background .1s ease; }
+  tbody tr.store-row:hover{ background:#F7F9FC; }
+  tbody tr.store-row.expanded{ background:var(--accent-soft); }
+  .store-name{ font-weight:600; color:var(--ink); }
+  .store-meta{ font-size:11.5px; color:var(--ink-faint); margin-top:2px; }
+  .area-pill{
+    font-size:11px; font-weight:600; padding:2px 8px; border-radius:6px;
+    background:#EEF1F7; color:var(--ink-soft); white-space:nowrap;
+  }
+  .pct-cell{ display:flex; align-items:center; gap:8px; }
+  .pct-bar{ width:56px; height:6px; border-radius:100px; background:#E7EAF0; overflow:hidden; flex:none; }
+  .pct-bar-fill{ height:100%; border-radius:100px; }
+  .status-dot{ width:8px; height:8px; border-radius:50%; flex:none; }
+  tbody td.num{ text-align:right; }
+  .detail-row td{ padding:0; border-bottom:1px solid var(--line); }
+  .detail-inner{ padding:18px 24px 22px; background:#FBFCFE; display:grid; grid-template-columns:1.3fr 1fr; gap:28px; }
+  @media (max-width: 860px){ .detail-inner{ grid-template-columns:1fr; } }
+  .detail-block h4{ font-size:12px; text-transform:uppercase; letter-spacing:0.06em; color:var(--ink-faint); margin-bottom:10px; font-weight:700; }
+  .vas-grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(130px,1fr)); gap:10px; }
+  .vas-item{ background:var(--surface); border:1px solid var(--line); border-radius:8px; padding:10px 12px; }
+  .vas-item-label{ font-size:11px; color:var(--ink-faint); font-weight:600; margin-bottom:4px;}
+  .vas-item-val{ font-size:14px; font-weight:700; font-family:'JetBrains Mono',monospace; }
+  .growth-row{ display:flex; align-items:center; justify-content:space-between; padding:7px 0; border-bottom:1px dashed var(--line); font-size:13px;}
+  .growth-row:last-child{ border-bottom:none; }
+  .growth-label{ color:var(--ink-soft); }
+  .growth-val{ font-family:'JetBrains Mono',monospace; font-weight:600; }
+
+  /* ===== CHARTS ===== */
+  .chart-grid{ display:grid; grid-template-columns:1.15fr 1fr; gap:16px; }
+  @media (max-width: 900px){ .chart-grid{ grid-template-columns:1fr; } }
+  .chart-card{
+    background:var(--surface); border:1px solid var(--line); border-radius:var(--radius);
+    padding:20px 22px; box-shadow:var(--shadow);
+  }
+  .chart-card h3{ font-size:14.5px; font-weight:700; margin-bottom:2px; }
+  .chart-card .hint{ font-size:12px; color:var(--ink-faint); margin-bottom:14px; display:block; }
+  canvas{ max-width:100%; }
+
+  .rank-list{ list-style:none; margin:0; padding:0; }
+  .rank-list li{
+    display:flex; align-items:center; gap:12px; padding:9px 0; border-bottom:1px solid var(--line);
+  }
+  .rank-list li:last-child{ border-bottom:none; }
+  .rank-num{ width:20px; font-family:'JetBrains Mono',monospace; font-size:12px; color:var(--ink-faint); flex:none; }
+  .rank-name{ flex:1; min-width:0; }
+  .rank-name .n{ font-weight:600; font-size:13px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+  .rank-name .a{ font-size:11px; color:var(--ink-faint); }
+  .rank-pct{ font-family:'JetBrains Mono',monospace; font-weight:700; font-size:13px; flex:none; }
+
+  footer{ text-align:center; padding:30px 20px 40px; color:var(--ink-faint); font-size:12px; }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="topbar-inner">
+    <div>
+      <div class="brand-eyebrow">PT Zhi Sheng Indonesia · Store Operations</div>
+      <div class="brand-title">Store Performance Dashboard</div>
+      <div class="brand-sub" id="period-sub">Memuat data periode…</div>
+    </div>
+    <div class="pace">
+      <div class="pace-ring">
+        <svg width="52" height="52" viewBox="0 0 52 52">
+          <circle class="pace-ring-track" cx="26" cy="26" r="21"></circle>
+          <circle class="pace-ring-fill" id="pace-ring-fill" cx="26" cy="26" r="21" stroke-dasharray="132" stroke-dashoffset="132"></circle>
+        </svg>
+        <div class="pace-ring-label" id="pace-ring-label">–</div>
+      </div>
+      <div class="pace-text">Time gone bulan ini<br><b id="pace-detail">–</b></div>
+    </div>
+  </div>
+</div>
+
+<div class="wrap">
+
+  <div class="kpi-grid" id="kpi-grid"></div>
+
+  <div class="section-head">
+    <h2>Semua Toko (<span id="store-count">0</span>)</h2>
+    <span class="hint">Klik baris untuk lihat detail VAS &amp; growth per toko</span>
+  </div>
+
+  <div class="toolbar">
+    <div class="search-box"><input type="text" id="search-input" placeholder="Cari nama toko atau manager…"></div>
+    <div class="chip-row" id="area-chips"></div>
+  </div>
+
+  <div class="table-card">
+    <table id="store-table">
+      <thead>
+        <tr>
+          <th data-key="no">No</th>
+          <th data-key="store_name">Toko</th>
+          <th data-key="area">Area</th>
+          <th data-key="target_unit" class="num">Target (unit)</th>
+          <th data-key="ach_unit" class="num">Ach (unit)</th>
+          <th data-key="ach_pct" class="num sorted">% Ach</th>
+          <th data-key="ach_value_pct" class="num">% Value</th>
+          <th data-key="mio3_pct" class="num">% 3MIO+</th>
+          <th data-key="vas_avg" class="num">Attach VAS</th>
+          <th data-key="growth_all_pct" class="num">Growth MoM</th>
+        </tr>
+      </thead>
+      <tbody id="table-body"></tbody>
+    </table>
+  </div>
+
+  <div class="section-head">
+    <h2>Analisis Jaringan</h2>
+    <span class="hint">Agregat seluruh 43 toko</span>
+  </div>
+
+  <div class="chart-grid">
+    <div class="chart-card">
+      <h3>% Achievement per Area</h3>
+      <span class="hint">Rata-rata pencapaian unit vs target, per area</span>
+      <canvas id="chart-area" height="230"></canvas>
+    </div>
+    <div class="chart-card">
+      <h3>Attach Rate VAS per Provider</h3>
+      <span class="hint">% pencapaian target seluruh jaringan</span>
+      <canvas id="chart-vas" height="230"></canvas>
+    </div>
+  </div>
+
+  <div class="chart-grid" style="margin-top:16px;">
+    <div class="chart-card">
+      <h3>Top 5 Toko</h3>
+      <span class="hint">Berdasarkan % achievement unit</span>
+      <ul class="rank-list" id="top5-list"></ul>
+    </div>
+    <div class="chart-card">
+      <h3>5 Toko Perlu Perhatian</h3>
+      <span class="hint">Achievement terendah — kandidat diagnosa funnel</span>
+      <ul class="rank-list" id="bottom5-list"></ul>
+    </div>
+  </div>
+
+</div>
+
+<footer>Store Performance Dashboard — update data lewat file <span class="mono">data.json</span> di repo GitHub.</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.4/chart.umd.min.js"></script>
+<script>
+const money = n => 'Rp ' + (n/1000000).toLocaleString('id-ID',{maximumFractionDigits:0}) + ' jt';
+const pct = n => (n*100).toFixed(1) + '%';
+const statusColor = p => p >= 1 ? 'good' : (p >= 0.9 ? 'warn' : 'bad');
+const colorHex = { good:'#0F8A5F', warn:'#B4780A', bad:'#C23B4B' };
+
+let DATA = null;
+let sortKey = 'ach_pct';
+let sortDir = -1;
+let activeArea = 'ALL';
+let searchTerm = '';
+let expandedRow = null;
+
+fetch('data.json').then(r => r.json()).then(json => {
+  DATA = json;
+  json.stores.forEach(s => {
+    const vasVals = Object.values(s.vas).map(v => v.pct);
+    s.vas_avg = vasVals.reduce((a,b)=>a+b,0) / vasVals.length;
+  });
+  init();
+}).catch(err => {
+  document.getElementById('table-body').innerHTML =
+    '<tr><td colspan="10" style="padding:24px;color:#C23B4B;">Gagal memuat data.json — pastikan file ada di folder yang sama dengan index.html. ('+err+')</td></tr>';
+});
+
+function init(){
+  document.getElementById('period-sub').textContent =
+    `Periode ${DATA.period} · ${DATA.stores.length} toko aktif`;
+  const pctDay = DATA.time_gone;
+  const circumference = 2*Math.PI*21;
+  document.getElementById('pace-ring-fill').style.strokeDasharray = circumference;
+  document.getElementById('pace-ring-fill').style.strokeDashoffset = circumference*(1-pctDay);
+  document.getElementById('pace-ring-label').textContent = Math.round(pctDay*100)+'%';
+  document.getElementById('pace-detail').textContent = `Hari ke-${DATA.to_date_day} dari ${DATA.total_days}`;
+
+  renderKPIs();
+  renderChips();
+  renderTable();
+  renderCharts();
+  renderRankings();
+
+  document.getElementById('search-input').addEventListener('input', e=>{
+    searchTerm = e.target.value.toLowerCase();
+    renderTable();
+  });
+  document.querySelectorAll('#store-table thead th[data-key]').forEach(th=>{
+    th.addEventListener('click', ()=>{
+      const key = th.dataset.key;
+      if(sortKey===key){ sortDir *= -1; } else { sortKey = key; sortDir = -1; }
+      document.querySelectorAll('#store-table thead th').forEach(t=>t.classList.remove('sorted'));
+      th.classList.add('sorted');
+      renderTable();
+    });
+  });
+}
+
+function renderKPIs(){
+  const t = DATA.total;
+  const belowTarget = DATA.stores.filter(s=>s.ach_pct<1).length;
+  const vasAvgNet = Object.values(t.vas).reduce((a,v)=>a+v.pct,0)/5;
+  const cards = [
+    {label:'Achievement Unit', value: pct(t.ach_pct), sub:`${t.ach_unit.toLocaleString('id-ID')} / ${t.target_unit.toLocaleString('id-ID')} unit`, cls: statusColor(t.ach_pct)},
+    {label:'Achievement Value', value: pct(t.ach_value_pct), sub: money(t.ach_value)+' / '+money(t.target_value), cls: statusColor(t.ach_value_pct)},
+    {label:'Toko di bawah target', value: belowTarget+' / '+DATA.stores.length, sub:'toko belum capai 100%', cls: belowTarget>DATA.stores.length/2?'bad':'warn'},
+    {label:'Growth MoM (unit)', value:(t.growth_all_pct>=0?'+':'')+pct(t.growth_all_pct), sub:`Juni ${t.growth_all_june.toLocaleString('id-ID')} → Juli ${t.growth_all_july.toLocaleString('id-ID')}`, cls: t.growth_all_pct>=0?'good':'bad'},
+    {label:'Attach Rate VAS (avg)', value: pct(vasAvgNet), sub:'rata-rata 5 provider', cls: statusColor(vasAvgNet)},
+    {label:'3MIO+ Mix', value: pct(t.mio3_pct), sub: t.mio3_unit.toLocaleString('id-ID')+' unit dari total achievement', cls: statusColor(t.mio3_pct*1.4)},
+  ];
+  document.getElementById('kpi-grid').innerHTML = cards.map(c=>`
+    <div class="kpi-card">
+      <div class="kpi-label">${c.label}</div>
+      <div class="kpi-value ${c.cls}">${c.value}</div>
+      <div class="kpi-sub">${c.sub}</div>
+    </div>`).join('');
+}
+
+function renderChips(){
+  const areas = ['ALL', ...new Set(DATA.stores.map(s=>s.area))];
+  document.getElementById('area-chips').innerHTML = areas.map(a=>
+    `<div class="chip ${a===activeArea?'active':''}" data-area="${a}">${a==='ALL'?'Semua Area':a}</div>`
+  ).join('');
+  document.querySelectorAll('.chip').forEach(chip=>{
+    chip.addEventListener('click',()=>{
+      activeArea = chip.dataset.area;
+      document.querySelectorAll('.chip').forEach(c=>c.classList.remove('active'));
+      chip.classList.add('active');
+      renderTable();
+    });
+  });
+}
+
+function getFiltered(){
+  let list = DATA.stores.filter(s=>{
+    if(activeArea!=='ALL' && s.area!==activeArea) return false;
+    if(searchTerm && !(s.store_name.toLowerCase().includes(searchTerm) || s.manager.toLowerCase().includes(searchTerm))) return false;
+    return true;
+  });
+  list.sort((a,b)=> (a[sortKey]>b[sortKey]?1:-1)*sortDir);
+  return list;
+}
+
+function renderTable(){
+  const list = getFiltered();
+  document.getElementById('store-count').textContent = list.length;
+  document.getElementById('table-body').innerHTML = list.map(s=>{
+    const sc = statusColor(s.ach_pct);
+    const vc = statusColor(s.ach_value_pct);
+    const rowId = 'row-'+s.store_id;
+    return `
+    <tr class="store-row" data-id="${s.store_id}">
+      <td class="num">${s.no}</td>
+      <td>
+        <div class="store-name">${s.store_name}</div>
+        <div class="store-meta">${s.manager}</div>
+      </td>
+      <td><span class="area-pill">${s.area}</span></td>
+      <td class="num mono">${s.target_unit.toLocaleString('id-ID')}</td>
+      <td class="num mono">${s.ach_unit.toLocaleString('id-ID')}</td>
+      <td class="num">
+        <div class="pct-cell" style="justify-content:flex-end;">
+          <span class="status-dot" style="background:${colorHex[sc]}"></span>
+          <span class="mono" style="font-weight:700;">${pct(s.ach_pct)}</span>
+        </div>
+      </td>
+      <td class="num"><span class="tag ${vc}">${pct(s.ach_value_pct)}</span></td>
+      <td class="num mono">${pct(s.mio3_pct)}</td>
+      <td class="num">
+        <div class="pct-cell" style="justify-content:flex-end;">
+          <div class="pct-bar"><div class="pct-bar-fill" style="width:${Math.min(s.vas_avg*100,100)}%;background:${colorHex[statusColor(s.vas_avg)]}"></div></div>
+          <span class="mono">${pct(s.vas_avg)}</span>
+        </div>
+      </td>
+      <td class="num mono" style="color:${s.growth_all_pct>=0?colorHex.good:colorHex.bad}">${s.growth_all_pct>=0?'+':''}${pct(s.growth_all_pct)}</td>
+    </tr>
+    <tr class="detail-row" id="detail-${s.store_id}" style="display:none;"><td colspan="10">${detailHTML(s)}</td></tr>
+    `;
+  }).join('');
+
+  document.querySelectorAll('.store-row').forEach(row=>{
+    row.addEventListener('click', ()=>{
+      const id = row.dataset.id;
+      const detail = document.getElementById('detail-'+id);
+      const isOpen = detail.style.display !== 'none';
+      document.querySelectorAll('.detail-row').forEach(d=>d.style.display='none');
+      document.querySelectorAll('.store-row').forEach(r=>r.classList.remove('expanded'));
+      if(!isOpen){ detail.style.display='table-row'; row.classList.add('expanded'); }
+    });
+  });
+}
+
+function detailHTML(s){
+  const vasLabels = {acc:'ACC', qoala:'Qoala', bca_insurance:'BCA Insurance', indosat:'Indosat', telkomsel:'Telkomsel'};
+  const vasItems = Object.entries(s.vas).map(([k,v])=>`
+    <div class="vas-item">
+      <div class="vas-item-label">${vasLabels[k]}</div>
+      <div class="vas-item-val" style="color:${colorHex[statusColor(v.pct)]}">${pct(v.pct)}</div>
+    </div>`).join('');
+  return `
+    <div class="detail-inner">
+      <div class="detail-block">
+        <h4>Attach Rate VAS per Provider</h4>
+        <div class="vas-grid">${vasItems}</div>
+      </div>
+      <div class="detail-block">
+        <h4>Growth Juni → Juli</h4>
+        <div class="growth-row"><span class="growth-label">Unit</span><span class="growth-val">${s.growth_all_june.toLocaleString('id-ID')} → ${s.growth_all_july.toLocaleString('id-ID')}</span></div>
+        <div class="growth-row"><span class="growth-label">Gap Unit</span><span class="growth-val" style="color:${s.growth_all_gap>=0?colorHex.good:colorHex.bad}">${s.growth_all_gap>=0?'+':''}${s.growth_all_gap}</span></div>
+        <div class="growth-row"><span class="growth-label">Value</span><span class="growth-val">${money(s.growth_value_june)} → ${money(s.growth_value_july)}</span></div>
+        <div class="growth-row"><span class="growth-label">IQOO Ach</span><span class="growth-val">${s.iqoo_unit} unit (${pct(s.iqoo_pct)})</span></div>
+        <div class="growth-row"><span class="growth-label">Gap Unit vs Target</span><span class="growth-val" style="color:${s.gap_unit>=0?colorHex.good:colorHex.bad}">${s.gap_unit>=0?'+':''}${s.gap_unit}</span></div>
+      </div>
+    </div>`;
+}
+
+function renderCharts(){
+  const areaMap = {};
+  DATA.stores.forEach(s=>{
+    if(!areaMap[s.area]) areaMap[s.area] = {sum:0,count:0};
+    areaMap[s.area].sum += s.ach_pct;
+    areaMap[s.area].count += 1;
+  });
+  const areaLabels = Object.keys(areaMap);
+  const areaVals = areaLabels.map(a => (areaMap[a].sum/areaMap[a].count*100));
+
+  new Chart(document.getElementById('chart-area'), {
+    type:'bar',
+    data:{ labels:areaLabels, datasets:[{
+      data:areaVals,
+      backgroundColor: areaVals.map(v=>colorHex[statusColor(v/100)]),
+      borderRadius:5, maxBarThickness:34
+    }]},
+    options:{
+      plugins:{legend:{display:false}, tooltip:{callbacks:{label:c=>c.parsed.y.toFixed(1)+'%'}}},
+      scales:{ y:{ beginAtZero:true, ticks:{callback:v=>v+'%'}, grid:{color:'#EEF0F4'} }, x:{ grid:{display:false} } }
+    }
+  });
+
+  const t = DATA.total;
+  const vasLabels2 = ['ACC','Qoala','BCA Insurance','Indosat','Telkomsel'];
+  const vasKeys = ['acc','qoala','bca_insurance','indosat','telkomsel'];
+  const vasVals = vasKeys.map(k=>t.vas[k].pct*100);
+  new Chart(document.getElementById('chart-vas'), {
+    type:'bar',
+    data:{ labels:vasLabels2, datasets:[{
+      data:vasVals,
+      backgroundColor: vasVals.map(v=>colorHex[statusColor(v/100)]),
+      borderRadius:5, maxBarThickness:34
+    }]},
+    options:{
+      indexAxis:'y',
+      plugins:{legend:{display:false}, tooltip:{callbacks:{label:c=>c.parsed.x.toFixed(1)+'%'}}},
+      scales:{ x:{ beginAtZero:true, ticks:{callback:v=>v+'%'}, grid:{color:'#EEF0F4'} }, y:{ grid:{display:false} } }
+    }
+  });
+}
+
+function renderRankings(){
+  const sorted = [...DATA.stores].sort((a,b)=>b.ach_pct-a.ach_pct);
+  const top5 = sorted.slice(0,5);
+  const bottom5 = sorted.slice(-5).reverse();
+  const renderList = (arr) => arr.map((s,i)=>`
+    <li>
+      <span class="rank-num">${i+1}</span>
+      <div class="rank-name">
+        <div class="n">${s.store_name}</div>
+        <div class="a">${s.area} · ${s.manager}</div>
+      </div>
+      <span class="rank-pct" style="color:${colorHex[statusColor(s.ach_pct)]}">${pct(s.ach_pct)}</span>
+    </li>`).join('');
+  document.getElementById('top5-list').innerHTML = renderList(top5);
+  document.getElementById('bottom5-list').innerHTML = renderList(bottom5);
+}
+</script>
+</body>
+</html>

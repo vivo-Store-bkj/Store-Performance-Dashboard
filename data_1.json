@@ -1,0 +1,2465 @@
+{
+  "period": "JULY",
+  "to_date_day": 30,
+  "total_days": 30,
+  "time_gone": 1,
+  "stores": [
+    {
+      "no": 1,
+      "area": "JKT BU",
+      "area_raw": "601 雅加达西北 JKT BU",
+      "store_id": 6010708,
+      "store_name": "MVS SHOWROOM CENTRAL PARK",
+      "manager": "NANDI FEBRIANA",
+      "jml_pc": 3,
+      "target_unit": 120,
+      "target_value": 900000000,
+      "ach_unit": 110,
+      "ach_pct": 0.9166666666666666,
+      "gap_unit": -10,
+      "mio3_unit": 74,
+      "mio3_pct": 0.6727272727272727,
+      "iqoo_unit": 18,
+      "iqoo_pct": 0.16363636363636364,
+      "ach_value": 857390000,
+      "ach_value_pct": 0.9526555555555556,
+      "gap_value": -42610000,
+      "growth_all_june": 132,
+      "growth_all_july": 110,
+      "growth_all_gap": -22,
+      "growth_all_pct": -0.16666666666666666,
+      "growth_value_june": 976368000,
+      "growth_value_july": 857390000,
+      "growth_value_gap": -118978000,
+      "growth_value_pct": -0.12185774216279108,
+      "vas": {
+        "acc": {
+          "target": 24,
+          "ach": 22,
+          "pct": 0.9166666666666666
+        },
+        "qoala": {
+          "target": 3600000,
+          "ach": 4420000,
+          "pct": 1.2277777777777779
+        },
+        "bca_insurance": {
+          "target": 900000,
+          "ach": 1000000,
+          "pct": 1.1111111111111112
+        },
+        "indosat": {
+          "target": 3.6,
+          "ach": 0,
+          "pct": 0
+        },
+        "telkomsel": {
+          "target": 1.2,
+          "ach": 0,
+          "pct": 0
+        }
+      }
+    },
+    {
+      "no": 2,
+      "area": "JKT BU",
+      "area_raw": "601 雅加达西北 JKT BU",
+      "store_id": 6010701,
+      "store_name": "MVS ROXY SHOWROOM 21",
+      "manager": "ANGGARIA",
+      "jml_pc": 6,
+      "target_unit": 270,
+      "target_value": 972000000,
+      "ach_unit": 270,
+      "ach_pct": 1,
+      "gap_unit": 0,
+      "mio3_unit": 109,
+      "mio3_pct": 0.40370370370370373,
+      "iqoo_unit": 10,
+      "iqoo_pct": 0.037037037037037035,
+      "ach_value": 1014730000,
+      "ach_value_pct": 1.0439609053497942,
+      "gap_value": 42730000,
+      "growth_all_june": 250,
+      "growth_all_july": 270,
+      "growth_all_gap": 20,
+      "growth_all_pct": 0.08,
+      "growth_value_june": 994150000,
+      "growth_value_july": 1014730000,
+      "growth_value_gap": 20580000,
+      "growth_value_pct": 0.02070110144344415,
+      "vas": {
+        "acc": {
+          "target": 54,
+          "ach": 73,
+          "pct": 1.3518518518518519
+        },
+        "qoala": {
+          "target": 3888000,
+          "ach": 4452000,
+          "pct": 1.1450617283950617
+        },
+        "bca_insurance": {
+          "target": 972000,
+          "ach": 1000000,
+          "pct": 1.02880658436214
+        },
+        "indosat": {
+          "target": 8.1,
+          "ach": 2,
+          "pct": 0.2469135802469136
+        },
+        "telkomsel": {
+          "target": 2.7,
+          "ach": 0,
+          "pct": 0
+        }
+      }
+    },
+    {
+      "no": 3,
+      "area": "JKT BU",
+      "area_raw": "601 雅加达西北 JKT BU",
+      "store_id": 6010702,
+      "store_name": "ME ROXY PAMERAN TIMUR",
+      "manager": "ANGGARIA",
+      "jml_pc": 7,
+      "target_unit": 270,
+      "target_value": 972000000,
+      "ach_unit": 270,
+      "ach_pct": 1,
+      "gap_unit": 0,
+      "mio3_unit": 91,
+      "mio3_pct": 0.337037037037037,
+      "iqoo_unit": 11,
+      "iqoo_pct": 0.040740740740740744,
+      "ach_value": 985330000,
+      "ach_value_pct": 1.0137139917695472,
+      "gap_value": 13330000,
+      "growth_all_june": 287,
+      "growth_all_july": 270,
+      "growth_all_gap": -17,
+      "growth_all_pct": -0.059233449477351915,
+      "growth_value_june": 957513000,
+      "growth_value_july": 985330000,
+      "growth_value_gap": 27817000,
+      "growth_value_pct": 0.029051302697717944,
+      "vas": {
+        "acc": {
+          "target": 54,
+          "ach": 66,
+          "pct": 1.2222222222222223
+        },
+        "qoala": {
+          "target": 3888000,
+          "ach": 3122000,
+          "pct": 0.8029835390946503
+        },
+        "bca_insurance": {
+          "target": 972000,
+          "ach": 0,
+          "pct": 0
+        },
+        "indosat": {
+          "target": 8.1,
+          "ach": 3,
+          "pct": 0.3703703703703704
+        },
+        "telkomsel": {
+          "target": 2.7,
+          "ach": 0,
+          "pct": 0
+        }
+      }
+    },
+    {
+      "no": 4,
+      "area": "JKT BU",
+      "area_raw": "601 雅加达西北 JKT BU",
+      "store_id": 6010703,
+      "store_name": "VIVO STORE WINSHOP",
+      "manager": "NUR IRAWATI",
+      "jml_pc": 3,
+      "target_unit": 120,
+      "target_value": 396000000,
+      "ach_unit": 105,
+      "ach_pct": 0.875,
+      "gap_unit": -15,
+      "mio3_unit": 25,
+      "mio3_pct": 0.23809523809523808,
+      "iqoo_unit": 7,
+      "iqoo_pct": 0.06666666666666667,
+      "ach_value": 301395000,
+      "ach_value_pct": 0.7610984848484849,
+      "gap_value": -94605000,
+      "growth_all_june": 103,
+      "growth_all_july": 105,
+      "growth_all_gap": 2,
+      "growth_all_pct": 0.019417475728155338,
+      "growth_value_june": 337397000,
+      "growth_value_july": 301395000,
+      "growth_value_gap": -36002000,
+      "growth_value_pct": -0.1067051574258218,
+      "vas": {
+        "acc": {
+          "target": 24,
+          "ach": 20,
+          "pct": 0.8333333333333334
+        },
+        "qoala": {
+          "target": 1584000,
+          "ach": 1431000,
+          "pct": 0.9034090909090909
+        },
+        "bca_insurance": {
+          "target": 396000,
+          "ach": 0,
+          "pct": 0
+        },
+        "indosat": {
+          "target": 3.6,
+          "ach": 1,
+          "pct": 0.2777777777777778
+        },
+        "telkomsel": {
+          "target": 1.2,
+          "ach": 0,
+          "pct": 0
+        }
+      }
+    },
+    {
+      "no": 5,
+      "area": "JKT BU",
+      "area_raw": "601 雅加达西北 JKT BU",
+      "store_id": 6010709,
+      "store_name": "PAMERAN UTARA",
+      "manager": "NUR IRAWATI",
+      "jml_pc": 7,
+      "target_unit": 330,
+      "target_value": 1089000000,
+      "ach_unit": 353,
+      "ach_pct": 1.0696969696969696,
+      "gap_unit": 23,
+      "mio3_unit": 83,
+      "mio3_pct": 0.23512747875354106,
+      "iqoo_unit": 11,
+      "iqoo_pct": 0.031161473087818695,
+      "ach_value": 1057847000,
+      "ach_value_pct": 0.9713930211202938,
+      "gap_value": -31153000,
+      "growth_all_june": 295,
+      "growth_all_july": 353,
+      "growth_all_gap": 58,
+      "growth_all_pct": 0.19661016949152543,
+      "growth_value_june": 933505000,
+      "growth_value_july": 1057847000,
+      "growth_value_gap": 124342000,
+      "growth_value_pct": 0.1331990723134852,
+      "vas": {
+        "acc": {
+          "target": 66,
+          "ach": 98,
+          "pct": 1.4848484848484849
+        },
+        "qoala": {
+          "target": 4356000,
+          "ach": 3816000,
+          "pct": 0.8760330578512396
+        },
+        "bca_insurance": {
+          "target": 1089000,
+          "ach": 0,
+          "pct": 0
+        },
+        "indosat": {
+          "target": 9.9,
+          "ach": 3,
+          "pct": 0.30303030303030304
+        },
+        "telkomsel": {
+          "target": 3.3,
+          "ach": 0,
+          "pct": 0
+        }
+      }
+    },
+    {
+      "no": 6,
+      "area": "JKT BU",
+      "area_raw": "601 雅加达西北 JKT BU",
+      "store_id": 6010710,
+      "store_name": "PAMERAN SELATAN",
+      "manager": "NUR IRAWATI",
+      "jml_pc": 3,
+      "target_unit": 120,
+      "target_value": 396000000,
+      "ach_unit": 120,
+      "ach_pct": 1,
+      "gap_unit": 0,
+      "mio3_unit": 40,
+      "mio3_pct": 0.3333333333333333,
+      "iqoo_unit": 7,
+      "iqoo_pct": 0.058333333333333334,
+      "ach_value": 499580000,
+      "ach_value_pct": 1.2615656565656566,
+      "gap_value": 103580000,
+      "growth_all_june": 90,
+      "growth_all_july": 120,
+      "growth_all_gap": 30,
+      "growth_all_pct": 0.3333333333333333,
+      "growth_value_june": 296710000,
+      "growth_value_july": 499580000,
+      "growth_value_gap": 202870000,
+      "growth_value_pct": 0.6837315897677867,
+      "vas": {
+        "acc": {
+          "target": 24,
+          "ach": 34,
+          "pct": 1.4166666666666667
+        },
+        "qoala": {
+          "target": 1584000,
+          "ach": 1272000,
+          "pct": 0.803030303030303
+        },
+        "bca_insurance": {
+          "target": 396000,
+          "ach": 0,
+          "pct": 0
+        },
+        "indosat": {
+          "target": 3.6,
+          "ach": 1,
+          "pct": 0.2777777777777778
+        },
+        "telkomsel": {
+          "target": 1.2,
+          "ach": 0,
+          "pct": 0
+        }
+      }
+    },
+    {
+      "no": 7,
+      "area": "JKT BU",
+      "area_raw": "601 雅加达西北 JKT BU",
+      "store_id": 6020711,
+      "store_name": "vivostore emporium",
+      "manager": "M KHOIRUDIN",
+      "jml_pc": 3,
+      "target_unit": 120,
+      "target_value": 840000000,
+      "ach_unit": 111,
+      "ach_pct": 0.925,
+      "gap_unit": -9,
+      "mio3_unit": 67,
+      "mio3_pct": 0.6036036036036037,
+      "iqoo_unit": 11,
+      "iqoo_pct": 0.0990990990990991,
+      "ach_value": 650689000,
+      "ach_value_pct": 0.774629761904762,
+      "gap_value": -189311000,
+      "growth_all_june": 107,
+      "growth_all_july": 111,
+      "growth_all_gap": 4,
+      "growth_all_pct": 0.037383177570093455,
+      "growth_value_june": 786093000,
+      "growth_value_july": 650689000,
+      "growth_value_gap": -135404000,
+      "growth_value_pct": -0.17224933945474644,
+      "vas": {
+        "acc": {
+          "target": 24,
+          "ach": 22,
+          "pct": 0.9166666666666666
+        },
+        "qoala": {
+          "target": 3360000,
+          "ach": 3618000,
+          "pct": 1.0767857142857142
+        },
+        "bca_insurance": {
+          "target": 840000,
+          "ach": 1000000,
+          "pct": 1.1904761904761905
+        },
+        "indosat": {
+          "target": 3.6,
+          "ach": 0,
+          "pct": 0
+        },
+        "telkomsel": {
+          "target": 1.2,
+          "ach": 0,
+          "pct": 0
+        }
+      }
+    },
+    {
+      "no": 8,
+      "area": "JKT BU",
+      "area_raw": "601 雅加达西北 JKT BU",
+      "store_id": 6010711,
+      "store_name": "LIPPO MALL PURI 1FK02",
+      "manager": "HERRU ILYASA",
+      "jml_pc": 3,
+      "target_unit": 50,
+      "target_value": 365000000,
+      "ach_unit": 38,
+      "ach_pct": 0.76,
+      "gap_unit": -12,
+      "mio3_unit": 24,
+      "mio3_pct": 0.631578947368421,
+      "iqoo_unit": 3,
+      "iqoo_pct": 0.07894736842105263,
+      "ach_value": 315162000,
+      "ach_value_pct": 0.8634575342465753,
+      "gap_value": -49838000,
+      "growth_all_june": 54,
+      "growth_all_july": 38,
+      "growth_all_gap": -16,
+      "growth_all_pct": -0.2962962962962963,
+      "growth_value_june": 490946000,
+      "growth_value_july": 315162000,
+      "growth_value_gap": -175784000,
+      "growth_value_pct": -0.35805159834279127,
+      "vas": {
+        "acc": {
+          "target": 10,
+          "ach": 27,
+          "pct": 2.7
+        },
+        "qoala": {
+          "target": 1460000,
+          "ach": 987000,
+          "pct": 0.6760273972602739
+        },
+        "bca_insurance": {
+          "target": 365000,
+          "ach": 0,
+          "pct": 0
+        },
+        "indosat": {
+          "target": 1.5,
+          "ach": 0,
+          "pct": 0
+        },
+        "telkomsel": {
+          "target": 0.5,
+          "ach": 0,
+          "pct": 0
+        }
+      }
+    },
+    {
+      "no": 9,
+      "area": "JKT BU",
+      "area_raw": "601 雅加达西北 JKT BU",
+      "store_id": 6020706,
+      "store_name": "MVS CEMPAKA SHOWROOM 2 (454)",
+      "manager": "NOVIA HARYANTI",
+      "jml_pc": 3,
+      "target_unit": 110,
+      "target_value": 429000000,
+      "ach_unit": 108,
+      "ach_pct": 0.9818181818181818,
+      "gap_unit": -2,
+      "mio3_unit": 59,
+      "mio3_pct": 0.5462962962962963,
+      "iqoo_unit": 13,
+      "iqoo_pct": 0.12037037037037036,
+      "ach_value": 491192000,
+      "ach_value_pct": 1.144969696969697,
+      "gap_value": 62192000,
+      "growth_all_june": 109,
+      "growth_all_july": 108,
+      "growth_all_gap": -1,
+      "growth_all_pct": -0.009174311926605505,
+      "growth_value_june": 454591000,
+      "growth_value_july": 491192000,
+      "growth_value_gap": 36601000,
+      "growth_value_pct": 0.08051413248392511,
+      "vas": {
+        "acc": {
+          "target": 22,
+          "ach": 14,
+          "pct": 0.6363636363636364
+        },
+        "qoala": {
+          "target": 1716000,
+          "ach": 477000,
+          "pct": 0.27797202797202797
+        },
+        "bca_insurance": {
+          "target": 429000,
+          "ach": 0,
+          "pct": 0
+        },
+        "indosat": {
+          "target": 3.3,
+          "ach": 0,
+          "pct": 0
+        },
+        "telkomsel": {
+          "target": 1.1,
+          "ach": 0,
+          "pct": 0
+        }
+      }
+    },
+    {
+      "no": 10,
+      "area": "JKT BU",
+      "area_raw": "601 雅加达西北 JKT BU",
+      "store_id": 6020704,
+      "store_name": "MVS CEMPAKA SHOWROOM 14 (8TOKO)",
+      "manager": "NOVIA HARYANTI",
+      "jml_pc": 3,
+      "target_unit": 60,
+      "target_value": 234000000,
+      "ach_unit": 54,
+      "ach_pct": 0.9,
+      "gap_unit": -6,
+      "mio3_unit": 23,
+      "mio3_pct": 0.42592592592592593,
+      "iqoo_unit": 3,
+      "iqoo_pct": 0.05555555555555555,
+      "ach_value": 207746000,
+      "ach_value_pct": 0.8878034188034188,
+      "gap_value": -26254000,
+      "growth_all_june": 41,
+      "growth_all_july": 54,
+      "growth_all_gap": 13,
+      "growth_all_pct": 0.3170731707317073,
+      "growth_value_june": 140859000,
+      "growth_value_july": 207746000,
+      "growth_value_gap": 66887000,
+      "growth_value_pct": 0.47485073726208477,
+      "vas": {
+        "acc": {
+          "target": 12,
+          "ach": 10,
+          "pct": 0.8333333333333334
+        },
+        "qoala": {
+          "target": 936000,
+          "ach": 477000,
+          "pct": 0.5096153846153846
+        },
+        "bca_insurance": {
+          "target": 234000,
+          "ach": 0,
+          "pct": 0
+        },
+        "indosat": {
+          "target": 1.8,
+          "ach": 0,
+          "pct": 0
+        },
+        "telkomsel": {
+          "target": 0.6,
+          "ach": 0,
+          "pct": 0
+        }
+      }
+    },
+    {
+      "no": 11,
+      "area": "JKT TS",
+      "area_raw": "604 雅加达东南 JKT TS",
+      "store_id": 6040701,
+      "store_name": "ITC-VIVO STORE 1",
+      "manager": "Erlangga Pradita",
+      "jml_pc": 3,
+      "target_unit": 60,
+      "target_value": 240000000,
+      "ach_unit": 56,
+      "ach_pct": 0.9333333333333333,
+      "gap_unit": -4,
+      "mio3_unit": 34,
+      "mio3_pct": 0.6071428571428571,
+      "iqoo_unit": 6,
+      "iqoo_pct": 0.10714285714285714,
+      "ach_value": 257644000,
+      "ach_value_pct": 1.0735166666666667,
+      "gap_value": 17644000,
+      "growth_all_june": 48,
+      "growth_all_july": 56,
+      "growth_all_gap": 8,
+      "growth_all_pct": 0.16666666666666666,
+      "growth_value_june": 187652000,
+      "growth_value_july": 257644000,
+      "growth_value_gap": 69992000,
+      "growth_value_pct": 0.3729882974868373,
+      "vas": {
+        "acc": {
+          "target": 12,
+          "ach": 30,
+          "pct": 2.5
+        },
+        "qoala": {
+          "target": 960000,
+          "ach": 1984000,
+          "pct": 2.066666666666667
+        },
+        "bca_insurance": {
+          "target": 240000,
+          "ach": 0,
+          "pct": 0
+        },
+        "indosat": {
+          "target": 1.8,
+          "ach": 0,
+          "pct": 0
+        },
+        "telkomsel": {
+          "target": 0.6,
+          "ach": 0,
+          "pct": 0
+        }
+      }
+    },
+    {
+      "no": 12,
+      "area": "JKT TS",
+      "area_raw": "604 雅加达东南 JKT TS",
+      "store_id": 6080712,
+      "store_name": "MVS ITC DEPOK VIVO STORE 2",
+      "manager": "Erlangga Pradita",
+      "jml_pc": 3,
+      "target_unit": 70,
+      "target_value": 280000000,
+      "ach_unit": 65,
+      "ach_pct": 0.9285714285714286,
+      "gap_unit": -5,
+      "mio3_unit": 42,
+      "mio3_pct": 0.6461538461538462,
+      "iqoo_unit": 9,
+      "iqoo_pct": 0.13846153846153847,
+      "ach_value": 377635000,
+      "ach_value_pct": 1.3486964285714285,
+      "gap_value": 97635000,
+      "growth_all_june": 57,
+      "growth_all_july": 65,
+      "growth_all_gap": 8,
+      "growth_all_pct": 0.14035087719298245,
+      "growth_value_june": 278943000,
+      "growth_value_july": 377635000,
+      "growth_value_gap": 98692000,
+      "growth_value_pct": 0.35380705018588027,
+      "vas": {
+        "acc": {
+          "target": 14,
+          "ach": 12,
+          "pct": 0.8571428571428571
+        },
+        "qoala": {
+          "target": 1120000,
+          "ach": 828000,
+          "pct": 0.7392857142857143
+        },
+        "bca_insurance": {
+          "target": 280000,
+          "ach": 1000000,
+          "pct": 3.5714285714285716
+        },
+        "indosat": {
+          "target": 2.1,
+          "ach": 1,
+          "pct": 0.47619047619047616
+        },
+        "telkomsel": {
+          "target": 0.7,
+          "ach": 0,
+          "pct": 0
+        }
+      }
+    },
+    {
+      "no": 13,
+      "area": "JKT TS",
+      "area_raw": "604 雅加达东南 JKT TS",
+      "store_id": 6040702,
+      "store_name": "TRAN STUDIO MALL 2F059",
+      "manager": "Erlangga Pradita",
+      "jml_pc": 2,
+      "target_unit": 40,
+      "target_value": 280000000,
+      "ach_unit": 28,
+      "ach_pct": 0.7,
+      "gap_unit": -12,
+      "mio3_unit": 20,
+      "mio3_pct": 0.7142857142857143,
+      "iqoo_unit": 9,
+      "iqoo_pct": 0.32142857142857145,
+      "ach_value": 206872000,
+      "ach_value_pct": 0.7388285714285714,
+      "gap_value": -73128000,
+      "growth_all_june": 21,
+      "growth_all_july": 28,
+      "growth_all_gap": 7,
+      "growth_all_pct": 0.3333333333333333,
+      "growth_value_june": 125879000,
+      "growth_value_july": 206872000,
+      "growth_value_gap": 80993000,
+      "growth_value_pct": 0.6434194742570246,
+      "vas": {
+        "acc": {
+          "target": 8,
+          "ach": 8,
+          "pct": 1
+        },
+        "qoala": {
+          "target": 1120000,
+          "ach": 1815000,
+          "pct": 1.6205357142857142
+        },
+        "bca_insurance": {
+          "target": 280000,
+          "ach": 0,
+          "pct": 0
+        },
+        "indosat": {
+          "target": 1.2,
+          "ach": 0,
+          "pct": 0
+        },
+        "telkomsel": {
+          "target": 0.4,
+          "ach": 0,
+          "pct": 0
+        }
+      }
+    },
+    {
+      "no": 14,
+      "area": "JKT TS",
+      "area_raw": "604 雅加达东南 JKT TS",
+      "store_id": 6040703,
+      "store_name": "SAWANGAN 1F1-0320",
+      "manager": "Erlangga Pradita",
+      "jml_pc": 2,
+      "target_unit": 40,
+      "target_value": 216000000,
+      "ach_unit": 44,
+      "ach_pct": 1.1,
+      "gap_unit": 4,
+      "mio3_unit": 32,
+      "mio3_pct": 0.7272727272727273,
+      "iqoo_unit": 6,
+      "iqoo_pct": 0.13636363636363635,
+      "ach_value": 265456000,
+      "ach_value_pct": 1.228962962962963,
+      "gap_value": 49456000,
+      "growth_all_june": 29,
+      "growth_all_july": 44,
+      "growth_all_gap": 15,
+      "growth_all_pct": 0.5172413793103449,
+      "growth_value_june": 166171000,
+      "growth_value_july": 265456000,
+      "growth_value_gap": 99285000,
+      "growth_value_pct": 0.5974869261182758,
+      "vas": {
+        "acc": {
+          "target": 8,
+          "ach": 34,
+          "pct": 4.25
+        },
+        "qoala": {
+          "target": 864000,
+          "ach": 1225000,
+          "pct": 1.4178240740740742
+        },
+        "bca_insurance": {
+          "target": 216000,
+          "ach": 0,
+          "pct": 0
+        },
+        "indosat": {
+          "target": 1.2,
+          "ach": 1,
+          "pct": 0.8333333333333334
+        },
+        "telkomsel": {
+          "target": 0.4,
+          "ach": 0,
+          "pct": 0
+        }
+      }
+    },
+    {
+      "no": 15,
+      "area": "BEKASI",
+      "area_raw": "605 勿加泗 BEKASI",
+      "store_id": 6050701,
+      "store_name": "MVS X6 DS0824",
+      "manager": "M RIZKI",
+      "jml_pc": 2,
+      "target_unit": 60,
+      "target_value": 342000000,
+      "ach_unit": 54,
+      "ach_pct": 0.9,
+      "gap_unit": -6,
+      "mio3_unit": 38,
+      "mio3_pct": 0.7037037037037037,
+      "iqoo_unit": 11,
+      "iqoo_pct": 0.2037037037037037,
+      "ach_value": 325546000,
+      "ach_value_pct": 0.9518888888888889,
+      "gap_value": -16454000,
+      "growth_all_june": 61,
+      "growth_all_july": 54,
+      "growth_all_gap": -7,
+      "growth_all_pct": -0.11475409836065574,
+      "growth_value_june": 319839000,
+      "growth_value_july": 325546000,
+      "growth_value_gap": 5707000,
+      "growth_value_pct": 0.01784335243669471,
+      "vas": {
+        "acc": {
+          "target": 12,
+          "ach": 6,
+          "pct": 0.5
+        },
+        "qoala": {
+          "target": 1368000,
+          "ach": 488000,
+          "pct": 0.3567251461988304
+        },
+        "bca_insurance": {
+          "target": 342000,
+          "ach": 0,
+          "pct": 0
+        },
+        "indosat": {
+          "target": 1.8,
+          "ach": 0,
+          "pct": 0
+        },
+        "telkomsel": {
+          "target": 0.6,
+          "ach": 0,
+          "pct": 0
+        }
+      }
+    },
+    {
+      "no": 16,
+      "area": "BEKASI",
+      "area_raw": "605 勿加泗 BEKASI",
+      "store_id": 6220701,
+      "store_name": "MVS MBH-VIP VIVO STORE-DD284",
+      "manager": "M RIZKI",
+      "jml_pc": 2,
+      "target_unit": 80,
+      "target_value": 456000000,
+      "ach_unit": 64,
+      "ach_pct": 0.8,
+      "gap_unit": -16,
+      "mio3_unit": 38,
+      "mio3_pct": 0.59375,
+      "iqoo_unit": 9,
+      "iqoo_pct": 0.140625,
+      "ach_value": 360336000,
+      "ach_value_pct": 0.7902105263157895,
+      "gap_value": -95664000,
+      "growth_all_june": 78,
+      "growth_all_july": 64,
+      "growth_all_gap": -14,
+      "growth_all_pct": -0.1794871794871795,
+      "growth_value_june": 452022000,
+      "growth_value_july": 360336000,
+      "growth_value_gap": -91686000,
+      "growth_value_pct": -0.20283526023069673,
+      "vas": {
+        "acc": {
+          "target": 16,
+          "ach": 9,
+          "pct": 0.5625
+        },
+        "qoala": {
+          "target": 1824000,
+          "ach": 2956000,
+          "pct": 1.6206140350877194
+        },
+        "bca_insurance": {
+          "target": 456000,
+          "ach": 0,
+          "pct": 0
+        },
+        "indosat": {
+          "target": 2.4,
+          "ach": 0,
+          "pct": 0
+        },
+        "telkomsel": {
+          "target": 0.8,
+          "ach": 0,
+          "pct": 0
+        }
+      }
+    },
+    {
+      "no": 17,
+      "area": "BEKASI",
+      "area_raw": "605 勿加泗 BEKASI",
+      "store_id": 6050705,
+      "store_name": "MBH 2F009",
+      "manager": "M RIZKI",
+      "jml_pc": 1,
+      "target_unit": 20,
+      "target_value": 114000000,
+      "ach_unit": 37,
+      "ach_pct": 1.85,
+      "gap_unit": 17,
+      "mio3_unit": 18,
+      "mio3_pct": 0.4864864864864865,
+      "iqoo_unit": 2,
+      "iqoo_pct": 0.05405405405405406,
+      "ach_value": 157363000,
+      "ach_value_pct": 1.3803771929824562,
+      "gap_value": 43363000,
+      "growth_all_june": 18,
+      "growth_all_july": 37,
+      "growth_all_gap": 19,
+      "growth_all_pct": 1.0555555555555556,
+      "growth_value_june": 91882000,
+      "growth_value_july": 157363000,
+      "growth_value_gap": 65481000,
+      "growth_value_pct": 0.7126640691321477,
+      "vas": {
+        "acc": {
+          "target": 4,
+          "ach": 7,
+          "pct": 1.75
+        },
+        "qoala": {
+          "target": 456000,
+          "ach": 159000,
+          "pct": 0.34868421052631576
+        },
+        "bca_insurance": {
+          "target": 114000,
+          "ach": 1000000,
+          "pct": 8.771929824561404
+        },
+        "indosat": {
+          "target": 0,
+          "ach": 0,
+          "pct": 0
+        },
+        "telkomsel": {
+          "target": 0,
+          "ach": 0,
+          "pct": 0
+        }
+      }
+    },
+    {
+      "no": 18,
+      "area": "BEKASI",
+      "area_raw": "605 勿加泗 BEKASI",
+      "store_id": 6050706,
+      "store_name": "AEON MALL DELTAMAS 1F081",
+      "manager": "M RIZKI",
+      "jml_pc": 0,
+      "target_unit": 20,
+      "target_value": 80000000,
+      "ach_unit": 8,
+      "ach_pct": 0.4,
+      "gap_unit": -12,
+      "mio3_unit": 7,
+      "mio3_pct": 0.875,
+      "iqoo_unit": 1,
+      "iqoo_pct": 0.125,
+      "ach_value": 41992000,
+      "ach_value_pct": 0.5249,
+      "gap_value": -38008000,
+      "growth_all_june": 0,
+      "growth_all_july": 8,
+      "growth_all_gap": 8,
+      "growth_all_pct": 0,
+      "growth_value_june": 0,
+      "growth_value_july": 41992000,
+      "growth_value_gap": 41992000,
+      "growth_value_pct": 0,
+      "vas": {
+        "acc": {
+          "target": 4,
+          "ach": 0,
+          "pct": 0
+        },
+        "qoala": {
+          "target": 320000,
+          "ach": 499000,
+          "pct": 1.559375
+        },
+        "bca_insurance": {
+          "target": 80000,
+          "ach": 0,
+          "pct": 0
+        },
+        "indosat": {
+          "target": 0,
+          "ach": 0,
+          "pct": 0
+        },
+        "telkomsel": {
+          "target": 0,
+          "ach": 0,
+          "pct": 0
+        }
+      }
+    },
+    {
+      "no": 19,
+      "area": "BOGOR",
+      "area_raw": "618 茂物 BOGOR",
+      "store_id": 6180706,
+      "store_name": "MVS MALL CCM",
+      "manager": "DANDI SURYA",
+      "jml_pc": 3,
+      "target_unit": 120,
+      "target_value": 612000000,
+      "ach_unit": 129,
+      "ach_pct": 1.075,
+      "gap_unit": 9,
+      "mio3_unit": 85,
+      "mio3_pct": 0.6589147286821705,
+      "iqoo_unit": 25,
+      "iqoo_pct": 0.1937984496124031,
+      "ach_value": 678471000,
+      "ach_value_pct": 1.1086127450980392,
+      "gap_value": 66471000,
+      "growth_all_june": 132,
+      "growth_all_july": 129,
+      "growth_all_gap": -3,
+      "growth_all_pct": -0.022727272727272728,
+      "growth_value_june": 741568000,
+      "growth_value_july": 678471000,
+      "growth_value_gap": -63097000,
+      "growth_value_pct": -0.08508592603780099,
+      "vas": {
+        "acc": {
+          "target": 24,
+          "ach": 50,
+          "pct": 2.0833333333333335
+        },
+        "qoala": {
+          "target": 2448000,
+          "ach": 1803000,
+          "pct": 0.7365196078431373
+        },
+        "bca_insurance": {
+          "target": 612000,
+          "ach": 0,
+          "pct": 0
+        },
+        "indosat": {
+          "target": 3.6,
+          "ach": 1,
+          "pct": 0.2777777777777778
+        },
+        "telkomsel": {
+          "target": 1.2,
+          "ach": 0,
+          "pct": 0
+        }
+      }
+    },
+    {
+      "no": 20,
+      "area": "BOGOR",
+      "area_raw": "618 茂物 BOGOR",
+      "store_id": 6180707,
+      "store_name": "SC BTM",
+      "manager": "DANDI SURYA",
+      "jml_pc": 1,
+      "target_unit": 25,
+      "target_value": 117500000,
+      "ach_unit": 31,
+      "ach_pct": 1.24,
+      "gap_unit": 6,
+      "mio3_unit": 17,
+      "mio3_pct": 0.5483870967741935,
+      "iqoo_unit": 3,
+      "iqoo_pct": 0.0967741935483871,
+      "ach_value": 165669000,
+      "ach_value_pct": 1.4099489361702127,
+      "gap_value": 48169000,
+      "growth_all_june": 28,
+      "growth_all_july": 31,
+      "growth_all_gap": 3,
+      "growth_all_pct": 0.10714285714285714,
+      "growth_value_june": 125772000,
+      "growth_value_july": 165669000,
+      "growth_value_gap": 39897000,
+      "growth_value_pct": 0.31721686861940657,
+      "vas": {
+        "acc": {
+          "target": 5,
+          "ach": 0,
+          "pct": 0
+        },
+        "qoala": {
+          "target": 100000,
+          "ach": 0,
+          "pct": 0
+        },
+        "bca_insurance": {
+          "target": 100000,
+          "ach": 0,
+          "pct": 0
+        },
+        "indosat": {
+          "target": 0.75,
+          "ach": 0,
+          "pct": 0
+        },
+        "telkomsel": {
+          "target": 0.25,
+          "ach": 0,
+          "pct": 0
+        }
+      }
+    },
+    {
+      "no": 21,
+      "area": "BANTEN",
+      "area_raw": "624-万丹BANTEN",
+      "store_id": 6170707,
+      "store_name": "LG BLOK D NO. 01D SKY 7",
+      "manager": "ARIES FITRIYANTO",
+      "jml_pc": 2,
+      "target_unit": 80,
+      "target_value": 344000000,
+      "ach_unit": 89,
+      "ach_pct": 1.1125,
+      "gap_unit": 9,
+      "mio3_unit": 39,
+      "mio3_pct": 0.43820224719101125,
+      "iqoo_unit": 7,
+      "iqoo_pct": 0.07865168539325842,
+      "ach_value": 377511000,
+      "ach_value_pct": 1.0974156976744187,
+      "gap_value": 33511000,
+      "growth_all_june": 63,
+      "growth_all_july": 89,
+      "growth_all_gap": 26,
+      "growth_all_pct": 0.4126984126984127,
+      "growth_value_june": 250237000,
+      "growth_value_july": 377511000,
+      "growth_value_gap": 127274000,
+      "growth_value_pct": 0.5086138340852872,
+      "vas": {
+        "acc": {
+          "target": 16,
+          "ach": 16,
+          "pct": 1
+        },
+        "qoala": {
+          "target": 1376000,
+          "ach": 737000,
+          "pct": 0.5356104651162791
+        },
+        "bca_insurance": {
+          "target": 344000,
+          "ach": 0,
+          "pct": 0
+        },
+        "indosat": {
+          "target": 2.4,
+          "ach": 0,
+          "pct": 0
+        },
+        "telkomsel": {
+          "target": 0.8,
+          "ach": 0,
+          "pct": 0
+        }
+      }
+    },
+    {
+      "no": 22,
+      "area": "BANTEN",
+      "area_raw": "624-万丹BANTEN",
+      "store_id": 6240702,
+      "store_name": "LG BLOK B NO. 01B SKY M3",
+      "manager": "ARIES FITRIYANTO",
+      "jml_pc": 3,
+      "target_unit": 100,
+      "target_value": 430000000,
+      "ach_unit": 105,
+      "ach_pct": 1.05,
+      "gap_unit": 5,
+      "mio3_unit": 54,
+      "mio3_pct": 0.5142857142857142,
+      "iqoo_unit": 11,
+      "iqoo_pct": 0.10476190476190476,
+      "ach_value": 475895000,
+      "ach_value_pct": 1.1067325581395349,
+      "gap_value": 45895000,
+      "growth_all_june": 87,
+      "growth_all_july": 105,
+      "growth_all_gap": 18,
+      "growth_all_pct": 0.20689655172413793,
+      "growth_value_june": 396913000,
+      "growth_value_july": 475895000,
+      "growth_value_gap": 78982000,
+      "growth_value_pct": 0.19899071081068143,
+      "vas": {
+        "acc": {
+          "target": 20,
+          "ach": 25,
+          "pct": 1.25
+        },
+        "qoala": {
+          "target": 1720000,
+          "ach": 1952000,
+          "pct": 1.1348837209302325
+        },
+        "bca_insurance": {
+          "target": 430000,
+          "ach": 1000000,
+          "pct": 2.3255813953488373
+        },
+        "indosat": {
+          "target": 3,
+          "ach": 0,
+          "pct": 0
+        },
+        "telkomsel": {
+          "target": 1,
+          "ach": 0,
+          "pct": 0
+        }
+      }
+    },
+    {
+      "no": 23,
+      "area": "BANTEN",
+      "area_raw": "624-万丹BANTEN",
+      "store_id": 6240704,
+      "store_name": "TANGCITY LG017 WEST LOBBY",
+      "manager": "ARIES FITRIYANTO",
+      "jml_pc": 2,
+      "target_unit": 40,
+      "target_value": 172000000,
+      "ach_unit": 21,
+      "ach_pct": 0.525,
+      "gap_unit": -19,
+      "mio3_unit": 10,
+      "mio3_pct": 0.47619047619047616,
+      "iqoo_unit": 2,
+      "iqoo_pct": 0.09523809523809523,
+      "ach_value": 90879000,
+      "ach_value_pct": 0.5283662790697674,
+      "gap_value": -81121000,
+      "growth_all_june": 37,
+      "growth_all_july": 21,
+      "growth_all_gap": -16,
+      "growth_all_pct": -0.43243243243243246,
+      "growth_value_june": 137463000,
+      "growth_value_july": 90879000,
+      "growth_value_gap": -46584000,
+      "growth_value_pct": -0.338883917854259,
+      "vas": {
+        "acc": {
+          "target": 8,
+          "ach": 9,
+          "pct": 1.125
+        },
+        "qoala": {
+          "target": 350000,
+          "ach": 159000,
+          "pct": 0.4542857142857143
+        },
+        "bca_insurance": {
+          "target": 150000,
+          "ach": 0,
+          "pct": 0
+        },
+        "indosat": {
+          "target": 1.2,
+          "ach": 0,
+          "pct": 0
+        },
+        "telkomsel": {
+          "target": 0.4,
+          "ach": 0,
+          "pct": 0
+        }
+      }
+    },
+    {
+      "no": 24,
+      "area": "BANTEN",
+      "area_raw": "624-万丹BANTEN",
+      "store_id": 6240701,
+      "store_name": "LG BLOK A-B NO. 12 SKY 5",
+      "manager": "DHANI EKO NUGROHO",
+      "jml_pc": 3,
+      "target_unit": 90,
+      "target_value": 387000000,
+      "ach_unit": 94,
+      "ach_pct": 1.0444444444444445,
+      "gap_unit": 4,
+      "mio3_unit": 42,
+      "mio3_pct": 0.44680851063829785,
+      "iqoo_unit": 6,
+      "iqoo_pct": 0.06382978723404255,
+      "ach_value": 402706000,
+      "ach_value_pct": 1.0405839793281653,
+      "gap_value": 15706000,
+      "growth_all_june": 94,
+      "growth_all_july": 94,
+      "growth_all_gap": 0,
+      "growth_all_pct": 0,
+      "growth_value_june": 443806000,
+      "growth_value_july": 402706000,
+      "growth_value_gap": -41100000,
+      "growth_value_pct": -0.09260803143715948,
+      "vas": {
+        "acc": {
+          "target": 18,
+          "ach": 7,
+          "pct": 0.3888888888888889
+        },
+        "qoala": {
+          "target": 1548000,
+          "ach": 1395000,
+          "pct": 0.9011627906976745
+        },
+        "bca_insurance": {
+          "target": 387000,
+          "ach": 1000000,
+          "pct": 2.5839793281653747
+        },
+        "indosat": {
+          "target": 2.7,
+          "ach": 0,
+          "pct": 0
+        },
+        "telkomsel": {
+          "target": 0.9,
+          "ach": 0,
+          "pct": 0
+        }
+      }
+    },
+    {
+      "no": 25,
+      "area": "BANTEN",
+      "area_raw": "624-万丹BANTEN",
+      "store_id": 6170706,
+      "store_name": "CHARLES",
+      "manager": "DHANI EKO NUGROHO",
+      "jml_pc": 3,
+      "target_unit": 90,
+      "target_value": 387000000,
+      "ach_unit": 94,
+      "ach_pct": 1.0444444444444445,
+      "gap_unit": 4,
+      "mio3_unit": 42,
+      "mio3_pct": 0.44680851063829785,
+      "iqoo_unit": 6,
+      "iqoo_pct": 0.06382978723404255,
+      "ach_value": 414106000,
+      "ach_value_pct": 1.0700413436692506,
+      "gap_value": 27106000,
+      "growth_all_june": 90,
+      "growth_all_july": 94,
+      "growth_all_gap": 4,
+      "growth_all_pct": 0.044444444444444446,
+      "growth_value_june": 367310000,
+      "growth_value_july": 414106000,
+      "growth_value_gap": 46796000,
+      "growth_value_pct": 0.12740192208216494,
+      "vas": {
+        "acc": {
+          "target": 18,
+          "ach": 10,
+          "pct": 0.5555555555555556
+        },
+        "qoala": {
+          "target": 1548000,
+          "ach": 1804000,
+          "pct": 1.165374677002584
+        },
+        "bca_insurance": {
+          "target": 387000,
+          "ach": 0,
+          "pct": 0
+        },
+        "indosat": {
+          "target": 2.7,
+          "ach": 0,
+          "pct": 0
+        },
+        "telkomsel": {
+          "target": 0.9,
+          "ach": 0,
+          "pct": 0
+        }
+      }
+    },
+    {
+      "no": 26,
+      "area": "BANTEN",
+      "area_raw": "624-万丹BANTEN",
+      "store_id": 6240703,
+      "store_name": "TANGCITY LG009 CENTER",
+      "manager": "DHANI EKO NUGROHO",
+      "jml_pc": 2,
+      "target_unit": 90,
+      "target_value": 387000000,
+      "ach_unit": 105,
+      "ach_pct": 1.1666666666666667,
+      "gap_unit": 15,
+      "mio3_unit": 49,
+      "mio3_pct": 0.4666666666666667,
+      "iqoo_unit": 5,
+      "iqoo_pct": 0.047619047619047616,
+      "ach_value": 432595000,
+      "ach_value_pct": 1.1178165374677003,
+      "gap_value": 45595000,
+      "growth_all_june": 63,
+      "growth_all_july": 105,
+      "growth_all_gap": 42,
+      "growth_all_pct": 0.6666666666666666,
+      "growth_value_june": 298937000,
+      "growth_value_july": 432595000,
+      "growth_value_gap": 133658000,
+      "growth_value_pct": 0.44711092972766836,
+      "vas": {
+        "acc": {
+          "target": 18,
+          "ach": 12,
+          "pct": 0.6666666666666666
+        },
+        "qoala": {
+          "target": 1548000,
+          "ach": 2132000,
+          "pct": 1.3772609819121446
+        },
+        "bca_insurance": {
+          "target": 387000,
+          "ach": 0,
+          "pct": 0
+        },
+        "indosat": {
+          "target": 2.7,
+          "ach": 0,
+          "pct": 0
+        },
+        "telkomsel": {
+          "target": 0.9,
+          "ach": 0,
+          "pct": 0
+        }
+      }
+    },
+    {
+      "no": 27,
+      "area": "BANTEN",
+      "area_raw": "624-万丹BANTEN",
+      "store_id": 6170703,
+      "store_name": "4004 MVS-BNT-CCM STORE",
+      "manager": "DWI IRAWAN ( PIC )",
+      "jml_pc": 2,
+      "target_unit": 40,
+      "target_value": 172000000,
+      "ach_unit": 30,
+      "ach_pct": 0.75,
+      "gap_unit": -10,
+      "mio3_unit": 20,
+      "mio3_pct": 0.6666666666666666,
+      "iqoo_unit": 6,
+      "iqoo_pct": 0.2,
+      "ach_value": 178770000,
+      "ach_value_pct": 1.039360465116279,
+      "gap_value": 6770000,
+      "growth_all_june": 20,
+      "growth_all_july": 30,
+      "growth_all_gap": 10,
+      "growth_all_pct": 0.5,
+      "growth_value_june": 86480000,
+      "growth_value_july": 178770000,
+      "growth_value_gap": 92290000,
+      "growth_value_pct": 1.0671831637372804,
+      "vas": {
+        "acc": {
+          "target": 8,
+          "ach": 1,
+          "pct": 0.125
+        },
+        "qoala": {
+          "target": 200000,
+          "ach": 329000,
+          "pct": 1.645
+        },
+        "bca_insurance": {
+          "target": 100000,
+          "ach": 0,
+          "pct": 0
+        },
+        "indosat": {
+          "target": 1.2,
+          "ach": 0,
+          "pct": 0
+        },
+        "telkomsel": {
+          "target": 0.4,
+          "ach": 0,
+          "pct": 0
+        }
+      }
+    },
+    {
+      "no": 28,
+      "area": "BANTEN",
+      "area_raw": "624-万丹BANTEN",
+      "store_id": 6240705,
+      "store_name": "CIPUTRA 2FC15",
+      "manager": "DANFY INDRAWAN (PIC)",
+      "jml_pc": 2,
+      "target_unit": 40,
+      "target_value": 160000000,
+      "ach_unit": 38,
+      "ach_pct": 0.95,
+      "gap_unit": -2,
+      "mio3_unit": 22,
+      "mio3_pct": 0.5789473684210527,
+      "iqoo_unit": 6,
+      "iqoo_pct": 0.15789473684210525,
+      "ach_value": 180262000,
+      "ach_value_pct": 1.1266375,
+      "gap_value": 20262000,
+      "growth_all_june": 31,
+      "growth_all_july": 38,
+      "growth_all_gap": 7,
+      "growth_all_pct": 0.22580645161290322,
+      "growth_value_june": 151169000,
+      "growth_value_july": 180262000,
+      "growth_value_gap": 29093000,
+      "growth_value_pct": 0.19245347921862285,
+      "vas": {
+        "acc": {
+          "target": 8,
+          "ach": 7,
+          "pct": 0.875
+        },
+        "qoala": {
+          "target": 100000,
+          "ach": 0,
+          "pct": 0
+        },
+        "bca_insurance": {
+          "target": 50000,
+          "ach": 0,
+          "pct": 0
+        },
+        "indosat": {
+          "target": 1.2,
+          "ach": 0,
+          "pct": 0
+        },
+        "telkomsel": {
+          "target": 0.4,
+          "ach": 0,
+          "pct": 0
+        }
+      }
+    },
+    {
+      "no": 29,
+      "area": "BANTEN",
+      "area_raw": "624-万丹BANTEN",
+      "store_id": 6240709,
+      "store_name": "ITC BSD 1F49-50",
+      "manager": "RIZKI SUCIANTO",
+      "jml_pc": 2,
+      "target_unit": 30,
+      "target_value": 135000000,
+      "ach_unit": 20,
+      "ach_pct": 0.6666666666666666,
+      "gap_unit": -10,
+      "mio3_unit": 14,
+      "mio3_pct": 0.7,
+      "iqoo_unit": 3,
+      "iqoo_pct": 0.15,
+      "ach_value": 115880000,
+      "ach_value_pct": 0.8583703703703703,
+      "gap_value": -19120000,
+      "growth_all_june": 20,
+      "growth_all_july": 20,
+      "growth_all_gap": 0,
+      "growth_all_pct": 0,
+      "growth_value_june": 96280000,
+      "growth_value_july": 115880000,
+      "growth_value_gap": 19600000,
+      "growth_value_pct": 0.20357291233901123,
+      "vas": {
+        "acc": {
+          "target": 6,
+          "ach": 0,
+          "pct": 0
+        },
+        "qoala": {
+          "target": 540000,
+          "ach": 828000,
+          "pct": 1.5333333333333334
+        },
+        "bca_insurance": {
+          "target": 135000,
+          "ach": 0,
+          "pct": 0
+        },
+        "indosat": {
+          "target": 0.9,
+          "ach": 0,
+          "pct": 0
+        },
+        "telkomsel": {
+          "target": 0.3,
+          "ach": 0,
+          "pct": 0
+        }
+      }
+    },
+    {
+      "no": 30,
+      "area": "BANTEN",
+      "area_raw": "624-万丹BANTEN",
+      "store_id": 6240708,
+      "store_name": "ITC BSD 1F09-14",
+      "manager": "RIZKI SUCIANTO",
+      "jml_pc": 2,
+      "target_unit": 30,
+      "target_value": 135000000,
+      "ach_unit": 40,
+      "ach_pct": 1.3333333333333333,
+      "gap_unit": 10,
+      "mio3_unit": 25,
+      "mio3_pct": 0.625,
+      "iqoo_unit": 3,
+      "iqoo_pct": 0.075,
+      "ach_value": 285760000,
+      "ach_value_pct": 2.116740740740741,
+      "gap_value": 150760000,
+      "growth_all_june": 26,
+      "growth_all_july": 40,
+      "growth_all_gap": 14,
+      "growth_all_pct": 0.5384615384615384,
+      "growth_value_june": 139374000,
+      "growth_value_july": 285760000,
+      "growth_value_gap": 146386000,
+      "growth_value_pct": 1.0503106748747972,
+      "vas": {
+        "acc": {
+          "target": 6,
+          "ach": 3,
+          "pct": 0.5
+        },
+        "qoala": {
+          "target": 540000,
+          "ach": 5096000,
+          "pct": 9.437037037037037
+        },
+        "bca_insurance": {
+          "target": 135000,
+          "ach": 0,
+          "pct": 0
+        },
+        "indosat": {
+          "target": 0.9,
+          "ach": 0,
+          "pct": 0
+        },
+        "telkomsel": {
+          "target": 0.3,
+          "ach": 0,
+          "pct": 0
+        }
+      }
+    },
+    {
+      "no": 31,
+      "area": "BANTEN",
+      "area_raw": "624-万丹BANTEN",
+      "store_id": 6240707,
+      "store_name": "SUPERMALL UGN3A",
+      "manager": "ADE RIVALDI L",
+      "jml_pc": 2,
+      "target_unit": 35,
+      "target_value": 192500000,
+      "ach_unit": 20,
+      "ach_pct": 0.5714285714285714,
+      "gap_unit": -15,
+      "mio3_unit": 13,
+      "mio3_pct": 0.65,
+      "iqoo_unit": 5,
+      "iqoo_pct": 0.25,
+      "ach_value": 147880000,
+      "ach_value_pct": 0.7682077922077922,
+      "gap_value": -44620000,
+      "growth_all_june": 30,
+      "growth_all_july": 20,
+      "growth_all_gap": -10,
+      "growth_all_pct": -0.3333333333333333,
+      "growth_value_june": 212570000,
+      "growth_value_july": 147880000,
+      "growth_value_gap": -64690000,
+      "growth_value_pct": -0.30432328174248485,
+      "vas": {
+        "acc": {
+          "target": 7,
+          "ach": 5,
+          "pct": 0.7142857142857143
+        },
+        "qoala": {
+          "target": 770000,
+          "ach": 658000,
+          "pct": 0.8545454545454545
+        },
+        "bca_insurance": {
+          "target": 192500,
+          "ach": 0,
+          "pct": 0
+        },
+        "indosat": {
+          "target": 1.05,
+          "ach": 0,
+          "pct": 0
+        },
+        "telkomsel": {
+          "target": 0.35,
+          "ach": 0,
+          "pct": 0
+        }
+      }
+    },
+    {
+      "no": 32,
+      "area": "BANTEN",
+      "area_raw": "624-万丹BANTEN",
+      "store_id": 6240706,
+      "store_name": "SUPERMALL LGC3A",
+      "manager": "ADE RIVALDI L",
+      "jml_pc": 2,
+      "target_unit": 35,
+      "target_value": 192500000,
+      "ach_unit": 30,
+      "ach_pct": 0.8571428571428571,
+      "gap_unit": -5,
+      "mio3_unit": 22,
+      "mio3_pct": 0.7333333333333333,
+      "iqoo_unit": 3,
+      "iqoo_pct": 0.1,
+      "ach_value": 178670000,
+      "ach_value_pct": 0.9281558441558442,
+      "gap_value": -13830000,
+      "growth_all_june": 31,
+      "growth_all_july": 30,
+      "growth_all_gap": -1,
+      "growth_all_pct": -0.03225806451612903,
+      "growth_value_june": 165669000,
+      "growth_value_july": 178670000,
+      "growth_value_gap": 13001000,
+      "growth_value_pct": 0.07847575587466575,
+      "vas": {
+        "acc": {
+          "target": 7,
+          "ach": 6,
+          "pct": 0.8571428571428571
+        },
+        "qoala": {
+          "target": 770000,
+          "ach": 1457000,
+          "pct": 1.8922077922077922
+        },
+        "bca_insurance": {
+          "target": 192500,
+          "ach": 1000000,
+          "pct": 5.194805194805195
+        },
+        "indosat": {
+          "target": 1.05,
+          "ach": 0,
+          "pct": 0
+        },
+        "telkomsel": {
+          "target": 0.35,
+          "ach": 0,
+          "pct": 0
+        }
+      }
+    },
+    {
+      "no": 33,
+      "area": "BDG KOTA",
+      "area_raw": "619-万隆市区BDG KOTA",
+      "store_id": 6190701,
+      "store_name": "VIVO STORE UG",
+      "manager": "EKO PURWANTO",
+      "jml_pc": 1,
+      "target_unit": 40,
+      "target_value": 180000000,
+      "ach_unit": 53,
+      "ach_pct": 1.325,
+      "gap_unit": 13,
+      "mio3_unit": 23,
+      "mio3_pct": 0.4339622641509434,
+      "iqoo_unit": 6,
+      "iqoo_pct": 0.11320754716981132,
+      "ach_value": 306847000,
+      "ach_value_pct": 1.7047055555555555,
+      "gap_value": 126847000,
+      "growth_all_june": 31,
+      "growth_all_july": 53,
+      "growth_all_gap": 22,
+      "growth_all_pct": 0.7096774193548387,
+      "growth_value_june": 116569000,
+      "growth_value_july": 306847000,
+      "growth_value_gap": 190278000,
+      "growth_value_pct": 1.6323207713886196,
+      "vas": {
+        "acc": {
+          "target": 8,
+          "ach": 3,
+          "pct": 0.375
+        },
+        "qoala": {
+          "target": 720000,
+          "ach": 159000,
+          "pct": 0.22083333333333333
+        },
+        "bca_insurance": {
+          "target": 180000,
+          "ach": 0,
+          "pct": 0
+        },
+        "indosat": {
+          "target": 1.2,
+          "ach": 1,
+          "pct": 0.8333333333333334
+        },
+        "telkomsel": {
+          "target": 0.4,
+          "ach": 0,
+          "pct": 0
+        }
+      }
+    },
+    {
+      "no": 34,
+      "area": "BDG KOTA",
+      "area_raw": "619-万隆市区BDG KOTA",
+      "store_id": 6190706,
+      "store_name": "VIVO STORE 4 BEC",
+      "manager": "EKO PURWANTO",
+      "jml_pc": 4,
+      "target_unit": 125,
+      "target_value": 562500000,
+      "ach_unit": 116,
+      "ach_pct": 0.928,
+      "gap_unit": -9,
+      "mio3_unit": 51,
+      "mio3_pct": 0.4396551724137931,
+      "iqoo_unit": 4,
+      "iqoo_pct": 0.034482758620689655,
+      "ach_value": 449984000,
+      "ach_value_pct": 0.7999715555555555,
+      "gap_value": -112516000,
+      "growth_all_june": 124,
+      "growth_all_july": 116,
+      "growth_all_gap": -8,
+      "growth_all_pct": -0.06451612903225806,
+      "growth_value_june": 540976000,
+      "growth_value_july": 449984000,
+      "growth_value_gap": -90992000,
+      "growth_value_pct": -0.16819969832303097,
+      "vas": {
+        "acc": {
+          "target": 25,
+          "ach": 15,
+          "pct": 0.6
+        },
+        "qoala": {
+          "target": 2250000,
+          "ach": 1792000,
+          "pct": 0.7964444444444444
+        },
+        "bca_insurance": {
+          "target": 562500,
+          "ach": 0,
+          "pct": 0
+        },
+        "indosat": {
+          "target": 3.75,
+          "ach": 2,
+          "pct": 0.5333333333333333
+        },
+        "telkomsel": {
+          "target": 1.25,
+          "ach": 0,
+          "pct": 0
+        }
+      }
+    },
+    {
+      "no": 35,
+      "area": "BDG KOTA",
+      "area_raw": "619-万隆市区BDG KOTA",
+      "store_id": 6190705,
+      "store_name": "VIVO STORE LG F20",
+      "manager": "EKO PURWANTO",
+      "jml_pc": 2,
+      "target_unit": 60,
+      "target_value": 270000000,
+      "ach_unit": 70,
+      "ach_pct": 1.1666666666666667,
+      "gap_unit": 10,
+      "mio3_unit": 28,
+      "mio3_pct": 0.4,
+      "iqoo_unit": 5,
+      "iqoo_pct": 0.07142857142857142,
+      "ach_value": 307130000,
+      "ach_value_pct": 1.1375185185185186,
+      "gap_value": 37130000,
+      "growth_all_june": 53,
+      "growth_all_july": 70,
+      "growth_all_gap": 17,
+      "growth_all_pct": 0.32075471698113206,
+      "growth_value_june": 183847000,
+      "growth_value_july": 307130000,
+      "growth_value_gap": 123283000,
+      "growth_value_pct": 0.6705739011243045,
+      "vas": {
+        "acc": {
+          "target": 12,
+          "ach": 5,
+          "pct": 0.4166666666666667
+        },
+        "qoala": {
+          "target": 1080000,
+          "ach": 658000,
+          "pct": 0.6092592592592593
+        },
+        "bca_insurance": {
+          "target": 270000,
+          "ach": 0,
+          "pct": 0
+        },
+        "indosat": {
+          "target": 1.8,
+          "ach": 8,
+          "pct": 4.444444444444445
+        },
+        "telkomsel": {
+          "target": 0.6,
+          "ach": 0,
+          "pct": 0
+        }
+      }
+    },
+    {
+      "no": 36,
+      "area": "BDG KOTA",
+      "area_raw": "619-万隆市区BDG KOTA",
+      "store_id": 6190704,
+      "store_name": "VIVO STORE 1 BEC",
+      "manager": "NENG TOTOH",
+      "jml_pc": 4,
+      "target_unit": 130,
+      "target_value": 585000000,
+      "ach_unit": 112,
+      "ach_pct": 0.8615384615384616,
+      "gap_unit": -18,
+      "mio3_unit": 44,
+      "mio3_pct": 0.39285714285714285,
+      "iqoo_unit": 8,
+      "iqoo_pct": 0.07142857142857142,
+      "ach_value": 433888000,
+      "ach_value_pct": 0.7416888888888888,
+      "gap_value": -151112000,
+      "growth_all_june": 114,
+      "growth_all_july": 112,
+      "growth_all_gap": -2,
+      "growth_all_pct": -0.017543859649122806,
+      "growth_value_june": 535686000,
+      "growth_value_july": 433888000,
+      "growth_value_gap": -101798000,
+      "growth_value_pct": -0.19003296707399484,
+      "vas": {
+        "acc": {
+          "target": 26,
+          "ach": 11,
+          "pct": 0.4230769230769231
+        },
+        "qoala": {
+          "target": 2340000,
+          "ach": 636000,
+          "pct": 0.2717948717948718
+        },
+        "bca_insurance": {
+          "target": 585000,
+          "ach": 0,
+          "pct": 0
+        },
+        "indosat": {
+          "target": 3.9,
+          "ach": 2,
+          "pct": 0.5128205128205129
+        },
+        "telkomsel": {
+          "target": 1.3,
+          "ach": 0,
+          "pct": 0
+        }
+      }
+    },
+    {
+      "no": 37,
+      "area": "BDG KOTA",
+      "area_raw": "619-万隆市区BDG KOTA",
+      "store_id": 6190707,
+      "store_name": "VIVO STORE LU",
+      "manager": "NENG TOTOH",
+      "jml_pc": 4,
+      "target_unit": 120,
+      "target_value": 540000000,
+      "ach_unit": 142,
+      "ach_pct": 1.1833333333333333,
+      "gap_unit": 22,
+      "mio3_unit": 66,
+      "mio3_pct": 0.4647887323943662,
+      "iqoo_unit": 11,
+      "iqoo_pct": 0.07746478873239436,
+      "ach_value": 668658000,
+      "ach_value_pct": 1.2382555555555557,
+      "gap_value": 128658000,
+      "growth_all_june": 118,
+      "growth_all_july": 142,
+      "growth_all_gap": 24,
+      "growth_all_pct": 0.2033898305084746,
+      "growth_value_june": 482282000,
+      "growth_value_july": 668658000,
+      "growth_value_gap": 186376000,
+      "growth_value_pct": 0.3864461041465367,
+      "vas": {
+        "acc": {
+          "target": 24,
+          "ach": 16,
+          "pct": 0.6666666666666666
+        },
+        "qoala": {
+          "target": 2160000,
+          "ach": 477000,
+          "pct": 0.22083333333333333
+        },
+        "bca_insurance": {
+          "target": 540000,
+          "ach": 0,
+          "pct": 0
+        },
+        "indosat": {
+          "target": 3.6,
+          "ach": 5,
+          "pct": 1.3888888888888888
+        },
+        "telkomsel": {
+          "target": 1.2,
+          "ach": 0,
+          "pct": 0
+        }
+      }
+    },
+    {
+      "no": 38,
+      "area": "BDG KOTA",
+      "area_raw": "619-万隆市区BDG KOTA",
+      "store_id": 6190708,
+      "store_name": "BEC SC LGAA07",
+      "manager": "NENG TOTOH",
+      "jml_pc": 1,
+      "target_unit": 10,
+      "target_value": 45000000,
+      "ach_unit": 14,
+      "ach_pct": 1.4,
+      "gap_unit": 4,
+      "mio3_unit": 7,
+      "mio3_pct": 0.5,
+      "iqoo_unit": 3,
+      "iqoo_pct": 0.21428571428571427,
+      "ach_value": 65686000,
+      "ach_value_pct": 1.4596888888888888,
+      "gap_value": 20686000,
+      "growth_all_june": 0,
+      "growth_all_july": 14,
+      "growth_all_gap": 14,
+      "growth_all_pct": 0,
+      "growth_value_june": 0,
+      "growth_value_july": 65686000,
+      "growth_value_gap": 65686000,
+      "growth_value_pct": 0,
+      "vas": {
+        "acc": {
+          "target": 2,
+          "ach": 1,
+          "pct": 0.5
+        },
+        "qoala": {
+          "target": 180000,
+          "ach": 0,
+          "pct": 0
+        },
+        "bca_insurance": {
+          "target": 45000,
+          "ach": 0,
+          "pct": 0
+        },
+        "indosat": {
+          "target": 0.3,
+          "ach": 1,
+          "pct": 3.3333333333333335
+        },
+        "telkomsel": {
+          "target": 0.1,
+          "ach": 0,
+          "pct": 0
+        }
+      }
+    },
+    {
+      "no": 39,
+      "area": "SOLO",
+      "area_raw": "615-中爪哇东SOLO",
+      "store_id": 6150702,
+      "store_name": "GRANMALL SC GF-11",
+      "manager": "VACANT",
+      "jml_pc": 2,
+      "target_unit": 10,
+      "target_value": 40000000,
+      "ach_unit": 8,
+      "ach_pct": 0.8,
+      "gap_unit": -2,
+      "mio3_unit": 3,
+      "mio3_pct": 0.375,
+      "iqoo_unit": 2,
+      "iqoo_pct": 0.25,
+      "ach_value": 31892000,
+      "ach_value_pct": 0.7973,
+      "gap_value": -8108000,
+      "growth_all_june": 0,
+      "growth_all_july": 8,
+      "growth_all_gap": 8,
+      "growth_all_pct": 0,
+      "growth_value_june": 0,
+      "growth_value_july": 31892000,
+      "growth_value_gap": 31892000,
+      "growth_value_pct": 0,
+      "vas": {
+        "acc": {
+          "target": 2,
+          "ach": 0,
+          "pct": 0
+        },
+        "qoala": {
+          "target": 160000,
+          "ach": 0,
+          "pct": 0
+        },
+        "bca_insurance": {
+          "target": 40000,
+          "ach": 0,
+          "pct": 0
+        },
+        "indosat": {
+          "target": 0.3,
+          "ach": 0,
+          "pct": 0
+        },
+        "telkomsel": {
+          "target": 0.1,
+          "ach": 0,
+          "pct": 0
+        }
+      }
+    },
+    {
+      "no": 40,
+      "area": "Purwokerto",
+      "area_raw": "中爪哇西 - Purwokerto",
+      "store_id": 6130702,
+      "store_name": "RITA SUPERMALL SF36-37",
+      "manager": "FRISKA FAJAR",
+      "jml_pc": 3,
+      "target_unit": 60,
+      "target_value": 300000000,
+      "ach_unit": 50,
+      "ach_pct": 0.8333333333333334,
+      "gap_unit": -10,
+      "mio3_unit": 31,
+      "mio3_pct": 0.62,
+      "iqoo_unit": 11,
+      "iqoo_pct": 0.22,
+      "ach_value": 273750000,
+      "ach_value_pct": 0.9125,
+      "gap_value": -26250000,
+      "growth_all_june": 70,
+      "growth_all_july": 50,
+      "growth_all_gap": -20,
+      "growth_all_pct": -0.2857142857142857,
+      "growth_value_june": 369330000,
+      "growth_value_july": 273750000,
+      "growth_value_gap": -95580000,
+      "growth_value_pct": -0.25879294939485015,
+      "vas": {
+        "acc": {
+          "target": 12,
+          "ach": 14,
+          "pct": 1.1666666666666667
+        },
+        "qoala": {
+          "target": 1200000,
+          "ach": 1236000,
+          "pct": 1.03
+        },
+        "bca_insurance": {
+          "target": 300000,
+          "ach": 1000000,
+          "pct": 3.3333333333333335
+        },
+        "indosat": {
+          "target": 1.8,
+          "ach": 0,
+          "pct": 0
+        },
+        "telkomsel": {
+          "target": 0.6,
+          "ach": 0,
+          "pct": 0
+        }
+      }
+    },
+    {
+      "no": 41,
+      "area": "Semarang",
+      "area_raw": "614 三宝垄 Semarang",
+      "store_id": 6100702,
+      "store_name": "VS Jogja City Mall",
+      "manager": "BIRILYAN KUSWARA",
+      "jml_pc": 1,
+      "target_unit": 60,
+      "target_value": 420000000,
+      "ach_unit": 49,
+      "ach_pct": 0.8166666666666667,
+      "gap_unit": -11,
+      "mio3_unit": 36,
+      "mio3_pct": 0.7346938775510204,
+      "iqoo_unit": 8,
+      "iqoo_pct": 0.16326530612244897,
+      "ach_value": 360151000,
+      "ach_value_pct": 0.857502380952381,
+      "gap_value": -59849000,
+      "growth_all_june": 47,
+      "growth_all_july": 49,
+      "growth_all_gap": 2,
+      "growth_all_pct": 0.0425531914893617,
+      "growth_value_june": 387653000,
+      "growth_value_july": 360151000,
+      "growth_value_gap": -27502000,
+      "growth_value_pct": -0.0709448914364135,
+      "vas": {
+        "acc": {
+          "target": 12,
+          "ach": 4,
+          "pct": 0.3333333333333333
+        },
+        "qoala": {
+          "target": 1680000,
+          "ach": 636000,
+          "pct": 0.37857142857142856
+        },
+        "bca_insurance": {
+          "target": 420000,
+          "ach": 0,
+          "pct": 0
+        },
+        "indosat": {
+          "target": 1.8,
+          "ach": 0,
+          "pct": 0
+        },
+        "telkomsel": {
+          "target": 0.6,
+          "ach": 0,
+          "pct": 0
+        }
+      }
+    },
+    {
+      "no": 42,
+      "area": "Semarang",
+      "area_raw": "614 三宝垄 Semarang",
+      "store_id": 6140706,
+      "store_name": "23 SEMARANG MALL 1F065-66",
+      "manager": "VICKY DINDA INEZ",
+      "jml_pc": 2,
+      "target_unit": 20,
+      "target_value": 140000000,
+      "ach_unit": 29,
+      "ach_pct": 1.45,
+      "gap_unit": 9,
+      "mio3_unit": 23,
+      "mio3_pct": 0.7931034482758621,
+      "iqoo_unit": 6,
+      "iqoo_pct": 0.20689655172413793,
+      "ach_value": 246571000,
+      "ach_value_pct": 1.7612214285714285,
+      "gap_value": 106571000,
+      "growth_all_june": 21,
+      "growth_all_july": 29,
+      "growth_all_gap": 8,
+      "growth_all_pct": 0.38095238095238093,
+      "growth_value_june": 222079000,
+      "growth_value_july": 246571000,
+      "growth_value_gap": 24492000,
+      "growth_value_pct": 0.11028507873324357,
+      "vas": {
+        "acc": {
+          "target": 4,
+          "ach": 7,
+          "pct": 1.75
+        },
+        "qoala": {
+          "target": 560000,
+          "ach": 0,
+          "pct": 0
+        },
+        "bca_insurance": {
+          "target": 140000,
+          "ach": 0,
+          "pct": 0
+        },
+        "indosat": {
+          "target": 0.6,
+          "ach": 0,
+          "pct": 0
+        },
+        "telkomsel": {
+          "target": 0.2,
+          "ach": 0,
+          "pct": 0
+        }
+      }
+    },
+    {
+      "no": 43,
+      "area": "Semarang",
+      "area_raw": "614 三宝垄 Semarang",
+      "store_id": 6140705,
+      "store_name": "QUEENCITY 2F027",
+      "manager": "EDI SUSANTO",
+      "jml_pc": 3,
+      "target_unit": 60,
+      "target_value": 420000000,
+      "ach_unit": 58,
+      "ach_pct": 0.9666666666666667,
+      "gap_unit": -2,
+      "mio3_unit": 46,
+      "mio3_pct": 0.7931034482758621,
+      "iqoo_unit": 15,
+      "iqoo_pct": 0.25862068965517243,
+      "ach_value": 439542000,
+      "ach_value_pct": 1.0465285714285715,
+      "gap_value": 19542000,
+      "growth_all_june": 56,
+      "growth_all_july": 58,
+      "growth_all_gap": 2,
+      "growth_all_pct": 0.03571428571428571,
+      "growth_value_june": 500244000,
+      "growth_value_july": 439542000,
+      "growth_value_gap": -60702000,
+      "growth_value_pct": -0.12134478374553218,
+      "vas": {
+        "acc": {
+          "target": 12,
+          "ach": 5,
+          "pct": 0.4166666666666667
+        },
+        "qoala": {
+          "target": 1680000,
+          "ach": 0,
+          "pct": 0
+        },
+        "bca_insurance": {
+          "target": 420000,
+          "ach": 0,
+          "pct": 0
+        },
+        "indosat": {
+          "target": 1.8,
+          "ach": 0,
+          "pct": 0
+        },
+        "telkomsel": {
+          "target": 0.6,
+          "ach": 0,
+          "pct": 0
+        }
+      }
+    }
+  ],
+  "total": {
+    "target_unit": 3500,
+    "target_value": 15927000000,
+    "ach_unit": 3442,
+    "ach_pct": 0.9834285714285714,
+    "gap_unit": -58,
+    "mio3_unit": 1636,
+    "mio3_pct": 0.47530505520046484,
+    "iqoo_unit": 317,
+    "iqoo_pct": 0.09209761766414876,
+    "ach_value": 16083058000,
+    "ach_value_pct": 1.009798329880078,
+    "gap_value": 156058000,
+    "growth_all_june": 3166,
+    "growth_all_july": 3442,
+    "growth_all_gap": 276,
+    "growth_all_pct": 0.08717624763108023,
+    "growth_value_june": 14942734000,
+    "growth_value_july": 16083058000,
+    "growth_value_gap": 1140324000,
+    "growth_value_pct": 0.07631294246421036,
+    "vas": {
+      "acc": {
+        "target": 700,
+        "ach": 724,
+        "pct": 1.0342857142857143
+      },
+      "qoala": {
+        "target": 61972000,
+        "ach": 57970000,
+        "pct": 0.9354224488478667
+      },
+      "bca_insurance": {
+        "target": 15705500,
+        "ach": 9000000,
+        "pct": 0.5730476584635955
+      },
+      "indosat": {
+        "target": 103.8,
+        "ach": 32,
+        "pct": 0.3082851637764933
+      },
+      "telkomsel": {
+        "target": 34.60000000000001,
+        "ach": 0,
+        "pct": 0
+      }
+    }
+  }
+}

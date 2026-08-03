@@ -1,25 +1,40 @@
-PT ZHI SHENG INDONESIA · STORE OPERATIONS
-Store Performance Dashboard
-Memuat data periode…
-–
-Time gone bulan ini
-–
-Semua Toko (0)
-Klik baris untuk lihat detail VAS & growth per toko
-
-NO	TOKO	AREA	TARGET (UNIT)	ACH (UNIT)	% ACH	% VALUE	% 3MIO+	ATTACH VAS	GROWTH MOM
-Gagal memuat data.json — pastikan file ada di folder yang sama dengan index.html. (TypeError: Load failed)
-Analisis Jaringan
-Agregat seluruh 43 toko
-% Achievement per Area
-Rata-rata pencapaian unit vs target, per area
-Attach Rate VAS per Provider
-% pencapaian target seluruh jaringan
-Top 5 Toko
-Berdasarkan % achievement unit
-5 Toko Perlu Perhatian
-Achievement terendah — kandidat diagnosa funnel
-Store Performance Dashboard — update data lewat file data.json di repo GitHub.    color:var(--ink);
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Store Performance Dashboard</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#EEF1F5;
+    --surface:#FFFFFF;
+    --ink:#12182B;
+    --ink-soft:#5C6478;
+    --ink-faint:#8B93A6;
+    --line:#E1E5EC;
+    --line-strong:#CBD2DE;
+    --accent:#1F4FD8;
+    --accent-ink:#12318F;
+    --accent-soft:#E7EDFC;
+    --good:#0F8A5F;
+    --good-soft:#E4F5EC;
+    --warn:#B4780A;
+    --warn-soft:#FCF0DC;
+    --bad:#C23B4B;
+    --bad-soft:#FBE7E9;
+    --navy:#0C1730;
+    --navy-soft:#1A2A4D;
+    --radius:10px;
+    --shadow:0 1px 2px rgba(12,23,48,0.06), 0 8px 24px -12px rgba(12,23,48,0.12);
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{
+    background:var(--bg);
+    color:var(--ink);
     font-family:'Inter',system-ui,sans-serif;
     font-size:14px;
     line-height:1.5;
@@ -297,7 +312,7 @@ Store Performance Dashboard — update data lewat file data.json di repo GitHub.
 
 <footer>Store Performance Dashboard — update data lewat file <span class="mono">data.json</span> di repo GitHub.</footer>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.4/chart.umd.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.5.0/chart.umd.min.js"></script>
 <script>
 const money = n => 'Rp ' + (n/1000000).toLocaleString('id-ID',{maximumFractionDigits:0}) + ' jt';
 const pct = n => (n*100).toFixed(1) + '%';
@@ -333,11 +348,11 @@ function init(){
   document.getElementById('pace-ring-label').textContent = Math.round(pctDay*100)+'%';
   document.getElementById('pace-detail').textContent = `Hari ke-${DATA.to_date_day} dari ${DATA.total_days}`;
 
-  renderKPIs();
-  renderChips();
-  renderTable();
-  renderCharts();
-  renderRankings();
+  try{ renderKPIs(); }catch(e){ console.error('renderKPIs failed', e); }
+  try{ renderChips(); }catch(e){ console.error('renderChips failed', e); }
+  try{ renderTable(); }catch(e){ console.error('renderTable failed', e); }
+  try{ renderCharts(); }catch(e){ console.error('renderCharts failed', e); }
+  try{ renderRankings(); }catch(e){ console.error('renderRankings failed', e); }
 
   document.getElementById('search-input').addEventListener('input', e=>{
     searchTerm = e.target.value.toLowerCase();

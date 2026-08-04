@@ -8,12 +8,30 @@ Output: data.json                    (auto-generated, don't edit by hand)
 import openpyxl
 import json
 import re
+import os
 import sys
+from datetime import datetime
 from pathlib import Path
+
+try:
+    from zoneinfo import ZoneInfo
+    JAKARTA = ZoneInfo("Asia/Jakarta")
+except Exception:
+    JAKARTA = None
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
 INPUT_PATH = REPO_ROOT / "source" / "dashboard_data.xlsx"
 OUTPUT_PATH = REPO_ROOT / "data.json"
+
+BULAN_ID = [
+    "", "Januari", "Februari", "Maret", "April", "Mei", "Juni",
+    "Juli", "Agustus", "September", "Oktober", "November", "Desember",
+]
+
+
+def format_updated_at():
+    now = datetime.now(JAKARTA) if JAKARTA else datetime.utcnow()
+    return f"{now.day} {BULAN_ID[now.month]} {now.year}, {now.strftime('%H:%M')} WIB"
 
 
 def clean_area(s):
@@ -125,6 +143,8 @@ def main():
         "to_date_day": to_date_day,
         "total_days": total_days,
         "time_gone": time_gone,
+        "updated_by": os.environ.get("UPDATED_BY", "Michael Fumar"),
+        "updated_at": format_updated_at(),
         "stores": stores,
         "total": total_row,
     }

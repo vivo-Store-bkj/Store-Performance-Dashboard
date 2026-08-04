@@ -191,6 +191,7 @@
   .vas-item{ background:var(--surface); border:1px solid var(--line); border-radius:8px; padding:10px 12px; }
   .vas-item-label{ font-size:11px; color:var(--ink-faint); font-weight:600; margin-bottom:4px;}
   .vas-item-val{ font-size:14px; font-weight:700; font-family:'JetBrains Mono',monospace; }
+  .vas-item-detail{ font-size:10.5px; color:var(--ink-faint); margin-top:4px; font-family:'JetBrains Mono',monospace; }
   .growth-row{ display:flex; align-items:center; justify-content:space-between; padding:7px 0; border-bottom:1px dashed var(--line); font-size:13px;}
   .growth-row:last-child{ border-bottom:none; }
   .growth-label{ color:var(--ink-soft); }
@@ -472,6 +473,7 @@ function detailHTML(s){
     <div class="vas-item">
       <div class="vas-item-label">${vasLabels[k]}</div>
       <div class="vas-item-val" style="color:${colorHex[statusColor(v.pct)]}">${pct(v.pct)}</div>
+      <div class="vas-item-detail">Ach ${Number(v.ach).toLocaleString('id-ID')} / Target ${Number(v.target).toLocaleString('id-ID')}</div>
     </div>`).join('');
   return `
     <div class="detail-inner">

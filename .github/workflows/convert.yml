@@ -25,6 +25,8 @@ jobs:
         run: pip install openpyxl
 
       - name: Convert Excel to data.json
+        env:
+          UPDATED_BY: "Michael Fumar"
         run: python scripts/convert_xlsx_to_json.py
 
       - name: Commit updated data.json

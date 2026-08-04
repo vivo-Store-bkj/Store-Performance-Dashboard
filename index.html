@@ -207,6 +207,13 @@
   .chart-card h3{ font-size:14.5px; font-weight:700; margin-bottom:2px; }
   .chart-card .hint{ font-size:12px; color:var(--ink-faint); margin-bottom:14px; display:block; }
   canvas{ max-width:100%; }
+  .chart-legend{ margin-top:16px; border-top:1px solid var(--line); padding-top:10px; }
+  .chart-legend-row{
+    display:flex; align-items:center; gap:10px; padding:6px 0; font-size:12.5px;
+  }
+  .chart-legend-row .lg-label{ flex:none; width:92px; color:var(--ink-soft); font-weight:600; }
+  .chart-legend-row .lg-nums{ flex:1; color:var(--ink-faint); font-family:'JetBrains Mono',monospace; font-size:11.5px; }
+  .chart-legend-row .lg-pct{ flex:none; font-family:'JetBrains Mono',monospace; font-weight:700; width:56px; text-align:right; }
 
   .rank-list{ list-style:none; margin:0; padding:0; }
   .rank-list li{
@@ -287,13 +294,15 @@
   <div class="chart-grid">
     <div class="chart-card">
       <h3>% Achievement per Area</h3>
-      <span class="hint">Rata-rata pencapaian unit vs target, per area</span>
+      <span class="hint">Total achievement vs target unit, per area</span>
       <canvas id="chart-area" height="230"></canvas>
+      <div class="chart-legend" id="area-legend"></div>
     </div>
     <div class="chart-card">
       <h3>Attach Rate VAS per Provider</h3>
-      <span class="hint">% pencapaian target seluruh jaringan</span>
+      <span class="hint">Total achievement vs target, seluruh jaringan</span>
       <canvas id="chart-vas" height="230"></canvas>
+      <div class="chart-legend" id="vas-legend"></div>
     </div>
   </div>
 
@@ -495,12 +504,12 @@ function detailHTML(s){
 function renderCharts(){
   const areaMap = {};
   DATA.stores.forEach(s=>{
-    if(!areaMap[s.area]) areaMap[s.area] = {sum:0,count:0};
-    areaMap[s.area].sum += s.ach_pct;
-    areaMap[s.area].count += 1;
+    if(!areaMap[s.area]) areaMap[s.area] = {target:0, ach:0};
+    areaMap[s.area].target += s.target_unit;
+    areaMap[s.area].ach += s.ach_unit;
   });
   const areaLabels = Object.keys(areaMap);
-  const areaVals = areaLabels.map(a => (areaMap[a].sum/areaMap[a].count*100));
+  const areaVals = areaLabels.map(a => areaMap[a].target > 0 ? (areaMap[a].ach/areaMap[a].target*100) : 0);
 
   new Chart(document.getElementById('chart-area'), {
     type:'bar',
@@ -510,10 +519,25 @@ function renderCharts(){
       borderRadius:5, maxBarThickness:34
     }]},
     options:{
-      plugins:{legend:{display:false}, tooltip:{callbacks:{label:c=>c.parsed.y.toFixed(1)+'%'}}},
+      plugins:{legend:{display:false}, tooltip:{callbacks:{
+        label:c=>{
+          const a = areaMap[c.label];
+          return [`${c.parsed.y.toFixed(1)}%`, `Ach ${a.ach.toLocaleString('id-ID')} / Target ${a.target.toLocaleString('id-ID')} unit`];
+        }
+      }}},
       scales:{ y:{ beginAtZero:true, ticks:{callback:v=>v+'%'}, grid:{color:'#EEF0F4'} }, x:{ grid:{display:false} } }
     }
   });
+
+  document.getElementById('area-legend').innerHTML = areaLabels.map(a=>{
+    const v = areaMap[a];
+    const p = v.target>0 ? v.ach/v.target : 0;
+    return `<div class="chart-legend-row">
+      <span class="lg-label">${a}</span>
+      <span class="lg-nums">${v.ach.toLocaleString('id-ID')} / ${v.target.toLocaleString('id-ID')} unit</span>
+      <span class="lg-pct" style="color:${colorHex[statusColor(p)]}">${(p*100).toFixed(1)}%</span>
+    </div>`;
+  }).join('');
 
   const t = DATA.total;
   const vasLabels2 = ['ACC','Qoala','BCA Insurance','Indosat','Telkomsel'];
@@ -528,10 +552,24 @@ function renderCharts(){
     }]},
     options:{
       indexAxis:'y',
-      plugins:{legend:{display:false}, tooltip:{callbacks:{label:c=>c.parsed.x.toFixed(1)+'%'}}},
+      plugins:{legend:{display:false}, tooltip:{callbacks:{
+        label:c=>{
+          const v = t.vas[vasKeys[c.dataIndex]];
+          return [`${c.parsed.x.toFixed(1)}%`, `Ach ${Number(v.ach).toLocaleString('id-ID')} / Target ${Number(v.target).toLocaleString('id-ID')}`];
+        }
+      }}},
       scales:{ x:{ beginAtZero:true, ticks:{callback:v=>v+'%'}, grid:{color:'#EEF0F4'} }, y:{ grid:{display:false} } }
     }
   });
+
+  document.getElementById('vas-legend').innerHTML = vasKeys.map((k,i)=>{
+    const v = t.vas[k];
+    return `<div class="chart-legend-row">
+      <span class="lg-label">${vasLabels2[i]}</span>
+      <span class="lg-nums">${Number(v.ach).toLocaleString('id-ID')} / ${Number(v.target).toLocaleString('id-ID')}</span>
+      <span class="lg-pct" style="color:${colorHex[statusColor(v.pct)]}">${(v.pct*100).toFixed(1)}%</span>
+    </div>`;
+  }).join('');
 }
 
 function renderRankings(){

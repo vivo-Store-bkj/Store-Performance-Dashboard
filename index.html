@@ -229,6 +229,7 @@
       <div class="brand-eyebrow">PT Zhi Sheng Indonesia · Store Operations</div>
       <div class="brand-title">Store Performance Dashboard</div>
       <div class="brand-sub" id="period-sub">Memuat data periode…</div>
+      <div class="brand-sub" id="updated-sub" style="margin-top:2px;"></div>
     </div>
     <div class="pace">
       <div class="pace-ring">
@@ -341,6 +342,8 @@ fetch('data.json').then(r => r.json()).then(json => {
 function init(){
   document.getElementById('period-sub').textContent =
     `Periode ${DATA.period} · ${DATA.stores.length} toko aktif`;
+  document.getElementById('updated-sub').textContent =
+    DATA.updated_by ? `Diupdate oleh ${DATA.updated_by} · ${DATA.updated_at}` : '';
   const pctDay = DATA.time_gone;
   const circumference = 2*Math.PI*21;
   document.getElementById('pace-ring-fill').style.strokeDasharray = circumference;

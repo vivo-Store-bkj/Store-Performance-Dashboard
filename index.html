@@ -89,6 +89,17 @@
   .pace-text{ font-size:12px; color:#C4CDE3; line-height:1.4; }
   .pace-text b{ color:#fff; }
 
+  .month-row{
+    max-width:1400px; margin:16px auto 0; display:flex; gap:8px; flex-wrap:wrap;
+  }
+  .month-pill{
+    padding:7px 16px; border-radius:100px; border:1px solid rgba(255,255,255,0.16);
+    background:rgba(255,255,255,0.04); color:#B9C2DA; font-size:12.5px; font-weight:600;
+    cursor:pointer; transition:all .12s ease;
+  }
+  .month-pill:hover{ border-color:rgba(255,255,255,0.35); color:#fff; }
+  .month-pill.active{ background:#5B8CFF; border-color:#5B8CFF; color:#fff; }
+
   /* ===== LAYOUT ===== */
   .wrap{ max-width:1400px; margin:0 auto; padding:28px 32px 64px; }
 
@@ -250,6 +261,7 @@
       <div class="pace-text">Time gone bulan ini<br><b id="pace-detail">–</b></div>
     </div>
   </div>
+  <div class="month-row" id="month-row"></div>
 </div>
 
 <div class="wrap">
@@ -321,7 +333,7 @@
 
 </div>
 
-<footer>Store Performance Dashboard — update data lewat file <span class="mono">data.json</span> di repo GitHub.</footer>
+<footer>Store Performance Dashboard — data per bulan disimpan di folder <span class="mono">data/</span>, jangan diedit manual.</footer>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.5.0/chart.umd.min.js"></script>
 <script>
@@ -331,27 +343,52 @@ const statusColor = p => p >= 1 ? 'good' : (p >= 0.9 ? 'warn' : 'bad');
 const colorHex = { good:'#0F8A5F', warn:'#B4780A', bad:'#C23B4B' };
 
 let DATA = null;
+let MANIFEST = null;
+let currentKey = null;
+let areaChart = null;
+let vasChart = null;
 let sortKey = 'ach_pct';
 let sortDir = -1;
 let activeArea = 'ALL';
 let searchTerm = '';
-let expandedRow = null;
 
-fetch('data.json').then(r => r.json()).then(json => {
-  DATA = json;
-  json.stores.forEach(s => {
-    const vasVals = Object.values(s.vas).map(v => v.pct);
-    s.vas_avg = vasVals.reduce((a,b)=>a+b,0) / vasVals.length;
-  });
-  init();
+fetch('data/manifest.json').then(r => r.json()).then(manifest => {
+  MANIFEST = manifest;
+  if(!manifest.periods || manifest.periods.length === 0) throw new Error('Belum ada data bulan.');
+  renderMonthRow();
+  loadPeriod(manifest.periods[manifest.periods.length - 1].key);
 }).catch(err => {
   document.getElementById('table-body').innerHTML =
-    '<tr><td colspan="10" style="padding:24px;color:#C23B4B;">Gagal memuat data.json — pastikan file ada di folder yang sama dengan index.html. ('+err+')</td></tr>';
+    '<tr><td colspan="10" style="padding:24px;color:#C23B4B;">Gagal memuat data/manifest.json — pastikan folder data/ ada di repo dan workflow sudah pernah jalan. ('+err+')</td></tr>';
 });
+
+function renderMonthRow(){
+  document.getElementById('month-row').innerHTML = MANIFEST.periods.map(p =>
+    `<div class="month-pill ${p.key===currentKey?'active':''}" data-key="${p.key}">${p.label}</div>`
+  ).join('');
+  document.querySelectorAll('.month-pill').forEach(pill=>{
+    pill.addEventListener('click', ()=> loadPeriod(pill.dataset.key));
+  });
+}
+
+function loadPeriod(key){
+  const meta = MANIFEST.periods.find(p=>p.key===key);
+  if(!meta) return;
+  fetch(meta.file).then(r=>r.json()).then(json=>{
+    DATA = json;
+    currentKey = key;
+    DATA.stores.forEach(s => {
+      const vasVals = Object.values(s.vas).map(v => v.pct);
+      s.vas_avg = vasVals.reduce((a,b)=>a+b,0) / vasVals.length;
+    });
+    renderMonthRow();
+    init();
+  });
+}
 
 function init(){
   document.getElementById('period-sub').textContent =
-    `Periode ${DATA.period} · ${DATA.stores.length} toko aktif`;
+    `Periode ${DATA.period_label || DATA.period} · ${DATA.stores.length} toko aktif`;
   document.getElementById('updated-sub').textContent =
     DATA.updated_by ? `Diupdate oleh ${DATA.updated_by} · ${DATA.updated_at}` : '';
   const pctDay = DATA.time_gone;
@@ -390,7 +427,7 @@ function renderKPIs(){
     {label:'Achievement Unit', value: pct(t.ach_pct), sub:`${t.ach_unit.toLocaleString('id-ID')} / ${t.target_unit.toLocaleString('id-ID')} unit`, cls: statusColor(t.ach_pct)},
     {label:'Achievement Value', value: pct(t.ach_value_pct), sub: money(t.ach_value)+' / '+money(t.target_value), cls: statusColor(t.ach_value_pct)},
     {label:'Toko di bawah target', value: belowTarget+' / '+DATA.stores.length, sub:'toko belum capai 100%', cls: belowTarget>DATA.stores.length/2?'bad':'warn'},
-    {label:'Growth MoM (unit)', value:(t.growth_all_pct>=0?'+':'')+pct(t.growth_all_pct), sub:`Juni ${t.growth_all_june.toLocaleString('id-ID')} → Juli ${t.growth_all_july.toLocaleString('id-ID')}`, cls: t.growth_all_pct>=0?'good':'bad'},
+    {label:'Growth MoM (unit)', value:(t.growth_all_pct>=0?'+':'')+pct(t.growth_all_pct), sub:`Bulan lalu ${t.growth_all_prev.toLocaleString('id-ID')} → Bulan ini ${t.growth_all_curr.toLocaleString('id-ID')}`, cls: t.growth_all_pct>=0?'good':'bad'},
     {label:'Attach Rate VAS (avg)', value: pct(vasAvgNet), sub:'rata-rata 5 provider', cls: statusColor(vasAvgNet)},
     {label:'3MIO+ Mix', value: pct(t.mio3_pct), sub: t.mio3_unit.toLocaleString('id-ID')+' unit dari total achievement', cls: statusColor(t.mio3_pct*1.4)},
   ];
@@ -492,9 +529,9 @@ function detailHTML(s){
       </div>
       <div class="detail-block">
         <h4>Growth Juni → Juli</h4>
-        <div class="growth-row"><span class="growth-label">Unit</span><span class="growth-val">${s.growth_all_june.toLocaleString('id-ID')} → ${s.growth_all_july.toLocaleString('id-ID')}</span></div>
+        <div class="growth-row"><span class="growth-label">Unit</span><span class="growth-val">${s.growth_all_prev.toLocaleString('id-ID')} → ${s.growth_all_curr.toLocaleString('id-ID')}</span></div>
         <div class="growth-row"><span class="growth-label">Gap Unit</span><span class="growth-val" style="color:${s.growth_all_gap>=0?colorHex.good:colorHex.bad}">${s.growth_all_gap>=0?'+':''}${s.growth_all_gap}</span></div>
-        <div class="growth-row"><span class="growth-label">Value</span><span class="growth-val">${money(s.growth_value_june)} → ${money(s.growth_value_july)}</span></div>
+        <div class="growth-row"><span class="growth-label">Value</span><span class="growth-val">${money(s.growth_value_prev)} → ${money(s.growth_value_curr)}</span></div>
         <div class="growth-row"><span class="growth-label">IQOO Ach</span><span class="growth-val">${s.iqoo_unit} unit (${pct(s.iqoo_pct)})</span></div>
         <div class="growth-row"><span class="growth-label">Gap Unit vs Target</span><span class="growth-val" style="color:${s.gap_unit>=0?colorHex.good:colorHex.bad}">${s.gap_unit>=0?'+':''}${s.gap_unit}</span></div>
       </div>
@@ -511,7 +548,8 @@ function renderCharts(){
   const areaLabels = Object.keys(areaMap);
   const areaVals = areaLabels.map(a => areaMap[a].target > 0 ? (areaMap[a].ach/areaMap[a].target*100) : 0);
 
-  new Chart(document.getElementById('chart-area'), {
+  if(areaChart) areaChart.destroy();
+  areaChart = new Chart(document.getElementById('chart-area'), {
     type:'bar',
     data:{ labels:areaLabels, datasets:[{
       data:areaVals,
@@ -543,7 +581,8 @@ function renderCharts(){
   const vasLabels2 = ['ACC','Qoala','BCA Insurance','Indosat','Telkomsel'];
   const vasKeys = ['acc','qoala','bca_insurance','indosat','telkomsel'];
   const vasVals = vasKeys.map(k=>t.vas[k].pct*100);
-  new Chart(document.getElementById('chart-vas'), {
+  if(vasChart) vasChart.destroy();
+  vasChart = new Chart(document.getElementById('chart-vas'), {
     type:'bar',
     data:{ labels:vasLabels2, datasets:[{
       data:vasVals,

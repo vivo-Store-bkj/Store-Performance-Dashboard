@@ -1,9 +1,13 @@
 """
-Convert the daily store-performance Excel file into data.json for the dashboard.
+Convert the daily store-performance Excel file into a per-month JSON snapshot,
+and keep a manifest of all months so the dashboard can switch between them.
+
 Run from the repo root: python scripts/convert_xlsx_to_json.py
 
-Input : source/dashboard_data.xlsx   (overwrite this file every day with your update)
-Output: data.json                    (auto-generated, don't edit by hand)
+Input : source/dashboard_data.xlsx     (overwrite this file every day with your update)
+Output: data/<YYYY-MM>.json            (one snapshot per month, auto-generated)
+        data/manifest.json             (list of available months, auto-generated)
+Don't edit anything inside data/ by hand — it gets regenerated every run.
 """
 import openpyxl
 import json
@@ -21,11 +25,16 @@ except Exception:
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
 INPUT_PATH = REPO_ROOT / "source" / "dashboard_data.xlsx"
-OUTPUT_PATH = REPO_ROOT / "data.json"
+DATA_DIR = REPO_ROOT / "data"
+MANIFEST_PATH = DATA_DIR / "manifest.json"
 
 BULAN_ID = [
     "", "Januari", "Februari", "Maret", "April", "Mei", "Juni",
     "Juli", "Agustus", "September", "Oktober", "November", "Desember",
+]
+MONTHS_EN = [
+    "JANUARY", "FEBRUARY", "MARCH", "APRIL", "MAY", "JUNE",
+    "JULY", "AUGUST", "SEPTEMBER", "OCTOBER", "NOVEMBER", "DECEMBER",
 ]
 
 
@@ -50,10 +59,21 @@ def parse_period(title):
     return title.strip()
 
 
+def month_number(period_name):
+    p = period_name.strip().upper()
+    if p in MONTHS_EN:
+        return MONTHS_EN.index(p) + 1
+    # fallback: kalau nama bulan gak dikenali, pakai bulan berjalan
+    now = datetime.now(JAKARTA) if JAKARTA else datetime.utcnow()
+    return now.month
+
+
 def main():
     if not INPUT_PATH.exists():
         print(f"ERROR: {INPUT_PATH} tidak ditemukan. Upload file Excel ke source/dashboard_data.xlsx dulu.")
         sys.exit(1)
+
+    DATA_DIR.mkdir(exist_ok=True)
 
     wb = openpyxl.load_workbook(INPUT_PATH, data_only=True)
     ws = wb.worksheets[0]  # selalu ambil sheet pertama
@@ -67,9 +87,24 @@ def main():
         to_date_day / total_days if total_days else 0
     )
 
+    period = parse_period(title)
+    m_num = month_number(period)
+    year = (datetime.now(JAKARTA) if JAKARTA else datetime.utcnow()).year
+    period_key = f"{year}-{m_num:02d}"
+    period_label = f"{BULAN_ID[m_num]} {year}"
+
     def v(row, col):
         val = ws.cell(row, col).value
         return val if val is not None else 0
+
+    def vas_block(r):
+        return {
+            "acc": {"target": v(r, 55), "ach": v(r, 56), "pct": v(r, 57)},
+            "qoala": {"target": v(r, 58), "ach": v(r, 59), "pct": v(r, 60)},
+            "bca_insurance": {"target": v(r, 61), "ach": v(r, 62), "pct": v(r, 63)},
+            "indosat": {"target": v(r, 64), "ach": v(r, 65), "pct": v(r, 66)},
+            "telkomsel": {"target": v(r, 67), "ach": v(r, 68), "pct": v(r, 69)},
+        }
 
     stores = []
     total_row = None
@@ -85,17 +120,11 @@ def main():
                 "mio3_unit": v(r, 13), "mio3_pct": v(r, 14),
                 "iqoo_unit": v(r, 15), "iqoo_pct": v(r, 16),
                 "ach_value": v(r, 18), "ach_value_pct": v(r, 19), "gap_value": v(r, 20),
-                "growth_all_june": v(r, 35), "growth_all_july": v(r, 36),
+                "growth_all_prev": v(r, 35), "growth_all_curr": v(r, 36),
                 "growth_all_gap": v(r, 37), "growth_all_pct": v(r, 38),
-                "growth_value_june": v(r, 47), "growth_value_july": v(r, 48),
+                "growth_value_prev": v(r, 47), "growth_value_curr": v(r, 48),
                 "growth_value_gap": v(r, 49), "growth_value_pct": v(r, 50),
-                "vas": {
-                    "acc": {"target": v(r, 55), "ach": v(r, 56), "pct": v(r, 57)},
-                    "qoala": {"target": v(r, 58), "ach": v(r, 59), "pct": v(r, 60)},
-                    "bca_insurance": {"target": v(r, 61), "ach": v(r, 62), "pct": v(r, 63)},
-                    "indosat": {"target": v(r, 64), "ach": v(r, 65), "pct": v(r, 66)},
-                    "telkomsel": {"target": v(r, 67), "ach": v(r, 68), "pct": v(r, 69)},
-                },
+                "vas": vas_block(r),
             }
             continue
         if not isinstance(a, (int, float)):
@@ -121,25 +150,21 @@ def main():
             "ach_value": v(r, 18),
             "ach_value_pct": v(r, 19),
             "gap_value": v(r, 20),
-            "growth_all_june": v(r, 35),
-            "growth_all_july": v(r, 36),
+            "growth_all_prev": v(r, 35),
+            "growth_all_curr": v(r, 36),
             "growth_all_gap": v(r, 37),
             "growth_all_pct": v(r, 38),
-            "growth_value_june": v(r, 47),
-            "growth_value_july": v(r, 48),
+            "growth_value_prev": v(r, 47),
+            "growth_value_curr": v(r, 48),
             "growth_value_gap": v(r, 49),
             "growth_value_pct": v(r, 50),
-            "vas": {
-                "acc": {"target": v(r, 55), "ach": v(r, 56), "pct": v(r, 57)},
-                "qoala": {"target": v(r, 58), "ach": v(r, 59), "pct": v(r, 60)},
-                "bca_insurance": {"target": v(r, 61), "ach": v(r, 62), "pct": v(r, 63)},
-                "indosat": {"target": v(r, 64), "ach": v(r, 65), "pct": v(r, 66)},
-                "telkomsel": {"target": v(r, 67), "ach": v(r, 68), "pct": v(r, 69)},
-            },
+            "vas": vas_block(r),
         })
 
     data = {
-        "period": parse_period(title),
+        "period": period,
+        "period_key": period_key,
+        "period_label": period_label,
         "to_date_day": to_date_day,
         "total_days": total_days,
         "time_gone": time_gone,
@@ -149,10 +174,29 @@ def main():
         "total": total_row,
     }
 
-    with open(OUTPUT_PATH, "w", encoding="utf-8") as f:
+    out_path = DATA_DIR / f"{period_key}.json"
+    with open(out_path, "w", encoding="utf-8") as f:
         json.dump(data, f, indent=2, ensure_ascii=False)
 
-    print(f"OK: {len(stores)} toko diproses -> {OUTPUT_PATH}")
+    # --- update manifest (daftar semua bulan yang tersedia) ---
+    if MANIFEST_PATH.exists():
+        manifest = json.loads(MANIFEST_PATH.read_text(encoding="utf-8"))
+    else:
+        manifest = {"periods": []}
+
+    existing = {p["key"]: p for p in manifest["periods"]}
+    existing[period_key] = {
+        "key": period_key,
+        "label": period_label,
+        "file": f"data/{period_key}.json",
+    }
+    manifest["periods"] = sorted(existing.values(), key=lambda p: p["key"])
+
+    with open(MANIFEST_PATH, "w", encoding="utf-8") as f:
+        json.dump(manifest, f, indent=2, ensure_ascii=False)
+
+    print(f"OK: {len(stores)} toko diproses -> {out_path}")
+    print(f"Manifest updated -> {MANIFEST_PATH} ({len(manifest['periods'])} bulan tersedia)")
 
 
 if __name__ == "__main__":

@@ -1,0 +1,9 @@
+{
+  "periods": [
+    {
+      "key": "2026-07",
+      "label": "Juli 2026",
+      "file": "data/2026-07.json"
+    }
+  ]
+}

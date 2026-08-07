@@ -285,6 +285,7 @@
   <div class="section-tabs" id="section-tabs">
     <button class="section-tab active" data-section="performance">📈 Performance</button>
     <button class="section-tab" data-section="stock">📦 Stock</button>
+    <button class="section-tab" data-section="salestype">🏷️ Sales per Tipe</button>
   </div>
   <div class="month-row" id="month-row"></div>
 </div>
@@ -423,6 +424,69 @@
 
   </div>
 
+  <!-- ================= SALES PER TYPE PAGE ================= -->
+  <div class="page" id="page-salestype">
+
+    <div class="kpi-grid" id="salestype-kpi-grid"></div>
+
+    <div class="section-head">
+      <h2>Total Penjualan per Tipe (Jaringan)</h2>
+      <span class="hint">Agregat seluruh toko, bulan berjalan</span>
+    </div>
+
+    <div class="toolbar">
+      <div class="seg" id="salestype-metric-seg">
+        <button data-metric="value" class="active">Value (Rp)</button>
+        <button data-metric="qty">Qty (unit)</button>
+      </div>
+    </div>
+
+    <div class="chart-grid">
+      <div class="chart-card" style="grid-column:1/-1;">
+        <h3 id="salestype-chart-title">Value per Tipe</h3>
+        <span class="hint">Diurutkan dari tertinggi</span>
+        <canvas id="chart-salestype-network" height="200"></canvas>
+      </div>
+    </div>
+
+    <div class="table-card" style="margin-top:16px;">
+      <table id="salestype-network-table">
+        <thead>
+          <tr>
+            <th data-key="model">Tipe / Model</th>
+            <th data-key="qty" class="num">Qty (unit)</th>
+            <th data-key="value" class="num sorted">Value (Rp)</th>
+          </tr>
+        </thead>
+        <tbody id="salestype-network-table-body"></tbody>
+      </table>
+    </div>
+
+    <div class="section-head">
+      <h2>Penjualan per Tipe per Toko (<span id="salestype-store-count">0</span> toko)</h2>
+      <span class="hint">Klik baris untuk lihat breakdown per tipe di toko tersebut</span>
+    </div>
+
+    <div class="toolbar">
+      <div class="search-box"><input type="text" id="salestype-search-input" placeholder="Cari nama toko atau area…"></div>
+    </div>
+
+    <div class="table-card">
+      <table id="salestype-store-table">
+        <thead>
+          <tr>
+            <th data-key="store_name">Toko</th>
+            <th data-key="area">Area</th>
+            <th data-key="total_qty" class="num">Total Qty</th>
+            <th data-key="total_value" class="num sorted">Total Value</th>
+          </tr>
+        </thead>
+        <tbody id="salestype-store-table-body"></tbody>
+      </table>
+    </div>
+
+  </div>
+
 </div>
 
 <footer>Store Dashboard — data performance di <span class="mono">data/&lt;bulan&gt;.json</span>, data stock di <span class="mono">data/stock-&lt;bulan&gt;.json</span>. Jangan diedit manual, keduanya auto-generate dari file di <span class="mono">source/</span>.</footer>
@@ -459,6 +523,18 @@ let stockSortKey = 'dos';
 let stockSortDir = 1;
 let stockSearchTerm = '';
 
+/* ================= SALES PER TYPE STATE ================= */
+let SALESTYPE_DATA = null;
+let SALESTYPE_MANIFEST = null;
+let salesTypeCurrentKey = null;
+let salesTypeNetworkChart = null;
+let salesTypeMetric = 'value'; // value | qty
+let salesTypeNetSortKey = 'value';
+let salesTypeNetSortDir = -1;
+let salesTypeStoreSortKey = 'total_value';
+let salesTypeStoreSortDir = -1;
+let salesTypeSearchTerm = '';
+
 /* ================= INIT / LOAD ================= */
 // cache-bust every data fetch so GitHub Pages' CDN / browser cache never
 // serves a stale manifest or period file after a data update
@@ -484,6 +560,15 @@ fetchFresh('data/stock-manifest.json').then(r => r.json()).then(manifest => {
     '<tr><td colspan="4" style="padding:24px;color:#C23B4B;">Gagal memuat data/stock-manifest.json — pastikan source/stock_data.xlsx sudah pernah di-push. ('+err+')</td></tr>';
 });
 
+fetchFresh('data/sales-type-manifest.json').then(r => r.json()).then(manifest => {
+  SALESTYPE_MANIFEST = manifest;
+  if(!manifest.periods || manifest.periods.length === 0) throw new Error('Belum ada data sales per tipe.');
+  loadSalesTypePeriod(manifest.periods[manifest.periods.length - 1].key);
+}).catch(err => {
+  document.getElementById('salestype-store-table-body').innerHTML =
+    '<tr><td colspan="4" style="padding:24px;color:#C23B4B;">Gagal memuat data/sales-type-manifest.json — pastikan sheet \'SALES VALUE PER TYPE\' ada di source/dashboard_data.xlsx dan workflow sudah pernah jalan. ('+err+')</td></tr>';
+});
+
 /* ================= SECTION TABS ================= */
 document.getElementById('section-tabs').addEventListener('click', e=>{
   const btn = e.target.closest('.section-tab');
@@ -493,8 +578,12 @@ document.getElementById('section-tabs').addEventListener('click', e=>{
   activeSection = btn.dataset.section;
   document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
   document.getElementById('page-'+activeSection).classList.add('active');
-  document.getElementById('brand-title').textContent =
-    activeSection==='performance' ? 'Store Performance Dashboard' : 'Stock Dashboard — IQOO & VIVO';
+  const titles = {
+    performance: 'Store Performance Dashboard',
+    stock: 'Stock Dashboard — IQOO & VIVO',
+    salestype: 'Sales per Tipe — Value & Qty',
+  };
+  document.getElementById('brand-title').textContent = titles[activeSection];
   renderMonthRow();
   updatePaceRingForActiveSection();
 });
@@ -509,6 +598,9 @@ function updatePaceRingForActiveSection(){
     setPaceRing(pctDay, `Hari ke-${STOCK_DATA.hari_berjalan} dari ${STOCK_DATA.total_hari}`, 'Hari berjalan bulan ini');
     document.getElementById('period-sub').textContent = `Periode ${STOCK_DATA.period_label || STOCK_DATA.period} · ${STOCK_DATA.stores.length} toko`;
     document.getElementById('updated-sub').textContent = STOCK_DATA.updated_by ? `Diupdate oleh ${STOCK_DATA.updated_by} · ${STOCK_DATA.updated_at}` : '';
+  } else if(activeSection==='salestype' && SALESTYPE_DATA){
+    document.getElementById('period-sub').textContent = `Periode ${SALESTYPE_DATA.period_label} · ${SALESTYPE_DATA.stores.length} toko · ${SALESTYPE_DATA.totals_by_type.length} tipe produk`;
+    document.getElementById('updated-sub').textContent = SALESTYPE_DATA.updated_by ? `Diupdate oleh ${SALESTYPE_DATA.updated_by} · ${SALESTYPE_DATA.updated_at}` : '';
   }
 }
 
@@ -523,8 +615,10 @@ function setPaceRing(pctDay, detailText, label){
 
 /* ================= MONTH ROW (shared, section-aware) ================= */
 function renderMonthRow(){
-  const manifest = activeSection==='performance' ? PERF_MANIFEST : STOCK_MANIFEST;
-  const currentKey = activeSection==='performance' ? perfCurrentKey : stockCurrentKey;
+  const manifests = {performance:PERF_MANIFEST, stock:STOCK_MANIFEST, salestype:SALESTYPE_MANIFEST};
+  const currentKeys = {performance:perfCurrentKey, stock:stockCurrentKey, salestype:salesTypeCurrentKey};
+  const manifest = manifests[activeSection];
+  const currentKey = currentKeys[activeSection];
   if(!manifest){ document.getElementById('month-row').innerHTML=''; return; }
   document.getElementById('month-row').innerHTML = manifest.periods.map(p =>
     `<div class="month-pill ${p.key===currentKey?'active':''}" data-key="${p.key}">${p.label}</div>`
@@ -532,7 +626,8 @@ function renderMonthRow(){
   document.querySelectorAll('.month-pill').forEach(pill=>{
     pill.addEventListener('click', ()=>{
       if(activeSection==='performance') loadPerfPeriod(pill.dataset.key);
-      else loadStockPeriod(pill.dataset.key);
+      else if(activeSection==='stock') loadStockPeriod(pill.dataset.key);
+      else loadSalesTypePeriod(pill.dataset.key);
     });
   });
 }
@@ -991,6 +1086,184 @@ function renderStockRankings(){
     </li>`).join('');
   document.getElementById('stock-risk-list').innerHTML = renderList(risk);
   document.getElementById('stock-overstock-list').innerHTML = renderList(overstock);
+}
+
+/* ================================================================ */
+/* ====================== SALES PER TYPE LOGIC ====================== */
+/* ================================================================ */
+function loadSalesTypePeriod(key){
+  const meta = SALESTYPE_MANIFEST.periods.find(p=>p.key===key);
+  if(!meta) return;
+  fetchFresh(meta.file).then(r=>r.json()).then(json=>{
+    SALESTYPE_DATA = json;
+    salesTypeCurrentKey = key;
+    if(activeSection==='salestype') renderMonthRow();
+    initSalesType();
+  });
+}
+
+function initSalesType(){
+  if(activeSection==='salestype') updatePaceRingForActiveSection();
+  try{ renderSalesTypeKPIs(); }catch(e){ console.error('renderSalesTypeKPIs failed', e); }
+  try{ renderSalesTypeNetwork(); }catch(e){ console.error('renderSalesTypeNetwork failed', e); }
+  try{ renderSalesTypeStores(); }catch(e){ console.error('renderSalesTypeStores failed', e); }
+
+  document.getElementById('salestype-search-input').oninput = e=>{
+    salesTypeSearchTerm = e.target.value.toLowerCase();
+    renderSalesTypeStores();
+  };
+  document.querySelectorAll('#salestype-network-table thead th[data-key]').forEach(th=>{
+    th.onclick = ()=>{
+      const key = th.dataset.key;
+      if(salesTypeNetSortKey===key){ salesTypeNetSortDir *= -1; } else { salesTypeNetSortKey = key; salesTypeNetSortDir = key==='model'?1:-1; }
+      document.querySelectorAll('#salestype-network-table thead th').forEach(t=>t.classList.remove('sorted'));
+      th.classList.add('sorted');
+      renderSalesTypeNetworkTable();
+    };
+  });
+  document.querySelectorAll('#salestype-store-table thead th[data-key]').forEach(th=>{
+    th.onclick = ()=>{
+      const key = th.dataset.key;
+      if(salesTypeStoreSortKey===key){ salesTypeStoreSortDir *= -1; } else { salesTypeStoreSortKey = key; salesTypeStoreSortDir = key==='store_name'||key==='area'?1:-1; }
+      document.querySelectorAll('#salestype-store-table thead th').forEach(t=>t.classList.remove('sorted'));
+      th.classList.add('sorted');
+      renderSalesTypeStoreTable();
+    };
+  });
+}
+
+function renderSalesTypeKPIs(){
+  const totals = SALESTYPE_DATA.totals_by_type;
+  const totalQty = totals.reduce((a,t)=>a+t.qty,0);
+  const totalValue = totals.reduce((a,t)=>a+t.value,0);
+  const topByValue = [...totals].sort((a,b)=>b.value-a.value)[0];
+  const topByQty = [...totals].sort((a,b)=>b.qty-a.qty)[0];
+  const cards = [
+    {label:'Total Qty Terjual', value: fmt(totalQty), sub:'unit, seluruh tipe'},
+    {label:'Total Value Terjual', value: money(totalValue), sub:'seluruh toko'},
+    {label:'Tipe Terlaris (Value)', value: topByValue?topByValue.model:'-', sub: topByValue?money(topByValue.value):''},
+    {label:'Tipe Terlaris (Qty)', value: topByQty?topByQty.model:'-', sub: topByQty?fmt(topByQty.qty)+' unit':''},
+  ];
+  document.getElementById('salestype-kpi-grid').innerHTML = cards.map(c=>`
+    <div class="kpi-card">
+      <div class="kpi-label">${c.label}</div>
+      <div class="kpi-value">${c.value}</div>
+      <div class="kpi-sub">${c.sub}</div>
+    </div>`).join('');
+}
+
+document.getElementById('salestype-metric-seg').addEventListener('click', e=>{
+  const btn = e.target.closest('button');
+  if(!btn) return;
+  document.querySelectorAll('#salestype-metric-seg button').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  salesTypeMetric = btn.dataset.metric;
+  renderSalesTypeNetwork();
+});
+
+function renderSalesTypeNetwork(){
+  document.getElementById('salestype-chart-title').textContent =
+    (salesTypeMetric==='value' ? 'Value' : 'Qty') + ' per Tipe';
+  renderSalesTypeNetworkTable();
+}
+
+function renderSalesTypeNetworkTable(){
+  let rows = [...SALESTYPE_DATA.totals_by_type];
+  rows.sort((a,b)=>{
+    let va=a[salesTypeNetSortKey], vb=b[salesTypeNetSortKey];
+    if(salesTypeNetSortKey==='model') return (va>vb?1:-1)*salesTypeNetSortDir;
+    return (va-vb)*salesTypeNetSortDir;
+  });
+  document.getElementById('salestype-network-table-body').innerHTML = rows.map(t=>`
+    <tr>
+      <td><div class="store-name">${t.model}</div></td>
+      <td class="num mono">${fmt(t.qty)}</td>
+      <td class="num mono">${money(t.value)}</td>
+    </tr>`).join('');
+
+  const chartRows = [...rows].sort((a,b)=>b[salesTypeMetric]-a[salesTypeMetric]).slice(0,15);
+  const labels = chartRows.map(t=>t.model);
+  if(salesTypeNetworkChart) salesTypeNetworkChart.destroy();
+  salesTypeNetworkChart = new Chart(document.getElementById('chart-salestype-network'), {
+    type:'bar',
+    data:{ labels, datasets:[{
+      data: chartRows.map(t=>t[salesTypeMetric]),
+      backgroundColor:'#7C4FE0', borderRadius:5, maxBarThickness:34,
+    }]},
+    options:{
+      plugins:{legend:{display:false}, tooltip:{callbacks:{
+        label:c=> salesTypeMetric==='value' ? money(c.parsed.y) : fmt(c.parsed.y)+' unit'
+      }}},
+      scales:{
+        x:{ ticks:{font:{size:10}, maxRotation:50, minRotation:50}, grid:{display:false} },
+        y:{ beginAtZero:true, ticks:{callback:v=> salesTypeMetric==='value' ? (v/1000000)+'jt' : v}, grid:{color:'#EEF0F4'} }
+      }
+    }
+  });
+}
+
+function getSalesTypeStoreRows(){
+  let rows = SALESTYPE_DATA.stores;
+  if(salesTypeSearchTerm) rows = rows.filter(s=>s.store_name.toLowerCase().includes(salesTypeSearchTerm) || String(s.area).toLowerCase().includes(salesTypeSearchTerm));
+  rows = [...rows].sort((a,b)=>{
+    let va=a[salesTypeStoreSortKey], vb=b[salesTypeStoreSortKey];
+    if(typeof va==='string') return (va>vb?1:-1)*salesTypeStoreSortDir;
+    return (va-vb)*salesTypeStoreSortDir;
+  });
+  return rows;
+}
+
+function renderSalesTypeStores(){
+  renderSalesTypeStoreTable();
+}
+
+function renderSalesTypeStoreTable(){
+  const rows = getSalesTypeStoreRows();
+  document.getElementById('salestype-store-count').textContent = rows.length;
+  document.getElementById('salestype-store-table-body').innerHTML = rows.map((s,i)=>{
+    const rowId = 'salestype-row-'+i;
+    return `
+    <tr class="store-row" data-id="${rowId}">
+      <td><div class="store-name">${s.store_name}</div></td>
+      <td><span class="area-pill">${s.area}</span></td>
+      <td class="num mono">${fmt(s.total_qty)}</td>
+      <td class="num mono">${money(s.total_value)}</td>
+    </tr>
+    <tr class="detail-row" id="detail-${rowId}" style="display:none;"><td colspan="4">${salesTypeDetailHTML(s)}</td></tr>`;
+  }).join('');
+
+  document.querySelectorAll('#page-salestype .store-row').forEach(row=>{
+    row.onclick = ()=>{
+      const id = row.dataset.id;
+      const detail = document.getElementById('detail-'+id);
+      const isOpen = detail.style.display !== 'none';
+      document.querySelectorAll('#page-salestype .detail-row').forEach(d=>d.style.display='none');
+      document.querySelectorAll('#page-salestype .store-row').forEach(r=>r.classList.remove('expanded'));
+      if(!isOpen){ detail.style.display='table-row'; row.classList.add('expanded'); }
+    };
+  });
+}
+
+function salesTypeDetailHTML(s){
+  if(!s.by_type || s.by_type.length===0){
+    return `<div class="detail-inner"><div class="detail-block"><h4>Breakdown per Tipe</h4><div class="growth-row"><span class="growth-label">Tidak ada penjualan tercatat di toko ini.</span></div></div></div>`;
+  }
+  const rows = s.by_type.map(t=>`
+    <tr>
+      <td>${t.model}</td>
+      <td class="num mono">${fmt(t.qty)}</td>
+      <td class="num mono">${money(t.value)}</td>
+    </tr>`).join('');
+  return `
+    <div class="detail-inner" style="grid-template-columns:1fr;">
+      <div class="detail-block">
+        <h4>Breakdown per Tipe — ${s.store_name}</h4>
+        <table class="mini-table">
+          <thead><tr><th>Model</th><th class="num">Qty</th><th class="num">Value</th></tr></thead>
+          <tbody>${rows}</tbody>
+        </table>
+      </div>
+    </div>`;
 }
 </script>
 </body>

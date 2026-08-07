@@ -460,7 +460,12 @@ let stockSortDir = 1;
 let stockSearchTerm = '';
 
 /* ================= INIT / LOAD ================= */
-fetch('data/manifest.json').then(r => r.json()).then(manifest => {
+// cache-bust every data fetch so GitHub Pages' CDN / browser cache never
+// serves a stale manifest or period file after a data update
+const noCache = url => url + (url.includes('?') ? '&' : '?') + 'v=' + Date.now();
+const fetchFresh = url => fetch(noCache(url), {cache:'no-store'});
+
+fetchFresh('data/manifest.json').then(r => r.json()).then(manifest => {
   PERF_MANIFEST = manifest;
   if(!manifest.periods || manifest.periods.length === 0) throw new Error('Belum ada data performance.');
   renderMonthRow();
@@ -470,7 +475,7 @@ fetch('data/manifest.json').then(r => r.json()).then(manifest => {
     '<tr><td colspan="10" style="padding:24px;color:#C23B4B;">Gagal memuat data/manifest.json — pastikan folder data/ ada di repo dan workflow sudah pernah jalan. ('+err+')</td></tr>';
 });
 
-fetch('data/stock-manifest.json').then(r => r.json()).then(manifest => {
+fetchFresh('data/stock-manifest.json').then(r => r.json()).then(manifest => {
   STOCK_MANIFEST = manifest;
   if(!manifest.periods || manifest.periods.length === 0) throw new Error('Belum ada data stock.');
   loadStockPeriod(manifest.periods[manifest.periods.length - 1].key, true);
@@ -538,7 +543,7 @@ function renderMonthRow(){
 function loadPerfPeriod(key){
   const meta = PERF_MANIFEST.periods.find(p=>p.key===key);
   if(!meta) return;
-  fetch(meta.file).then(r=>r.json()).then(json=>{
+  fetchFresh(meta.file).then(r=>r.json()).then(json=>{
     PERF_DATA = json;
     perfCurrentKey = key;
     PERF_DATA.stores.forEach(s => {
@@ -788,7 +793,7 @@ function renderRankings(){
 function loadStockPeriod(key, isInitial){
   const meta = STOCK_MANIFEST.periods.find(p=>p.key===key);
   if(!meta) return;
-  fetch(meta.file).then(r=>r.json()).then(json=>{
+  fetchFresh(meta.file).then(r=>r.json()).then(json=>{
     STOCK_DATA = json;
     stockCurrentKey = key;
     if(activeSection==='stock') renderMonthRow();

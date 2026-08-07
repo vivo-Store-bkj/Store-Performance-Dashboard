@@ -4,6 +4,7 @@ on:
   push:
     paths:
       - "source/dashboard_data.xlsx"
+      - "source/stock_data.xlsx"
   workflow_dispatch:
 
 permissions:
@@ -24,10 +25,15 @@ jobs:
       - name: Install dependencies
         run: pip install openpyxl
 
-      - name: Convert Excel to data.json
+      - name: Convert Performance Excel to data/*.json
         env:
           UPDATED_BY: "Michael Fumar"
         run: python scripts/convert_xlsx_to_json.py
+
+      - name: Convert Stock Excel to data/stock-*.json
+        env:
+          UPDATED_BY: "Michael Fumar"
+        run: python scripts/convert_stock_xlsx_to_json.py
 
       - name: Commit updated data
         run: |

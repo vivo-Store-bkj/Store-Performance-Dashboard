@@ -249,6 +249,41 @@ def main():
 
     stores.sort(key=lambda s: s["store_name"])
 
+    # invert the per-store by_type breakdown into a per-type view: for each
+    # brand, "which stores carry model X, and how much" — this is what
+    # lets the dashboard answer "tipe X ada di toko mana saja" instead of
+    # only "toko Y ada tipe apa saja".
+    types_by_brand = {}
+    for brand in parsed.keys():
+        key = f"{brand.lower()}_by_type"
+        model_acc = {}
+        for s in stores:
+            for t in s.get(key, []):
+                acc = model_acc.setdefault(t["model"], {"stock": 0, "sales_out": 0, "stores": []})
+                acc["stock"] += t["stock"]
+                acc["sales_out"] += t["sales_out"]
+                if t["stock"] or t["sales_out"]:
+                    acc["stores"].append({
+                        "store_name": s["store_name"],
+                        "store_id": s["store_id"],
+                        "stock": t["stock"],
+                        "sales_out": t["sales_out"],
+                        "dos": t["dos"],
+                    })
+        types = []
+        for model, acc in model_acc.items():
+            dos = round(acc["stock"] / (acc["sales_out"] / hari_berjalan), 2) if acc["sales_out"] else None
+            acc["stores"].sort(key=lambda x: -x["stock"])
+            types.append({
+                "model": model,
+                "stock": acc["stock"],
+                "sales_out": acc["sales_out"],
+                "dos": dos,
+                "stores": acc["stores"],
+            })
+        types.sort(key=lambda t: -t["stock"])
+        types_by_brand[brand] = types
+
     now = datetime.now(JAKARTA) if JAKARTA else datetime.utcnow()
     period_key = f"{now.year}-{now.month:02d}"
     period_label = f"{BULAN_ID[now.month]} {now.year}"
@@ -264,6 +299,7 @@ def main():
         "updated_by": os.environ.get("UPDATED_BY", "Michael Fumar"),
         "updated_at": format_updated_at(),
         "stores": stores,
+        "types_by_brand": types_by_brand,
     }
 
     out_path = DATA_DIR / f"stock-{period_key}.json"

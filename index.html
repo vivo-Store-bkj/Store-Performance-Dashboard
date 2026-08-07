@@ -223,6 +223,12 @@
   .growth-label{ color:var(--ink-soft); }
   .growth-val{ font-family:'JetBrains Mono',monospace; font-weight:600; }
 
+  .mini-table{ width:100%; border-collapse:collapse; }
+  .mini-table th{ text-align:left; font-size:10.5px; text-transform:uppercase; letter-spacing:0.05em; color:var(--ink-faint); font-weight:700; padding:6px 8px; border-bottom:1px solid var(--line); background:transparent; cursor:default; white-space:nowrap; }
+  .mini-table td{ padding:7px 8px; border-bottom:1px solid var(--line); font-size:12.5px; white-space:nowrap; }
+  .mini-table th.num, .mini-table td.num{ text-align:right; }
+  .mini-table tbody tr:last-child td{ border-bottom:none; }
+
   /* ===== CHARTS ===== */
   .chart-grid{ display:grid; grid-template-columns:1.15fr 1fr; gap:16px; }
   @media (max-width: 900px){ .chart-grid{ grid-template-columns:1fr; } }
@@ -362,7 +368,7 @@
 
     <div class="section-head">
       <h2>Semua Toko (<span id="stock-store-count">0</span>)</h2>
-      <span class="hint">DOS = Days of Stock, ketahanan stock dibagi rata-rata penjualan harian</span>
+      <span class="hint">Klik baris untuk lihat breakdown per tipe produk · DOS = Days of Stock</span>
     </div>
 
     <div class="toolbar">
@@ -791,9 +797,10 @@ function loadStockPeriod(key, isInitial){
 }
 
 function stockRow(s, brand){
-  if(brand==='iqoo') return {store_name:s.store_name, stock:s.iqoo_stock||0, sales_out:s.iqoo_sales_out||0, dos:s.iqoo_dos};
-  if(brand==='vivo') return {store_name:s.store_name, stock:s.vivo_stock||0, sales_out:s.vivo_sales_out||0, dos:s.vivo_dos};
-  return {store_name:s.store_name, stock:s.total_stock||0, sales_out:s.total_sales_out||0, dos:s.total_dos};
+  const id = s.store_id || s.store_name;
+  if(brand==='iqoo') return {store_name:s.store_name, store_id:id, stock:s.iqoo_stock||0, sales_out:s.iqoo_sales_out||0, dos:s.iqoo_dos, raw:s};
+  if(brand==='vivo') return {store_name:s.store_name, store_id:id, stock:s.vivo_stock||0, sales_out:s.vivo_sales_out||0, dos:s.vivo_dos, raw:s};
+  return {store_name:s.store_name, store_id:id, stock:s.total_stock||0, sales_out:s.total_sales_out||0, dos:s.total_dos, raw:s};
 }
 function dosStatus(dos){
   if(dos===null||dos===undefined) return 'warn';
@@ -878,16 +885,53 @@ function getStockFiltered(){
 function renderStockTable(){
   const rows = getStockFiltered();
   document.getElementById('stock-store-count').textContent = rows.length;
-  document.getElementById('stock-table-body').innerHTML = rows.map(r=>{
+  document.getElementById('stock-table-body').innerHTML = rows.map((r,i)=>{
     const sc = dosStatus(r.dos);
+    const rowId = 'stock-row-'+i;
     return `
-    <tr>
+    <tr class="store-row" data-id="${rowId}">
       <td><div class="store-name">${r.store_name}</div></td>
       <td class="num mono">${fmt(r.stock)}</td>
       <td class="num mono">${fmt(r.sales_out)}</td>
       <td class="num"><span class="tag ${sc}">${r.dos!==null&&r.dos!==undefined?Number(r.dos).toFixed(1):'-'}</span></td>
-    </tr>`;
+    </tr>
+    <tr class="detail-row" id="detail-${rowId}" style="display:none;"><td colspan="4">${stockDetailHTML(r.raw)}</td></tr>`;
   }).join('');
+
+  document.querySelectorAll('#page-stock .store-row').forEach(row=>{
+    row.onclick = ()=>{
+      const id = row.dataset.id;
+      const detail = document.getElementById('detail-'+id);
+      const isOpen = detail.style.display !== 'none';
+      document.querySelectorAll('#page-stock .detail-row').forEach(d=>d.style.display='none');
+      document.querySelectorAll('#page-stock .store-row').forEach(r=>r.classList.remove('expanded'));
+      if(!isOpen){ detail.style.display='table-row'; row.classList.add('expanded'); }
+    };
+  });
+}
+
+function stockDetailHTML(s){
+  const brandBlock = (label, list) => {
+    if(!list || list.length===0){
+      return `<div class="detail-block"><h4>${label}</h4><div class="growth-row"><span class="growth-label">Tidak ada data produk ${label}.</span></div></div>`;
+    }
+    const rows = list.map(t=>`
+      <tr>
+        <td>${t.model}</td>
+        <td class="num mono">${fmt(t.stock)}</td>
+        <td class="num mono">${fmt(t.sales_out)}</td>
+        <td class="num"><span class="tag ${dosStatus(t.dos)}">${t.dos!==null&&t.dos!==undefined?Number(t.dos).toFixed(1):'-'}</span></td>
+      </tr>`).join('');
+    return `
+      <div class="detail-block">
+        <h4>Breakdown per Tipe — ${label}</h4>
+        <table class="mini-table">
+          <thead><tr><th>Model</th><th class="num">Stock</th><th class="num">Sales Out</th><th class="num">DOS</th></tr></thead>
+          <tbody>${rows}</tbody>
+        </table>
+      </div>`;
+  };
+  return `<div class="detail-inner">${brandBlock('IQOO', s.iqoo_by_type)}${brandBlock('VIVO', s.vivo_by_type)}</div>`;
 }
 
 function renderStockCharts(){

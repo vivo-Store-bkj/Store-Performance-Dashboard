@@ -6,7 +6,7 @@
   "hari_berjalan": 6,
   "sisa_hari": 24,
   "updated_by": "Michael Fumar",
-  "updated_at": "7 Agustus 2026, 10:15 WIB",
+  "updated_at": "7 Agustus 2026, 10:31 WIB",
   "stores": [
     {
       "store_id": "6140706",
@@ -14,9 +14,91 @@
       "iqoo_stock": 7,
       "iqoo_sales_out": 0,
       "iqoo_dos": null,
+      "iqoo_by_type": [
+        {
+          "model": "IQOO Z11",
+          "stock": 5,
+          "sales_out": 0,
+          "dos": null
+        },
+        {
+          "model": "IQOO Z11x",
+          "stock": 2,
+          "sales_out": 0,
+          "dos": null
+        }
+      ],
       "vivo_stock": 44,
       "vivo_sales_out": 4,
       "vivo_dos": 66,
+      "vivo_by_type": [
+        {
+          "model": "Y500",
+          "stock": 8,
+          "sales_out": 0,
+          "dos": null
+        },
+        {
+          "model": "V70 FE",
+          "stock": 7,
+          "sales_out": 0,
+          "dos": null
+        },
+        {
+          "model": "Y11d",
+          "stock": 6,
+          "sales_out": 1,
+          "dos": 36.0
+        },
+        {
+          "model": "Y05",
+          "stock": 5,
+          "sales_out": 0,
+          "dos": null
+        },
+        {
+          "model": "Y31d",
+          "stock": 4,
+          "sales_out": 0,
+          "dos": null
+        },
+        {
+          "model": "Y31d Pro",
+          "stock": 4,
+          "sales_out": 1,
+          "dos": 24.0
+        },
+        {
+          "model": "V70",
+          "stock": 4,
+          "sales_out": 1,
+          "dos": 24.0
+        },
+        {
+          "model": "V60 Lite",
+          "stock": 2,
+          "sales_out": 0,
+          "dos": null
+        },
+        {
+          "model": "Y05e",
+          "stock": 2,
+          "sales_out": 0,
+          "dos": null
+        },
+        {
+          "model": "X300 Ultra",
+          "stock": 1,
+          "sales_out": 1,
+          "dos": 6.0
+        },
+        {
+          "model": "V60 Lite 5G",
+          "stock": 1,
+          "sales_out": 0,
+          "dos": null
+        }
+      ],
       "total_stock": 51,
       "total_sales_out": 4,
       "total_dos": 76.5
@@ -27,9 +109,85 @@
       "iqoo_stock": 3,
       "iqoo_sales_out": 1,
       "iqoo_dos": 18,
+      "iqoo_by_type": [
+        {
+          "model": "IQOO Z11x",
+          "stock": 1,
+          "sales_out": 0,
+          "dos": null
+        },
+        {
+          "model": "IQOO Z11",
+          "stock": 1,
+          "sales_out": 1,
+          "dos": 6.0
+        },
+        {
+          "model": "IQOO 15 R",
+          "stock": 1,
+          "sales_out": 0,
+          "dos": null
+        }
+      ],
       "vivo_stock": 27,
       "vivo_sales_out": 3,
       "vivo_dos": 54,
+      "vivo_by_type": [
+        {
+          "model": "Y31d Pro",
+          "stock": 6,
+          "sales_out": 0,
+          "dos": null
+        },
+        {
+          "model": "Y11d",
+          "stock": 5,
+          "sales_out": 1,
+          "dos": 30.0
+        },
+        {
+          "model": "Y05",
+          "stock": 5,
+          "sales_out": 0,
+          "dos": null
+        },
+        {
+          "model": "V70 FE",
+          "stock": 3,
+          "sales_out": 1,
+          "dos": 18.0
+        },
+        {
+          "model": "Y500",
+          "stock": 3,
+          "sales_out": 0,
+          "dos": null
+        },
+        {
+          "model": "V60 Lite",
+          "stock": 2,
+          "sales_out": 0,
+          "dos": null
+        },
+        {
+          "model": "Y05e",
+          "stock": 2,
+          "sales_out": 0,
+          "dos": null
+        },
+        {
+          "model": "Y31d",
+          "stock": 1,
+          "sales_out": 0,
+          "dos": null
+        },
+        {
+          "model": "V70",
+          "stock": 0,
+          "sales_out": 1,
+          "dos": 0.0
+        }
+      ],
       "total_stock": 30,
       "total_sales_out": 4,
       "total_dos": 45.0
@@ -40,9 +198,85 @@
       "iqoo_stock": 8,
       "iqoo_sales_out": 0,
       "iqoo_dos": null,
+      "iqoo_by_type": [
+        {
+          "model": "IQOO Z11",
+          "stock": 6,
+          "sales_out": 0,
+          "dos": null
+        },
+        {
+          "model": "IQOO Z11x",
+          "stock": 2,
+          "sales_out": 0,
+          "dos": null
+        }
+      ],
       "vivo_stock": 50,
       "vivo_sales_out": 15,
       "vivo_dos": 20,
+      "vivo_by_type": [
+        {
+          "model": "Y31d Pro",
+          "stock": 11,
+          "sales_out": 0,
+          "dos": null
+        },
+        {
+          "model": "Y11d",
+          "stock": 6,
+          "sales_out": 7,
+          "dos": 5.14
+        },
+        {
+          "model": "V70 FE",
+          "stock": 6,
+          "sales_out": 1,
+          "dos": 36.0
+        },
+        {
+          "model": "Y05",
+          "stock": 6,
+          "sales_out": 5,
+          "dos": 7.2
+        },
+        {
+          "model": "Y05e",
+          "stock": 6,
+          "sales_out": 0,
+          "dos": null
+        },
+        {
+          "model": "Y500",
+          "stock": 5,
+          "sales_out": 2,
+          "dos": 15.0
+        },
+        {
+          "model": "Y31d",
+          "stock": 3,
+          "sales_out": 0,
+          "dos": null
+        },
+        {
+          "model": "V70",
+          "stock": 3,
+          "sales_out": 0,
+          "dos": null
+        },
+        {
+          "model": "V60 Lite",
+          "stock": 3,
+          "sales_out": 0,
+          "dos": null
+        },
+        {
+          "model": "X300 Ultra",
+          "stock": 1,
+          "sales_out": 0,
+          "dos": null
+        }
+      ],
       "total_stock": 58,
       "total_sales_out": 15,
       "total_dos": 23.2
@@ -53,9 +287,85 @@
       "iqoo_stock": 5,
       "iqoo_sales_out": 3,
       "iqoo_dos": 10,
+      "iqoo_by_type": [
+        {
+          "model": "IQOO Z11",
+          "stock": 3,
+          "sales_out": 3,
+          "dos": 6.0
+        },
+        {
+          "model": "IQOO Z11x",
+          "stock": 1,
+          "sales_out": 0,
+          "dos": null
+        },
+        {
+          "model": "IQOO 15 R",
+          "stock": 1,
+          "sales_out": 0,
+          "dos": null
+        }
+      ],
       "vivo_stock": 35,
       "vivo_sales_out": 7,
       "vivo_dos": 30.0,
+      "vivo_by_type": [
+        {
+          "model": "Y05",
+          "stock": 10,
+          "sales_out": 1,
+          "dos": 60.0
+        },
+        {
+          "model": "Y11d",
+          "stock": 6,
+          "sales_out": 1,
+          "dos": 36.0
+        },
+        {
+          "model": "Y31d Pro",
+          "stock": 6,
+          "sales_out": 1,
+          "dos": 36.0
+        },
+        {
+          "model": "V70 FE",
+          "stock": 3,
+          "sales_out": 1,
+          "dos": 18.0
+        },
+        {
+          "model": "Y500",
+          "stock": 3,
+          "sales_out": 1,
+          "dos": 18.0
+        },
+        {
+          "model": "Y31d",
+          "stock": 2,
+          "sales_out": 0,
+          "dos": null
+        },
+        {
+          "model": "V60 Lite",
+          "stock": 2,
+          "sales_out": 0,
+          "dos": null
+        },
+        {
+          "model": "Y05e",
+          "stock": 2,
+          "sales_out": 1,
+          "dos": 12.0
+        },
+        {
+          "model": "V70",
+          "stock": 1,
+          "sales_out": 1,
+          "dos": 6.0
+        }
+      ],
       "total_stock": 40,
       "total_sales_out": 10,
       "total_dos": 24.0
@@ -66,9 +376,79 @@
       "iqoo_stock": 2,
       "iqoo_sales_out": 0,
       "iqoo_dos": null,
+      "iqoo_by_type": [
+        {
+          "model": "IQOO Z11",
+          "stock": 1,
+          "sales_out": 0,
+          "dos": null
+        },
+        {
+          "model": "IQOO 15 R",
+          "stock": 1,
+          "sales_out": 0,
+          "dos": null
+        }
+      ],
       "vivo_stock": 25,
       "vivo_sales_out": 2,
       "vivo_dos": 75,
+      "vivo_by_type": [
+        {
+          "model": "Y31d",
+          "stock": 4,
+          "sales_out": 0,
+          "dos": null
+        },
+        {
+          "model": "Y31d Pro",
+          "stock": 4,
+          "sales_out": 1,
+          "dos": 24.0
+        },
+        {
+          "model": "Y05",
+          "stock": 4,
+          "sales_out": 0,
+          "dos": null
+        },
+        {
+          "model": "Y11d",
+          "stock": 3,
+          "sales_out": 0,
+          "dos": null
+        },
+        {
+          "model": "Y500",
+          "stock": 3,
+          "sales_out": 1,
+          "dos": 18.0
+        },
+        {
+          "model": "V70",
+          "stock": 2,
+          "sales_out": 0,
+          "dos": null
+        },
+        {
+          "model": "V60 Lite",
+          "stock": 2,
+          "sales_out": 0,
+          "dos": null
+        },
+        {
+          "model": "Y05e",
+          "stock": 2,
+          "sales_out": 0,
+          "dos": null
+        },
+        {
+          "model": "V70 FE",
+          "stock": 1,
+          "sales_out": 0,
+          "dos": null
+        }
+      ],
       "total_stock": 27,
       "total_sales_out": 2,
       "total_dos": 81.0
@@ -79,9 +459,85 @@
       "iqoo_stock": 9,
       "iqoo_sales_out": 0,
       "iqoo_dos": null,
+      "iqoo_by_type": [
+        {
+          "model": "IQOO Z11",
+          "stock": 5,
+          "sales_out": 0,
+          "dos": null
+        },
+        {
+          "model": "IQOO Z11x",
+          "stock": 3,
+          "sales_out": 0,
+          "dos": null
+        },
+        {
+          "model": "IQOO 15 R",
+          "stock": 1,
+          "sales_out": 0,
+          "dos": null
+        }
+      ],
       "vivo_stock": 50,
       "vivo_sales_out": 12,
       "vivo_dos": 25,
+      "vivo_by_type": [
+        {
+          "model": "Y31d Pro",
+          "stock": 10,
+          "sales_out": 3,
+          "dos": 20.0
+        },
+        {
+          "model": "Y11d",
+          "stock": 8,
+          "sales_out": 4,
+          "dos": 12.0
+        },
+        {
+          "model": "Y05",
+          "stock": 8,
+          "sales_out": 1,
+          "dos": 48.0
+        },
+        {
+          "model": "Y05e",
+          "stock": 7,
+          "sales_out": 1,
+          "dos": 42.0
+        },
+        {
+          "model": "Y31d",
+          "stock": 4,
+          "sales_out": 0,
+          "dos": null
+        },
+        {
+          "model": "V70",
+          "stock": 4,
+          "sales_out": 0,
+          "dos": null
+        },
+        {
+          "model": "Y500",
+          "stock": 4,
+          "sales_out": 1,
+          "dos": 24.0
+        },
+        {
+          "model": "V70 FE",
+          "stock": 3,
+          "sales_out": 2,
+          "dos": 9.0
+        },
+        {
+          "model": "V60 Lite",
+          "stock": 2,
+          "sales_out": 0,
+          "dos": null
+        }
+      ],
       "total_stock": 59,
       "total_sales_out": 12,
       "total_dos": 29.5
@@ -92,9 +548,91 @@
       "iqoo_stock": 9,
       "iqoo_sales_out": 1,
       "iqoo_dos": 54,
+      "iqoo_by_type": [
+        {
+          "model": "IQOO Z11",
+          "stock": 6,
+          "sales_out": 1,
+          "dos": 36.0
+        },
+        {
+          "model": "IQOO Z11x",
+          "stock": 2,
+          "sales_out": 0,
+          "dos": null
+        },
+        {
+          "model": "IQOO 15 R",
+          "stock": 1,
+          "sales_out": 0,
+          "dos": null
+        }
+      ],
       "vivo_stock": 62,
       "vivo_sales_out": 64,
       "vivo_dos": 5.81,
+      "vivo_by_type": [
+        {
+          "model": "Y05",
+          "stock": 20,
+          "sales_out": 13,
+          "dos": 9.23
+        },
+        {
+          "model": "Y31d Pro",
+          "stock": 12,
+          "sales_out": 10,
+          "dos": 7.2
+        },
+        {
+          "model": "Y11d",
+          "stock": 6,
+          "sales_out": 24,
+          "dos": 1.5
+        },
+        {
+          "model": "Y05e",
+          "stock": 6,
+          "sales_out": 8,
+          "dos": 4.5
+        },
+        {
+          "model": "V70 FE",
+          "stock": 5,
+          "sales_out": 2,
+          "dos": 15.0
+        },
+        {
+          "model": "V60 Lite",
+          "stock": 4,
+          "sales_out": 1,
+          "dos": 24.0
+        },
+        {
+          "model": "Y500",
+          "stock": 4,
+          "sales_out": 2,
+          "dos": 12.0
+        },
+        {
+          "model": "X300 Ultra",
+          "stock": 2,
+          "sales_out": 1,
+          "dos": 12.0
+        },
+        {
+          "model": "Y31d",
+          "stock": 2,
+          "sales_out": 2,
+          "dos": 6.0
+        },
+        {
+          "model": "V70",
+          "stock": 1,
+          "sales_out": 1,
+          "dos": 6.0
+        }
+      ],
       "total_stock": 71,
       "total_sales_out": 65,
       "total_dos": 6.55
@@ -105,9 +643,85 @@
       "iqoo_stock": 5,
       "iqoo_sales_out": 0,
       "iqoo_dos": null,
+      "iqoo_by_type": [
+        {
+          "model": "IQOO Z11",
+          "stock": 4,
+          "sales_out": 0,
+          "dos": null
+        },
+        {
+          "model": "IQOO 15 R",
+          "stock": 1,
+          "sales_out": 0,
+          "dos": null
+        }
+      ],
       "vivo_stock": 60,
       "vivo_sales_out": 37,
       "vivo_dos": 9.73,
+      "vivo_by_type": [
+        {
+          "model": "Y05e",
+          "stock": 15,
+          "sales_out": 5,
+          "dos": 18.0
+        },
+        {
+          "model": "Y11d",
+          "stock": 10,
+          "sales_out": 14,
+          "dos": 4.29
+        },
+        {
+          "model": "Y05",
+          "stock": 10,
+          "sales_out": 8,
+          "dos": 7.5
+        },
+        {
+          "model": "Y31d Pro",
+          "stock": 9,
+          "sales_out": 2,
+          "dos": 27.0
+        },
+        {
+          "model": "V70 FE",
+          "stock": 5,
+          "sales_out": 0,
+          "dos": null
+        },
+        {
+          "model": "Y31d",
+          "stock": 4,
+          "sales_out": 0,
+          "dos": null
+        },
+        {
+          "model": "Y500",
+          "stock": 4,
+          "sales_out": 2,
+          "dos": 12.0
+        },
+        {
+          "model": "V60 Lite",
+          "stock": 2,
+          "sales_out": 4,
+          "dos": 3.0
+        },
+        {
+          "model": "X300 Ultra",
+          "stock": 1,
+          "sales_out": 0,
+          "dos": null
+        },
+        {
+          "model": "V70",
+          "stock": 0,
+          "sales_out": 2,
+          "dos": 0.0
+        }
+      ],
       "total_stock": 65,
       "total_sales_out": 37,
       "total_dos": 10.54
@@ -118,9 +732,103 @@
       "iqoo_stock": 8,
       "iqoo_sales_out": 2,
       "iqoo_dos": 24,
+      "iqoo_by_type": [
+        {
+          "model": "IQOO Z11",
+          "stock": 4,
+          "sales_out": 1,
+          "dos": 24.0
+        },
+        {
+          "model": "IQOO Z11x",
+          "stock": 2,
+          "sales_out": 0,
+          "dos": null
+        },
+        {
+          "model": "IQOO 15 R",
+          "stock": 2,
+          "sales_out": 0,
+          "dos": null
+        },
+        {
+          "model": "IQOO 15",
+          "stock": 0,
+          "sales_out": 1,
+          "dos": 0.0
+        }
+      ],
       "vivo_stock": 43,
       "vivo_sales_out": 11,
       "vivo_dos": 23.45,
+      "vivo_by_type": [
+        {
+          "model": "Y11d",
+          "stock": 7,
+          "sales_out": 3,
+          "dos": 14.0
+        },
+        {
+          "model": "Y31d Pro",
+          "stock": 7,
+          "sales_out": 2,
+          "dos": 21.0
+        },
+        {
+          "model": "V70 FE",
+          "stock": 5,
+          "sales_out": 0,
+          "dos": null
+        },
+        {
+          "model": "Y05e",
+          "stock": 5,
+          "sales_out": 0,
+          "dos": null
+        },
+        {
+          "model": "Y05",
+          "stock": 4,
+          "sales_out": 3,
+          "dos": 8.0
+        },
+        {
+          "model": "Y500",
+          "stock": 4,
+          "sales_out": 1,
+          "dos": 24.0
+        },
+        {
+          "model": "X300 Ultra",
+          "stock": 3,
+          "sales_out": 2,
+          "dos": 9.0
+        },
+        {
+          "model": "Y31d",
+          "stock": 3,
+          "sales_out": 0,
+          "dos": null
+        },
+        {
+          "model": "V70",
+          "stock": 3,
+          "sales_out": 0,
+          "dos": null
+        },
+        {
+          "model": "V60 Lite 5G",
+          "stock": 1,
+          "sales_out": 0,
+          "dos": null
+        },
+        {
+          "model": "V60 Lite",
+          "stock": 1,
+          "sales_out": 0,
+          "dos": null
+        }
+      ],
       "total_stock": 51,
       "total_sales_out": 13,
       "total_dos": 23.54
@@ -131,9 +839,85 @@
       "iqoo_stock": 3,
       "iqoo_sales_out": 2,
       "iqoo_dos": 9,
+      "iqoo_by_type": [
+        {
+          "model": "IQOO Z11",
+          "stock": 3,
+          "sales_out": 1,
+          "dos": 18.0
+        },
+        {
+          "model": "IQOO Z11x",
+          "stock": 0,
+          "sales_out": 1,
+          "dos": 0.0
+        }
+      ],
       "vivo_stock": 85,
       "vivo_sales_out": 65,
       "vivo_dos": 7.85,
+      "vivo_by_type": [
+        {
+          "model": "Y05",
+          "stock": 30,
+          "sales_out": 11,
+          "dos": 16.36
+        },
+        {
+          "model": "Y31d Pro",
+          "stock": 16,
+          "sales_out": 9,
+          "dos": 10.67
+        },
+        {
+          "model": "Y11d",
+          "stock": 12,
+          "sales_out": 16,
+          "dos": 4.5
+        },
+        {
+          "model": "Y500",
+          "stock": 8,
+          "sales_out": 1,
+          "dos": 48.0
+        },
+        {
+          "model": "Y31d",
+          "stock": 7,
+          "sales_out": 0,
+          "dos": null
+        },
+        {
+          "model": "Y05e",
+          "stock": 7,
+          "sales_out": 27,
+          "dos": 1.56
+        },
+        {
+          "model": "V70",
+          "stock": 3,
+          "sales_out": 0,
+          "dos": null
+        },
+        {
+          "model": "X300 Ultra",
+          "stock": 1,
+          "sales_out": 0,
+          "dos": null
+        },
+        {
+          "model": "V70 FE",
+          "stock": 1,
+          "sales_out": 0,
+          "dos": null
+        },
+        {
+          "model": "V60 Lite",
+          "stock": 0,
+          "sales_out": 1,
+          "dos": 0.0
+        }
+      ],
       "total_stock": 88,
       "total_sales_out": 67,
       "total_dos": 7.88
@@ -144,9 +928,79 @@
       "iqoo_stock": 3,
       "iqoo_sales_out": 1,
       "iqoo_dos": 18,
+      "iqoo_by_type": [
+        {
+          "model": "IQOO Z11",
+          "stock": 2,
+          "sales_out": 1,
+          "dos": 12.0
+        },
+        {
+          "model": "IQOO Z11x",
+          "stock": 1,
+          "sales_out": 0,
+          "dos": null
+        }
+      ],
       "vivo_stock": 30,
       "vivo_sales_out": 27,
       "vivo_dos": 6.67,
+      "vivo_by_type": [
+        {
+          "model": "Y05",
+          "stock": 9,
+          "sales_out": 6,
+          "dos": 9.0
+        },
+        {
+          "model": "Y31d Pro",
+          "stock": 8,
+          "sales_out": 6,
+          "dos": 8.0
+        },
+        {
+          "model": "Y31d",
+          "stock": 4,
+          "sales_out": 2,
+          "dos": 12.0
+        },
+        {
+          "model": "Y500",
+          "stock": 3,
+          "sales_out": 1,
+          "dos": 18.0
+        },
+        {
+          "model": "Y11d",
+          "stock": 2,
+          "sales_out": 6,
+          "dos": 2.0
+        },
+        {
+          "model": "V70 FE",
+          "stock": 2,
+          "sales_out": 0,
+          "dos": null
+        },
+        {
+          "model": "V60 Lite",
+          "stock": 1,
+          "sales_out": 2,
+          "dos": 3.0
+        },
+        {
+          "model": "Y05e",
+          "stock": 1,
+          "sales_out": 3,
+          "dos": 2.0
+        },
+        {
+          "model": "V60 Lite 5G",
+          "stock": 0,
+          "sales_out": 1,
+          "dos": 0.0
+        }
+      ],
       "total_stock": 33,
       "total_sales_out": 28,
       "total_dos": 7.07
@@ -157,9 +1011,85 @@
       "iqoo_stock": 4,
       "iqoo_sales_out": 2,
       "iqoo_dos": 12,
+      "iqoo_by_type": [
+        {
+          "model": "IQOO Z11x",
+          "stock": 2,
+          "sales_out": 1,
+          "dos": 12.0
+        },
+        {
+          "model": "IQOO Z11",
+          "stock": 2,
+          "sales_out": 1,
+          "dos": 12.0
+        }
+      ],
       "vivo_stock": 37,
       "vivo_sales_out": 32,
       "vivo_dos": 6.94,
+      "vivo_by_type": [
+        {
+          "model": "Y31d Pro",
+          "stock": 8,
+          "sales_out": 7,
+          "dos": 6.86
+        },
+        {
+          "model": "Y11d",
+          "stock": 6,
+          "sales_out": 8,
+          "dos": 4.5
+        },
+        {
+          "model": "Y05",
+          "stock": 5,
+          "sales_out": 5,
+          "dos": 6.0
+        },
+        {
+          "model": "Y500",
+          "stock": 5,
+          "sales_out": 3,
+          "dos": 10.0
+        },
+        {
+          "model": "Y31d",
+          "stock": 3,
+          "sales_out": 0,
+          "dos": null
+        },
+        {
+          "model": "V70 FE",
+          "stock": 3,
+          "sales_out": 3,
+          "dos": 6.0
+        },
+        {
+          "model": "Y05e",
+          "stock": 3,
+          "sales_out": 2,
+          "dos": 9.0
+        },
+        {
+          "model": "V60 Lite",
+          "stock": 2,
+          "sales_out": 0,
+          "dos": null
+        },
+        {
+          "model": "V70",
+          "stock": 1,
+          "sales_out": 2,
+          "dos": 3.0
+        },
+        {
+          "model": "V60 Lite 5G",
+          "stock": 1,
+          "sales_out": 2,
+          "dos": 3.0
+        }
+      ],
       "total_stock": 41,
       "total_sales_out": 34,
       "total_dos": 7.24
@@ -170,9 +1100,91 @@
       "iqoo_stock": 11,
       "iqoo_sales_out": 0,
       "iqoo_dos": null,
+      "iqoo_by_type": [
+        {
+          "model": "IQOO Z11",
+          "stock": 7,
+          "sales_out": 0,
+          "dos": null
+        },
+        {
+          "model": "IQOO Z11x",
+          "stock": 3,
+          "sales_out": 0,
+          "dos": null
+        },
+        {
+          "model": "IQOO 15 R",
+          "stock": 1,
+          "sales_out": 0,
+          "dos": null
+        }
+      ],
       "vivo_stock": 37,
       "vivo_sales_out": 24,
       "vivo_dos": 9.25,
+      "vivo_by_type": [
+        {
+          "model": "Y11d",
+          "stock": 7,
+          "sales_out": 5,
+          "dos": 8.4
+        },
+        {
+          "model": "Y31d Pro",
+          "stock": 7,
+          "sales_out": 1,
+          "dos": 42.0
+        },
+        {
+          "model": "Y05",
+          "stock": 6,
+          "sales_out": 3,
+          "dos": 12.0
+        },
+        {
+          "model": "Y05e",
+          "stock": 4,
+          "sales_out": 8,
+          "dos": 3.0
+        },
+        {
+          "model": "X300 Ultra",
+          "stock": 3,
+          "sales_out": 0,
+          "dos": null
+        },
+        {
+          "model": "Y31d",
+          "stock": 3,
+          "sales_out": 0,
+          "dos": null
+        },
+        {
+          "model": "V60 Lite",
+          "stock": 3,
+          "sales_out": 2,
+          "dos": 9.0
+        },
+        {
+          "model": "Y500",
+          "stock": 3,
+          "sales_out": 1,
+          "dos": 18.0
+        },
+        {
+          "model": "V70 FE",
+          "stock": 1,
+          "sales_out": 2,
+          "dos": 3.0
+        },
+        {
+          "model": "V70",
+          "stock": 0,
+          "sales_out": 2,
+          "dos": 0.0
+        }
+      ],
       "total_stock": 48,
       "total_sales_out": 24,
       "total_dos": 12.0
@@ -183,9 +1195,97 @@
       "iqoo_stock": 9,
       "iqoo_sales_out": 3,
       "iqoo_dos": 18,
+      "iqoo_by_type": [
+        {
+          "model": "IQOO Z11",
+          "stock": 5,
+          "sales_out": 1,
+          "dos": 30.0
+        },
+        {
+          "model": "IQOO Z11x",
+          "stock": 3,
+          "sales_out": 1,
+          "dos": 18.0
+        },
+        {
+          "model": "IQOO 15 R",
+          "stock": 1,
+          "sales_out": 1,
+          "dos": 6.0
+        }
+      ],
       "vivo_stock": 51,
       "vivo_sales_out": 18,
       "vivo_dos": 17,
+      "vivo_by_type": [
+        {
+          "model": "Y05",
+          "stock": 9,
+          "sales_out": 4,
+          "dos": 13.5
+        },
+        {
+          "model": "Y31d Pro",
+          "stock": 8,
+          "sales_out": 4,
+          "dos": 12.0
+        },
+        {
+          "model": "Y11d",
+          "stock": 7,
+          "sales_out": 7,
+          "dos": 6.0
+        },
+        {
+          "model": "Y500",
+          "stock": 7,
+          "sales_out": 1,
+          "dos": 42.0
+        },
+        {
+          "model": "Y05e",
+          "stock": 5,
+          "sales_out": 1,
+          "dos": 30.0
+        },
+        {
+          "model": "Y31d",
+          "stock": 4,
+          "sales_out": 0,
+          "dos": null
+        },
+        {
+          "model": "V70",
+          "stock": 4,
+          "sales_out": 0,
+          "dos": null
+        },
+        {
+          "model": "V70 FE",
+          "stock": 4,
+          "sales_out": 0,
+          "dos": null
+        },
+        {
+          "model": "V60 Lite",
+          "stock": 2,
+          "sales_out": 0,
+          "dos": null
+        },
+        {
+          "model": "X300 Ultra",
+          "stock": 1,
+          "sales_out": 0,
+          "dos": null
+        },
+        {
+          "model": "V60 Lite 5G",
+          "stock": 0,
+          "sales_out": 1,
+          "dos": 0.0
+        }
+      ],
       "total_stock": 60,
       "total_sales_out": 21,
       "total_dos": 17.14
@@ -196,9 +1296,85 @@
       "iqoo_stock": 2,
       "iqoo_sales_out": 3,
       "iqoo_dos": 4,
+      "iqoo_by_type": [
+        {
+          "model": "IQOO Z11",
+          "stock": 2,
+          "sales_out": 2,
+          "dos": 6.0
+        },
+        {
+          "model": "IQOO Z11x",
+          "stock": 0,
+          "sales_out": 1,
+          "dos": 0.0
+        }
+      ],
       "vivo_stock": 86,
       "vivo_sales_out": 63,
       "vivo_dos": 8.19,
+      "vivo_by_type": [
+        {
+          "model": "Y05",
+          "stock": 26,
+          "sales_out": 14,
+          "dos": 11.14
+        },
+        {
+          "model": "Y31d Pro",
+          "stock": 16,
+          "sales_out": 13,
+          "dos": 7.38
+        },
+        {
+          "model": "Y11d",
+          "stock": 15,
+          "sales_out": 9,
+          "dos": 10.0
+        },
+        {
+          "model": "Y500",
+          "stock": 9,
+          "sales_out": 3,
+          "dos": 18.0
+        },
+        {
+          "model": "Y05e",
+          "stock": 8,
+          "sales_out": 18,
+          "dos": 2.67
+        },
+        {
+          "model": "Y31d",
+          "stock": 7,
+          "sales_out": 2,
+          "dos": 21.0
+        },
+        {
+          "model": "V60 Lite",
+          "stock": 2,
+          "sales_out": 0,
+          "dos": null
+        },
+        {
+          "model": "X300 Ultra",
+          "stock": 1,
+          "sales_out": 1,
+          "dos": 6.0
+        },
+        {
+          "model": "V70",
+          "stock": 1,
+          "sales_out": 1,
+          "dos": 6.0
+        },
+        {
+          "model": "V70 FE",
+          "stock": 1,
+          "sales_out": 2,
+          "dos": 3.0
+        }
+      ],
       "total_stock": 88,
       "total_sales_out": 66,
       "total_dos": 8.0
@@ -209,9 +1385,97 @@
       "iqoo_stock": 10,
       "iqoo_sales_out": 2,
       "iqoo_dos": 30,
+      "iqoo_by_type": [
+        {
+          "model": "IQOO Z11",
+          "stock": 8,
+          "sales_out": 1,
+          "dos": 48.0
+        },
+        {
+          "model": "IQOO 15 R",
+          "stock": 2,
+          "sales_out": 0,
+          "dos": null
+        },
+        {
+          "model": "IQOO Z11x",
+          "stock": 0,
+          "sales_out": 1,
+          "dos": 0.0
+        }
+      ],
       "vivo_stock": 57,
       "vivo_sales_out": 14,
       "vivo_dos": 24.43,
+      "vivo_by_type": [
+        {
+          "model": "Y31d Pro",
+          "stock": 10,
+          "sales_out": 3,
+          "dos": 20.0
+        },
+        {
+          "model": "Y11d",
+          "stock": 9,
+          "sales_out": 2,
+          "dos": 27.0
+        },
+        {
+          "model": "Y05",
+          "stock": 9,
+          "sales_out": 3,
+          "dos": 18.0
+        },
+        {
+          "model": "X300 Ultra",
+          "stock": 6,
+          "sales_out": 0,
+          "dos": null
+        },
+        {
+          "model": "V70 FE",
+          "stock": 6,
+          "sales_out": 1,
+          "dos": 36.0
+        },
+        {
+          "model": "Y500",
+          "stock": 4,
+          "sales_out": 0,
+          "dos": null
+        },
+        {
+          "model": "Y31d",
+          "stock": 3,
+          "sales_out": 0,
+          "dos": null
+        },
+        {
+          "model": "V70",
+          "stock": 3,
+          "sales_out": 0,
+          "dos": null
+        },
+        {
+          "model": "V60 Lite",
+          "stock": 3,
+          "sales_out": 2,
+          "dos": 9.0
+        },
+        {
+          "model": "Y05e",
+          "stock": 3,
+          "sales_out": 3,
+          "dos": 6.0
+        },
+        {
+          "model": "V60 Lite 5G",
+          "stock": 1,
+          "sales_out": 0,
+          "dos": null
+        }
+      ],
       "total_stock": 67,
       "total_sales_out": 16,
       "total_dos": 25.12
@@ -222,9 +1486,85 @@
       "iqoo_stock": 10,
       "iqoo_sales_out": 1,
       "iqoo_dos": 60,
+      "iqoo_by_type": [
+        {
+          "model": "IQOO Z11",
+          "stock": 5,
+          "sales_out": 1,
+          "dos": 30.0
+        },
+        {
+          "model": "IQOO Z11x",
+          "stock": 3,
+          "sales_out": 0,
+          "dos": null
+        },
+        {
+          "model": "IQOO 15 R",
+          "stock": 2,
+          "sales_out": 0,
+          "dos": null
+        }
+      ],
       "vivo_stock": 56,
       "vivo_sales_out": 9,
       "vivo_dos": 37.33,
+      "vivo_by_type": [
+        {
+          "model": "Y31d Pro",
+          "stock": 12,
+          "sales_out": 1,
+          "dos": 72.0
+        },
+        {
+          "model": "Y05",
+          "stock": 11,
+          "sales_out": 0,
+          "dos": null
+        },
+        {
+          "model": "Y11d",
+          "stock": 8,
+          "sales_out": 4,
+          "dos": 12.0
+        },
+        {
+          "model": "Y500",
+          "stock": 6,
+          "sales_out": 0,
+          "dos": null
+        },
+        {
+          "model": "Y31d",
+          "stock": 5,
+          "sales_out": 0,
+          "dos": null
+        },
+        {
+          "model": "V70 FE",
+          "stock": 5,
+          "sales_out": 1,
+          "dos": 30.0
+        },
+        {
+          "model": "Y05e",
+          "stock": 4,
+          "sales_out": 1,
+          "dos": 24.0
+        },
+        {
+          "model": "V70",
+          "stock": 3,
+          "sales_out": 1,
+          "dos": 18.0
+        },
+        {
+          "model": "V60 Lite",
+          "stock": 2,
+          "sales_out": 1,
+          "dos": 12.0
+        }
+      ],
       "total_stock": 66,
       "total_sales_out": 10,
       "total_dos": 39.6
@@ -235,9 +1575,97 @@
       "iqoo_stock": 11,
       "iqoo_sales_out": 4,
       "iqoo_dos": 16.5,
+      "iqoo_by_type": [
+        {
+          "model": "IQOO Z11",
+          "stock": 7,
+          "sales_out": 3,
+          "dos": 14.0
+        },
+        {
+          "model": "IQOO 15 R",
+          "stock": 3,
+          "sales_out": 0,
+          "dos": null
+        },
+        {
+          "model": "IQOO Z11x",
+          "stock": 1,
+          "sales_out": 1,
+          "dos": 6.0
+        }
+      ],
       "vivo_stock": 48,
       "vivo_sales_out": 7,
       "vivo_dos": 41.14,
+      "vivo_by_type": [
+        {
+          "model": "Y31d Pro",
+          "stock": 10,
+          "sales_out": 0,
+          "dos": null
+        },
+        {
+          "model": "Y11d",
+          "stock": 9,
+          "sales_out": 1,
+          "dos": 54.0
+        },
+        {
+          "model": "Y05",
+          "stock": 6,
+          "sales_out": 0,
+          "dos": null
+        },
+        {
+          "model": "Y500",
+          "stock": 5,
+          "sales_out": 0,
+          "dos": null
+        },
+        {
+          "model": "X300 Ultra",
+          "stock": 4,
+          "sales_out": 1,
+          "dos": 24.0
+        },
+        {
+          "model": "V70 FE",
+          "stock": 4,
+          "sales_out": 2,
+          "dos": 12.0
+        },
+        {
+          "model": "Y31d",
+          "stock": 3,
+          "sales_out": 0,
+          "dos": null
+        },
+        {
+          "model": "V70",
+          "stock": 3,
+          "sales_out": 2,
+          "dos": 9.0
+        },
+        {
+          "model": "V60 Lite",
+          "stock": 2,
+          "sales_out": 1,
+          "dos": 12.0
+        },
+        {
+          "model": "V60 Lite 5G",
+          "stock": 1,
+          "sales_out": 0,
+          "dos": null
+        },
+        {
+          "model": "Y05e",
+          "stock": 1,
+          "sales_out": 0,
+          "dos": null
+        }
+      ],
       "total_stock": 59,
       "total_sales_out": 11,
       "total_dos": 32.18
@@ -248,9 +1676,91 @@
       "iqoo_stock": 9,
       "iqoo_sales_out": 2,
       "iqoo_dos": 27,
+      "iqoo_by_type": [
+        {
+          "model": "IQOO Z11x",
+          "stock": 4,
+          "sales_out": 0,
+          "dos": null
+        },
+        {
+          "model": "IQOO Z11",
+          "stock": 3,
+          "sales_out": 2,
+          "dos": 9.0
+        },
+        {
+          "model": "IQOO 15 R",
+          "stock": 2,
+          "sales_out": 0,
+          "dos": null
+        }
+      ],
       "vivo_stock": 37,
       "vivo_sales_out": 6,
       "vivo_dos": 37,
+      "vivo_by_type": [
+        {
+          "model": "Y11d",
+          "stock": 9,
+          "sales_out": 0,
+          "dos": null
+        },
+        {
+          "model": "Y05",
+          "stock": 6,
+          "sales_out": 2,
+          "dos": 18.0
+        },
+        {
+          "model": "Y500",
+          "stock": 6,
+          "sales_out": 0,
+          "dos": null
+        },
+        {
+          "model": "V70",
+          "stock": 3,
+          "sales_out": 1,
+          "dos": 18.0
+        },
+        {
+          "model": "V70 FE",
+          "stock": 3,
+          "sales_out": 1,
+          "dos": 18.0
+        },
+        {
+          "model": "V60 Lite",
+          "stock": 3,
+          "sales_out": 0,
+          "dos": null
+        },
+        {
+          "model": "Y05e",
+          "stock": 3,
+          "sales_out": 0,
+          "dos": null
+        },
+        {
+          "model": "Y31d",
+          "stock": 2,
+          "sales_out": 0,
+          "dos": null
+        },
+        {
+          "model": "X300 Ultra",
+          "stock": 1,
+          "sales_out": 0,
+          "dos": null
+        },
+        {
+          "model": "Y31d Pro",
+          "stock": 1,
+          "sales_out": 2,
+          "dos": 3.0
+        }
+      ],
       "total_stock": 46,
       "total_sales_out": 8,
       "total_dos": 34.5
@@ -261,9 +1771,97 @@
       "iqoo_stock": 4,
       "iqoo_sales_out": 2,
       "iqoo_dos": 12,
+      "iqoo_by_type": [
+        {
+          "model": "IQOO Z11",
+          "stock": 3,
+          "sales_out": 0,
+          "dos": null
+        },
+        {
+          "model": "IQOO 15 R",
+          "stock": 1,
+          "sales_out": 0,
+          "dos": null
+        },
+        {
+          "model": "IQOO Z11x",
+          "stock": 0,
+          "sales_out": 2,
+          "dos": 0.0
+        }
+      ],
       "vivo_stock": 39,
       "vivo_sales_out": 7,
       "vivo_dos": 33.43,
+      "vivo_by_type": [
+        {
+          "model": "Y31d Pro",
+          "stock": 9,
+          "sales_out": 0,
+          "dos": null
+        },
+        {
+          "model": "Y05",
+          "stock": 7,
+          "sales_out": 1,
+          "dos": 42.0
+        },
+        {
+          "model": "Y11d",
+          "stock": 5,
+          "sales_out": 2,
+          "dos": 15.0
+        },
+        {
+          "model": "Y500",
+          "stock": 4,
+          "sales_out": 1,
+          "dos": 24.0
+        },
+        {
+          "model": "Y31d",
+          "stock": 3,
+          "sales_out": 0,
+          "dos": null
+        },
+        {
+          "model": "V70",
+          "stock": 3,
+          "sales_out": 0,
+          "dos": null
+        },
+        {
+          "model": "V60 Lite 5G",
+          "stock": 2,
+          "sales_out": 0,
+          "dos": null
+        },
+        {
+          "model": "V60 Lite",
+          "stock": 2,
+          "sales_out": 0,
+          "dos": null
+        },
+        {
+          "model": "Y05e",
+          "stock": 2,
+          "sales_out": 1,
+          "dos": 12.0
+        },
+        {
+          "model": "X300 Ultra",
+          "stock": 1,
+          "sales_out": 1,
+          "dos": 6.0
+        },
+        {
+          "model": "V70 FE",
+          "stock": 1,
+          "sales_out": 1,
+          "dos": 6.0
+        }
+      ],
       "total_stock": 43,
       "total_sales_out": 9,
       "total_dos": 28.67
@@ -274,9 +1872,66 @@
       "iqoo_stock": 0,
       "iqoo_sales_out": 0,
       "iqoo_dos": null,
+      "iqoo_by_type": [],
       "vivo_stock": 24,
       "vivo_sales_out": 2,
       "vivo_dos": 72,
+      "vivo_by_type": [
+        {
+          "model": "Y05",
+          "stock": 5,
+          "sales_out": 0,
+          "dos": null
+        },
+        {
+          "model": "Y11d",
+          "stock": 4,
+          "sales_out": 1,
+          "dos": 24.0
+        },
+        {
+          "model": "Y31d Pro",
+          "stock": 4,
+          "sales_out": 1,
+          "dos": 24.0
+        },
+        {
+          "model": "Y05e",
+          "stock": 3,
+          "sales_out": 0,
+          "dos": null
+        },
+        {
+          "model": "Y31d",
+          "stock": 2,
+          "sales_out": 0,
+          "dos": null
+        },
+        {
+          "model": "V70 FE",
+          "stock": 2,
+          "sales_out": 0,
+          "dos": null
+        },
+        {
+          "model": "Y500",
+          "stock": 2,
+          "sales_out": 0,
+          "dos": null
+        },
+        {
+          "model": "V70",
+          "stock": 1,
+          "sales_out": 0,
+          "dos": null
+        },
+        {
+          "model": "V60 Lite",
+          "stock": 1,
+          "sales_out": 0,
+          "dos": null
+        }
+      ],
       "total_stock": 24,
       "total_sales_out": 2,
       "total_dos": 72.0
@@ -287,9 +1942,91 @@
       "iqoo_stock": 4,
       "iqoo_sales_out": 0,
       "iqoo_dos": null,
+      "iqoo_by_type": [
+        {
+          "model": "IQOO Z11",
+          "stock": 3,
+          "sales_out": 0,
+          "dos": null
+        },
+        {
+          "model": "IQOO 15 R",
+          "stock": 1,
+          "sales_out": 0,
+          "dos": null
+        }
+      ],
       "vivo_stock": 38,
       "vivo_sales_out": 9,
       "vivo_dos": 25.33,
+      "vivo_by_type": [
+        {
+          "model": "Y05",
+          "stock": 8,
+          "sales_out": 0,
+          "dos": null
+        },
+        {
+          "model": "Y11d",
+          "stock": 6,
+          "sales_out": 4,
+          "dos": 9.0
+        },
+        {
+          "model": "Y31d Pro",
+          "stock": 4,
+          "sales_out": 3,
+          "dos": 8.0
+        },
+        {
+          "model": "V70",
+          "stock": 4,
+          "sales_out": 0,
+          "dos": null
+        },
+        {
+          "model": "V70 FE",
+          "stock": 3,
+          "sales_out": 0,
+          "dos": null
+        },
+        {
+          "model": "V60 Lite 5G",
+          "stock": 3,
+          "sales_out": 0,
+          "dos": null
+        },
+        {
+          "model": "Y500",
+          "stock": 3,
+          "sales_out": 0,
+          "dos": null
+        },
+        {
+          "model": "Y05e",
+          "stock": 3,
+          "sales_out": 1,
+          "dos": 18.0
+        },
+        {
+          "model": "X300 Ultra",
+          "stock": 2,
+          "sales_out": 0,
+          "dos": null
+        },
+        {
+          "model": "Y31d",
+          "stock": 2,
+          "sales_out": 0,
+          "dos": null
+        },
+        {
+          "model": "V60 Lite",
+          "stock": 0,
+          "sales_out": 1,
+          "dos": 0.0
+        }
+      ],
       "total_stock": 42,
       "total_sales_out": 9,
       "total_dos": 28.0
@@ -300,9 +2037,85 @@
       "iqoo_stock": 5,
       "iqoo_sales_out": 1,
       "iqoo_dos": 30,
+      "iqoo_by_type": [
+        {
+          "model": "IQOO Z11",
+          "stock": 3,
+          "sales_out": 1,
+          "dos": 18.0
+        },
+        {
+          "model": "IQOO Z11x",
+          "stock": 1,
+          "sales_out": 0,
+          "dos": null
+        },
+        {
+          "model": "IQOO 15 R",
+          "stock": 1,
+          "sales_out": 0,
+          "dos": null
+        }
+      ],
       "vivo_stock": 28,
       "vivo_sales_out": 7,
       "vivo_dos": 24,
+      "vivo_by_type": [
+        {
+          "model": "Y11d",
+          "stock": 6,
+          "sales_out": 0,
+          "dos": null
+        },
+        {
+          "model": "Y31d Pro",
+          "stock": 6,
+          "sales_out": 0,
+          "dos": null
+        },
+        {
+          "model": "Y500",
+          "stock": 4,
+          "sales_out": 2,
+          "dos": 12.0
+        },
+        {
+          "model": "V70",
+          "stock": 3,
+          "sales_out": 1,
+          "dos": 18.0
+        },
+        {
+          "model": "Y05",
+          "stock": 3,
+          "sales_out": 2,
+          "dos": 9.0
+        },
+        {
+          "model": "X300 Ultra",
+          "stock": 2,
+          "sales_out": 0,
+          "dos": null
+        },
+        {
+          "model": "Y31d",
+          "stock": 2,
+          "sales_out": 0,
+          "dos": null
+        },
+        {
+          "model": "Y05e",
+          "stock": 2,
+          "sales_out": 1,
+          "dos": 12.0
+        },
+        {
+          "model": "V70 FE",
+          "stock": 0,
+          "sales_out": 1,
+          "dos": 0.0
+        }
+      ],
       "total_stock": 33,
       "total_sales_out": 8,
       "total_dos": 24.75
@@ -313,9 +2126,79 @@
       "iqoo_stock": 9,
       "iqoo_sales_out": 2,
       "iqoo_dos": 27,
+      "iqoo_by_type": [
+        {
+          "model": "IQOO Z11",
+          "stock": 7,
+          "sales_out": 1,
+          "dos": 42.0
+        },
+        {
+          "model": "IQOO Z11x",
+          "stock": 2,
+          "sales_out": 1,
+          "dos": 12.0
+        }
+      ],
       "vivo_stock": 81,
       "vivo_sales_out": 58,
       "vivo_dos": 8.38,
+      "vivo_by_type": [
+        {
+          "model": "Y31d Pro",
+          "stock": 17,
+          "sales_out": 9,
+          "dos": 11.33
+        },
+        {
+          "model": "Y11d",
+          "stock": 15,
+          "sales_out": 17,
+          "dos": 5.29
+        },
+        {
+          "model": "Y05",
+          "stock": 15,
+          "sales_out": 10,
+          "dos": 9.0
+        },
+        {
+          "model": "V70 FE",
+          "stock": 8,
+          "sales_out": 4,
+          "dos": 12.0
+        },
+        {
+          "model": "Y05e",
+          "stock": 7,
+          "sales_out": 14,
+          "dos": 3.0
+        },
+        {
+          "model": "Y31d",
+          "stock": 6,
+          "sales_out": 0,
+          "dos": null
+        },
+        {
+          "model": "V60 Lite",
+          "stock": 5,
+          "sales_out": 1,
+          "dos": 30.0
+        },
+        {
+          "model": "V70",
+          "stock": 4,
+          "sales_out": 2,
+          "dos": 12.0
+        },
+        {
+          "model": "Y500",
+          "stock": 4,
+          "sales_out": 1,
+          "dos": 24.0
+        }
+      ],
       "total_stock": 90,
       "total_sales_out": 60,
       "total_dos": 9.0
@@ -326,9 +2209,85 @@
       "iqoo_stock": 15,
       "iqoo_sales_out": 2,
       "iqoo_dos": 45,
+      "iqoo_by_type": [
+        {
+          "model": "IQOO Z11",
+          "stock": 10,
+          "sales_out": 1,
+          "dos": 60.0
+        },
+        {
+          "model": "IQOO Z11x",
+          "stock": 3,
+          "sales_out": 0,
+          "dos": null
+        },
+        {
+          "model": "IQOO 15 R",
+          "stock": 2,
+          "sales_out": 1,
+          "dos": 12.0
+        }
+      ],
       "vivo_stock": 64,
       "vivo_sales_out": 49,
       "vivo_dos": 7.84,
+      "vivo_by_type": [
+        {
+          "model": "Y05",
+          "stock": 20,
+          "sales_out": 6,
+          "dos": 20.0
+        },
+        {
+          "model": "Y31d Pro",
+          "stock": 14,
+          "sales_out": 14,
+          "dos": 6.0
+        },
+        {
+          "model": "Y500",
+          "stock": 8,
+          "sales_out": 1,
+          "dos": 48.0
+        },
+        {
+          "model": "Y11d",
+          "stock": 6,
+          "sales_out": 16,
+          "dos": 2.25
+        },
+        {
+          "model": "V70",
+          "stock": 5,
+          "sales_out": 1,
+          "dos": 30.0
+        },
+        {
+          "model": "V60 Lite",
+          "stock": 4,
+          "sales_out": 2,
+          "dos": 12.0
+        },
+        {
+          "model": "Y05e",
+          "stock": 4,
+          "sales_out": 5,
+          "dos": 4.8
+        },
+        {
+          "model": "V70 FE",
+          "stock": 2,
+          "sales_out": 3,
+          "dos": 4.0
+        },
+        {
+          "model": "X300 Ultra",
+          "stock": 1,
+          "sales_out": 1,
+          "dos": 6.0
+        }
+      ],
       "total_stock": 79,
       "total_sales_out": 51,
       "total_dos": 9.29
@@ -339,9 +2298,85 @@
       "iqoo_stock": 7,
       "iqoo_sales_out": 2,
       "iqoo_dos": 21,
+      "iqoo_by_type": [
+        {
+          "model": "IQOO Z11",
+          "stock": 4,
+          "sales_out": 1,
+          "dos": 24.0
+        },
+        {
+          "model": "IQOO Z11x",
+          "stock": 3,
+          "sales_out": 1,
+          "dos": 18.0
+        }
+      ],
       "vivo_stock": 104,
       "vivo_sales_out": 152,
       "vivo_dos": 4.11,
+      "vivo_by_type": [
+        {
+          "model": "Y05e",
+          "stock": 28,
+          "sales_out": 73,
+          "dos": 2.3
+        },
+        {
+          "model": "Y05",
+          "stock": 24,
+          "sales_out": 23,
+          "dos": 6.26
+        },
+        {
+          "model": "Y31d Pro",
+          "stock": 16,
+          "sales_out": 10,
+          "dos": 9.6
+        },
+        {
+          "model": "Y11d",
+          "stock": 15,
+          "sales_out": 27,
+          "dos": 3.33
+        },
+        {
+          "model": "Y31d",
+          "stock": 8,
+          "sales_out": 9,
+          "dos": 5.33
+        },
+        {
+          "model": "Y500",
+          "stock": 6,
+          "sales_out": 4,
+          "dos": 9.0
+        },
+        {
+          "model": "V70 FE",
+          "stock": 3,
+          "sales_out": 1,
+          "dos": 18.0
+        },
+        {
+          "model": "X300 Ultra",
+          "stock": 2,
+          "sales_out": 0,
+          "dos": null
+        },
+        {
+          "model": "V60 Lite",
+          "stock": 2,
+          "sales_out": 3,
+          "dos": 4.0
+        },
+        {
+          "model": "V70",
+          "stock": 0,
+          "sales_out": 2,
+          "dos": 0.0
+        }
+      ],
       "total_stock": 111,
       "total_sales_out": 154,
       "total_dos": 4.32
@@ -352,9 +2387,85 @@
       "iqoo_stock": 5,
       "iqoo_sales_out": 1,
       "iqoo_dos": 30,
+      "iqoo_by_type": [
+        {
+          "model": "IQOO Z11",
+          "stock": 5,
+          "sales_out": 0,
+          "dos": null
+        },
+        {
+          "model": "IQOO 15 R",
+          "stock": 0,
+          "sales_out": 1,
+          "dos": 0.0
+        }
+      ],
       "vivo_stock": 40,
       "vivo_sales_out": 5,
       "vivo_dos": 48,
+      "vivo_by_type": [
+        {
+          "model": "Y31d Pro",
+          "stock": 7,
+          "sales_out": 1,
+          "dos": 42.0
+        },
+        {
+          "model": "Y11d",
+          "stock": 6,
+          "sales_out": 2,
+          "dos": 18.0
+        },
+        {
+          "model": "Y05",
+          "stock": 6,
+          "sales_out": 0,
+          "dos": null
+        },
+        {
+          "model": "X300 Ultra",
+          "stock": 4,
+          "sales_out": 0,
+          "dos": null
+        },
+        {
+          "model": "V70",
+          "stock": 4,
+          "sales_out": 0,
+          "dos": null
+        },
+        {
+          "model": "Y500",
+          "stock": 4,
+          "sales_out": 0,
+          "dos": null
+        },
+        {
+          "model": "Y31d",
+          "stock": 3,
+          "sales_out": 0,
+          "dos": null
+        },
+        {
+          "model": "V70 FE",
+          "stock": 3,
+          "sales_out": 0,
+          "dos": null
+        },
+        {
+          "model": "Y05e",
+          "stock": 2,
+          "sales_out": 1,
+          "dos": 12.0
+        },
+        {
+          "model": "V60 Lite",
+          "stock": 1,
+          "sales_out": 1,
+          "dos": 6.0
+        }
+      ],
       "total_stock": 45,
       "total_sales_out": 6,
       "total_dos": 45.0
@@ -365,9 +2476,91 @@
       "iqoo_stock": 12,
       "iqoo_sales_out": 0,
       "iqoo_dos": null,
+      "iqoo_by_type": [
+        {
+          "model": "IQOO Z11",
+          "stock": 6,
+          "sales_out": 0,
+          "dos": null
+        },
+        {
+          "model": "IQOO Z11x",
+          "stock": 3,
+          "sales_out": 0,
+          "dos": null
+        },
+        {
+          "model": "IQOO 15 R",
+          "stock": 3,
+          "sales_out": 0,
+          "dos": null
+        }
+      ],
       "vivo_stock": 51,
       "vivo_sales_out": 19,
       "vivo_dos": 16.11,
+      "vivo_by_type": [
+        {
+          "model": "Y11d",
+          "stock": 10,
+          "sales_out": 5,
+          "dos": 12.0
+        },
+        {
+          "model": "Y05",
+          "stock": 10,
+          "sales_out": 4,
+          "dos": 15.0
+        },
+        {
+          "model": "Y31d Pro",
+          "stock": 9,
+          "sales_out": 3,
+          "dos": 18.0
+        },
+        {
+          "model": "Y31d",
+          "stock": 4,
+          "sales_out": 0,
+          "dos": null
+        },
+        {
+          "model": "V70 FE",
+          "stock": 4,
+          "sales_out": 2,
+          "dos": 12.0
+        },
+        {
+          "model": "Y500",
+          "stock": 4,
+          "sales_out": 0,
+          "dos": null
+        },
+        {
+          "model": "X300 Ultra",
+          "stock": 3,
+          "sales_out": 1,
+          "dos": 18.0
+        },
+        {
+          "model": "Y05e",
+          "stock": 3,
+          "sales_out": 2,
+          "dos": 9.0
+        },
+        {
+          "model": "V70",
+          "stock": 2,
+          "sales_out": 2,
+          "dos": 6.0
+        },
+        {
+          "model": "V60 Lite",
+          "stock": 2,
+          "sales_out": 0,
+          "dos": null
+        }
+      ],
       "total_stock": 63,
       "total_sales_out": 19,
       "total_dos": 19.89

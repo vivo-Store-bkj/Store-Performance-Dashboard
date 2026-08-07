@@ -11,10 +11,14 @@ Output: data/stock-<YYYY-MM>.json     (one snapshot per month, auto-generated)
 Don't edit anything inside data/ by hand — it gets regenerated every run.
 
 Source file has two sheets, "STOCK IQOO" and "STOCK VIVO", each with a
-multi-row header (product model -> variant -> color -> metric) that is not
-used here — only the per-store TOTAL STOCK / TOTAL SALES OUT / TOTAL DOS
-columns are extracted (column position is detected dynamically by header
-text so it survives minor column reshuffles).
+multi-row header (product model -> variant -> color -> metric). For each
+store we extract:
+  - the per-store TOTAL STOCK / TOTAL SALES OUT / TOTAL DOS columns (column
+    position detected dynamically by header text, survives minor column
+    reshuffles), and
+  - a per-product-model breakdown ("by_type"): all variant/color columns
+    under the same merged model header (e.g. "IQOO Z11", "VIVO Y31d") are
+    summed together into one Stock/Sales Out/DOS figure per model.
 """
 import openpyxl
 import json
@@ -93,11 +97,44 @@ def find_header_row_and_cols(ws):
     while data_start <= ws.max_row and ws.cell(data_start, 1).value is None:
         data_start += 1
 
-    return header_row, data_start, col_stock, col_sales, col_dos
+    # metric row (STOCK / SALES OUT / DOS / SARAN labels) is the row between
+    # header_row and data_start that contains the text "STOCK"
+    metric_row = None
+    for r in range(header_row + 1, data_start):
+        for c in range(1, ws.max_column + 1):
+            v = ws.cell(r, c).value
+            if v and "stock" in str(v).lower():
+                metric_row = r
+                break
+        if metric_row:
+            break
+
+    return header_row, metric_row, data_start, col_stock, col_sales, col_dos
+
+
+def build_column_maps(ws, header_row, metric_row):
+    """Forward-fill the merged product-model header per column, and read the
+    metric label (STOCK/SALES OUT/DOS/SARAN) per column."""
+    col_model = {}
+    current_model = None
+    for c in range(2, ws.max_column + 1):
+        v = ws.cell(header_row, c).value
+        if v:
+            vs = str(v).lower()
+            current_model = None if "total" in vs else str(v).replace("\n", " ").strip()
+        col_model[c] = current_model
+
+    col_metric = {}
+    for c in range(2, ws.max_column + 1):
+        v = ws.cell(metric_row, c).value if metric_row else None
+        col_metric[c] = str(v).strip().upper() if v else None
+
+    return col_model, col_metric
 
 
 def parse_sheet(ws):
-    header_row, data_start, col_stock, col_sales, col_dos = find_header_row_and_cols(ws)
+    header_row, metric_row, data_start, col_stock, col_sales, col_dos = find_header_row_and_cols(ws)
+    col_model, col_metric = build_column_maps(ws, header_row, metric_row)
 
     total_hari = ws.cell(1, 2).value or 30
     hari_berjalan = ws.cell(2, 2).value or 0
@@ -108,6 +145,36 @@ def parse_sheet(ws):
         raw_name = ws.cell(r, 1).value
         if not raw_name or "grand total" in str(raw_name).lower():
             continue
+
+        # per-model breakdown
+        by_model_acc = {}
+        for c in range(2, ws.max_column + 1):
+            model = col_model.get(c)
+            metric = col_metric.get(c)
+            if not model or not metric:
+                continue
+            if metric not in ("STOCK", "SALES OUT"):
+                continue  # ignore DOS / SARAN sub-columns, we recompute DOS ourselves
+            val = ws.cell(r, c).value or 0
+            acc = by_model_acc.setdefault(model, {"stock": 0, "sales_out": 0})
+            if metric == "STOCK":
+                acc["stock"] += val
+            else:
+                acc["sales_out"] += val
+
+        by_type = []
+        for model, acc in by_model_acc.items():
+            if not acc["stock"] and not acc["sales_out"]:
+                continue  # skip models with zero stock and zero sales at this store
+            dos = round(acc["stock"] / (acc["sales_out"] / hari_berjalan), 2) if acc["sales_out"] else None
+            by_type.append({
+                "model": model,
+                "stock": acc["stock"],
+                "sales_out": acc["sales_out"],
+                "dos": dos,
+            })
+        by_type.sort(key=lambda t: -t["stock"])
+
         stock = ws.cell(r, col_stock).value or 0
         sales_out = ws.cell(r, col_sales).value or 0
         dos = ws.cell(r, col_dos).value
@@ -115,12 +182,14 @@ def parse_sheet(ws):
         # sales_out is 0 (div-by-zero workaround) — treat as "not computable"
         if not sales_out:
             dos = None
+
         rows.append({
             "store_id": extract_store_id(raw_name),
             "store_name": clean_store_name(raw_name),
             "stock": stock,
             "sales_out": sales_out,
             "dos": round(dos, 2) if isinstance(dos, (int, float)) else dos,
+            "by_type": by_type,
         })
 
     return {
@@ -160,6 +229,7 @@ def main():
             store_map[key][f"{brand.lower()}_stock"] = row["stock"]
             store_map[key][f"{brand.lower()}_sales_out"] = row["sales_out"]
             store_map[key][f"{brand.lower()}_dos"] = row["dos"]
+            store_map[key][f"{brand.lower()}_by_type"] = row["by_type"]
 
     stores = []
     for key, s in store_map.items():
@@ -173,6 +243,8 @@ def main():
         s["total_stock"] = total_stock
         s["total_sales_out"] = total_sales
         s["total_dos"] = total_dos
+        s.setdefault("iqoo_by_type", [])
+        s.setdefault("vivo_by_type", [])
         stores.append(s)
 
     stores.sort(key=lambda s: s["store_name"])

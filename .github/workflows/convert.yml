@@ -35,6 +35,11 @@ jobs:
           UPDATED_BY: "Michael Fumar"
         run: python scripts/convert_stock_xlsx_to_json.py
 
+      - name: Convert Sales-per-Type sheet to data/sales-type-*.json
+        env:
+          UPDATED_BY: "Michael Fumar"
+        run: python scripts/convert_sales_type_xlsx_to_json.py
+
       - name: Commit updated data
         run: |
           git config user.name "github-actions[bot]"

@@ -367,28 +367,65 @@
 
     <div class="kpi-grid" id="stock-kpi-grid"></div>
 
-    <div class="section-head">
-      <h2>Semua Toko (<span id="stock-store-count">0</span>)</h2>
-      <span class="hint">Klik baris untuk lihat breakdown per tipe produk · DOS = Days of Stock</span>
-    </div>
-
     <div class="toolbar">
-      <div class="search-box"><input type="text" id="stock-search-input" placeholder="Cari nama toko…"></div>
+      <div class="seg" id="stock-view-seg">
+        <button data-view="toko" class="active">📍 Per Toko</button>
+        <button data-view="tipe">🏷️ Per Tipe</button>
+      </div>
       <div class="chip-row" id="stock-brand-chips"></div>
     </div>
 
-    <div class="table-card">
-      <table id="stock-table">
-        <thead>
-          <tr>
-            <th data-key="store_name">Toko</th>
-            <th data-key="stock" class="num">Stock</th>
-            <th data-key="sales_out" class="num">Sales Out</th>
-            <th data-key="dos" class="num sorted">DOS</th>
-          </tr>
-        </thead>
-        <tbody id="stock-table-body"></tbody>
-      </table>
+    <!-- ---- VIEW: PER TOKO (toko -> daftar tipe di toko itu) ---- -->
+    <div id="stock-view-toko">
+      <div class="section-head">
+        <h2>Semua Toko (<span id="stock-store-count">0</span>)</h2>
+        <span class="hint">Klik baris untuk lihat breakdown per tipe produk · DOS = Days of Stock</span>
+      </div>
+
+      <div class="toolbar">
+        <div class="search-box"><input type="text" id="stock-search-input" placeholder="Cari nama toko…"></div>
+      </div>
+
+      <div class="table-card">
+        <table id="stock-table">
+          <thead>
+            <tr>
+              <th data-key="store_name">Toko</th>
+              <th data-key="stock" class="num">Stock</th>
+              <th data-key="sales_out" class="num">Sales Out</th>
+              <th data-key="dos" class="num sorted">DOS</th>
+            </tr>
+          </thead>
+          <tbody id="stock-table-body"></tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- ---- VIEW: PER TIPE (tipe -> toko mana saja yang punya) ---- -->
+    <div id="stock-view-tipe" style="display:none;">
+      <div class="section-head">
+        <h2>Semua Tipe (<span id="stock-type-count">0</span>)</h2>
+        <span class="hint">Klik baris tipe untuk lihat toko mana saja yang punya stock tipe ini</span>
+      </div>
+
+      <div class="toolbar">
+        <div class="search-box"><input type="text" id="stock-type-search-input" placeholder="Cari nama tipe/model…"></div>
+      </div>
+
+      <div class="table-card">
+        <table id="stock-type-table">
+          <thead>
+            <tr>
+              <th data-key="model">Tipe / Model</th>
+              <th data-key="stock" class="num sorted">Total Stock</th>
+              <th data-key="sales_out" class="num">Total Sales Out</th>
+              <th data-key="dos" class="num">DOS</th>
+              <th data-key="store_count" class="num">Jml Toko</th>
+            </tr>
+          </thead>
+          <tbody id="stock-type-table-body"></tbody>
+        </table>
+      </div>
     </div>
 
     <div class="section-head">
@@ -522,6 +559,10 @@ let stockBrand = 'total'; // total | iqoo | vivo
 let stockSortKey = 'dos';
 let stockSortDir = 1;
 let stockSearchTerm = '';
+let stockView = 'toko'; // toko | tipe
+let stockTypeSortKey = 'stock';
+let stockTypeSortDir = -1;
+let stockTypeSearchTerm = '';
 
 /* ================= SALES PER TYPE STATE ================= */
 let SALESTYPE_DATA = null;
@@ -914,6 +955,7 @@ function initStock(){
   try{ renderStockKPIs(); }catch(e){ console.error('renderStockKPIs failed', e); }
   try{ renderStockChips(); }catch(e){ console.error('renderStockChips failed', e); }
   try{ renderStockTable(); }catch(e){ console.error('renderStockTable failed', e); }
+  try{ renderStockTypeTable(); }catch(e){ console.error('renderStockTypeTable failed', e); }
   try{ renderStockCharts(); }catch(e){ console.error('renderStockCharts failed', e); }
   try{ renderStockRankings(); }catch(e){ console.error('renderStockRankings failed', e); }
 
@@ -930,6 +972,97 @@ function initStock(){
       renderStockTable();
     };
   });
+
+  document.getElementById('stock-type-search-input').oninput = e=>{
+    stockTypeSearchTerm = e.target.value.toLowerCase();
+    renderStockTypeTable();
+  };
+  document.querySelectorAll('#stock-type-table thead th[data-key]').forEach(th=>{
+    th.onclick = ()=>{
+      const key = th.dataset.key;
+      if(stockTypeSortKey===key){ stockTypeSortDir *= -1; } else { stockTypeSortKey = key; stockTypeSortDir = key==='model'?1:-1; }
+      document.querySelectorAll('#stock-type-table thead th').forEach(t=>t.classList.remove('sorted'));
+      th.classList.add('sorted');
+      renderStockTypeTable();
+    };
+  });
+
+  document.getElementById('stock-view-seg').onclick = e=>{
+    const btn = e.target.closest('button');
+    if(!btn) return;
+    document.querySelectorAll('#stock-view-seg button').forEach(b=>b.classList.remove('active'));
+    btn.classList.add('active');
+    stockView = btn.dataset.view;
+    document.getElementById('stock-view-toko').style.display = stockView==='toko' ? '' : 'none';
+    document.getElementById('stock-view-tipe').style.display = stockView==='tipe' ? '' : 'none';
+  };
+}
+
+function getStockTypesForBrand(){
+  if(!STOCK_DATA.types_by_brand) return [];
+  if(stockBrand==='iqoo') return STOCK_DATA.types_by_brand.IQOO || [];
+  if(stockBrand==='vivo') return STOCK_DATA.types_by_brand.VIVO || [];
+  return [...(STOCK_DATA.types_by_brand.IQOO||[]), ...(STOCK_DATA.types_by_brand.VIVO||[])];
+}
+
+function renderStockTypeTable(){
+  let types = getStockTypesForBrand();
+  if(stockTypeSearchTerm) types = types.filter(t=>t.model.toLowerCase().includes(stockTypeSearchTerm));
+  types = [...types].sort((a,b)=>{
+    let va, vb;
+    if(stockTypeSortKey==='store_count'){ va=a.stores.length; vb=b.stores.length; }
+    else { va=a[stockTypeSortKey]; vb=b[stockTypeSortKey]; }
+    if(stockTypeSortKey==='model') return (va>vb?1:-1)*stockTypeSortDir;
+    va=(va===null||va===undefined)?-Infinity:va; vb=(vb===null||vb===undefined)?-Infinity:vb;
+    return (va-vb)*stockTypeSortDir;
+  });
+  document.getElementById('stock-type-count').textContent = types.length;
+  document.getElementById('stock-type-table-body').innerHTML = types.map((t,i)=>{
+    const rowId = 'stock-type-row-'+i;
+    return `
+    <tr class="store-row" data-id="${rowId}">
+      <td><div class="store-name">${t.model}</div></td>
+      <td class="num mono">${fmt(t.stock)}</td>
+      <td class="num mono">${fmt(t.sales_out)}</td>
+      <td class="num"><span class="tag ${dosStatus(t.dos)}">${t.dos!==null&&t.dos!==undefined?Number(t.dos).toFixed(1):'-'}</span></td>
+      <td class="num mono">${t.stores.length}</td>
+    </tr>
+    <tr class="detail-row" id="detail-${rowId}" style="display:none;"><td colspan="5">${stockTypeDetailHTML(t)}</td></tr>`;
+  }).join('');
+
+  document.querySelectorAll('#stock-view-tipe .store-row').forEach(row=>{
+    row.onclick = ()=>{
+      const id = row.dataset.id;
+      const detail = document.getElementById('detail-'+id);
+      const isOpen = detail.style.display !== 'none';
+      document.querySelectorAll('#stock-view-tipe .detail-row').forEach(d=>d.style.display='none');
+      document.querySelectorAll('#stock-view-tipe .store-row').forEach(r=>r.classList.remove('expanded'));
+      if(!isOpen){ detail.style.display='table-row'; row.classList.add('expanded'); }
+    };
+  });
+}
+
+function stockTypeDetailHTML(t){
+  if(!t.stores || t.stores.length===0){
+    return `<div class="detail-inner" style="grid-template-columns:1fr;"><div class="detail-block"><h4>Toko dengan stock ${t.model}</h4><div class="growth-row"><span class="growth-label">Tidak ada toko dengan stock tipe ini.</span></div></div></div>`;
+  }
+  const rows = t.stores.map(s=>`
+    <tr>
+      <td>${s.store_name}</td>
+      <td class="num mono">${fmt(s.stock)}</td>
+      <td class="num mono">${fmt(s.sales_out)}</td>
+      <td class="num"><span class="tag ${dosStatus(s.dos)}">${s.dos!==null&&s.dos!==undefined?Number(s.dos).toFixed(1):'-'}</span></td>
+    </tr>`).join('');
+  return `
+    <div class="detail-inner" style="grid-template-columns:1fr;">
+      <div class="detail-block">
+        <h4>Toko dengan stock ${t.model} (${t.stores.length} toko)</h4>
+        <table class="mini-table">
+          <thead><tr><th>Toko</th><th class="num">Stock</th><th class="num">Sales Out</th><th class="num">DOS</th></tr></thead>
+          <tbody>${rows}</tbody>
+        </table>
+      </div>
+    </div>`;
 }
 
 function renderStockKPIs(){
@@ -964,7 +1097,7 @@ function renderStockChips(){
       stockBrand = chip.dataset.brand;
       document.querySelectorAll('#stock-brand-chips .chip').forEach(c=>c.classList.remove('active'));
       chip.classList.add('active');
-      renderStockKPIs(); renderStockTable(); renderStockCharts(); renderStockRankings();
+      renderStockKPIs(); renderStockTable(); renderStockTypeTable(); renderStockCharts(); renderStockRankings();
     };
   });
 }

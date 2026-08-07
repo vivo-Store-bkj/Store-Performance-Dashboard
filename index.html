@@ -762,12 +762,12 @@ function getFiltered(){
 function renderTable(){
   const list = getFiltered();
   document.getElementById('store-count').textContent = list.length;
-  document.getElementById('table-body').innerHTML = list.map(s=>{
+  document.getElementById('table-body').innerHTML = list.map((s,i)=>{
     const sc = statusColor(s.ach_pct);
     const vc = statusColor(s.ach_value_pct);
     return `
     <tr class="store-row" data-id="${s.store_id}">
-      <td class="num">${s.no}</td>
+      <td class="num">${i+1}</td>
       <td>
         <div class="store-name">${s.store_name}</div>
         <div class="store-meta">${s.manager}</div>

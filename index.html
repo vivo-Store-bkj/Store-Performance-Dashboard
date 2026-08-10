@@ -491,8 +491,12 @@
         <thead>
           <tr>
             <th data-key="model">Tipe / Model</th>
-            <th data-key="qty" class="num">Qty (unit)</th>
-            <th data-key="value" class="num sorted">Value (Rp)</th>
+            <th data-key="qty" class="num">Qty Bulan Ini</th>
+            <th data-key="qty_prev" class="num">Qty Bulan Lalu</th>
+            <th data-key="qty_delta_pct" class="num">Δ Qty</th>
+            <th data-key="value" class="num sorted">Value Bulan Ini</th>
+            <th data-key="value_prev" class="num">Value Bulan Lalu</th>
+            <th data-key="value_delta_pct" class="num">Δ Value</th>
           </tr>
         </thead>
         <tbody id="salestype-network-table-body"></tbody>
@@ -514,8 +518,10 @@
           <tr>
             <th data-key="store_name">Toko</th>
             <th data-key="area">Area</th>
-            <th data-key="total_qty" class="num">Total Qty</th>
-            <th data-key="total_value" class="num sorted">Total Value</th>
+            <th data-key="total_qty" class="num">Qty Bulan Ini</th>
+            <th data-key="total_qty_delta_pct" class="num">Δ Qty</th>
+            <th data-key="total_value" class="num sorted">Value Bulan Ini</th>
+            <th data-key="total_value_delta_pct" class="num">Δ Value</th>
           </tr>
         </thead>
         <tbody id="salestype-store-table-body"></tbody>
@@ -532,6 +538,9 @@
 const money = n => 'Rp ' + (n/1000000).toLocaleString('id-ID',{maximumFractionDigits:0}) + ' jt';
 const pct = n => (n===null||n===undefined||isNaN(n)) ? '-' : (n*100).toFixed(1) + '%';
 const fmt = n => (n===null||n===undefined||isNaN(n)) ? '-' : Number(n).toLocaleString('id-ID');
+const safeDiv = (a,b) => b ? a/b : 0;
+const pctSigned = n => (n===null||n===undefined||isNaN(n)) ? '-' : (n>=0?'+':'') + (n*100).toFixed(1) + '%';
+const deltaClass = n => n > 0.001 ? 'good' : (n < -0.001 ? 'bad' : '');
 const statusColor = p => (p===null||p===undefined) ? 'warn' : (p >= 1 ? 'good' : (p >= 0.9 ? 'warn' : 'bad'));
 const colorHex = { good:'#0F8A5F', warn:'#B4780A', bad:'#C23B4B' };
 
@@ -1229,6 +1238,20 @@ function loadSalesTypePeriod(key){
   fetchFresh(meta.file).then(r=>r.json()).then(json=>{
     SALESTYPE_DATA = json;
     salesTypeCurrentKey = key;
+
+    (SALESTYPE_DATA.totals_by_type||[]).forEach(t=>{
+      t.qty_delta_pct = safeDiv(t.qty_delta, t.qty_prev);
+      t.value_delta_pct = safeDiv(t.value_delta, t.value_prev);
+    });
+    (SALESTYPE_DATA.stores||[]).forEach(s=>{
+      s.total_qty_delta_pct = safeDiv(s.total_qty - s.total_qty_prev, s.total_qty_prev);
+      s.total_value_delta_pct = safeDiv(s.total_value - s.total_value_prev, s.total_value_prev);
+      (s.by_type||[]).forEach(t=>{
+        t.qty_delta_pct = safeDiv(t.qty_delta, t.qty_prev);
+        t.value_delta_pct = safeDiv(t.value_delta, t.value_prev);
+      });
+    });
+
     if(activeSection==='salestype') renderMonthRow();
     initSalesType();
   });
@@ -1266,20 +1289,23 @@ function initSalesType(){
 
 function renderSalesTypeKPIs(){
   const totals = SALESTYPE_DATA.totals_by_type;
-  const totalQty = totals.reduce((a,t)=>a+t.qty,0);
-  const totalValue = totals.reduce((a,t)=>a+t.value,0);
+  const nt = SALESTYPE_DATA.network_total;
+  const totalQty = nt ? nt.qty : totals.reduce((a,t)=>a+t.qty,0);
+  const totalValue = nt ? nt.value : totals.reduce((a,t)=>a+t.value,0);
   const topByValue = [...totals].sort((a,b)=>b.value-a.value)[0];
-  const topByQty = [...totals].sort((a,b)=>b.qty-a.qty)[0];
+  const sortedByGrowth = [...totals].sort((a,b)=>b.qty_delta_pct-a.qty_delta_pct);
+  const bestGrowth = sortedByGrowth[0];
+  const worstGrowth = sortedByGrowth[sortedByGrowth.length-1];
   const cards = [
-    {label:'Total Qty Terjual', value: fmt(totalQty), sub:'unit, seluruh tipe'},
-    {label:'Total Value Terjual', value: money(totalValue), sub:'seluruh toko'},
+    {label:'Total Qty Terjual', value: fmt(totalQty), sub: nt ? `Bulan lalu ${fmt(nt.qty_prev)} (${pctSigned(safeDiv(nt.qty_delta,nt.qty_prev))})` : 'unit, seluruh tipe', cls: nt?deltaClass(nt.qty_delta):''},
+    {label:'Total Value Terjual', value: money(totalValue), sub: nt ? `Bulan lalu ${money(nt.value_prev)} (${pctSigned(safeDiv(nt.value_delta,nt.value_prev))})` : 'seluruh toko', cls: nt?deltaClass(nt.value_delta):''},
     {label:'Tipe Terlaris (Value)', value: topByValue?topByValue.model:'-', sub: topByValue?money(topByValue.value):''},
-    {label:'Tipe Terlaris (Qty)', value: topByQty?topByQty.model:'-', sub: topByQty?fmt(topByQty.qty)+' unit':''},
+    {label:'Tipe Paling Naik/Turun', value: bestGrowth?bestGrowth.model:'-', sub: bestGrowth?`Qty ${pctSigned(bestGrowth.qty_delta_pct)} · terendah: ${worstGrowth.model} (${pctSigned(worstGrowth.qty_delta_pct)})`:'', cls: bestGrowth?deltaClass(bestGrowth.qty_delta):''},
   ];
   document.getElementById('salestype-kpi-grid').innerHTML = cards.map(c=>`
     <div class="kpi-card">
       <div class="kpi-label">${c.label}</div>
-      <div class="kpi-value">${c.value}</div>
+      <div class="kpi-value ${c.cls||''}">${c.value}</div>
       <div class="kpi-sub">${c.sub}</div>
     </div>`).join('');
 }
@@ -1310,7 +1336,11 @@ function renderSalesTypeNetworkTable(){
     <tr>
       <td><div class="store-name">${t.model}</div></td>
       <td class="num mono">${fmt(t.qty)}</td>
+      <td class="num mono">${fmt(t.qty_prev)}</td>
+      <td class="num"><span class="tag ${deltaClass(t.qty_delta)}">${pctSigned(t.qty_delta_pct)}</span></td>
       <td class="num mono">${money(t.value)}</td>
+      <td class="num mono">${money(t.value_prev)}</td>
+      <td class="num"><span class="tag ${deltaClass(t.value_delta)}">${pctSigned(t.value_delta_pct)}</span></td>
     </tr>`).join('');
 
   const chartRows = [...rows].sort((a,b)=>b[salesTypeMetric]-a[salesTypeMetric]).slice(0,15);
@@ -1359,9 +1389,11 @@ function renderSalesTypeStoreTable(){
       <td><div class="store-name">${s.store_name}</div></td>
       <td><span class="area-pill">${s.area}</span></td>
       <td class="num mono">${fmt(s.total_qty)}</td>
+      <td class="num"><span class="tag ${deltaClass(s.total_qty-s.total_qty_prev)}">${pctSigned(s.total_qty_delta_pct)}</span></td>
       <td class="num mono">${money(s.total_value)}</td>
+      <td class="num"><span class="tag ${deltaClass(s.total_value-s.total_value_prev)}">${pctSigned(s.total_value_delta_pct)}</span></td>
     </tr>
-    <tr class="detail-row" id="detail-${rowId}" style="display:none;"><td colspan="4">${salesTypeDetailHTML(s)}</td></tr>`;
+    <tr class="detail-row" id="detail-${rowId}" style="display:none;"><td colspan="6">${salesTypeDetailHTML(s)}</td></tr>`;
   }).join('');
 
   document.querySelectorAll('#page-salestype .store-row').forEach(row=>{
@@ -1384,14 +1416,18 @@ function salesTypeDetailHTML(s){
     <tr>
       <td>${t.model}</td>
       <td class="num mono">${fmt(t.qty)}</td>
+      <td class="num mono">${fmt(t.qty_prev)}</td>
+      <td class="num"><span class="tag ${deltaClass(t.qty_delta)}">${pctSigned(t.qty_delta_pct)}</span></td>
       <td class="num mono">${money(t.value)}</td>
+      <td class="num mono">${money(t.value_prev)}</td>
+      <td class="num"><span class="tag ${deltaClass(t.value_delta)}">${pctSigned(t.value_delta_pct)}</span></td>
     </tr>`).join('');
   return `
     <div class="detail-inner" style="grid-template-columns:1fr;">
       <div class="detail-block">
         <h4>Breakdown per Tipe — ${s.store_name}</h4>
         <table class="mini-table">
-          <thead><tr><th>Model</th><th class="num">Qty</th><th class="num">Value</th></tr></thead>
+          <thead><tr><th>Model</th><th class="num">Qty Ini</th><th class="num">Qty Lalu</th><th class="num">Δ Qty</th><th class="num">Value Ini</th><th class="num">Value Lalu</th><th class="num">Δ Value</th></tr></thead>
           <tbody>${rows}</tbody>
         </table>
       </div>

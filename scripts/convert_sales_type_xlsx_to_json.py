@@ -1,7 +1,8 @@
 """
 Convert the "SALES VALUE PER TYPE" sheet inside source/dashboard_data.xlsx
 into a per-month JSON snapshot (network totals by product model + per-store
-breakdown), and keep a manifest so the dashboard can switch between months.
+breakdown), including a comparison against last month (qty & value), and
+keep a manifest so the dashboard can switch between months.
 Mirrors scripts/convert_xlsx_to_json.py and convert_stock_xlsx_to_json.py.
 
 Run from the repo root: python scripts/convert_sales_type_xlsx_to_json.py
@@ -12,9 +13,17 @@ Output: data/sales-type-<YYYY-MM>.json   (one snapshot per month, auto-generated
         data/sales-type-manifest.json    (list of available months, auto-generated)
 Don't edit anything inside data/ by hand — it gets regenerated every run.
 
-The sheet has a multi-row header (product model -> Qty/Value) with model
-columns sometimes repeated (e.g. two "Y11d" columns) — all columns sharing
-the same (whitespace-normalized) model name are summed together.
+Sheet layout (as of Agustus 2026 template, "LINKED FROM PIVOT"):
+  Row 1: title, e.g. "SALES QTY & VALUE PER TYPE - PERBANDINGAN AGUSTUS vs JULI"
+  Row 3: one merged header per product model, spanning 6 columns, in order:
+         [Qty bulan ini, Qty bulan lalu, Selisih Qty, Value bulan ini, Value bulan lalu, Selisih Value]
+         A "TOTAL" group (same 6 columns) appears as the last group per row.
+  Columns A-E: NO, AREA, ID STORE, NAMA TOKO, HEADSTORE
+  Data rows start at row 5; a "TOTAL" row (network aggregate) appears at the bottom.
+
+This positional layout (not the text labels, which change every month e.g.
+"Qty Agustus" -> "Qty September") is what's parsed, so this script keeps
+working as the month rolls over without edits.
 """
 import openpyxl
 import json
@@ -60,54 +69,25 @@ def norm_model(s):
     return re.sub(r"\s+", " ", str(s)).strip()
 
 
-def find_layout(ws):
-    header_row = None
-    for r in range(1, min(ws.max_row, 8) + 1):
-        v = ws.cell(r, 1).value
-        if v and str(v).strip().upper() == "NO":
-            header_row = r
-            break
-    if header_row is None:
-        raise ValueError(f"Header row 'NO' tidak ditemukan di sheet {ws.title}")
-
-    metric_row = header_row + 1
-    data_start = header_row + 2
-
-    # "TOTAL" header is a merged cell spanning 2 columns (Qty, Value) — only
-    # the first column carries the text, so locate it and check the next
-    # column too rather than requiring "TOTAL" literally in both.
-    col_total_qty = col_total_value = None
-    for c in range(1, ws.max_column + 1):
-        v = ws.cell(header_row, c).value
-        if v and str(v).strip().upper() == "TOTAL":
-            for cc in (c, c + 1):
-                metric = str(ws.cell(metric_row, cc).value or "").strip().upper()
-                if metric == "QTY":
-                    col_total_qty = cc
-                elif metric == "VALUE":
-                    col_total_value = cc
-    if not (col_total_qty and col_total_value):
-        raise ValueError(f"Kolom TOTAL Qty/Value tidak ditemukan di sheet {ws.title}")
-
-    return header_row, metric_row, data_start, col_total_qty, col_total_value
-
-
-def build_column_maps(ws, header_row, metric_row):
-    col_model = {}
-    current_model = None
+def find_model_groups(ws, header_row=3):
+    """Each product-model group spans 6 columns starting at column F (6).
+    Detect group starts by any non-empty cell in the header row."""
+    groups = []
     for c in range(6, ws.max_column + 1):
         v = ws.cell(header_row, c).value
-        if v:
-            vs = str(v).strip().upper()
-            current_model = None if vs == "TOTAL" else norm_model(v)
-        col_model[c] = current_model
+        if v is not None and str(v).strip():
+            groups.append((c, norm_model(v)))
+    return groups
 
-    col_metric = {}
-    for c in range(6, ws.max_column + 1):
-        v = ws.cell(metric_row, c).value
-        col_metric[c] = str(v).strip().upper() if v else None
 
-    return col_model, col_metric
+def block(ws, row, start_col):
+    def v(c):
+        val = ws.cell(row, c).value
+        return val if val is not None else 0
+    return {
+        "qty": v(start_col), "qty_prev": v(start_col + 1), "qty_delta": v(start_col + 2),
+        "value": v(start_col + 3), "value_prev": v(start_col + 4), "value_delta": v(start_col + 5),
+    }
 
 
 def main():
@@ -121,59 +101,62 @@ def main():
         sys.exit(0)
 
     ws = wb[SHEET_NAME]
-    header_row, metric_row, data_start, col_total_qty, col_total_value = find_layout(ws)
-    col_model, col_metric = build_column_maps(ws, header_row, metric_row)
+    groups = find_model_groups(ws)
+    if not groups:
+        print(f"SKIP: gagal menemukan kolom model produk di sheet {SHEET_NAME}.")
+        sys.exit(0)
+
+    total_col = next((c for c, name in groups if name.upper() == "TOTAL"), None)
+    model_groups = [(c, name) for c, name in groups if name.upper() != "TOTAL"]
 
     DATA_DIR.mkdir(exist_ok=True)
 
     stores = []
-    network_totals = {}  # model -> {qty, value}
+    network_by_model = {}
+    network_total = None
 
-    for r in range(data_start, ws.max_row + 1):
+    for r in range(5, ws.max_row + 1):
+        a = ws.cell(r, 1).value
+        if a is None:
+            continue
+        if str(a).strip().upper() == "TOTAL":
+            for c, name in model_groups:
+                network_by_model[name] = block(ws, r, c)
+            if total_col:
+                network_total = block(ws, r, total_col)
+            continue
+        if not isinstance(a, (int, float)):
+            continue
         store_name_raw = ws.cell(r, 4).value
-        if not store_name_raw or "total" in str(ws.cell(r, 1).value or "").lower():
+        if not store_name_raw:
             continue
-        if not isinstance(ws.cell(r, 1).value, (int, float)):
-            continue
-
-        by_model_acc = {}
-        for c in range(6, ws.max_column + 1):
-            model = col_model.get(c)
-            metric = col_metric.get(c)
-            if not model or not metric:
-                continue
-            val = ws.cell(r, c).value or 0
-            acc = by_model_acc.setdefault(model, {"qty": 0, "value": 0})
-            if metric == "QTY":
-                acc["qty"] += val
-            elif metric == "VALUE":
-                acc["value"] += val
 
         by_type = []
-        for model, acc in by_model_acc.items():
-            if not acc["qty"] and not acc["value"]:
+        for c, name in model_groups:
+            b = block(ws, r, c)
+            if not (b["qty"] or b["qty_prev"] or b["value"] or b["value_prev"]):
                 continue
-            by_type.append({"model": model, "qty": acc["qty"], "value": acc["value"]})
-            net = network_totals.setdefault(model, {"qty": 0, "value": 0})
-            net["qty"] += acc["qty"]
-            net["value"] += acc["value"]
+            by_type.append({"model": name, **b})
         by_type.sort(key=lambda t: -t["value"])
+
+        store_total = block(ws, r, total_col) if total_col else None
 
         stores.append({
             "store_id": ws.cell(r, 3).value,
             "store_name": clean_store_name(store_name_raw),
             "area": clean_area(ws.cell(r, 2).value),
             "headstore": ws.cell(r, 5).value,
-            "total_qty": ws.cell(r, col_total_qty).value or 0,
-            "total_value": ws.cell(r, col_total_value).value or 0,
+            "total_qty": store_total["qty"] if store_total else 0,
+            "total_qty_prev": store_total["qty_prev"] if store_total else 0,
+            "total_value": store_total["value"] if store_total else 0,
+            "total_value_prev": store_total["value_prev"] if store_total else 0,
             "by_type": by_type,
         })
 
     stores.sort(key=lambda s: s["store_name"])
 
     totals_by_type = [
-        {"model": m, "qty": v["qty"], "value": v["value"]}
-        for m, v in network_totals.items()
+        {"model": name, **b} for name, b in network_by_model.items()
     ]
     totals_by_type.sort(key=lambda t: -t["value"])
 
@@ -181,8 +164,9 @@ def main():
     # otherwise fall back to the current run month
     period_key = None
     period_label = None
-    if "Sheet1" in wb.sheetnames:
-        title = str(wb["Sheet1"].cell(1, 1).value or "")
+    if "Sheet1" in wb.sheetnames or wb.worksheets[0].title != SHEET_NAME:
+        main_ws = wb["Sheet1"] if "Sheet1" in wb.sheetnames else wb.worksheets[0]
+        title = str(main_ws.cell(1, 1).value or "")
         months_en = ["JANUARY","FEBRUARY","MARCH","APRIL","MAY","JUNE","JULY","AUGUST","SEPTEMBER","OCTOBER","NOVEMBER","DECEMBER"]
         if " ON " in title.upper():
             mname = title.upper().split(" ON ")[-1].strip()
@@ -202,6 +186,7 @@ def main():
         "updated_by": os.environ.get("UPDATED_BY", "Michael Fumar"),
         "updated_at": format_updated_at(),
         "totals_by_type": totals_by_type,
+        "network_total": network_total,
         "stores": stores,
     }
 

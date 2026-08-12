@@ -674,24 +674,34 @@ const numOrNull = n => (n===null||n===undefined||isNaN(n)) ? null : n;
 const EXPORT_BUILDERS = {
   performance: () => {
     const list = getFiltered();
+    const vasLabels = {acc:'ACC', qoala:'Qoala', bca_insurance:'BCA Insurance', indosat:'Indosat', telkomsel:'Telkomsel'};
     return [{
       sheet: 'Store Performance',
-      rows: list.map((s,i)=>({
-        'No': i+1,
-        'Toko': s.store_name,
-        'Manager': s.manager,
-        'Area': s.area,
-        'Target Unit': s.target_unit,
-        'Achievement Unit': s.ach_unit,
-        '% Achievement Unit': pctNum(s.ach_pct),
-        'Gap Unit': s.gap_unit,
-        'Target Value (Rp)': s.target_value,
-        'Achievement Value (Rp)': s.ach_value,
-        '% Achievement Value': pctNum(s.ach_value_pct),
-        '% 3MIO+': pctNum(s.mio3_pct),
-        'Attach Rate VAS (%)': pctNum(s.vas_avg),
-        'Growth MoM (%)': pctNum(s.growth_all_pct),
-      })),
+      rows: list.map((s,i)=>{
+        const row = {
+          'No': i+1,
+          'Toko': s.store_name,
+          'Manager': s.manager,
+          'Area': s.area,
+          'Target Unit': s.target_unit,
+          'Achievement Unit': s.ach_unit,
+          '% Achievement Unit': pctNum(s.ach_pct),
+          'Gap Unit': s.gap_unit,
+          'Target Value (Rp)': s.target_value,
+          'Achievement Value (Rp)': s.ach_value,
+          '% Achievement Value': pctNum(s.ach_value_pct),
+          '% 3MIO+': pctNum(s.mio3_pct),
+        };
+        Object.entries(vasLabels).forEach(([key,label])=>{
+          const v = s.vas?.[key] || {};
+          row[`${label} Target`] = v.target!=null ? Math.round(v.target*100)/100 : null;
+          row[`${label} Achievement`] = v.ach!=null ? Math.round(v.ach*100)/100 : null;
+          row[`${label} %`] = pctNum(v.pct);
+        });
+        row['Attach Rate VAS Rata-rata (%)'] = pctNum(s.vas_avg);
+        row['Growth MoM (%)'] = pctNum(s.growth_all_pct);
+        return row;
+      }),
     }];
   },
 
@@ -725,9 +735,27 @@ const EXPORT_BUILDERS = {
       });
     });
 
+    const perStorePerType = [];
+    rows.forEach(s=>{
+      ['iqoo','vivo'].forEach(brand=>{
+        (s[`${brand}_by_type`]||[]).forEach(t=>{
+          if(!t.stock && !t.sales_out) return;
+          perStorePerType.push({
+            'Toko': s.store_name,
+            'Brand': brand.toUpperCase(),
+            'Model': t.model,
+            'Stock': numOrNull(t.stock),
+            'Sales Out': numOrNull(t.sales_out),
+            'DOS': numOrNull(t.dos),
+          });
+        });
+      });
+    });
+
     return [
       { sheet: 'Stock per Toko', rows: perStore },
       { sheet: 'Stock per Tipe', rows: perType },
+      { sheet: 'Stock per Toko per Tipe', rows: perStorePerType },
     ];
   },
 

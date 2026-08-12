@@ -1,13 +1,24 @@
 """
-Convert the daily store-performance Excel file into a per-month JSON snapshot,
-and keep a manifest of all months so the dashboard can switch between them.
+Convert the daily Stock/Sales-Out/DOS Excel file (IQOO & VIVO sheets) into a
+per-month JSON snapshot, and keep a manifest so the dashboard can switch
+between months. Mirrors scripts/convert_xlsx_to_json.py (performance).
 
-Run from the repo root: python scripts/convert_xlsx_to_json.py
+Run from the repo root: python scripts/convert_stock_xlsx_to_json.py
 
-Input : source/dashboard_data.xlsx     (overwrite this file every day with your update)
-Output: data/<YYYY-MM>.json            (one snapshot per month, auto-generated)
-        data/manifest.json             (list of available months, auto-generated)
+Input : source/stock_data.xlsx        (overwrite this file every time you update stock)
+Output: data/stock-<YYYY-MM>.json     (one snapshot per month, auto-generated)
+        data/stock-manifest.json      (list of available months, auto-generated)
 Don't edit anything inside data/ by hand — it gets regenerated every run.
+
+Source file has two sheets, "STOCK IQOO" and "STOCK VIVO", each with a
+multi-row header (product model -> variant -> color -> metric). For each
+store we extract:
+  - the per-store TOTAL STOCK / TOTAL SALES OUT / TOTAL DOS columns (column
+    position detected dynamically by header text, survives minor column
+    reshuffles), and
+  - a per-product-model breakdown ("by_type"): all variant/color columns
+    under the same merged model header (e.g. "IQOO Z11", "VIVO Y31d") are
+    summed together into one Stock/Sales Out/DOS figure per model.
 """
 import openpyxl
 import json
@@ -24,17 +35,18 @@ except Exception:
     JAKARTA = None
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
-INPUT_PATH = REPO_ROOT / "source" / "dashboard_data.xlsx"
+INPUT_PATH = REPO_ROOT / "source" / "stock_data.xlsx"
 DATA_DIR = REPO_ROOT / "data"
-MANIFEST_PATH = DATA_DIR / "manifest.json"
+MANIFEST_PATH = DATA_DIR / "stock-manifest.json"
 
 BULAN_ID = [
     "", "Januari", "Februari", "Maret", "April", "Mei", "Juni",
     "Juli", "Agustus", "September", "Oktober", "November", "Desember",
 ]
-MONTHS_EN = [
-    "JANUARY", "FEBRUARY", "MARCH", "APRIL", "MAY", "JUNE",
-    "JULY", "AUGUST", "SEPTEMBER", "OCTOBER", "NOVEMBER", "DECEMBER",
+
+SHEETS = [
+    ("IQOO", "STOCK IQOO"),
+    ("VIVO", "STOCK VIVO"),
 ]
 
 
@@ -43,142 +55,257 @@ def format_updated_at():
     return f"{now.day} {BULAN_ID[now.month]} {now.year}, {now.strftime('%H:%M')} WIB"
 
 
-def clean_area(s):
-    m = re.findall(r"[A-Za-z][A-Za-z\s]*$", str(s))
-    return m[-1].strip() if m else str(s)
-
-
 def clean_store_name(s):
-    return re.sub(r"^[A-Za-z0-9]+-", "", str(s)).strip()
+    s = re.sub(r"^[A-Za-z0-9]+-", "", str(s)).strip()
+    s = s.replace("仓库", "").strip()
+    return s
 
 
-def parse_period(title):
-    title = str(title)
-    if " ON " in title.upper():
-        return title.upper().split(" ON ")[-1].strip()
-    return title.strip()
+def extract_store_id(s):
+    m = re.match(r"^(\d+)-", str(s))
+    return m.group(1) if m else None
 
 
-def month_number(period_name):
-    p = period_name.strip().upper()
-    if p in MONTHS_EN:
-        return MONTHS_EN.index(p) + 1
-    # fallback: kalau nama bulan gak dikenali, pakai bulan berjalan
-    now = datetime.now(JAKARTA) if JAKARTA else datetime.utcnow()
-    return now.month
+def find_header_row_and_cols(ws):
+    """Find the row containing 'Nama Gudang / Toko' and the TOTAL STOCK/SALES OUT/DOS columns."""
+    header_row = None
+    for r in range(1, min(ws.max_row, 10) + 1):
+        v = ws.cell(r, 1).value
+        if v and "nama gudang" in str(v).lower():
+            header_row = r
+            break
+    if header_row is None:
+        raise ValueError(f"Header row 'Nama Gudang / Toko' tidak ditemukan di sheet {ws.title}")
+
+    col_stock = col_sales = col_dos = None
+    for c in range(1, ws.max_column + 1):
+        v = ws.cell(header_row, c).value
+        if not v:
+            continue
+        vs = str(v).lower().replace("\n", " ")
+        if "total" in vs and "stock" in vs:
+            col_stock = c
+        elif "total" in vs and "sales" in vs:
+            col_sales = c
+        elif "total" in vs and "dos" in vs:
+            col_dos = c
+    if not (col_stock and col_sales and col_dos):
+        raise ValueError(f"Kolom TOTAL STOCK/SALES OUT/DOS tidak lengkap ditemukan di sheet {ws.title}")
+
+    # data starts at the first row after header_row where column A is not empty
+    data_start = header_row + 1
+    while data_start <= ws.max_row and ws.cell(data_start, 1).value is None:
+        data_start += 1
+
+    # metric row (STOCK / SALES OUT / DOS / SARAN labels) is the row between
+    # header_row and data_start that contains the text "STOCK"
+    metric_row = None
+    for r in range(header_row + 1, data_start):
+        for c in range(1, ws.max_column + 1):
+            v = ws.cell(r, c).value
+            if v and "stock" in str(v).lower():
+                metric_row = r
+                break
+        if metric_row:
+            break
+
+    return header_row, metric_row, data_start, col_stock, col_sales, col_dos
+
+
+def build_column_maps(ws, header_row, metric_row):
+    """Forward-fill the merged product-model header per column, and read the
+    metric label (STOCK/SALES OUT/DOS/SARAN) per column."""
+    col_model = {}
+    current_model = None
+    for c in range(2, ws.max_column + 1):
+        v = ws.cell(header_row, c).value
+        if v:
+            vs = str(v).lower()
+            current_model = None if "total" in vs else str(v).replace("\n", " ").strip()
+        col_model[c] = current_model
+
+    col_metric = {}
+    for c in range(2, ws.max_column + 1):
+        v = ws.cell(metric_row, c).value if metric_row else None
+        col_metric[c] = str(v).strip().upper() if v else None
+
+    return col_model, col_metric
+
+
+def parse_sheet(ws):
+    header_row, metric_row, data_start, col_stock, col_sales, col_dos = find_header_row_and_cols(ws)
+    col_model, col_metric = build_column_maps(ws, header_row, metric_row)
+
+    total_hari = ws.cell(1, 2).value or 30
+    hari_berjalan = ws.cell(2, 2).value or 0
+    sisa_hari = ws.cell(3, 2).value
+
+    rows = []
+    for r in range(data_start, ws.max_row + 1):
+        raw_name = ws.cell(r, 1).value
+        if not raw_name or "grand total" in str(raw_name).lower():
+            continue
+
+        # per-model breakdown
+        by_model_acc = {}
+        for c in range(2, ws.max_column + 1):
+            model = col_model.get(c)
+            metric = col_metric.get(c)
+            if not model or not metric:
+                continue
+            if metric not in ("STOCK", "SALES OUT"):
+                continue  # ignore DOS / SARAN sub-columns, we recompute DOS ourselves
+            val = ws.cell(r, c).value or 0
+            acc = by_model_acc.setdefault(model, {"stock": 0, "sales_out": 0})
+            if metric == "STOCK":
+                acc["stock"] += val
+            else:
+                acc["sales_out"] += val
+
+        by_type = []
+        for model, acc in by_model_acc.items():
+            if not acc["stock"] and not acc["sales_out"]:
+                continue  # skip models with zero stock and zero sales at this store
+            dos = round(acc["stock"] / (acc["sales_out"] / hari_berjalan), 2) if acc["sales_out"] else None
+            by_type.append({
+                "model": model,
+                "stock": acc["stock"],
+                "sales_out": acc["sales_out"],
+                "dos": dos,
+            })
+        by_type.sort(key=lambda t: -t["stock"])
+
+        stock = ws.cell(r, col_stock).value or 0
+        sales_out = ws.cell(r, col_sales).value or 0
+        dos = ws.cell(r, col_dos).value
+        # source file sometimes has a sentinel DOS value (e.g. 1000) when
+        # sales_out is 0 (div-by-zero workaround) — treat as "not computable"
+        if not sales_out:
+            dos = None
+
+        rows.append({
+            "store_id": extract_store_id(raw_name),
+            "store_name": clean_store_name(raw_name),
+            "stock": stock,
+            "sales_out": sales_out,
+            "dos": round(dos, 2) if isinstance(dos, (int, float)) else dos,
+            "by_type": by_type,
+        })
+
+    return {
+        "total_hari": total_hari,
+        "hari_berjalan": hari_berjalan,
+        "sisa_hari": sisa_hari,
+        "rows": rows,
+    }
 
 
 def main():
     if not INPUT_PATH.exists():
-        print(f"ERROR: {INPUT_PATH} tidak ditemukan. Upload file Excel ke source/dashboard_data.xlsx dulu.")
-        sys.exit(1)
+        print(f"SKIP: {INPUT_PATH} tidak ditemukan — belum ada data stock untuk diconvert.")
+        sys.exit(0)
 
     DATA_DIR.mkdir(exist_ok=True)
-
     wb = openpyxl.load_workbook(INPUT_PATH, data_only=True)
-    ws = wb.worksheets[0]  # selalu ambil sheet pertama
 
-    # --- pacing info (baris 1-2), posisinya tetap sama tiap bulan ---
-    title = ws.cell(1, 1).value or ""
-    total_days = ws.cell(2, 4).value or 30   # D2 = TOTAL DATE
-    to_date_day = ws.cell(2, 5).value or 0   # E2 = TO DATE
-    time_gone_raw = ws.cell(2, 6).value      # F2 = TIME GONE (rasio 0-1)
-    time_gone = time_gone_raw if time_gone_raw is not None else (
-        to_date_day / total_days if total_days else 0
-    )
+    parsed = {}
+    for brand, sheetname in SHEETS:
+        if sheetname not in wb.sheetnames:
+            print(f"WARNING: sheet '{sheetname}' tidak ditemukan, dilewati.")
+            continue
+        parsed[brand] = parse_sheet(wb[sheetname])
 
-    period = parse_period(title)
-    m_num = month_number(period)
-    year = (datetime.now(JAKARTA) if JAKARTA else datetime.utcnow()).year
-    period_key = f"{year}-{m_num:02d}"
-    period_label = f"{BULAN_ID[m_num]} {year}"
+    if not parsed:
+        print("ERROR: tidak ada sheet IQOO/VIVO yang bisa diparse.")
+        sys.exit(1)
 
-    def v(row, col):
-        val = ws.cell(row, col).value
-        return val if val is not None else 0
+    hari_berjalan = next(iter(parsed.values()))["hari_berjalan"] or 1
 
-    def vas_block(r):
-        return {
-            "acc": {"target": v(r, 55), "ach": v(r, 56), "pct": v(r, 57)},
-            "qoala": {"target": v(r, 58), "ach": v(r, 59), "pct": v(r, 60)},
-            "bca_insurance": {"target": v(r, 61), "ach": v(r, 62), "pct": v(r, 63)},
-            "indosat": {"target": v(r, 64), "ach": v(r, 65), "pct": v(r, 66)},
-            "telkomsel": {"target": v(r, 67), "ach": v(r, 68), "pct": v(r, 69)},
-        }
+    store_map = {}
+    for brand, data in parsed.items():
+        for row in data["rows"]:
+            key = row["store_id"] or row["store_name"]
+            store_map.setdefault(key, {"store_id": row["store_id"], "store_name": row["store_name"]})
+            store_map[key][f"{brand.lower()}_stock"] = row["stock"]
+            store_map[key][f"{brand.lower()}_sales_out"] = row["sales_out"]
+            store_map[key][f"{brand.lower()}_dos"] = row["dos"]
+            store_map[key][f"{brand.lower()}_by_type"] = row["by_type"]
 
     stores = []
-    total_row = None
+    for key, s in store_map.items():
+        iqoo_stock = s.get("iqoo_stock", 0) or 0
+        vivo_stock = s.get("vivo_stock", 0) or 0
+        iqoo_sales = s.get("iqoo_sales_out", 0) or 0
+        vivo_sales = s.get("vivo_sales_out", 0) or 0
+        total_stock = iqoo_stock + vivo_stock
+        total_sales = iqoo_sales + vivo_sales
+        total_dos = round(total_stock / (total_sales / hari_berjalan), 2) if total_sales else None
+        s["total_stock"] = total_stock
+        s["total_sales_out"] = total_sales
+        s["total_dos"] = total_dos
+        s.setdefault("iqoo_by_type", [])
+        s.setdefault("vivo_by_type", [])
+        stores.append(s)
 
-    for r in range(5, ws.max_row + 1):
-        a = ws.cell(r, 1).value
-        if a is None:
-            continue
-        if str(a).strip().upper() == "TOTAL":
-            total_row = {
-                "target_unit": v(r, 7), "target_value": v(r, 8),
-                "ach_unit": v(r, 9), "ach_pct": v(r, 10), "gap_unit": v(r, 11),
-                "mio3_unit": v(r, 13), "mio3_pct": v(r, 14),
-                "iqoo_unit": v(r, 15), "iqoo_pct": v(r, 16),
-                "ach_value": v(r, 18), "ach_value_pct": v(r, 19), "gap_value": v(r, 20),
-                "growth_all_prev": v(r, 35), "growth_all_curr": v(r, 36),
-                "growth_all_gap": v(r, 37), "growth_all_pct": v(r, 38),
-                "growth_value_prev": v(r, 47), "growth_value_curr": v(r, 48),
-                "growth_value_gap": v(r, 49), "growth_value_pct": v(r, 50),
-                "vas": vas_block(r),
-            }
-            continue
-        if not isinstance(a, (int, float)):
-            continue  # skip baris kosong/footer lain
+    stores.sort(key=lambda s: s["store_name"])
 
-        stores.append({
-            "no": v(r, 1),
-            "area": clean_area(v(r, 2)),
-            "area_raw": v(r, 2),
-            "store_id": v(r, 3),
-            "store_name": clean_store_name(v(r, 4)),
-            "manager": v(r, 5),
-            "jml_pc": v(r, 6),
-            "target_unit": v(r, 7),
-            "target_value": v(r, 8),
-            "ach_unit": v(r, 9),
-            "ach_pct": v(r, 10),
-            "gap_unit": v(r, 11),
-            "mio3_unit": v(r, 13),
-            "mio3_pct": v(r, 14),
-            "iqoo_unit": v(r, 15),
-            "iqoo_pct": v(r, 16),
-            "ach_value": v(r, 18),
-            "ach_value_pct": v(r, 19),
-            "gap_value": v(r, 20),
-            "growth_all_prev": v(r, 35),
-            "growth_all_curr": v(r, 36),
-            "growth_all_gap": v(r, 37),
-            "growth_all_pct": v(r, 38),
-            "growth_value_prev": v(r, 47),
-            "growth_value_curr": v(r, 48),
-            "growth_value_gap": v(r, 49),
-            "growth_value_pct": v(r, 50),
-            "vas": vas_block(r),
-        })
+    # invert the per-store by_type breakdown into a per-type view: for each
+    # brand, "which stores carry model X, and how much" — this is what
+    # lets the dashboard answer "tipe X ada di toko mana saja" instead of
+    # only "toko Y ada tipe apa saja".
+    types_by_brand = {}
+    for brand in parsed.keys():
+        key = f"{brand.lower()}_by_type"
+        model_acc = {}
+        for s in stores:
+            for t in s.get(key, []):
+                acc = model_acc.setdefault(t["model"], {"stock": 0, "sales_out": 0, "stores": []})
+                acc["stock"] += t["stock"]
+                acc["sales_out"] += t["sales_out"]
+                if t["stock"] or t["sales_out"]:
+                    acc["stores"].append({
+                        "store_name": s["store_name"],
+                        "store_id": s["store_id"],
+                        "stock": t["stock"],
+                        "sales_out": t["sales_out"],
+                        "dos": t["dos"],
+                    })
+        types = []
+        for model, acc in model_acc.items():
+            dos = round(acc["stock"] / (acc["sales_out"] / hari_berjalan), 2) if acc["sales_out"] else None
+            acc["stores"].sort(key=lambda x: -x["stock"])
+            types.append({
+                "model": model,
+                "stock": acc["stock"],
+                "sales_out": acc["sales_out"],
+                "dos": dos,
+                "stores": acc["stores"],
+            })
+        types.sort(key=lambda t: -t["stock"])
+        types_by_brand[brand] = types
 
-    data = {
-        "period": period,
+    now = datetime.now(JAKARTA) if JAKARTA else datetime.utcnow()
+    period_key = f"{now.year}-{now.month:02d}"
+    period_label = f"{BULAN_ID[now.month]} {now.year}"
+
+    ref = next(iter(parsed.values()))
+    payload = {
+        "period": period_key,
         "period_key": period_key,
         "period_label": period_label,
-        "to_date_day": to_date_day,
-        "total_days": total_days,
-        "time_gone": time_gone,
+        "total_hari": ref["total_hari"],
+        "hari_berjalan": ref["hari_berjalan"],
+        "sisa_hari": ref["sisa_hari"],
         "updated_by": os.environ.get("UPDATED_BY", "Michael Fumar"),
         "updated_at": format_updated_at(),
         "stores": stores,
-        "total": total_row,
+        "types_by_brand": types_by_brand,
     }
 
-    out_path = DATA_DIR / f"{period_key}.json"
+    out_path = DATA_DIR / f"stock-{period_key}.json"
     with open(out_path, "w", encoding="utf-8") as f:
-        json.dump(data, f, indent=2, ensure_ascii=False)
+        json.dump(payload, f, indent=2, ensure_ascii=False)
 
-    # --- update manifest (daftar semua bulan yang tersedia) ---
     if MANIFEST_PATH.exists():
         manifest = json.loads(MANIFEST_PATH.read_text(encoding="utf-8"))
     else:
@@ -188,7 +315,7 @@ def main():
     existing[period_key] = {
         "key": period_key,
         "label": period_label,
-        "file": f"data/{period_key}.json",
+        "file": f"data/stock-{period_key}.json",
     }
     manifest["periods"] = sorted(existing.values(), key=lambda p: p["key"])
 

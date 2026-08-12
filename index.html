@@ -281,6 +281,27 @@
   .rank-name .a{ font-size:11px; color:var(--ink-faint); }
   .rank-pct{ font-family:'JetBrains Mono',monospace; font-weight:700; font-size:13px; flex:none; }
 
+  .crosscheck-grid{ display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-bottom:8px; }
+  @media (max-width: 900px){ .crosscheck-grid{ grid-template-columns:1fr; } }
+  .cc-card{ background:var(--surface); border:1px solid var(--line); border-radius:var(--radius); overflow:hidden; box-shadow:var(--shadow); }
+  .cc-head{ padding:14px 18px; border-bottom:1px solid var(--line); display:flex; align-items:center; gap:10px; }
+  .cc-head .cc-icon{ width:30px; height:30px; border-radius:8px; display:flex; align-items:center; justify-content:center; font-size:15px; flex:none; }
+  .cc-head.over .cc-icon{ background:var(--warn-soft); }
+  .cc-head.under .cc-icon{ background:var(--bad-soft); }
+  .cc-head h3{ font-size:14.5px; font-weight:700; margin:0; }
+  .cc-head .cc-sub{ font-size:11.5px; color:var(--ink-faint); margin-top:1px; }
+  .cc-body{ padding:6px 0; }
+  .cc-row{ display:flex; align-items:center; gap:10px; padding:9px 18px; border-bottom:1px solid var(--line); }
+  .cc-row:last-child{ border-bottom:none; }
+  .cc-row .cc-name{ flex:1; min-width:0; }
+  .cc-row .cc-name .n{ font-weight:600; font-size:13px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+  .cc-row .cc-name .a{ font-size:11px; color:var(--ink-faint); }
+  .cc-metric{ flex:none; text-align:right; font-family:'JetBrains Mono',monospace; font-size:11.5px; }
+  .cc-metric .big{ font-size:13px; font-weight:700; display:block; }
+  .cc-metric.dos-over .big{ color:var(--warn); }
+  .cc-metric.dos-under .big{ color:var(--bad); }
+  .cc-empty{ padding:18px; font-size:12.5px; color:var(--ink-faint); text-align:center; }
+
   footer{ text-align:center; padding:30px 20px 40px; color:var(--ink-faint); font-size:12px; }
 </style>
 </head>
@@ -395,6 +416,14 @@
   <div class="page" id="page-stock">
 
     <div class="kpi-grid" id="stock-kpi-grid"></div>
+
+    <div id="stockout-section" style="display:none;">
+      <div class="section-head">
+        <h2>⚠️ Risiko Stockout per Tipe <span class="hint" style="font-weight:400;">(deteksi dini per tipe di tiap toko)</span></h2>
+        <span class="hint" id="stockout-hint"></span>
+      </div>
+      <div class="crosscheck-grid" id="stockout-grid"></div>
+    </div>
 
     <div class="toolbar">
       <div class="seg" id="stock-view-seg">
@@ -858,6 +887,83 @@ function renderMonthRow(){
 }
 
 /* ================================================================ */
+/* ============== RISIKO STOCKOUT PER TIPE (dari stock) ============ */
+/* ================================================================ */
+const SO_DOS_RISK = 7;    // DOS < 7 hari: berisiko habis dalam seminggu
+const SO_MAX_ROWS = 12;   // batas baris ditampilkan per kartu
+
+function renderStockoutRisk(){
+  const section = document.getElementById('stockout-section');
+  if(!STOCK_DATA || !STOCK_DATA.stores){ section.style.display='none'; return; }
+
+  const habis = [];    // stock 0 tapi masih ada sales -> sudah kehilangan penjualan
+  const berisiko = []; // masih ada stok tapi DOS < 7 hari
+
+  STOCK_DATA.stores.forEach(s=>{
+    ['iqoo','vivo'].forEach(brand=>{
+      (s[`${brand}_by_type`]||[]).forEach(t=>{
+        const sales = t.sales_out || 0;
+        const stock = t.stock || 0;
+        if(sales <= 0) return;                 // gak ada penjualan -> gak relevan
+        if(stock <= 0){
+          habis.push({store:s.store_name, brand:brand.toUpperCase(), model:t.model, stock, sales, dos:t.dos});
+        } else if(t.dos !== null && t.dos !== undefined && t.dos < SO_DOS_RISK){
+          berisiko.push({store:s.store_name, brand:brand.toUpperCase(), model:t.model, stock, sales, dos:t.dos});
+        }
+      });
+    });
+  });
+
+  // sudah habis: yang sales-nya paling tinggi = kehilangan paling banyak -> paling atas
+  habis.sort((a,b)=>b.sales-a.sales);
+  // berisiko: DOS paling rendah = paling mendesak -> paling atas
+  berisiko.sort((a,b)=>a.dos-b.dos);
+
+  document.getElementById('stockout-hint').textContent =
+    `${habis.length} tipe sudah habis · ${berisiko.length} tipe menipis · dari ${STOCK_DATA.stores.length} toko`;
+
+  const rowHTML = (r, kind) => `
+    <div class="cc-row">
+      <div class="cc-name">
+        <div class="n">${r.model} <span style="color:var(--ink-faint);font-weight:400;font-size:11px;">· ${r.brand}</span></div>
+        <div class="a">${r.store}</div>
+      </div>
+      <div class="cc-metric ${kind==='habis'?'dos-under':'dos-over'}">
+        ${kind==='habis'
+          ? `<span class="big">Stock 0</span><span>${fmt(r.sales)} terjual bln ini</span>`
+          : `<span class="big">${r.dos.toFixed(1)} hari</span><span>sisa ${fmt(r.stock)} unit</span>`}
+      </div>
+    </div>`;
+
+  const cap = (arr, kind) => {
+    if(!arr.length) return `<div class="cc-empty">Tidak ada 👍</div>`;
+    const shown = arr.slice(0, SO_MAX_ROWS).map(r=>rowHTML(r,kind)).join('');
+    const extra = arr.length > SO_MAX_ROWS
+      ? `<div class="cc-empty">+${arr.length-SO_MAX_ROWS} tipe lainnya — lihat di tabel per toko di bawah</div>`
+      : '';
+    return shown + extra;
+  };
+
+  document.getElementById('stockout-grid').innerHTML = `
+    <div class="cc-card">
+      <div class="cc-head under">
+        <div class="cc-icon">🚨</div>
+        <div><h3>Sudah habis — stok 0, masih ada demand</h3><div class="cc-sub">Restock secepatnya · urut dari sales terbanyak</div></div>
+      </div>
+      <div class="cc-body">${cap(habis,'habis')}</div>
+    </div>
+    <div class="cc-card">
+      <div class="cc-head over">
+        <div class="cc-icon">⏳</div>
+        <div><h3>Menipis — habis dalam &lt; ${SO_DOS_RISK} hari</h3><div class="cc-sub">Siapkan restock · urut dari paling mendesak</div></div>
+      </div>
+      <div class="cc-body">${cap(berisiko,'berisiko')}</div>
+    </div>`;
+
+  section.style.display = '';
+}
+
+/* ================================================================ */
 /* ======================= PERFORMANCE LOGIC ======================= */
 /* ================================================================ */
 function loadPerfPeriod(key){
@@ -1118,6 +1224,7 @@ function loadStockPeriod(key, isInitial){
     stockCurrentKey = key;
     if(activeSection==='stock') renderMonthRow();
     initStock();
+    renderStockoutRisk();
   });
 }
 

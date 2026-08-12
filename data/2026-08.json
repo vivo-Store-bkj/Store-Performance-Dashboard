@@ -4,9 +4,9 @@
   "period_label": "Agustus 2026",
   "to_date_day": 11,
   "total_days": 31,
-  "time_gone": 0.3548387096774194,
+  "time_gone": 0.354838709677419,
   "updated_by": "Michael Fumar",
-  "updated_at": "12 Agustus 2026, 10:03 WIB",
+  "updated_at": "12 Agustus 2026, 10:18 WIB",
   "stores": [
     {
       "no": 1,
@@ -19,33 +19,33 @@
       "target_unit": 120,
       "target_value": 840000000,
       "ach_unit": 29,
-      "ach_pct": 0.24166666666666667,
+      "ach_pct": 0.241666666666667,
       "gap_unit": -91,
       "mio3_unit": 14,
-      "mio3_pct": 0.4827586206896552,
+      "mio3_pct": 0.482758620689655,
       "iqoo_unit": 1,
-      "iqoo_pct": 0.034482758620689655,
+      "iqoo_pct": 0.0344827586206897,
       "ach_value": 120271000,
-      "ach_value_pct": 0.1431797619047619,
+      "ach_value_pct": 0.143179761904762,
       "gap_value": -719729000,
-      "growth_all_prev": 42,
+      "growth_all_prev": 50,
       "growth_all_curr": 29,
-      "growth_all_gap": -13,
-      "growth_all_pct": -0.30952380952380953,
-      "growth_value_prev": 262858000,
+      "growth_all_gap": -21,
+      "growth_all_pct": -0.42,
+      "growth_value_prev": 300050000,
       "growth_value_curr": 120271000,
-      "growth_value_gap": -142587000,
-      "growth_value_pct": -0.542448774623561,
+      "growth_value_gap": -179779000,
+      "growth_value_pct": -0.599163472754541,
       "vas": {
         "acc": {
           "target": 12,
           "ach": 19,
-          "pct": 1.5833333333333333
+          "pct": 1.58333333333333
         },
         "qoala": {
           "target": 4200000,
           "ach": 477000,
-          "pct": 0.11357142857142857
+          "pct": 0.113571428571429
         },
         "bca_insurance": {
           "target": 840000,
@@ -53,7 +53,7 @@
           "pct": 0
         },
         "indosat": {
-          "target": 3.5999999999999996,
+          "target": 3.6,
           "ach": 0,
           "pct": 0
         },
@@ -75,33 +75,33 @@
       "target_unit": 260,
       "target_value": 962000000,
       "ach_unit": 105,
-      "ach_pct": 0.40384615384615385,
+      "ach_pct": 0.403846153846154,
       "gap_unit": -155,
       "mio3_unit": 42,
       "mio3_pct": 0.4,
       "iqoo_unit": 2,
-      "iqoo_pct": 0.01904761904761905,
+      "iqoo_pct": 0.019047619047619,
       "ach_value": 382295000,
-      "ach_value_pct": 0.3973960498960499,
+      "ach_value_pct": 0.39739604989605,
       "gap_value": -579705000,
-      "growth_all_prev": 92,
+      "growth_all_prev": 113,
       "growth_all_curr": 105,
-      "growth_all_gap": 13,
-      "growth_all_pct": 0.14130434782608695,
-      "growth_value_prev": 320708000,
+      "growth_all_gap": -8,
+      "growth_all_pct": -0.0707964601769911,
+      "growth_value_prev": 397187000,
       "growth_value_curr": 382295000,
-      "growth_value_gap": 61587000,
-      "growth_value_pct": 0.1920344986716889,
+      "growth_value_gap": -14892000,
+      "growth_value_pct": -0.0374936742642634,
       "vas": {
         "acc": {
           "target": 26,
           "ach": 38,
-          "pct": 1.4615384615384615
+          "pct": 1.46153846153846
         },
         "qoala": {
           "target": 4810000,
           "ach": 3089000,
-          "pct": 0.6422037422037422
+          "pct": 0.642203742203742
         },
         "bca_insurance": {
           "target": 962000,
@@ -111,7 +111,7 @@
         "indosat": {
           "target": 7.8,
           "ach": 5,
-          "pct": 0.6410256410256411
+          "pct": 0.641025641025641
         },
         "telkomsel": {
           "target": 78,
@@ -131,33 +131,33 @@
       "target_unit": 260,
       "target_value": 962000000,
       "ach_unit": 108,
-      "ach_pct": 0.4153846153846154,
+      "ach_pct": 0.415384615384615,
       "gap_unit": -152,
       "mio3_unit": 29,
-      "mio3_pct": 0.26851851851851855,
+      "mio3_pct": 0.268518518518519,
       "iqoo_unit": 3,
-      "iqoo_pct": 0.027777777777777776,
+      "iqoo_pct": 0.0277777777777778,
       "ach_value": 340192000,
-      "ach_value_pct": 0.3536299376299376,
+      "ach_value_pct": 0.353629937629938,
       "gap_value": -621808000,
-      "growth_all_prev": 80,
+      "growth_all_prev": 105,
       "growth_all_curr": 108,
-      "growth_all_gap": 28,
-      "growth_all_pct": 0.35,
-      "growth_value_prev": 265120000,
+      "growth_all_gap": 3,
+      "growth_all_pct": 0.0285714285714286,
+      "growth_value_prev": 347595000,
       "growth_value_curr": 340192000,
-      "growth_value_gap": 75072000,
-      "growth_value_pct": 0.2831623415811708,
+      "growth_value_gap": -7403000,
+      "growth_value_pct": -0.0212977747090723,
       "vas": {
         "acc": {
           "target": 26,
           "ach": 34,
-          "pct": 1.3076923076923077
+          "pct": 1.30769230769231
         },
         "qoala": {
           "target": 4810000,
           "ach": 2067000,
-          "pct": 0.4297297297297297
+          "pct": 0.42972972972973
         },
         "bca_insurance": {
           "target": 962000,
@@ -167,7 +167,7 @@
         "indosat": {
           "target": 7.8,
           "ach": 3,
-          "pct": 0.38461538461538464
+          "pct": 0.384615384615385
         },
         "telkomsel": {
           "target": 78,
@@ -187,23 +187,23 @@
       "target_unit": 120,
       "target_value": 420000000,
       "ach_unit": 58,
-      "ach_pct": 0.48333333333333334,
+      "ach_pct": 0.483333333333333,
       "gap_unit": -62,
       "mio3_unit": 10,
-      "mio3_pct": 0.1724137931034483,
+      "mio3_pct": 0.172413793103448,
       "iqoo_unit": 1,
-      "iqoo_pct": 0.017241379310344827,
+      "iqoo_pct": 0.0172413793103448,
       "ach_value": 151242000,
       "ach_value_pct": 0.3601,
       "gap_value": -268758000,
-      "growth_all_prev": 32,
+      "growth_all_prev": 44,
       "growth_all_curr": 58,
-      "growth_all_gap": 26,
-      "growth_all_pct": 0.8125,
-      "growth_value_prev": 95768000,
+      "growth_all_gap": 14,
+      "growth_all_pct": 0.318181818181818,
+      "growth_value_prev": 122256000,
       "growth_value_curr": 151242000,
-      "growth_value_gap": 55474000,
-      "growth_value_pct": 0.5792540305738869,
+      "growth_value_gap": 28986000,
+      "growth_value_pct": 0.237092658029054,
       "vas": {
         "acc": {
           "target": 12,
@@ -213,7 +213,7 @@
         "qoala": {
           "target": 2100000,
           "ach": 954000,
-          "pct": 0.4542857142857143
+          "pct": 0.454285714285714
         },
         "bca_insurance": {
           "target": 420000,
@@ -221,9 +221,9 @@
           "pct": 0
         },
         "indosat": {
-          "target": 3.5999999999999996,
+          "target": 3.6,
           "ach": 1,
-          "pct": 0.2777777777777778
+          "pct": 0.277777777777778
         },
         "telkomsel": {
           "target": 36,
@@ -246,20 +246,20 @@
       "ach_pct": 0.484375,
       "gap_unit": -165,
       "mio3_unit": 34,
-      "mio3_pct": 0.21935483870967742,
+      "mio3_pct": 0.219354838709677,
       "iqoo_unit": 2,
-      "iqoo_pct": 0.012903225806451613,
+      "iqoo_pct": 0.0129032258064516,
       "ach_value": 442945000,
-      "ach_value_pct": 0.39548660714285716,
+      "ach_value_pct": 0.395486607142857,
       "gap_value": -677055000,
-      "growth_all_prev": 118,
+      "growth_all_prev": 152,
       "growth_all_curr": 155,
-      "growth_all_gap": 37,
-      "growth_all_pct": 0.3135593220338983,
-      "growth_value_prev": 336982000,
+      "growth_all_gap": 3,
+      "growth_all_pct": 0.0197368421052632,
+      "growth_value_prev": 431748000,
       "growth_value_curr": 442945000,
-      "growth_value_gap": 105963000,
-      "growth_value_pct": 0.3144470624543744,
+      "growth_value_gap": 11197000,
+      "growth_value_pct": 0.0259341097121469,
       "vas": {
         "acc": {
           "target": 32,
@@ -269,7 +269,7 @@
         "qoala": {
           "target": 5600000,
           "ach": 2634000,
-          "pct": 0.47035714285714286
+          "pct": 0.470357142857143
         },
         "bca_insurance": {
           "target": 1120000,
@@ -279,7 +279,7 @@
         "indosat": {
           "target": 9.6,
           "ach": 4,
-          "pct": 0.4166666666666667
+          "pct": 0.416666666666667
         },
         "telkomsel": {
           "target": 96,
@@ -299,33 +299,33 @@
       "target_unit": 110,
       "target_value": 385000000,
       "ach_unit": 58,
-      "ach_pct": 0.5272727272727272,
+      "ach_pct": 0.527272727272727,
       "gap_unit": -52,
       "mio3_unit": 12,
-      "mio3_pct": 0.20689655172413793,
+      "mio3_pct": 0.206896551724138,
       "iqoo_unit": 0,
       "iqoo_pct": 0,
       "ach_value": 157042000,
-      "ach_value_pct": 0.4079012987012987,
+      "ach_value_pct": 0.407901298701299,
       "gap_value": -227958000,
-      "growth_all_prev": 40,
+      "growth_all_prev": 44,
       "growth_all_curr": 58,
-      "growth_all_gap": 18,
-      "growth_all_pct": 0.45,
-      "growth_value_prev": 134460000,
+      "growth_all_gap": 14,
+      "growth_all_pct": 0.318181818181818,
+      "growth_value_prev": 155756000,
       "growth_value_curr": 157042000,
-      "growth_value_gap": 22582000,
-      "growth_value_pct": 0.16794585750409044,
+      "growth_value_gap": 1286000,
+      "growth_value_pct": 0.00825650376229487,
       "vas": {
         "acc": {
           "target": 11,
           "ach": 8,
-          "pct": 0.7272727272727273
+          "pct": 0.727272727272727
         },
         "qoala": {
           "target": 1925000,
           "ach": 1113000,
-          "pct": 0.5781818181818181
+          "pct": 0.578181818181818
         },
         "bca_insurance": {
           "target": 385000,
@@ -358,40 +358,40 @@
       "ach_pct": 0.275,
       "gap_unit": -87,
       "mio3_unit": 16,
-      "mio3_pct": 0.48484848484848486,
+      "mio3_pct": 0.484848484848485,
       "iqoo_unit": 1,
-      "iqoo_pct": 0.030303030303030304,
+      "iqoo_pct": 0.0303030303030303,
       "ach_value": 207267000,
-      "ach_value_pct": 0.24674642857142856,
+      "ach_value_pct": 0.246746428571429,
       "gap_value": -632733000,
-      "growth_all_prev": 28,
+      "growth_all_prev": 39,
       "growth_all_curr": 33,
-      "growth_all_gap": 5,
-      "growth_all_pct": 0.17857142857142858,
-      "growth_value_prev": 139472000,
+      "growth_all_gap": -6,
+      "growth_all_pct": -0.153846153846154,
+      "growth_value_prev": 193261000,
       "growth_value_curr": 207267000,
-      "growth_value_gap": 67795000,
-      "growth_value_pct": 0.4860832281748308,
+      "growth_value_gap": 14006000,
+      "growth_value_pct": 0.072471942088678,
       "vas": {
         "acc": {
           "target": 12,
           "ach": 16,
-          "pct": 1.3333333333333333
+          "pct": 1.33333333333333
         },
         "qoala": {
           "target": 4200000,
           "ach": 647000,
-          "pct": 0.15404761904761904
+          "pct": 0.154047619047619
         },
         "bca_insurance": {
           "target": 840000,
           "ach": 1000000,
-          "pct": 1.1904761904761905
+          "pct": 1.19047619047619
         },
         "indosat": {
-          "target": 3.5999999999999996,
+          "target": 3.6,
           "ach": 1,
-          "pct": 0.2777777777777778
+          "pct": 0.277777777777778
         },
         "telkomsel": {
           "target": 36,
@@ -414,20 +414,20 @@
       "ach_pct": 0.42,
       "gap_unit": -29,
       "mio3_unit": 12,
-      "mio3_pct": 0.5714285714285714,
+      "mio3_pct": 0.571428571428571,
       "iqoo_unit": 1,
-      "iqoo_pct": 0.047619047619047616,
+      "iqoo_pct": 0.0476190476190476,
       "ach_value": 164979000,
-      "ach_value_pct": 0.4713685714285714,
+      "ach_value_pct": 0.471368571428571,
       "gap_value": -185021000,
-      "growth_all_prev": 5,
+      "growth_all_prev": 7,
       "growth_all_curr": 21,
-      "growth_all_gap": 16,
-      "growth_all_pct": 3.2,
-      "growth_value_prev": 34595000,
+      "growth_all_gap": 14,
+      "growth_all_pct": 2,
+      "growth_value_prev": 41293000,
       "growth_value_curr": 164979000,
-      "growth_value_gap": 130384000,
-      "growth_value_pct": 3.768868333574216,
+      "growth_value_gap": 123686000,
+      "growth_value_pct": 2.99532608432422,
       "vas": {
         "acc": {
           "target": 5,
@@ -437,7 +437,7 @@
         "qoala": {
           "target": 1750000,
           "ach": 817000,
-          "pct": 0.46685714285714286
+          "pct": 0.466857142857143
         },
         "bca_insurance": {
           "target": 350000,
@@ -470,20 +470,20 @@
       "ach_pct": 0.39,
       "gap_unit": -61,
       "mio3_unit": 16,
-      "mio3_pct": 0.41025641025641024,
+      "mio3_pct": 0.41025641025641,
       "iqoo_unit": 1,
-      "iqoo_pct": 0.02564102564102564,
+      "iqoo_pct": 0.0256410256410256,
       "ach_value": 134461000,
       "ach_value_pct": 0.3127,
       "gap_value": -295539000,
-      "growth_all_prev": 39,
+      "growth_all_prev": 47,
       "growth_all_curr": 39,
-      "growth_all_gap": 0,
-      "growth_all_pct": 0,
-      "growth_value_prev": 162161000,
+      "growth_all_gap": -8,
+      "growth_all_pct": -0.170212765957447,
+      "growth_value_prev": 199753000,
       "growth_value_curr": 134461000,
-      "growth_value_gap": -27700000,
-      "growth_value_pct": -0.17081789086155116,
+      "growth_value_gap": -65292000,
+      "growth_value_pct": -0.326863676640651,
       "vas": {
         "acc": {
           "target": 10,
@@ -493,7 +493,7 @@
         "qoala": {
           "target": 2150000,
           "ach": 1464000,
-          "pct": 0.6809302325581396
+          "pct": 0.68093023255814
         },
         "bca_insurance": {
           "target": 430000,
@@ -526,30 +526,30 @@
       "ach_pct": 0.3,
       "gap_unit": -42,
       "mio3_unit": 10,
-      "mio3_pct": 0.5555555555555556,
+      "mio3_pct": 0.555555555555556,
       "iqoo_unit": 1,
-      "iqoo_pct": 0.05555555555555555,
+      "iqoo_pct": 0.0555555555555556,
       "ach_value": 71082000,
-      "ach_value_pct": 0.27551162790697675,
+      "ach_value_pct": 0.275511627906977,
       "gap_value": -186918000,
-      "growth_all_prev": 26,
+      "growth_all_prev": 27,
       "growth_all_curr": 18,
-      "growth_all_gap": -8,
-      "growth_all_pct": -0.3076923076923077,
-      "growth_value_prev": 89474000,
+      "growth_all_gap": -9,
+      "growth_all_pct": -0.333333333333333,
+      "growth_value_prev": 91873000,
       "growth_value_curr": 71082000,
-      "growth_value_gap": -18392000,
-      "growth_value_pct": -0.20555692156380626,
+      "growth_value_gap": -20791000,
+      "growth_value_pct": -0.226301524931155,
       "vas": {
         "acc": {
           "target": 6,
           "ach": 1,
-          "pct": 0.16666666666666666
+          "pct": 0.166666666666667
         },
         "qoala": {
           "target": 1290000,
           "ach": 249000,
-          "pct": 0.1930232558139535
+          "pct": 0.193023255813953
         },
         "bca_insurance": {
           "target": 258000,
@@ -557,7 +557,7 @@
           "pct": 0
         },
         "indosat": {
-          "target": 1.7999999999999998,
+          "target": 1.8,
           "ach": 0,
           "pct": 0
         },
@@ -584,18 +584,18 @@
       "mio3_unit": 13,
       "mio3_pct": 0.5,
       "iqoo_unit": 1,
-      "iqoo_pct": 0.038461538461538464,
+      "iqoo_pct": 0.0384615384615385,
       "ach_value": 104174000,
-      "ach_value_pct": 0.48453023255813954,
+      "ach_value_pct": 0.48453023255814,
       "gap_value": -110826000,
-      "growth_all_prev": 27,
+      "growth_all_prev": 33,
       "growth_all_curr": 26,
-      "growth_all_gap": -1,
-      "growth_all_pct": -0.037037037037037035,
-      "growth_value_prev": 134673000,
+      "growth_all_gap": -7,
+      "growth_all_pct": -0.212121212121212,
+      "growth_value_prev": 163167000,
       "growth_value_curr": 104174000,
-      "growth_value_gap": -30499000,
-      "growth_value_pct": -0.22646707209314412,
+      "growth_value_gap": -58993000,
+      "growth_value_pct": -0.361549823187287,
       "vas": {
         "acc": {
           "target": 5,
@@ -605,7 +605,7 @@
         "qoala": {
           "target": 1075000,
           "ach": 318000,
-          "pct": 0.2958139534883721
+          "pct": 0.295813953488372
         },
         "bca_insurance": {
           "target": 215000,
@@ -635,33 +635,33 @@
       "target_unit": 60,
       "target_value": 258000000,
       "ach_unit": 19,
-      "ach_pct": 0.31666666666666665,
+      "ach_pct": 0.316666666666667,
       "gap_unit": -41,
       "mio3_unit": 11,
-      "mio3_pct": 0.5789473684210527,
+      "mio3_pct": 0.578947368421053,
       "iqoo_unit": 1,
-      "iqoo_pct": 0.05263157894736842,
+      "iqoo_pct": 0.0526315789473684,
       "ach_value": 94881000,
-      "ach_value_pct": 0.3677558139534884,
+      "ach_value_pct": 0.367755813953488,
       "gap_value": -163119000,
-      "growth_all_prev": 23,
+      "growth_all_prev": 30,
       "growth_all_curr": 19,
-      "growth_all_gap": -4,
-      "growth_all_pct": -0.17391304347826086,
-      "growth_value_prev": 186677000,
+      "growth_all_gap": -11,
+      "growth_all_pct": -0.366666666666667,
+      "growth_value_prev": 215470000,
       "growth_value_curr": 94881000,
-      "growth_value_gap": -91796000,
-      "growth_value_pct": -0.491737064555355,
+      "growth_value_gap": -120589000,
+      "growth_value_pct": -0.559655636515524,
       "vas": {
         "acc": {
           "target": 6,
           "ach": 2,
-          "pct": 0.3333333333333333
+          "pct": 0.333333333333333
         },
         "qoala": {
           "target": 1290000,
           "ach": 408000,
-          "pct": 0.31627906976744186
+          "pct": 0.316279069767442
         },
         "bca_insurance": {
           "target": 258000,
@@ -669,9 +669,9 @@
           "pct": 0
         },
         "indosat": {
-          "target": 1.7999999999999998,
+          "target": 1.8,
           "ach": 2,
-          "pct": 1.1111111111111112
+          "pct": 1.11111111111111
         },
         "telkomsel": {
           "target": 18,
@@ -694,20 +694,20 @@
       "ach_pct": 0.4,
       "gap_unit": -18,
       "mio3_unit": 7,
-      "mio3_pct": 0.5833333333333334,
+      "mio3_pct": 0.583333333333333,
       "iqoo_unit": 2,
-      "iqoo_pct": 0.16666666666666666,
+      "iqoo_pct": 0.166666666666667,
       "ach_value": 58188000,
-      "ach_value_pct": 0.27708571428571427,
+      "ach_value_pct": 0.277085714285714,
       "gap_value": -151812000,
-      "growth_all_prev": 13,
+      "growth_all_prev": 15,
       "growth_all_curr": 12,
-      "growth_all_gap": -1,
-      "growth_all_pct": -0.07692307692307693,
-      "growth_value_prev": 108287000,
+      "growth_all_gap": -3,
+      "growth_all_pct": -0.2,
+      "growth_value_prev": 115685000,
       "growth_value_curr": 58188000,
-      "growth_value_gap": -50099000,
-      "growth_value_pct": -0.4626501796152816,
+      "growth_value_gap": -57497000,
+      "growth_value_pct": -0.49701344167351,
       "vas": {
         "acc": {
           "target": 3,
@@ -725,7 +725,7 @@
           "pct": 0
         },
         "indosat": {
-          "target": 0.8999999999999999,
+          "target": 0.9,
           "ach": 0,
           "pct": 0
         },
@@ -752,18 +752,18 @@
       "mio3_unit": 7,
       "mio3_pct": 0.5,
       "iqoo_unit": 2,
-      "iqoo_pct": 0.14285714285714285,
+      "iqoo_pct": 0.142857142857143,
       "ach_value": 79386000,
-      "ach_value_pct": 0.3608454545454545,
+      "ach_value_pct": 0.360845454545455,
       "gap_value": -140614000,
-      "growth_all_prev": 24,
+      "growth_all_prev": 28,
       "growth_all_curr": 14,
-      "growth_all_gap": -10,
-      "growth_all_pct": -0.4166666666666667,
-      "growth_value_prev": 156376000,
+      "growth_all_gap": -14,
+      "growth_all_pct": -0.5,
+      "growth_value_prev": 173572000,
       "growth_value_curr": 79386000,
-      "growth_value_gap": -76990000,
-      "growth_value_pct": -0.49233897784826314,
+      "growth_value_gap": -94186000,
+      "growth_value_pct": -0.542633604498421,
       "vas": {
         "acc": {
           "target": 4,
@@ -773,7 +773,7 @@
         "qoala": {
           "target": 1100000,
           "ach": 817000,
-          "pct": 0.7427272727272727
+          "pct": 0.742727272727273
         },
         "bca_insurance": {
           "target": 220000,
@@ -806,20 +806,20 @@
       "ach_pct": 0.3,
       "gap_unit": -42,
       "mio3_unit": 11,
-      "mio3_pct": 0.6111111111111112,
+      "mio3_pct": 0.611111111111111,
       "iqoo_unit": 4,
-      "iqoo_pct": 0.2222222222222222,
+      "iqoo_pct": 0.222222222222222,
       "ach_value": 92182000,
-      "ach_value_pct": 0.27933939393939394,
+      "ach_value_pct": 0.279339393939394,
       "gap_value": -237818000,
-      "growth_all_prev": 21,
+      "growth_all_prev": 29,
       "growth_all_curr": 18,
-      "growth_all_gap": -3,
-      "growth_all_pct": -0.14285714285714285,
-      "growth_value_prev": 132079000,
+      "growth_all_gap": -11,
+      "growth_all_pct": -0.379310344827586,
+      "growth_value_prev": 177371000,
       "growth_value_curr": 92182000,
-      "growth_value_gap": -39897000,
-      "growth_value_pct": -0.30206921615093996,
+      "growth_value_gap": -85189000,
+      "growth_value_pct": -0.480287081879225,
       "vas": {
         "acc": {
           "target": 6,
@@ -829,7 +829,7 @@
         "qoala": {
           "target": 1650000,
           "ach": 329000,
-          "pct": 0.1993939393939394
+          "pct": 0.199393939393939
         },
         "bca_insurance": {
           "target": 330000,
@@ -837,7 +837,7 @@
           "pct": 0
         },
         "indosat": {
-          "target": 1.7999999999999998,
+          "target": 1.8,
           "ach": 0,
           "pct": 0
         },
@@ -862,20 +862,20 @@
       "ach_pct": 0.225,
       "gap_unit": -62,
       "mio3_unit": 7,
-      "mio3_pct": 0.3888888888888889,
+      "mio3_pct": 0.388888888888889,
       "iqoo_unit": 1,
-      "iqoo_pct": 0.05555555555555555,
+      "iqoo_pct": 0.0555555555555556,
       "ach_value": 62682000,
-      "ach_value_pct": 0.6964666666666667,
+      "ach_value_pct": 0.696466666666667,
       "gap_value": -27318000,
-      "growth_all_prev": 24,
+      "growth_all_prev": 30,
       "growth_all_curr": 18,
-      "growth_all_gap": -6,
-      "growth_all_pct": -0.25,
-      "growth_value_prev": 181076000,
+      "growth_all_gap": -12,
+      "growth_all_pct": -0.4,
+      "growth_value_prev": 199770000,
       "growth_value_curr": 62682000,
-      "growth_value_gap": -118394000,
-      "growth_value_pct": -0.6538359583821158,
+      "growth_value_gap": -137088000,
+      "growth_value_pct": -0.686229163538069,
       "vas": {
         "acc": {
           "target": 2,
@@ -885,7 +885,7 @@
         "qoala": {
           "target": 450000,
           "ach": 329000,
-          "pct": 0.7311111111111112
+          "pct": 0.731111111111111
         },
         "bca_insurance": {
           "target": 90000,
@@ -918,20 +918,20 @@
       "ach_pct": 0.65,
       "gap_unit": -7,
       "mio3_unit": 9,
-      "mio3_pct": 0.6923076923076923,
+      "mio3_pct": 0.692307692307692,
       "iqoo_unit": 1,
-      "iqoo_pct": 0.07692307692307693,
+      "iqoo_pct": 0.0769230769230769,
       "ach_value": 62087000,
-      "ach_value_pct": 0.1411068181818182,
+      "ach_value_pct": 0.141106818181818,
       "gap_value": -377913000,
-      "growth_all_prev": 19,
+      "growth_all_prev": 20,
       "growth_all_curr": 13,
-      "growth_all_gap": -6,
-      "growth_all_pct": -0.3157894736842105,
-      "growth_value_prev": 92681000,
+      "growth_all_gap": -7,
+      "growth_all_pct": -0.35,
+      "growth_value_prev": 94780000,
       "growth_value_curr": 62087000,
-      "growth_value_gap": -30594000,
-      "growth_value_pct": -0.3301000205004262,
+      "growth_value_gap": -32693000,
+      "growth_value_pct": -0.344935640430471,
       "vas": {
         "acc": {
           "target": 8,
@@ -941,7 +941,7 @@
         "qoala": {
           "target": 2200000,
           "ach": 578000,
-          "pct": 0.26272727272727275
+          "pct": 0.262727272727273
         },
         "bca_insurance": {
           "target": 440000,
@@ -971,14 +971,14 @@
       "target_unit": 30,
       "target_value": 165000000,
       "ach_unit": 19,
-      "ach_pct": 0.6333333333333333,
+      "ach_pct": 0.633333333333333,
       "gap_unit": -11,
       "mio3_unit": 5,
-      "mio3_pct": 0.2631578947368421,
+      "mio3_pct": 0.263157894736842,
       "iqoo_unit": 1,
-      "iqoo_pct": 0.05263157894736842,
+      "iqoo_pct": 0.0526315789473684,
       "ach_value": 66481000,
-      "ach_value_pct": 0.4029151515151515,
+      "ach_value_pct": 0.402915151515152,
       "gap_value": -98519000,
       "growth_all_prev": 0,
       "growth_all_curr": 19,
@@ -992,12 +992,12 @@
         "acc": {
           "target": 3,
           "ach": 5,
-          "pct": 1.6666666666666667
+          "pct": 1.66666666666667
         },
         "qoala": {
           "target": 825000,
           "ach": 159000,
-          "pct": 0.19272727272727272
+          "pct": 0.192727272727273
         },
         "bca_insurance": {
           "target": 165000,
@@ -1005,7 +1005,7 @@
           "pct": 0
         },
         "indosat": {
-          "target": 0.8999999999999999,
+          "target": 0.9,
           "ach": 0,
           "pct": 0
         },
@@ -1027,33 +1027,33 @@
       "target_unit": 120,
       "target_value": 624000000,
       "ach_unit": 41,
-      "ach_pct": 0.3416666666666667,
+      "ach_pct": 0.341666666666667,
       "gap_unit": -79,
       "mio3_unit": 15,
-      "mio3_pct": 0.36585365853658536,
+      "mio3_pct": 0.365853658536585,
       "iqoo_unit": 2,
-      "iqoo_pct": 0.04878048780487805,
+      "iqoo_pct": 0.0487804878048781,
       "ach_value": 151359000,
       "ach_value_pct": 0.2425625,
       "gap_value": -472641000,
-      "growth_all_prev": 50,
+      "growth_all_prev": 62,
       "growth_all_curr": 41,
-      "growth_all_gap": -9,
-      "growth_all_pct": -0.18,
-      "growth_value_prev": 314050000,
+      "growth_all_gap": -21,
+      "growth_all_pct": -0.338709677419355,
+      "growth_value_prev": 370138000,
       "growth_value_curr": 151359000,
-      "growth_value_gap": -162691000,
-      "growth_value_pct": -0.5180417131030091,
+      "growth_value_gap": -218779000,
+      "growth_value_pct": -0.591074139915383,
       "vas": {
         "acc": {
           "target": 12,
           "ach": 1,
-          "pct": 0.08333333333333333
+          "pct": 0.0833333333333333
         },
         "qoala": {
           "target": 3120000,
           "ach": 318000,
-          "pct": 0.10192307692307692
+          "pct": 0.101923076923077
         },
         "bca_insurance": {
           "target": 624000,
@@ -1061,7 +1061,7 @@
           "pct": 0
         },
         "indosat": {
-          "target": 3.5999999999999996,
+          "target": 3.6,
           "ach": 0,
           "pct": 0
         },
@@ -1086,20 +1086,20 @@
       "ach_pct": 0.3,
       "gap_unit": -14,
       "mio3_unit": 2,
-      "mio3_pct": 0.3333333333333333,
+      "mio3_pct": 0.333333333333333,
       "iqoo_unit": 0,
       "iqoo_pct": 0,
       "ach_value": 18894000,
       "ach_value_pct": 0.18894,
       "gap_value": -81106000,
-      "growth_all_prev": 12,
+      "growth_all_prev": 14,
       "growth_all_curr": 6,
-      "growth_all_gap": -6,
-      "growth_all_pct": -0.5,
-      "growth_value_prev": 85388000,
+      "growth_all_gap": -8,
+      "growth_all_pct": -0.571428571428571,
+      "growth_value_prev": 96386000,
       "growth_value_curr": 18894000,
-      "growth_value_gap": -66494000,
-      "growth_value_pct": -0.7787276900735466,
+      "growth_value_gap": -77492000,
+      "growth_value_pct": -0.803975681115515,
       "vas": {
         "acc": {
           "target": 2,
@@ -1142,20 +1142,20 @@
       "ach_pct": 0.35,
       "gap_unit": -52,
       "mio3_unit": 6,
-      "mio3_pct": 0.21428571428571427,
+      "mio3_pct": 0.214285714285714,
       "iqoo_unit": 0,
       "iqoo_pct": 0,
       "ach_value": 89872000,
-      "ach_value_pct": 0.26125581395348835,
+      "ach_value_pct": 0.261255813953488,
       "gap_value": -254128000,
-      "growth_all_prev": 33,
+      "growth_all_prev": 43,
       "growth_all_curr": 28,
-      "growth_all_gap": -5,
-      "growth_all_pct": -0.15151515151515152,
-      "growth_value_prev": 136267000,
+      "growth_all_gap": -15,
+      "growth_all_pct": -0.348837209302326,
+      "growth_value_prev": 159957000,
       "growth_value_curr": 89872000,
-      "growth_value_gap": -46395000,
-      "growth_value_pct": -0.3404712806475522,
+      "growth_value_gap": -70085000,
+      "growth_value_pct": -0.438149002544434,
       "vas": {
         "acc": {
           "target": 8,
@@ -1198,20 +1198,20 @@
       "ach_pct": 0.36,
       "gap_unit": -64,
       "mio3_unit": 16,
-      "mio3_pct": 0.4444444444444444,
+      "mio3_pct": 0.444444444444444,
       "iqoo_unit": 0,
       "iqoo_pct": 0,
       "ach_value": 142564000,
-      "ach_value_pct": 0.33154418604651165,
+      "ach_value_pct": 0.331544186046512,
       "gap_value": -287436000,
-      "growth_all_prev": 32,
+      "growth_all_prev": 44,
       "growth_all_curr": 36,
-      "growth_all_gap": 4,
-      "growth_all_pct": 0.125,
-      "growth_value_prev": 124568000,
+      "growth_all_gap": -8,
+      "growth_all_pct": -0.181818181818182,
+      "growth_value_prev": 174156000,
       "growth_value_curr": 142564000,
-      "growth_value_gap": 17996000,
-      "growth_value_pct": 0.14446727891593347,
+      "growth_value_gap": -31592000,
+      "growth_value_pct": -0.181400583385011,
       "vas": {
         "acc": {
           "target": 10,
@@ -1254,11 +1254,11 @@
       "ach_pct": 0.2,
       "gap_unit": -24,
       "mio3_unit": 1,
-      "mio3_pct": 0.16666666666666666,
+      "mio3_pct": 0.166666666666667,
       "iqoo_unit": 0,
       "iqoo_pct": 0,
       "ach_value": 16694000,
-      "ach_value_pct": 0.1294108527131783,
+      "ach_value_pct": 0.129410852713178,
       "gap_value": -112306000,
       "growth_all_prev": 12,
       "growth_all_curr": 6,
@@ -1267,12 +1267,12 @@
       "growth_value_prev": 42388000,
       "growth_value_curr": 16694000,
       "growth_value_gap": -25694000,
-      "growth_value_pct": -0.6061621213551005,
+      "growth_value_pct": -0.606162121355101,
       "vas": {
         "acc": {
           "target": 3,
           "ach": 1,
-          "pct": 0.3333333333333333
+          "pct": 0.333333333333333
         },
         "qoala": {
           "target": 350000,
@@ -1285,7 +1285,7 @@
           "pct": 0
         },
         "indosat": {
-          "target": 0.8999999999999999,
+          "target": 0.9,
           "ach": 0,
           "pct": 0
         },
@@ -1307,33 +1307,33 @@
       "target_unit": 90,
       "target_value": 387000000,
       "ach_unit": 43,
-      "ach_pct": 0.4777777777777778,
+      "ach_pct": 0.477777777777778,
       "gap_unit": -47,
       "mio3_unit": 16,
-      "mio3_pct": 0.37209302325581395,
+      "mio3_pct": 0.372093023255814,
       "iqoo_unit": 1,
-      "iqoo_pct": 0.023255813953488372,
+      "iqoo_pct": 0.0232558139534884,
       "ach_value": 151457000,
-      "ach_value_pct": 0.3913617571059432,
+      "ach_value_pct": 0.391361757105943,
       "gap_value": -235543000,
-      "growth_all_prev": 39,
+      "growth_all_prev": 43,
       "growth_all_curr": 43,
-      "growth_all_gap": 4,
-      "growth_all_pct": 0.10256410256410256,
-      "growth_value_prev": 150761000,
+      "growth_all_gap": 0,
+      "growth_all_pct": 0,
+      "growth_value_prev": 185357000,
       "growth_value_curr": 151457000,
-      "growth_value_gap": 696000,
-      "growth_value_pct": 0.004616578558115162,
+      "growth_value_gap": -33900000,
+      "growth_value_pct": -0.182890314366331,
       "vas": {
         "acc": {
           "target": 9,
           "ach": 1,
-          "pct": 0.1111111111111111
+          "pct": 0.111111111111111
         },
         "qoala": {
           "target": 1935000,
           "ach": 1453000,
-          "pct": 0.7509043927648579
+          "pct": 0.750904392764858
         },
         "bca_insurance": {
           "target": 387000,
@@ -1341,7 +1341,7 @@
           "pct": 0
         },
         "indosat": {
-          "target": 2.6999999999999997,
+          "target": 2.7,
           "ach": 0,
           "pct": 0
         },
@@ -1363,23 +1363,23 @@
       "target_unit": 90,
       "target_value": 387000000,
       "ach_unit": 40,
-      "ach_pct": 0.4444444444444444,
+      "ach_pct": 0.444444444444444,
       "gap_unit": -50,
       "mio3_unit": 7,
       "mio3_pct": 0.175,
       "iqoo_unit": 0,
       "iqoo_pct": 0,
       "ach_value": 120860000,
-      "ach_value_pct": 0.3122997416020672,
+      "ach_value_pct": 0.312299741602067,
       "gap_value": -266140000,
-      "growth_all_prev": 31,
+      "growth_all_prev": 34,
       "growth_all_curr": 40,
-      "growth_all_gap": 9,
-      "growth_all_pct": 0.2903225806451613,
-      "growth_value_prev": 124369000,
+      "growth_all_gap": 6,
+      "growth_all_pct": 0.176470588235294,
+      "growth_value_prev": 138766000,
       "growth_value_curr": 120860000,
-      "growth_value_gap": -3509000,
-      "growth_value_pct": -0.02821442642459134,
+      "growth_value_gap": -17906000,
+      "growth_value_pct": -0.129037372266982,
       "vas": {
         "acc": {
           "target": 9,
@@ -1389,7 +1389,7 @@
         "qoala": {
           "target": 1935000,
           "ach": 159000,
-          "pct": 0.08217054263565891
+          "pct": 0.0821705426356589
         },
         "bca_insurance": {
           "target": 387000,
@@ -1397,7 +1397,7 @@
           "pct": 0
         },
         "indosat": {
-          "target": 2.6999999999999997,
+          "target": 2.7,
           "ach": 0,
           "pct": 0
         },
@@ -1419,33 +1419,33 @@
       "target_unit": 90,
       "target_value": 387000000,
       "ach_unit": 34,
-      "ach_pct": 0.37777777777777777,
+      "ach_pct": 0.377777777777778,
       "gap_unit": -56,
       "mio3_unit": 17,
       "mio3_pct": 0.5,
       "iqoo_unit": 0,
       "iqoo_pct": 0,
       "ach_value": 148666000,
-      "ach_value_pct": 0.3841498708010336,
+      "ach_value_pct": 0.384149870801034,
       "gap_value": -238334000,
-      "growth_all_prev": 36,
+      "growth_all_prev": 43,
       "growth_all_curr": 34,
-      "growth_all_gap": -2,
-      "growth_all_pct": -0.05555555555555555,
-      "growth_value_prev": 155064000,
+      "growth_all_gap": -9,
+      "growth_all_pct": -0.209302325581395,
+      "growth_value_prev": 182357000,
       "growth_value_curr": 148666000,
-      "growth_value_gap": -6398000,
-      "growth_value_pct": -0.041260382809678586,
+      "growth_value_gap": -33691000,
+      "growth_value_pct": -0.184752984530344,
       "vas": {
         "acc": {
           "target": 9,
           "ach": 1,
-          "pct": 0.1111111111111111
+          "pct": 0.111111111111111
         },
         "qoala": {
           "target": 1935000,
           "ach": 748000,
-          "pct": 0.38656330749354006
+          "pct": 0.38656330749354
         },
         "bca_insurance": {
           "target": 387000,
@@ -1453,7 +1453,7 @@
           "pct": 0
         },
         "indosat": {
-          "target": 2.6999999999999997,
+          "target": 2.7,
           "ach": 0,
           "pct": 0
         },
@@ -1478,20 +1478,20 @@
       "ach_pct": 0.3,
       "gap_unit": -21,
       "mio3_unit": 6,
-      "mio3_pct": 0.6666666666666666,
+      "mio3_pct": 0.666666666666667,
       "iqoo_unit": 1,
-      "iqoo_pct": 0.1111111111111111,
+      "iqoo_pct": 0.111111111111111,
       "ach_value": 52391000,
-      "ach_value_pct": 0.3492733333333333,
+      "ach_value_pct": 0.349273333333333,
       "gap_value": -97609000,
-      "growth_all_prev": 13,
+      "growth_all_prev": 17,
       "growth_all_curr": 9,
-      "growth_all_gap": -4,
-      "growth_all_pct": -0.3076923076923077,
-      "growth_value_prev": 75587000,
+      "growth_all_gap": -8,
+      "growth_all_pct": -0.470588235294118,
+      "growth_value_prev": 86483000,
       "growth_value_curr": 52391000,
-      "growth_value_gap": -23196000,
-      "growth_value_pct": -0.30687816688054825,
+      "growth_value_gap": -34092000,
+      "growth_value_pct": -0.394204641374605,
       "vas": {
         "acc": {
           "target": 3,
@@ -1509,7 +1509,7 @@
           "pct": 0
         },
         "indosat": {
-          "target": 0.8999999999999999,
+          "target": 0.9,
           "ach": 0,
           "pct": 0
         },
@@ -1538,16 +1538,16 @@
       "iqoo_unit": 3,
       "iqoo_pct": 0.1875,
       "ach_value": 99784000,
-      "ach_value_pct": 0.5801395348837209,
+      "ach_value_pct": 0.580139534883721,
       "gap_value": -72216000,
-      "growth_all_prev": 12,
+      "growth_all_prev": 14,
       "growth_all_curr": 16,
-      "growth_all_gap": 4,
-      "growth_all_pct": 0.3333333333333333,
-      "growth_value_prev": 47788000,
+      "growth_all_gap": 2,
+      "growth_all_pct": 0.142857142857143,
+      "growth_value_prev": 56186000,
       "growth_value_curr": 99784000,
-      "growth_value_gap": 51996000,
-      "growth_value_pct": 1.0880555788063948,
+      "growth_value_gap": 43598000,
+      "growth_value_pct": 0.775958423806642,
       "vas": {
         "acc": {
           "target": 4,
@@ -1587,23 +1587,23 @@
       "target_unit": 30,
       "target_value": 150000000,
       "ach_unit": 8,
-      "ach_pct": 0.26666666666666666,
+      "ach_pct": 0.266666666666667,
       "gap_unit": -22,
       "mio3_unit": 6,
       "mio3_pct": 0.75,
       "iqoo_unit": 1,
       "iqoo_pct": 0.125,
       "ach_value": 34892000,
-      "ach_value_pct": 0.23261333333333334,
+      "ach_value_pct": 0.232613333333333,
       "gap_value": -115108000,
-      "growth_all_prev": 6,
+      "growth_all_prev": 8,
       "growth_all_curr": 8,
-      "growth_all_gap": 2,
-      "growth_all_pct": 0.3333333333333333,
-      "growth_value_prev": 33194000,
+      "growth_all_gap": 0,
+      "growth_all_pct": 0,
+      "growth_value_prev": 47692000,
       "growth_value_curr": 34892000,
-      "growth_value_gap": 1698000,
-      "growth_value_pct": 0.051153822980056635,
+      "growth_value_gap": -12800000,
+      "growth_value_pct": -0.268388828315021,
       "vas": {
         "acc": {
           "target": 3,
@@ -1613,7 +1613,7 @@
         "qoala": {
           "target": 750000,
           "ach": 329000,
-          "pct": 0.43866666666666665
+          "pct": 0.438666666666667
         },
         "bca_insurance": {
           "target": 150000,
@@ -1621,7 +1621,7 @@
           "pct": 0
         },
         "indosat": {
-          "target": 0.8999999999999999,
+          "target": 0.9,
           "ach": 0,
           "pct": 0
         },
@@ -1643,7 +1643,7 @@
       "target_unit": 30,
       "target_value": 150000000,
       "ach_unit": 8,
-      "ach_pct": 0.26666666666666666,
+      "ach_pct": 0.266666666666667,
       "gap_unit": -22,
       "mio3_unit": 5,
       "mio3_pct": 0.625,
@@ -1652,19 +1652,19 @@
       "ach_value": 31392000,
       "ach_value_pct": 0.20928,
       "gap_value": -118608000,
-      "growth_all_prev": 6,
+      "growth_all_prev": 12,
       "growth_all_curr": 8,
-      "growth_all_gap": 2,
-      "growth_all_pct": 0.3333333333333333,
-      "growth_value_prev": 13794000,
+      "growth_all_gap": -4,
+      "growth_all_pct": -0.333333333333333,
+      "growth_value_prev": 60488000,
       "growth_value_curr": 31392000,
-      "growth_value_gap": 17598000,
-      "growth_value_pct": 1.275772074815137,
+      "growth_value_gap": -29096000,
+      "growth_value_pct": -0.481021028964423,
       "vas": {
         "acc": {
           "target": 3,
           "ach": 1,
-          "pct": 0.3333333333333333
+          "pct": 0.333333333333333
         },
         "qoala": {
           "target": 750000,
@@ -1677,7 +1677,7 @@
           "pct": 0
         },
         "indosat": {
-          "target": 0.8999999999999999,
+          "target": 0.9,
           "ach": 0,
           "pct": 0
         },
@@ -1699,28 +1699,28 @@
       "target_unit": 30,
       "target_value": 165000000,
       "ach_unit": 7,
-      "ach_pct": 0.23333333333333334,
+      "ach_pct": 0.233333333333333,
       "gap_unit": -23,
       "mio3_unit": 2,
-      "mio3_pct": 0.2857142857142857,
+      "mio3_pct": 0.285714285714286,
       "iqoo_unit": 0,
       "iqoo_pct": 0,
       "ach_value": 21193000,
-      "ach_value_pct": 0.12844242424242425,
+      "ach_value_pct": 0.128442424242424,
       "gap_value": -143807000,
       "growth_all_prev": 13,
       "growth_all_curr": 7,
       "growth_all_gap": -6,
-      "growth_all_pct": -0.46153846153846156,
+      "growth_all_pct": -0.461538461538462,
       "growth_value_prev": 84687000,
       "growth_value_curr": 21193000,
       "growth_value_gap": -63494000,
-      "growth_value_pct": -0.7497490760093048,
+      "growth_value_pct": -0.749749076009305,
       "vas": {
         "acc": {
           "target": 3,
           "ach": 1,
-          "pct": 0.3333333333333333
+          "pct": 0.333333333333333
         },
         "qoala": {
           "target": 825000,
@@ -1733,7 +1733,7 @@
           "pct": 0
         },
         "indosat": {
-          "target": 0.8999999999999999,
+          "target": 0.9,
           "ach": 0,
           "pct": 0
         },
@@ -1755,28 +1755,28 @@
       "target_unit": 30,
       "target_value": 165000000,
       "ach_unit": 10,
-      "ach_pct": 0.3333333333333333,
+      "ach_pct": 0.333333333333333,
       "gap_unit": -20,
       "mio3_unit": 4,
       "mio3_pct": 0.4,
       "iqoo_unit": 0,
       "iqoo_pct": 0,
       "ach_value": 39390000,
-      "ach_value_pct": 0.23872727272727273,
+      "ach_value_pct": 0.238727272727273,
       "gap_value": -125610000,
-      "growth_all_prev": 12,
+      "growth_all_prev": 16,
       "growth_all_curr": 10,
-      "growth_all_gap": -2,
-      "growth_all_pct": -0.16666666666666666,
-      "growth_value_prev": 59688000,
+      "growth_all_gap": -6,
+      "growth_all_pct": -0.375,
+      "growth_value_prev": 79384000,
       "growth_value_curr": 39390000,
-      "growth_value_gap": -20298000,
-      "growth_value_pct": -0.3400683554483313,
+      "growth_value_gap": -39994000,
+      "growth_value_pct": -0.503804293056535,
       "vas": {
         "acc": {
           "target": 3,
           "ach": 1,
-          "pct": 0.3333333333333333
+          "pct": 0.333333333333333
         },
         "qoala": {
           "target": 825000,
@@ -1789,7 +1789,7 @@
           "pct": 0
         },
         "indosat": {
-          "target": 0.8999999999999999,
+          "target": 0.9,
           "ach": 0,
           "pct": 0
         },
@@ -1814,20 +1814,20 @@
       "ach_pct": 0.34,
       "gap_unit": -33,
       "mio3_unit": 6,
-      "mio3_pct": 0.35294117647058826,
+      "mio3_pct": 0.352941176470588,
       "iqoo_unit": 1,
-      "iqoo_pct": 0.058823529411764705,
+      "iqoo_pct": 0.0588235294117647,
       "ach_value": 53883000,
-      "ach_value_pct": 0.2506186046511628,
+      "ach_value_pct": 0.250618604651163,
       "gap_value": -161117000,
-      "growth_all_prev": 28,
+      "growth_all_prev": 31,
       "growth_all_curr": 17,
-      "growth_all_gap": -11,
-      "growth_all_pct": -0.39285714285714285,
-      "growth_value_prev": 223772000,
+      "growth_all_gap": -14,
+      "growth_all_pct": -0.451612903225806,
+      "growth_value_prev": 231369000,
       "growth_value_curr": 53883000,
-      "growth_value_gap": -169889000,
-      "growth_value_pct": -0.7592057987594516,
+      "growth_value_gap": -177486000,
+      "growth_value_pct": -0.767112275196764,
       "vas": {
         "acc": {
           "target": 5,
@@ -1867,33 +1867,33 @@
       "target_unit": 110,
       "target_value": 473000000,
       "ach_unit": 49,
-      "ach_pct": 0.44545454545454544,
+      "ach_pct": 0.445454545454545,
       "gap_unit": -61,
       "mio3_unit": 23,
-      "mio3_pct": 0.46938775510204084,
+      "mio3_pct": 0.469387755102041,
       "iqoo_unit": 2,
-      "iqoo_pct": 0.04081632653061224,
+      "iqoo_pct": 0.0408163265306122,
       "ach_value": 242651000,
-      "ach_value_pct": 0.5130042283298097,
+      "ach_value_pct": 0.51300422832981,
       "gap_value": -230349000,
-      "growth_all_prev": 46,
+      "growth_all_prev": 53,
       "growth_all_curr": 49,
-      "growth_all_gap": 3,
-      "growth_all_pct": 0.06521739130434782,
-      "growth_value_prev": 180354000,
+      "growth_all_gap": -4,
+      "growth_all_pct": -0.0754716981132075,
+      "growth_value_prev": 199647000,
       "growth_value_curr": 242651000,
-      "growth_value_gap": 62297000,
-      "growth_value_pct": 0.34541512802599333,
+      "growth_value_gap": 43004000,
+      "growth_value_pct": 0.21540018132003,
       "vas": {
         "acc": {
           "target": 11,
           "ach": 6,
-          "pct": 0.5454545454545454
+          "pct": 0.545454545454545
         },
         "qoala": {
           "target": 2365000,
           "ach": 1157000,
-          "pct": 0.48921775898520087
+          "pct": 0.489217758985201
         },
         "bca_insurance": {
           "target": 473000,
@@ -1903,7 +1903,7 @@
         "indosat": {
           "target": 3.3,
           "ach": 2,
-          "pct": 0.6060606060606061
+          "pct": 0.606060606060606
         },
         "telkomsel": {
           "target": 33,
@@ -1926,30 +1926,30 @@
       "ach_pct": 0.2,
       "gap_unit": -48,
       "mio3_unit": 5,
-      "mio3_pct": 0.4166666666666667,
+      "mio3_pct": 0.416666666666667,
       "iqoo_unit": 1,
-      "iqoo_pct": 0.08333333333333333,
+      "iqoo_pct": 0.0833333333333333,
       "ach_value": 43688000,
-      "ach_value_pct": 0.16933333333333334,
+      "ach_value_pct": 0.169333333333333,
       "gap_value": -214312000,
-      "growth_all_prev": 21,
+      "growth_all_prev": 23,
       "growth_all_curr": 12,
-      "growth_all_gap": -9,
-      "growth_all_pct": -0.42857142857142855,
-      "growth_value_prev": 74479000,
+      "growth_all_gap": -11,
+      "growth_all_pct": -0.478260869565217,
+      "growth_value_prev": 80877000,
       "growth_value_curr": 43688000,
-      "growth_value_gap": -30791000,
-      "growth_value_pct": -0.41341854751003637,
+      "growth_value_gap": -37189000,
+      "growth_value_pct": -0.45982170456372,
       "vas": {
         "acc": {
           "target": 6,
           "ach": 1,
-          "pct": 0.16666666666666666
+          "pct": 0.166666666666667
         },
         "qoala": {
           "target": 1290000,
           "ach": 408000,
-          "pct": 0.31627906976744186
+          "pct": 0.316279069767442
         },
         "bca_insurance": {
           "target": 258000,
@@ -1957,7 +1957,7 @@
           "pct": 0
         },
         "indosat": {
-          "target": 1.7999999999999998,
+          "target": 1.8,
           "ach": 0,
           "pct": 0
         },
@@ -1979,33 +1979,33 @@
       "target_unit": 120,
       "target_value": 516000000,
       "ach_unit": 46,
-      "ach_pct": 0.38333333333333336,
+      "ach_pct": 0.383333333333333,
       "gap_unit": -74,
       "mio3_unit": 15,
-      "mio3_pct": 0.32608695652173914,
+      "mio3_pct": 0.326086956521739,
       "iqoo_unit": 1,
-      "iqoo_pct": 0.021739130434782608,
+      "iqoo_pct": 0.0217391304347826,
       "ach_value": 167054000,
-      "ach_value_pct": 0.3237480620155039,
+      "ach_value_pct": 0.323748062015504,
       "gap_value": -348946000,
-      "growth_all_prev": 34,
+      "growth_all_prev": 43,
       "growth_all_curr": 46,
-      "growth_all_gap": 12,
-      "growth_all_pct": 0.35294117647058826,
-      "growth_value_prev": 121866000,
+      "growth_all_gap": 3,
+      "growth_all_pct": 0.0697674418604651,
+      "growth_value_prev": 158857000,
       "growth_value_curr": 167054000,
-      "growth_value_gap": 45188000,
-      "growth_value_pct": 0.37080071554001937,
+      "growth_value_gap": 8197000,
+      "growth_value_pct": 0.0515998665466426,
       "vas": {
         "acc": {
           "target": 12,
           "ach": 7,
-          "pct": 0.5833333333333334
+          "pct": 0.583333333333333
         },
         "qoala": {
           "target": 2580000,
           "ach": 477000,
-          "pct": 0.18488372093023256
+          "pct": 0.184883720930233
         },
         "bca_insurance": {
           "target": 516000,
@@ -2013,7 +2013,7 @@
           "pct": 0
         },
         "indosat": {
-          "target": 3.5999999999999996,
+          "target": 3.6,
           "ach": 0,
           "pct": 0
         },
@@ -2038,30 +2038,30 @@
       "ach_pct": 0.4,
       "gap_unit": -72,
       "mio3_unit": 17,
-      "mio3_pct": 0.3541666666666667,
+      "mio3_pct": 0.354166666666667,
       "iqoo_unit": 4,
-      "iqoo_pct": 0.08333333333333333,
+      "iqoo_pct": 0.0833333333333333,
       "ach_value": 182152000,
-      "ach_value_pct": 0.3530077519379845,
+      "ach_value_pct": 0.353007751937985,
       "gap_value": -333848000,
-      "growth_all_prev": 60,
+      "growth_all_prev": 70,
       "growth_all_curr": 48,
-      "growth_all_gap": -12,
-      "growth_all_pct": -0.2,
-      "growth_value_prev": 301040000,
+      "growth_all_gap": -22,
+      "growth_all_pct": -0.314285714285714,
+      "growth_value_prev": 334730000,
       "growth_value_curr": 182152000,
-      "growth_value_gap": -118888000,
-      "growth_value_pct": -0.3949242625564709,
+      "growth_value_gap": -152578000,
+      "growth_value_pct": -0.45582409703343,
       "vas": {
         "acc": {
           "target": 12,
           "ach": 8,
-          "pct": 0.6666666666666666
+          "pct": 0.666666666666667
         },
         "qoala": {
           "target": 2580000,
           "ach": 636000,
-          "pct": 0.24651162790697675
+          "pct": 0.246511627906977
         },
         "bca_insurance": {
           "target": 516000,
@@ -2069,9 +2069,9 @@
           "pct": 0
         },
         "indosat": {
-          "target": 3.5999999999999996,
+          "target": 3.6,
           "ach": 2,
-          "pct": 0.5555555555555556
+          "pct": 0.555555555555556
         },
         "telkomsel": {
           "target": 36,
@@ -2098,16 +2098,16 @@
       "iqoo_unit": 0,
       "iqoo_pct": 0,
       "ach_value": 19496000,
-      "ach_value_pct": 0.22669767441860464,
+      "ach_value_pct": 0.226697674418605,
       "gap_value": -66504000,
       "growth_all_prev": 6,
       "growth_all_curr": 4,
       "growth_all_gap": -2,
-      "growth_all_pct": -0.3333333333333333,
+      "growth_all_pct": -0.333333333333333,
       "growth_value_prev": 27294000,
       "growth_value_curr": 19496000,
       "growth_value_gap": -7798000,
-      "growth_value_pct": -0.2857038176888693,
+      "growth_value_pct": -0.285703817688869,
       "vas": {
         "acc": {
           "target": 2,
@@ -2163,7 +2163,7 @@
       "growth_value_prev": 5198000,
       "growth_value_curr": 13397000,
       "growth_value_gap": 8199000,
-      "growth_value_pct": 1.5773374374759523,
+      "growth_value_pct": 1.57733743747595,
       "vas": {
         "acc": {
           "target": 2,
@@ -2206,30 +2206,30 @@
       "ach_pct": 0.25,
       "gap_unit": -45,
       "mio3_unit": 11,
-      "mio3_pct": 0.7333333333333333,
+      "mio3_pct": 0.733333333333333,
       "iqoo_unit": 3,
       "iqoo_pct": 0.2,
       "ach_value": 90985000,
-      "ach_value_pct": 0.30328333333333335,
+      "ach_value_pct": 0.303283333333333,
       "gap_value": -209015000,
-      "growth_all_prev": 19,
+      "growth_all_prev": 24,
       "growth_all_curr": 15,
-      "growth_all_gap": -4,
-      "growth_all_pct": -0.21052631578947367,
-      "growth_value_prev": 106681000,
+      "growth_all_gap": -9,
+      "growth_all_pct": -0.375,
+      "growth_value_prev": 133276000,
       "growth_value_curr": 90985000,
-      "growth_value_gap": -15696000,
-      "growth_value_pct": -0.1471302293754277,
+      "growth_value_gap": -42291000,
+      "growth_value_pct": -0.317318947147273,
       "vas": {
         "acc": {
           "target": 6,
           "ach": 1,
-          "pct": 0.16666666666666666
+          "pct": 0.166666666666667
         },
         "qoala": {
           "target": 1500000,
           "ach": 329000,
-          "pct": 0.21933333333333332
+          "pct": 0.219333333333333
         },
         "bca_insurance": {
           "target": 300000,
@@ -2237,7 +2237,7 @@
           "pct": 0
         },
         "indosat": {
-          "target": 1.7999999999999998,
+          "target": 1.8,
           "ach": 0,
           "pct": 0
         },
@@ -2262,20 +2262,20 @@
       "ach_pct": 0.22,
       "gap_unit": -39,
       "mio3_unit": 8,
-      "mio3_pct": 0.7272727272727273,
+      "mio3_pct": 0.727272727272727,
       "iqoo_unit": 1,
-      "iqoo_pct": 0.09090909090909091,
+      "iqoo_pct": 0.0909090909090909,
       "ach_value": 50089000,
-      "ach_value_pct": 0.14311142857142858,
+      "ach_value_pct": 0.143111428571429,
       "gap_value": -299911000,
-      "growth_all_prev": 18,
+      "growth_all_prev": 25,
       "growth_all_curr": 11,
-      "growth_all_gap": -7,
-      "growth_all_pct": -0.3888888888888889,
-      "growth_value_prev": 102382000,
+      "growth_all_gap": -14,
+      "growth_all_pct": -0.56,
+      "growth_value_prev": 176575000,
       "growth_value_curr": 50089000,
-      "growth_value_gap": -52293000,
-      "growth_value_pct": -0.5107636107909593,
+      "growth_value_gap": -126486000,
+      "growth_value_pct": -0.716330171315305,
       "vas": {
         "acc": {
           "target": 5,
@@ -2315,23 +2315,23 @@
       "target_unit": 30,
       "target_value": 210000000,
       "ach_unit": 5,
-      "ach_pct": 0.16666666666666666,
+      "ach_pct": 0.166666666666667,
       "gap_unit": -25,
       "mio3_unit": 3,
       "mio3_pct": 0.6,
       "iqoo_unit": 0,
       "iqoo_pct": 0,
       "ach_value": 45095000,
-      "ach_value_pct": 0.21473809523809523,
+      "ach_value_pct": 0.214738095238095,
       "gap_value": -164905000,
-      "growth_all_prev": 6,
+      "growth_all_prev": 7,
       "growth_all_curr": 5,
-      "growth_all_gap": -1,
-      "growth_all_pct": -0.16666666666666666,
-      "growth_value_prev": 42194000,
+      "growth_all_gap": -2,
+      "growth_all_pct": -0.285714285714286,
+      "growth_value_prev": 46993000,
       "growth_value_curr": 45095000,
-      "growth_value_gap": 2901000,
-      "growth_value_pct": 0.06875385125847276,
+      "growth_value_gap": -1898000,
+      "growth_value_pct": -0.0403889941055051,
       "vas": {
         "acc": {
           "target": 3,
@@ -2349,7 +2349,7 @@
           "pct": 0
         },
         "indosat": {
-          "target": 0.8999999999999999,
+          "target": 0.9,
           "ach": 0,
           "pct": 0
         },
@@ -2371,33 +2371,33 @@
       "target_unit": 60,
       "target_value": 420000000,
       "ach_unit": 20,
-      "ach_pct": 0.3333333333333333,
+      "ach_pct": 0.333333333333333,
       "gap_unit": -40,
       "mio3_unit": 16,
       "mio3_pct": 0.8,
       "iqoo_unit": 6,
       "iqoo_pct": 0.3,
       "ach_value": 128680000,
-      "ach_value_pct": 0.30638095238095236,
+      "ach_value_pct": 0.306380952380952,
       "gap_value": -291320000,
-      "growth_all_prev": 23,
+      "growth_all_prev": 26,
       "growth_all_curr": 20,
-      "growth_all_gap": -3,
-      "growth_all_pct": -0.13043478260869565,
-      "growth_value_prev": 160177000,
+      "growth_all_gap": -6,
+      "growth_all_pct": -0.230769230769231,
+      "growth_value_prev": 186774000,
       "growth_value_curr": 128680000,
-      "growth_value_gap": -31497000,
-      "growth_value_pct": -0.19663871841775035,
+      "growth_value_gap": -58094000,
+      "growth_value_pct": -0.311039009712273,
       "vas": {
         "acc": {
           "target": 6,
           "ach": 2,
-          "pct": 0.3333333333333333
+          "pct": 0.333333333333333
         },
         "qoala": {
           "target": 2100000,
           "ach": 748000,
-          "pct": 0.35619047619047617
+          "pct": 0.356190476190476
         },
         "bca_insurance": {
           "target": 420000,
@@ -2405,7 +2405,7 @@
           "pct": 0
         },
         "indosat": {
-          "target": 1.7999999999999998,
+          "target": 1.8,
           "ach": 0,
           "pct": 0
         },
@@ -2421,43 +2421,43 @@
     "target_unit": 3400,
     "target_value": 15659000000,
     "ach_unit": 1285,
-    "ach_pct": 0.3779411764705882,
+    "ach_pct": 0.377941176470588,
     "gap_unit": -2115,
     "mio3_unit": 489,
-    "mio3_pct": 0.38054474708171204,
+    "mio3_pct": 0.380544747081712,
     "iqoo_unit": 53,
-    "iqoo_pct": 0.04124513618677043,
+    "iqoo_pct": 0.0412451361867704,
     "ach_value": 4948415000,
-    "ach_value_pct": 0.31601092023756305,
+    "ach_value_pct": 0.316010920237563,
     "gap_value": -10710585000,
-    "growth_all_prev": 1223,
+    "growth_all_prev": 1498,
     "growth_all_curr": 1285,
-    "growth_all_gap": 62,
-    "growth_all_pct": 0.050695012264922325,
-    "growth_value_prev": 5626477000,
+    "growth_all_gap": -213,
+    "growth_all_pct": -0.14218958611482,
+    "growth_value_prev": 6766602000,
     "growth_value_curr": 4948415000,
-    "growth_value_gap": -678062000,
-    "growth_value_pct": -0.12051271159555083,
+    "growth_value_gap": -1818187000,
+    "growth_value_pct": -0.26870015408029,
     "vas": {
       "acc": {
         "target": 340,
         "ach": 252,
-        "pct": 0.7411764705882353
+        "pct": 0.741176470588235
       },
       "qoala": {
         "target": 76290000,
         "ach": 23460000,
-        "pct": 0.30751081399921354
+        "pct": 0.307510813999214
       },
       "bca_insurance": {
         "target": 15508000,
         "ach": 1000000,
-        "pct": 0.06448284756254836
+        "pct": 0.0644828475625484
       },
       "indosat": {
         "target": 102,
         "ach": 20,
-        "pct": 0.19607843137254902
+        "pct": 0.196078431372549
       },
       "telkomsel": {
         "target": 1020,

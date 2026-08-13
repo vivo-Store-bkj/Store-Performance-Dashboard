@@ -233,6 +233,8 @@
   .status-dot{ width:8px; height:8px; border-radius:50%; flex:none; }
   tbody td.num{ text-align:right; }
   .detail-row td{ padding:0; border-bottom:1px solid var(--line); }
+  .detail-row{ display:none; }
+  .detail-row.open{ display:table-row; }
   .detail-inner{ padding:18px 24px 22px; background:#FBFCFE; display:grid; grid-template-columns:1.3fr 1fr; gap:28px; }
   @media (max-width: 860px){ .detail-inner{ grid-template-columns:1fr; } }
   .detail-block h4{ font-size:12px; text-transform:uppercase; letter-spacing:0.06em; color:var(--ink-faint); margin-bottom:10px; font-weight:700; }
@@ -303,6 +305,72 @@
   .cc-empty{ padding:18px; font-size:12.5px; color:var(--ink-faint); text-align:center; }
 
   footer{ text-align:center; padding:30px 20px 40px; color:var(--ink-faint); font-size:12px; }
+
+  /* ===================== MOBILE (≤760px) ===================== */
+  @media (max-width: 760px){
+    .topbar{ padding:16px 16px 20px; }
+    .brand-title{ font-size:20px; }
+    .wrap{ padding:18px 14px 56px; }
+    .topbar-inner{ flex-direction:column; align-items:flex-start; gap:14px; }
+    .pace{ align-self:stretch; }
+
+    /* section tabs + export: wrap & full-width-ish */
+    .section-tabs{ flex-direction:column; align-items:stretch; gap:10px; margin-top:14px; }
+    .section-tabs-left{ overflow-x:auto; -webkit-overflow-scrolling:touch; padding-bottom:2px; }
+    .section-tab{ flex:1; white-space:nowrap; padding:9px 14px; font-size:13px; }
+    .export-group{ justify-content:stretch; }
+    .export-btn{ flex:1; justify-content:center; }
+
+    .kpi-grid{ grid-template-columns:1fr 1fr; gap:10px; }
+    .kpi-card{ padding:14px; }
+    .kpi-value{ font-size:20px; }
+    .kpi-label{ font-size:10.5px; }
+
+    .crosscheck-grid{ grid-template-columns:1fr; }
+    .chart-grid{ grid-template-columns:1fr; }
+    .section-head{ margin:26px 0 12px; }
+    .section-head h2{ font-size:16px; }
+
+    .toolbar{ gap:8px; }
+    .search-box{ max-width:none; min-width:0; width:100%; }
+
+    /* --- card-mode tables: each row becomes a stacked card --- */
+    table.mobile-cards thead{ display:none; }
+    table.mobile-cards, table.mobile-cards tbody{ display:block; }
+    table.mobile-cards tbody tr.data-row{
+      display:block; background:var(--surface); border:1px solid var(--line);
+      border-radius:10px; margin-bottom:10px; padding:6px 4px; box-shadow:var(--shadow);
+    }
+    table.mobile-cards tbody tr.data-row.expanded{ border-color:var(--accent); }
+    table.mobile-cards tbody td{
+      display:flex; justify-content:space-between; align-items:center; gap:12px;
+      padding:7px 14px; border:none; white-space:normal; text-align:right;
+    }
+    table.mobile-cards tbody td::before{
+      content:attr(data-label); font-size:11px; font-weight:600; color:var(--ink-faint);
+      text-transform:uppercase; letter-spacing:0.04em; text-align:left; flex:none;
+    }
+    /* the store-name cell: make it a header strip inside the card */
+    table.mobile-cards tbody td.cell-primary{
+      justify-content:flex-start; padding:10px 14px 8px; border-bottom:1px solid var(--line);
+      margin-bottom:4px; text-align:left;
+    }
+    table.mobile-cards tbody td.cell-primary::before{ display:none; }
+    table.mobile-cards tbody td.cell-primary .store-name{ font-size:15px; }
+    /* detail row spans full width */
+    table.mobile-cards tbody tr.detail-row{ display:none; }
+    table.mobile-cards tbody tr.detail-row.open{ display:block; }
+    table.mobile-cards tbody tr.detail-row td{ display:block; padding:0; }
+    table.mobile-cards tbody tr.detail-row td::before{ display:none; }
+    .detail-inner{ grid-template-columns:1fr !important; padding:14px 16px 18px; }
+    .mini-table{ font-size:11px; }
+    .mini-table th, .mini-table td{ padding:5px 6px; }
+
+    /* month pills scroll horizontally */
+    .month-row{ flex-wrap:nowrap; overflow-x:auto; -webkit-overflow-scrolling:touch; padding-bottom:4px; }
+    .month-pill{ flex:none; }
+    .chip-row{ flex-wrap:wrap; }
+  }
 </style>
 </head>
 <body>
@@ -358,7 +426,7 @@
     </div>
 
     <div class="table-card">
-      <table id="store-table">
+      <table id="store-table" class="mobile-cards">
         <thead>
           <tr>
             <th data-key="no">No</th>
@@ -445,7 +513,7 @@
       </div>
 
       <div class="table-card">
-        <table id="stock-table">
+        <table id="stock-table" class="mobile-cards">
           <thead>
             <tr>
               <th data-key="store_name">Toko</th>
@@ -471,7 +539,7 @@
       </div>
 
       <div class="table-card">
-        <table id="stock-type-table">
+        <table id="stock-type-table" class="mobile-cards">
           <thead>
             <tr>
               <th data-key="model">Tipe / Model</th>
@@ -545,7 +613,7 @@
     </div>
 
     <div class="table-card" style="margin-top:16px;">
-      <table id="salestype-network-table">
+      <table id="salestype-network-table" class="mobile-cards">
         <thead>
           <tr>
             <th data-key="model">Tipe / Model</th>
@@ -571,7 +639,7 @@
     </div>
 
     <div class="table-card">
-      <table id="salestype-store-table">
+      <table id="salestype-store-table" class="mobile-cards">
         <thead>
           <tr>
             <th data-key="store_name">Toko</th>
@@ -1057,32 +1125,32 @@ function renderTable(){
     const sc = statusColor(s.ach_pct);
     const vc = statusColor(s.ach_value_pct);
     return `
-    <tr class="store-row" data-id="${s.store_id}">
-      <td class="num">${i+1}</td>
-      <td>
+    <tr class="store-row data-row" data-id="${s.store_id}">
+      <td class="num" data-label="No">${i+1}</td>
+      <td class="cell-primary">
         <div class="store-name">${s.store_name}</div>
         <div class="store-meta">${s.manager}</div>
       </td>
-      <td><span class="area-pill">${s.area}</span></td>
-      <td class="num mono">${s.target_unit.toLocaleString('id-ID')}</td>
-      <td class="num mono">${s.ach_unit.toLocaleString('id-ID')}</td>
-      <td class="num">
+      <td data-label="Area"><span class="area-pill">${s.area}</span></td>
+      <td class="num mono" data-label="Target">${s.target_unit.toLocaleString('id-ID')}</td>
+      <td class="num mono" data-label="Ach (unit)">${s.ach_unit.toLocaleString('id-ID')}</td>
+      <td class="num" data-label="% Ach">
         <div class="pct-cell" style="justify-content:flex-end;">
           <span class="status-dot" style="background:${colorHex[sc]}"></span>
           <span class="mono" style="font-weight:700;">${pct(s.ach_pct)}</span>
         </div>
       </td>
-      <td class="num"><span class="tag ${vc}">${pct(s.ach_value_pct)}</span></td>
-      <td class="num mono">${pct(s.mio3_pct)}</td>
-      <td class="num">
+      <td class="num" data-label="% Value"><span class="tag ${vc}">${pct(s.ach_value_pct)}</span></td>
+      <td class="num mono" data-label="% 3MIO+">${pct(s.mio3_pct)}</td>
+      <td class="num" data-label="Attach VAS">
         <div class="pct-cell" style="justify-content:flex-end;">
           <div class="pct-bar"><div class="pct-bar-fill" style="width:${Math.min(s.vas_avg*100,100)}%;background:${colorHex[statusColor(s.vas_avg)]}"></div></div>
           <span class="mono">${pct(s.vas_avg)}</span>
         </div>
       </td>
-      <td class="num mono" style="color:${s.growth_all_pct>=0?colorHex.good:colorHex.bad}">${s.growth_all_pct>=0?'+':''}${pct(s.growth_all_pct)}</td>
+      <td class="num mono" data-label="Growth MoM" style="color:${s.growth_all_pct>=0?colorHex.good:colorHex.bad}">${s.growth_all_pct>=0?'+':''}${pct(s.growth_all_pct)}</td>
     </tr>
-    <tr class="detail-row" id="detail-${s.store_id}" style="display:none;"><td colspan="10">${detailHTML(s)}</td></tr>
+    <tr class="detail-row" id="detail-${s.store_id}"><td colspan="10">${detailHTML(s)}</td></tr>
     `;
   }).join('');
 
@@ -1090,10 +1158,10 @@ function renderTable(){
     row.onclick = ()=>{
       const id = row.dataset.id;
       const detail = document.getElementById('detail-'+id);
-      const isOpen = detail.style.display !== 'none';
-      document.querySelectorAll('#page-performance .detail-row').forEach(d=>d.style.display='none');
+      const isOpen = detail.classList.contains('open');
+      document.querySelectorAll('#page-performance .detail-row').forEach(d=>d.classList.remove('open'));
       document.querySelectorAll('#page-performance .store-row').forEach(r=>r.classList.remove('expanded'));
-      if(!isOpen){ detail.style.display='table-row'; row.classList.add('expanded'); }
+      if(!isOpen){ detail.classList.add('open'); row.classList.add('expanded'); }
     };
   });
 }
@@ -1311,24 +1379,24 @@ function renderStockTypeTable(){
   document.getElementById('stock-type-table-body').innerHTML = types.map((t,i)=>{
     const rowId = 'stock-type-row-'+i;
     return `
-    <tr class="store-row" data-id="${rowId}">
-      <td><div class="store-name">${t.model}</div></td>
-      <td class="num mono">${fmt(t.stock)}</td>
-      <td class="num mono">${fmt(t.sales_out)}</td>
-      <td class="num"><span class="tag ${dosStatus(t.dos)}">${t.dos!==null&&t.dos!==undefined?Number(t.dos).toFixed(1):'-'}</span></td>
-      <td class="num mono">${t.stores.length}</td>
+    <tr class="store-row data-row" data-id="${rowId}">
+      <td class="cell-primary"><div class="store-name">${t.model}</div></td>
+      <td class="num mono" data-label="Total Stock">${fmt(t.stock)}</td>
+      <td class="num mono" data-label="Total Sales Out">${fmt(t.sales_out)}</td>
+      <td class="num" data-label="DOS"><span class="tag ${dosStatus(t.dos)}">${t.dos!==null&&t.dos!==undefined?Number(t.dos).toFixed(1):'-'}</span></td>
+      <td class="num mono" data-label="Jml Toko">${t.stores.length}</td>
     </tr>
-    <tr class="detail-row" id="detail-${rowId}" style="display:none;"><td colspan="5">${stockTypeDetailHTML(t)}</td></tr>`;
+    <tr class="detail-row" id="detail-${rowId}"><td colspan="5">${stockTypeDetailHTML(t)}</td></tr>`;
   }).join('');
 
   document.querySelectorAll('#stock-view-tipe .store-row').forEach(row=>{
     row.onclick = ()=>{
       const id = row.dataset.id;
       const detail = document.getElementById('detail-'+id);
-      const isOpen = detail.style.display !== 'none';
-      document.querySelectorAll('#stock-view-tipe .detail-row').forEach(d=>d.style.display='none');
+      const isOpen = detail.classList.contains('open');
+      document.querySelectorAll('#stock-view-tipe .detail-row').forEach(d=>d.classList.remove('open'));
       document.querySelectorAll('#stock-view-tipe .store-row').forEach(r=>r.classList.remove('expanded'));
-      if(!isOpen){ detail.style.display='table-row'; row.classList.add('expanded'); }
+      if(!isOpen){ detail.classList.add('open'); row.classList.add('expanded'); }
     };
   });
 }
@@ -1413,23 +1481,23 @@ function renderStockTable(){
     const sc = dosStatus(r.dos);
     const rowId = 'stock-row-'+i;
     return `
-    <tr class="store-row" data-id="${rowId}">
-      <td><div class="store-name">${r.store_name}</div></td>
-      <td class="num mono">${fmt(r.stock)}</td>
-      <td class="num mono">${fmt(r.sales_out)}</td>
-      <td class="num"><span class="tag ${sc}">${r.dos!==null&&r.dos!==undefined?Number(r.dos).toFixed(1):'-'}</span></td>
+    <tr class="store-row data-row" data-id="${rowId}">
+      <td class="cell-primary"><div class="store-name">${r.store_name}</div></td>
+      <td class="num mono" data-label="Stock">${fmt(r.stock)}</td>
+      <td class="num mono" data-label="Sales Out">${fmt(r.sales_out)}</td>
+      <td class="num" data-label="DOS"><span class="tag ${sc}">${r.dos!==null&&r.dos!==undefined?Number(r.dos).toFixed(1):'-'}</span></td>
     </tr>
-    <tr class="detail-row" id="detail-${rowId}" style="display:none;"><td colspan="4">${stockDetailHTML(r.raw)}</td></tr>`;
+    <tr class="detail-row" id="detail-${rowId}"><td colspan="4">${stockDetailHTML(r.raw)}</td></tr>`;
   }).join('');
 
   document.querySelectorAll('#page-stock .store-row').forEach(row=>{
     row.onclick = ()=>{
       const id = row.dataset.id;
       const detail = document.getElementById('detail-'+id);
-      const isOpen = detail.style.display !== 'none';
-      document.querySelectorAll('#page-stock .detail-row').forEach(d=>d.style.display='none');
+      const isOpen = detail.classList.contains('open');
+      document.querySelectorAll('#page-stock .detail-row').forEach(d=>d.classList.remove('open'));
       document.querySelectorAll('#page-stock .store-row').forEach(r=>r.classList.remove('expanded'));
-      if(!isOpen){ detail.style.display='table-row'; row.classList.add('expanded'); }
+      if(!isOpen){ detail.classList.add('open'); row.classList.add('expanded'); }
     };
   });
 }
@@ -1616,14 +1684,14 @@ function renderSalesTypeNetworkTable(){
     return (va-vb)*salesTypeNetSortDir;
   });
   document.getElementById('salestype-network-table-body').innerHTML = rows.map(t=>`
-    <tr>
-      <td><div class="store-name">${t.model}</div></td>
-      <td class="num mono">${fmt(t.qty)}</td>
-      <td class="num mono">${fmt(t.qty_prev)}</td>
-      <td class="num"><span class="tag ${deltaClass(t.qty_delta)}">${pctSigned(t.qty_delta_pct)}</span></td>
-      <td class="num mono">${money(t.value)}</td>
-      <td class="num mono">${money(t.value_prev)}</td>
-      <td class="num"><span class="tag ${deltaClass(t.value_delta)}">${pctSigned(t.value_delta_pct)}</span></td>
+    <tr class="data-row">
+      <td class="cell-primary"><div class="store-name">${t.model}</div></td>
+      <td class="num mono" data-label="Qty Bulan Ini">${fmt(t.qty)}</td>
+      <td class="num mono" data-label="Qty Bulan Lalu">${fmt(t.qty_prev)}</td>
+      <td class="num" data-label="Δ Qty"><span class="tag ${deltaClass(t.qty_delta)}">${pctSigned(t.qty_delta_pct)}</span></td>
+      <td class="num mono" data-label="Value Bulan Ini">${money(t.value)}</td>
+      <td class="num mono" data-label="Value Bulan Lalu">${money(t.value_prev)}</td>
+      <td class="num" data-label="Δ Value"><span class="tag ${deltaClass(t.value_delta)}">${pctSigned(t.value_delta_pct)}</span></td>
     </tr>`).join('');
 
   const chartRows = [...rows].sort((a,b)=>b[salesTypeMetric]-a[salesTypeMetric]).slice(0,15);
@@ -1668,25 +1736,25 @@ function renderSalesTypeStoreTable(){
   document.getElementById('salestype-store-table-body').innerHTML = rows.map((s,i)=>{
     const rowId = 'salestype-row-'+i;
     return `
-    <tr class="store-row" data-id="${rowId}">
-      <td><div class="store-name">${s.store_name}</div></td>
-      <td><span class="area-pill">${s.area}</span></td>
-      <td class="num mono">${fmt(s.total_qty)}</td>
-      <td class="num"><span class="tag ${deltaClass(s.total_qty-s.total_qty_prev)}">${pctSigned(s.total_qty_delta_pct)}</span></td>
-      <td class="num mono">${money(s.total_value)}</td>
-      <td class="num"><span class="tag ${deltaClass(s.total_value-s.total_value_prev)}">${pctSigned(s.total_value_delta_pct)}</span></td>
+    <tr class="store-row data-row" data-id="${rowId}">
+      <td class="cell-primary"><div class="store-name">${s.store_name}</div></td>
+      <td data-label="Area"><span class="area-pill">${s.area}</span></td>
+      <td class="num mono" data-label="Qty Bulan Ini">${fmt(s.total_qty)}</td>
+      <td class="num" data-label="Δ Qty"><span class="tag ${deltaClass(s.total_qty-s.total_qty_prev)}">${pctSigned(s.total_qty_delta_pct)}</span></td>
+      <td class="num mono" data-label="Value Bulan Ini">${money(s.total_value)}</td>
+      <td class="num" data-label="Δ Value"><span class="tag ${deltaClass(s.total_value-s.total_value_prev)}">${pctSigned(s.total_value_delta_pct)}</span></td>
     </tr>
-    <tr class="detail-row" id="detail-${rowId}" style="display:none;"><td colspan="6">${salesTypeDetailHTML(s)}</td></tr>`;
+    <tr class="detail-row" id="detail-${rowId}"><td colspan="6">${salesTypeDetailHTML(s)}</td></tr>`;
   }).join('');
 
   document.querySelectorAll('#page-salestype .store-row').forEach(row=>{
     row.onclick = ()=>{
       const id = row.dataset.id;
       const detail = document.getElementById('detail-'+id);
-      const isOpen = detail.style.display !== 'none';
-      document.querySelectorAll('#page-salestype .detail-row').forEach(d=>d.style.display='none');
+      const isOpen = detail.classList.contains('open');
+      document.querySelectorAll('#page-salestype .detail-row').forEach(d=>d.classList.remove('open'));
       document.querySelectorAll('#page-salestype .store-row').forEach(r=>r.classList.remove('expanded'));
-      if(!isOpen){ detail.style.display='table-row'; row.classList.add('expanded'); }
+      if(!isOpen){ detail.classList.add('open'); row.classList.add('expanded'); }
     };
   });
 }

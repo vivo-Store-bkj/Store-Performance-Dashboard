@@ -382,6 +382,7 @@
       <div class="brand-title" id="brand-title">Store Performance Dashboard</div>
       <div class="brand-sub" id="period-sub">Memuat data periode…</div>
       <div class="brand-sub" id="updated-sub" style="margin-top:2px;"></div>
+      <div class="brand-sub" id="access-sub" style="margin-top:2px;color:#8EA3D8;"></div>
     </div>
     <div class="pace">
       <div class="pace-ring">
@@ -711,11 +712,83 @@ let salesTypeStoreSortKey = 'total_value';
 let salesTypeStoreSortDir = -1;
 let salesTypeSearchTerm = '';
 
+/* ================= AKSES PER EMAIL (Level 1 — filter tampilan) ================= */
+// Email di-lowercase-kan saat dibandingkan. Value 'ALL' = lihat semua toko.
+// Value array = daftar store_id yang boleh dilihat (dicocokkan sebagai string,
+// karena store_id di dataset Stock formatnya string sementara Performance/Sales
+// per Tipe formatnya angka).
+const ACCESS_MAP = {
+  'mikefumar@gmail.com': 'ALL',
+  'm.rizki9916@gmail.com': ['6050701','6220701','6050705','6050706'],
+  'anggaria86@gmail.com': ['6010701','6010702'],
+  'nviahrynti@gmail.com': ['6020706','6020704'],
+  'vivostorecentralpark@gmail.com': ['6010708'],
+  'nurirawati1992@gmail.com': ['6010703','6010709','6010710'],
+  'vivostorelippomallpuri@gmail.com': ['6010711'],
+  'vivostoreemporiumpluitmall@gmail.com': ['6020711'],
+  'vskarawaci@gmail.com': ['6240707','6240706'],
+  'vivostoreccmcilegon@gmail.com': ['6170703'],
+  'ariesfitriyanto@gmail.com': ['6170707','6240702','6240704','6240709','6240708'],
+  'dhanygrahakbrt@gmail.com': ['6240701','6170706','6240703','6240705'],
+  'nicofarelbalboa@gmail.com': ['6140705'],
+  'ffajarmuarif77@gmail.com': ['6130702'],
+  'vickyinez891@gmail.com': ['6140706'],
+  'brilyanriswara371@gmail.com': ['6100702'],
+  'erlangga.pradhitya@gmail.com': ['6040701','6080712','6040702','6040703'],
+};
+
+let ACCESS_SCOPE = 'ALL';   // 'ALL' | Set of store_id strings | 'NONE' (email tak terdaftar)
+let ACCESS_EMAIL = null;
+
+async function resolveAccessScope(){
+  try{
+    const res = await fetch('/cdn-cgi/access/get-identity', {credentials:'include'});
+    if(!res.ok) throw new Error('not behind access');
+    const identity = await res.json();
+    const email = (identity.email || '').toLowerCase().trim();
+    ACCESS_EMAIL = email;
+    const rule = ACCESS_MAP[email];
+    if(rule === 'ALL'){ ACCESS_SCOPE = 'ALL'; }
+    else if(Array.isArray(rule)){ ACCESS_SCOPE = new Set(rule.map(String)); }
+    else{ ACCESS_SCOPE = 'NONE'; }
+  }catch(e){
+    // Bukan diakses lewat Cloudflare Access (misal testing lokal) -> jangan batasi apa pun
+    ACCESS_SCOPE = 'ALL';
+  }
+  renderAccessBanner();
+}
+
+function accessAllows(storeId){
+  if(ACCESS_SCOPE === 'ALL') return true;
+  if(ACCESS_SCOPE === 'NONE') return false;
+  return ACCESS_SCOPE.has(String(storeId));
+}
+
+function filterStoresByAccess(stores){
+  if(ACCESS_SCOPE === 'ALL') return stores;
+  return stores.filter(s => accessAllows(s.store_id));
+}
+
+function renderAccessBanner(){
+  const el = document.getElementById('access-sub');
+  if(!el) return;
+  if(ACCESS_SCOPE === 'ALL'){
+    el.textContent = '';
+  } else if(ACCESS_SCOPE === 'NONE'){
+    el.textContent = `Akses untuk ${ACCESS_EMAIL} belum diatur — hubungi admin`;
+    el.style.color = '#FF9B9B';
+  } else {
+    el.textContent = `Akses: ${ACCESS_SCOPE.size} toko (${ACCESS_EMAIL})`;
+  }
+}
+
 /* ================= INIT / LOAD ================= */
 // cache-bust every data fetch so GitHub Pages' CDN / browser cache never
 // serves a stale manifest or period file after a data update
 const noCache = url => url + (url.includes('?') ? '&' : '?') + 'v=' + Date.now();
 const fetchFresh = url => fetch(noCache(url), {cache:'no-store'});
+
+resolveAccessScope().finally(() => {
 
 fetchFresh('data/manifest.json').then(r => r.json()).then(manifest => {
   PERF_MANIFEST = manifest;
@@ -744,6 +817,8 @@ fetchFresh('data/sales-type-manifest.json').then(r => r.json()).then(manifest =>
   document.getElementById('salestype-store-table-body').innerHTML =
     '<tr><td colspan="4" style="padding:24px;color:#C23B4B;">Gagal memuat data/sales-type-manifest.json — pastikan sheet \'SALES VALUE PER TYPE\' ada di source/dashboard_data.xlsx dan workflow sudah pernah jalan. ('+err+')</td></tr>';
 });
+
+}); // end resolveAccessScope().finally
 
 /* ================= SECTION TABS ================= */
 document.getElementById('section-tabs').addEventListener('click', e=>{
@@ -1034,12 +1109,37 @@ function renderStockoutRisk(){
 /* ================================================================ */
 /* ======================= PERFORMANCE LOGIC ======================= */
 /* ================================================================ */
+function recomputeTotalFromStores(stores){
+  const sum = (f) => stores.reduce((a,s)=>a+(f(s)||0), 0);
+  const target_unit = sum(s=>s.target_unit), ach_unit = sum(s=>s.ach_unit);
+  const target_value = sum(s=>s.target_value), ach_value = sum(s=>s.ach_value);
+  const growth_all_prev = sum(s=>s.growth_all_prev), growth_all_curr = sum(s=>s.growth_all_curr);
+  const mio3_unit = sum(s=>s.mio3_unit);
+  const vasKeys = ['acc','qoala','bca_insurance','indosat','telkomsel'];
+  const vas = {};
+  vasKeys.forEach(k=>{
+    const target = sum(s=>s.vas?.[k]?.target);
+    const ach = sum(s=>s.vas?.[k]?.ach);
+    vas[k] = { target, ach, pct: safeDiv(ach, target) };
+  });
+  return {
+    target_unit, ach_unit, ach_pct: safeDiv(ach_unit, target_unit),
+    target_value, ach_value, ach_value_pct: safeDiv(ach_value, target_value),
+    growth_all_prev, growth_all_curr, growth_all_gap: growth_all_curr-growth_all_prev,
+    growth_all_pct: safeDiv(growth_all_curr-growth_all_prev, growth_all_prev),
+    mio3_unit, mio3_pct: safeDiv(mio3_unit, ach_unit),
+    vas,
+  };
+}
+
 function loadPerfPeriod(key){
   const meta = PERF_MANIFEST.periods.find(p=>p.key===key);
   if(!meta) return;
   fetchFresh(meta.file).then(r=>r.json()).then(json=>{
     PERF_DATA = json;
     perfCurrentKey = key;
+    PERF_DATA.stores = filterStoresByAccess(PERF_DATA.stores);
+    if(ACCESS_SCOPE !== 'ALL') PERF_DATA.total = recomputeTotalFromStores(PERF_DATA.stores);
     PERF_DATA.stores.forEach(s => {
       const vasVals = Object.values(s.vas).map(v => v.pct);
       s.vas_avg = vasVals.reduce((a,b)=>a+b,0) / vasVals.length;
@@ -1284,12 +1384,40 @@ function renderRankings(){
 /* ================================================================ */
 /* ========================= STOCK LOGIC =========================== */
 /* ================================================================ */
+function recomputeTypesByBrandFromStores(stores, hariBerjalan){
+  const result = {};
+  ['IQOO','VIVO'].forEach(brand=>{
+    const key = brand.toLowerCase()+'_by_type';
+    const modelAcc = {};
+    stores.forEach(s=>{
+      (s[key]||[]).forEach(t=>{
+        const acc = modelAcc[t.model] || (modelAcc[t.model] = {stock:0, sales_out:0, stores:[]});
+        acc.stock += t.stock||0;
+        acc.sales_out += t.sales_out||0;
+        if(t.stock || t.sales_out){
+          acc.stores.push({store_name:s.store_name, store_id:s.store_id, stock:t.stock, sales_out:t.sales_out, dos:t.dos});
+        }
+      });
+    });
+    const types = Object.entries(modelAcc).map(([model,acc])=>{
+      const dos = acc.sales_out ? Math.round((acc.stock/(acc.sales_out/hariBerjalan))*100)/100 : null;
+      acc.stores.sort((a,b)=>b.stock-a.stock);
+      return {model, stock:acc.stock, sales_out:acc.sales_out, dos, stores:acc.stores};
+    });
+    types.sort((a,b)=>b.stock-a.stock);
+    result[brand] = types;
+  });
+  return result;
+}
+
 function loadStockPeriod(key, isInitial){
   const meta = STOCK_MANIFEST.periods.find(p=>p.key===key);
   if(!meta) return;
   fetchFresh(meta.file).then(r=>r.json()).then(json=>{
     STOCK_DATA = json;
     stockCurrentKey = key;
+    STOCK_DATA.stores = filterStoresByAccess(STOCK_DATA.stores);
+    if(ACCESS_SCOPE !== 'ALL') STOCK_DATA.types_by_brand = recomputeTypesByBrandFromStores(STOCK_DATA.stores, STOCK_DATA.hari_berjalan);
     if(activeSection==='stock') renderMonthRow();
     initStock();
     renderStockoutRisk();
@@ -1583,12 +1711,39 @@ function renderStockRankings(){
 /* ================================================================ */
 /* ====================== SALES PER TYPE LOGIC ====================== */
 /* ================================================================ */
+function recomputeSalesTypeAggregates(stores){
+  const modelAcc = {};
+  const nt = {qty:0, qty_prev:0, qty_delta:0, value:0, value_prev:0, value_delta:0};
+  stores.forEach(s=>{
+    nt.qty += s.total_qty||0; nt.qty_prev += s.total_qty_prev||0;
+    nt.value += s.total_value||0; nt.value_prev += s.total_value_prev||0;
+    (s.by_type||[]).forEach(t=>{
+      const acc = modelAcc[t.model] || (modelAcc[t.model] = {qty:0,qty_prev:0,value:0,value_prev:0});
+      acc.qty += t.qty||0; acc.qty_prev += t.qty_prev||0;
+      acc.value += t.value||0; acc.value_prev += t.value_prev||0;
+    });
+  });
+  nt.qty_delta = nt.qty - nt.qty_prev;
+  nt.value_delta = nt.value - nt.value_prev;
+  const totals_by_type = Object.entries(modelAcc).map(([model,acc])=>({
+    model, qty:acc.qty, qty_prev:acc.qty_prev, qty_delta:acc.qty-acc.qty_prev,
+    value:acc.value, value_prev:acc.value_prev, value_delta:acc.value-acc.value_prev,
+  }));
+  return { network_total: nt, totals_by_type };
+}
+
 function loadSalesTypePeriod(key){
   const meta = SALESTYPE_MANIFEST.periods.find(p=>p.key===key);
   if(!meta) return;
   fetchFresh(meta.file).then(r=>r.json()).then(json=>{
     SALESTYPE_DATA = json;
     salesTypeCurrentKey = key;
+    SALESTYPE_DATA.stores = filterStoresByAccess(SALESTYPE_DATA.stores);
+    if(ACCESS_SCOPE !== 'ALL'){
+      const agg = recomputeSalesTypeAggregates(SALESTYPE_DATA.stores);
+      SALESTYPE_DATA.network_total = agg.network_total;
+      SALESTYPE_DATA.totals_by_type = agg.totals_by_type;
+    }
 
     (SALESTYPE_DATA.totals_by_type||[]).forEach(t=>{
       t.qty_delta_pct = safeDiv(t.qty_delta, t.qty_prev);

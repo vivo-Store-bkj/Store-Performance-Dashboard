@@ -3,52 +3,46 @@
   "period_key": "2026-08",
   "period_label": "Agustus 2026",
   "total_hari": 31,
-  "hari_berjalan": 14,
-  "sisa_hari": 17,
+  "hari_berjalan": 17,
+  "sisa_hari": 14,
   "updated_by": "Michael Fumar",
-  "updated_at": "15 Agustus 2026, 08:01 WIB",
+  "updated_at": "18 Agustus 2026, 08:58 WIB",
   "stores": [
     {
       "store_id": "6140706",
       "store_name": "23 SEMARANG MALL 1F065-66",
-      "iqoo_stock": 11,
-      "iqoo_sales_out": 0,
-      "iqoo_dos": null,
+      "iqoo_stock": 8,
+      "iqoo_sales_out": 3,
+      "iqoo_dos": 45.33,
       "iqoo_by_type": [
         {
           "model": "IQOO Z11",
-          "stock": 6,
-          "sales_out": 0,
-          "dos": null
-        },
-        {
-          "model": "IQOO 15 R",
-          "stock": 3,
-          "sales_out": 0,
-          "dos": null
+          "stock": 4,
+          "sales_out": 2,
+          "dos": 34.0
         },
         {
           "model": "IQOO Z11x",
           "stock": 2,
           "sales_out": 0,
           "dos": null
+        },
+        {
+          "model": "IQOO 15 R",
+          "stock": 2,
+          "sales_out": 1,
+          "dos": 34.0
         }
       ],
-      "vivo_stock": 50,
-      "vivo_sales_out": 6,
-      "vivo_dos": 116.67,
+      "vivo_stock": 46,
+      "vivo_sales_out": 10,
+      "vivo_dos": 78.2,
       "vivo_by_type": [
         {
           "model": "Y11d",
-          "stock": 8,
-          "sales_out": 2,
-          "dos": 56.0
-        },
-        {
-          "model": "Y500",
-          "stock": 8,
-          "sales_out": 0,
-          "dos": null
+          "stock": 7,
+          "sales_out": 3,
+          "dos": 39.67
         },
         {
           "model": "V70 FE",
@@ -57,16 +51,16 @@
           "dos": null
         },
         {
+          "model": "Y500",
+          "stock": 7,
+          "sales_out": 1,
+          "dos": 119.0
+        },
+        {
           "model": "Y31d Pro",
           "stock": 6,
           "sales_out": 1,
-          "dos": 84.0
-        },
-        {
-          "model": "Y05",
-          "stock": 5,
-          "sales_out": 0,
-          "dos": null
+          "dos": 102.0
         },
         {
           "model": "Y31d",
@@ -78,13 +72,19 @@
           "model": "V70",
           "stock": 4,
           "sales_out": 1,
-          "dos": 56.0
+          "dos": 68.0
         },
         {
           "model": "X300 Ultra",
           "stock": 3,
           "sales_out": 1,
-          "dos": 42.0
+          "dos": 51.0
+        },
+        {
+          "model": "Y05",
+          "stock": 3,
+          "sales_out": 2,
+          "dos": 25.5
         },
         {
           "model": "V60 Lite",
@@ -96,7 +96,7 @@
           "model": "Y05e",
           "stock": 2,
           "sales_out": 1,
-          "dos": 28.0
+          "dos": 34.0
         },
         {
           "model": "V60 Lite 5G",
@@ -105,16 +105,16 @@
           "dos": null
         }
       ],
-      "total_stock": 61,
-      "total_sales_out": 6,
-      "total_dos": 142.33
+      "total_stock": 54,
+      "total_sales_out": 13,
+      "total_dos": 70.62
     },
     {
       "store_id": "6170703",
       "store_name": "4004 MVS-BNT-CCM STORE",
       "iqoo_stock": 2,
       "iqoo_sales_out": 2,
-      "iqoo_dos": 14,
+      "iqoo_dos": 17,
       "iqoo_by_type": [
         {
           "model": "IQOO Z11x",
@@ -126,7 +126,7 @@
           "model": "IQOO Z11",
           "stock": 1,
           "sales_out": 1,
-          "dos": 14.0
+          "dos": 17.0
         },
         {
           "model": "IQOO 15 R",
@@ -135,33 +135,33 @@
           "dos": 0.0
         }
       ],
-      "vivo_stock": 23,
-      "vivo_sales_out": 7,
-      "vivo_dos": 46,
+      "vivo_stock": 19,
+      "vivo_sales_out": 11,
+      "vivo_dos": 29.36,
       "vivo_by_type": [
         {
           "model": "Y31d Pro",
-          "stock": 6,
-          "sales_out": 0,
-          "dos": null
-        },
-        {
-          "model": "Y11d",
-          "stock": 4,
-          "sales_out": 2,
-          "dos": 28.0
-        },
-        {
-          "model": "Y05",
-          "stock": 4,
+          "stock": 5,
           "sales_out": 1,
-          "dos": 56.0
+          "dos": 85.0
         },
         {
           "model": "V70 FE",
           "stock": 3,
           "sales_out": 1,
-          "dos": 42.0
+          "dos": 51.0
+        },
+        {
+          "model": "Y05",
+          "stock": 3,
+          "sales_out": 2,
+          "dos": 25.5
+        },
+        {
+          "model": "Y11d",
+          "stock": 2,
+          "sales_out": 4,
+          "dos": 8.5
         },
         {
           "model": "V60 Lite",
@@ -173,7 +173,7 @@
           "model": "Y500",
           "stock": 2,
           "sales_out": 1,
-          "dos": 28.0
+          "dos": 34.0
         },
         {
           "model": "Y05e",
@@ -194,22 +194,22 @@
           "dos": 0.0
         }
       ],
-      "total_stock": 25,
-      "total_sales_out": 9,
-      "total_dos": 38.89
+      "total_stock": 21,
+      "total_sales_out": 13,
+      "total_dos": 27.46
     },
     {
       "store_id": "6050706",
       "store_name": "AEON MALL DELTAMAS 1F081",
       "iqoo_stock": 7,
       "iqoo_sales_out": 1,
-      "iqoo_dos": 98,
+      "iqoo_dos": 119,
       "iqoo_by_type": [
         {
           "model": "IQOO Z11",
           "stock": 5,
           "sales_out": 1,
-          "dos": 70.0
+          "dos": 85.0
         },
         {
           "model": "IQOO Z11x",
@@ -218,51 +218,51 @@
           "dos": null
         }
       ],
-      "vivo_stock": 55,
-      "vivo_sales_out": 20,
-      "vivo_dos": 38.5,
+      "vivo_stock": 53,
+      "vivo_sales_out": 25,
+      "vivo_dos": 36.04,
       "vivo_by_type": [
         {
+          "model": "Y05",
+          "stock": 9,
+          "sales_out": 6,
+          "dos": 25.5
+        },
+        {
           "model": "Y31d Pro",
-          "stock": 10,
-          "sales_out": 2,
-          "dos": 70.0
+          "stock": 8,
+          "sales_out": 4,
+          "dos": 34.0
         },
         {
           "model": "Y11d",
           "stock": 7,
-          "sales_out": 8,
-          "dos": 12.25
-        },
-        {
-          "model": "Y05",
-          "stock": 7,
-          "sales_out": 6,
-          "dos": 16.33
+          "sales_out": 9,
+          "dos": 13.22
         },
         {
           "model": "Y500",
           "stock": 7,
           "sales_out": 3,
-          "dos": 32.67
-        },
-        {
-          "model": "V70 FE",
-          "stock": 6,
-          "sales_out": 1,
-          "dos": 84.0
-        },
-        {
-          "model": "Y05e",
-          "stock": 6,
-          "sales_out": 0,
-          "dos": null
+          "dos": 39.67
         },
         {
           "model": "Y31d",
           "stock": 5,
           "sales_out": 0,
           "dos": null
+        },
+        {
+          "model": "V70 FE",
+          "stock": 5,
+          "sales_out": 2,
+          "dos": 42.5
+        },
+        {
+          "model": "Y05e",
+          "stock": 5,
+          "sales_out": 1,
+          "dos": 85.0
         },
         {
           "model": "V70",
@@ -283,22 +283,22 @@
           "dos": null
         }
       ],
-      "total_stock": 62,
-      "total_sales_out": 21,
-      "total_dos": 41.33
+      "total_stock": 60,
+      "total_sales_out": 26,
+      "total_dos": 39.23
     },
     {
       "store_id": "6240705",
       "store_name": "CIPUTRA 2FC15",
       "iqoo_stock": 5,
       "iqoo_sales_out": 4,
-      "iqoo_dos": 17.5,
+      "iqoo_dos": 21.25,
       "iqoo_by_type": [
         {
           "model": "IQOO Z11",
           "stock": 4,
           "sales_out": 3,
-          "dos": 18.67
+          "dos": 22.67
         },
         {
           "model": "IQOO Z11x",
@@ -313,45 +313,45 @@
           "dos": 0.0
         }
       ],
-      "vivo_stock": 35,
-      "vivo_sales_out": 14,
-      "vivo_dos": 35,
+      "vivo_stock": 32,
+      "vivo_sales_out": 20,
+      "vivo_dos": 27.2,
       "vivo_by_type": [
         {
           "model": "Y05",
-          "stock": 10,
-          "sales_out": 1,
-          "dos": 140.0
-        },
-        {
-          "model": "Y31d Pro",
-          "stock": 6,
-          "sales_out": 1,
-          "dos": 84.0
+          "stock": 9,
+          "sales_out": 2,
+          "dos": 76.5
         },
         {
           "model": "Y11d",
-          "stock": 5,
-          "sales_out": 4,
-          "dos": 17.5
+          "stock": 6,
+          "sales_out": 5,
+          "dos": 20.4
+        },
+        {
+          "model": "Y31d Pro",
+          "stock": 4,
+          "sales_out": 3,
+          "dos": 22.67
         },
         {
           "model": "Y500",
           "stock": 4,
-          "sales_out": 3,
-          "dos": 18.67
-        },
-        {
-          "model": "V70 FE",
-          "stock": 3,
-          "sales_out": 2,
-          "dos": 21.0
+          "sales_out": 4,
+          "dos": 17.0
         },
         {
           "model": "Y31d",
           "stock": 2,
           "sales_out": 0,
           "dos": null
+        },
+        {
+          "model": "V70 FE",
+          "stock": 2,
+          "sales_out": 3,
+          "dos": 11.33
         },
         {
           "model": "V60 Lite",
@@ -363,7 +363,7 @@
           "model": "Y05e",
           "stock": 2,
           "sales_out": 1,
-          "dos": 28.0
+          "dos": 34.0
         },
         {
           "model": "X300 Ultra",
@@ -378,9 +378,9 @@
           "dos": 0.0
         }
       ],
-      "total_stock": 40,
-      "total_sales_out": 18,
-      "total_dos": 31.11
+      "total_stock": 37,
+      "total_sales_out": 24,
+      "total_dos": 26.21
     },
     {
       "store_id": "6150702",
@@ -404,13 +404,13 @@
       ],
       "vivo_stock": 23,
       "vivo_sales_out": 4,
-      "vivo_dos": 80.5,
+      "vivo_dos": 97.75,
       "vivo_by_type": [
         {
           "model": "Y31d Pro",
           "stock": 4,
           "sales_out": 1,
-          "dos": 56.0
+          "dos": 68.0
         },
         {
           "model": "Y11d",
@@ -422,19 +422,19 @@
           "model": "Y31d",
           "stock": 3,
           "sales_out": 1,
-          "dos": 42.0
+          "dos": 51.0
         },
         {
           "model": "Y05",
           "stock": 3,
           "sales_out": 1,
-          "dos": 42.0
+          "dos": 51.0
         },
         {
           "model": "Y500",
           "stock": 3,
           "sales_out": 1,
-          "dos": 42.0
+          "dos": 51.0
         },
         {
           "model": "V70",
@@ -463,14 +463,14 @@
       ],
       "total_stock": 25,
       "total_sales_out": 4,
-      "total_dos": 87.5
+      "total_dos": 106.25
     },
     {
       "store_id": "6240708",
       "store_name": "ITC BSD 1F09-14",
       "iqoo_stock": 8,
       "iqoo_sales_out": 1,
-      "iqoo_dos": 112,
+      "iqoo_dos": 136,
       "iqoo_by_type": [
         {
           "model": "IQOO Z11",
@@ -482,7 +482,7 @@
           "model": "IQOO Z11x",
           "stock": 2,
           "sales_out": 1,
-          "dos": 28.0
+          "dos": 34.0
         },
         {
           "model": "IQOO 15 R",
@@ -491,33 +491,33 @@
           "dos": null
         }
       ],
-      "vivo_stock": 48,
-      "vivo_sales_out": 18,
-      "vivo_dos": 37.33,
+      "vivo_stock": 50,
+      "vivo_sales_out": 21,
+      "vivo_dos": 40.48,
       "vivo_by_type": [
+        {
+          "model": "Y05",
+          "stock": 11,
+          "sales_out": 1,
+          "dos": 187.0
+        },
         {
           "model": "Y11d",
           "stock": 10,
           "sales_out": 4,
-          "dos": 35.0
-        },
-        {
-          "model": "Y05",
-          "stock": 10,
-          "sales_out": 1,
-          "dos": 140.0
+          "dos": 42.5
         },
         {
           "model": "Y05e",
-          "stock": 7,
+          "stock": 8,
           "sales_out": 1,
-          "dos": 98.0
+          "dos": 136.0
         },
         {
           "model": "Y31d Pro",
           "stock": 5,
-          "sales_out": 8,
-          "dos": 8.75
+          "sales_out": 9,
+          "dos": 9.44
         },
         {
           "model": "Y31d",
@@ -532,46 +532,52 @@
           "dos": null
         },
         {
-          "model": "Y500",
-          "stock": 4,
-          "sales_out": 1,
-          "dos": 56.0
+          "model": "V70 FE",
+          "stock": 3,
+          "sales_out": 3,
+          "dos": 17.0
         },
         {
-          "model": "V70 FE",
-          "stock": 2,
-          "sales_out": 3,
-          "dos": 9.33
+          "model": "Y500",
+          "stock": 3,
+          "sales_out": 2,
+          "dos": 25.5
+        },
+        {
+          "model": "X300 Ultra",
+          "stock": 1,
+          "sales_out": 0,
+          "dos": null
         },
         {
           "model": "V60 Lite",
-          "stock": 2,
-          "sales_out": 0,
-          "dos": null
+          "stock": 1,
+          "sales_out": 1,
+          "dos": 17.0
         }
       ],
-      "total_stock": 56,
-      "total_sales_out": 19,
-      "total_dos": 41.26
+      "total_stock": 58,
+      "total_sales_out": 22,
+      "total_dos": 44.82
     },
     {
       "store_id": "6240701",
       "store_name": "LG BLOK A-B NO. 12",
       "iqoo_stock": 7,
       "iqoo_sales_out": 3,
-      "iqoo_dos": 32.67,
+      "iqoo_dos": 39.67,
       "iqoo_by_type": [
         {
           "model": "IQOO Z11",
           "stock": 5,
           "sales_out": 2,
-          "dos": 35.0
+          "dos": 42.5
         },
         {
           "model": "IQOO Z11x",
           "stock": 1,
           "sales_out": 1,
-          "dos": 14.0
+          "dos": 17.0
         },
         {
           "model": "IQOO 15 R",
@@ -580,63 +586,63 @@
           "dos": null
         }
       ],
-      "vivo_stock": 49,
-      "vivo_sales_out": 133,
-      "vivo_dos": 5.16,
+      "vivo_stock": 62,
+      "vivo_sales_out": 164,
+      "vivo_dos": 6.43,
       "vivo_by_type": [
         {
           "model": "Y11d",
-          "stock": 9,
-          "sales_out": 48,
-          "dos": 2.62
+          "stock": 17,
+          "sales_out": 58,
+          "dos": 4.98
         },
         {
           "model": "Y05",
-          "stock": 9,
-          "sales_out": 24,
-          "dos": 5.25
+          "stock": 12,
+          "sales_out": 35,
+          "dos": 5.83
         },
         {
           "model": "Y05e",
-          "stock": 6,
-          "sales_out": 19,
-          "dos": 4.42
+          "stock": 8,
+          "sales_out": 20,
+          "dos": 6.8
         },
         {
           "model": "Y31d",
-          "stock": 5,
-          "sales_out": 3,
-          "dos": 23.33
-        },
-        {
-          "model": "Y31d Pro",
-          "stock": 5,
-          "sales_out": 24,
-          "dos": 2.92
+          "stock": 6,
+          "sales_out": 5,
+          "dos": 20.4
         },
         {
           "model": "Y500",
           "stock": 5,
-          "sales_out": 3,
-          "dos": 23.33
+          "sales_out": 4,
+          "dos": 21.25
+        },
+        {
+          "model": "Y31d Pro",
+          "stock": 4,
+          "sales_out": 28,
+          "dos": 2.43
         },
         {
           "model": "V70 FE",
           "stock": 4,
-          "sales_out": 4,
-          "dos": 14.0
+          "sales_out": 5,
+          "dos": 13.6
         },
         {
           "model": "V60 Lite",
           "stock": 4,
-          "sales_out": 5,
-          "dos": 11.2
+          "sales_out": 6,
+          "dos": 11.33
         },
         {
           "model": "X300 Ultra",
           "stock": 2,
           "sales_out": 1,
-          "dos": 28.0
+          "dos": 34.0
         },
         {
           "model": "V70",
@@ -645,9 +651,9 @@
           "dos": 0.0
         }
       ],
-      "total_stock": 56,
-      "total_sales_out": 136,
-      "total_dos": 5.76
+      "total_stock": 69,
+      "total_sales_out": 167,
+      "total_dos": 7.02
     },
     {
       "store_id": "6170707",
@@ -669,33 +675,27 @@
           "dos": null
         }
       ],
-      "vivo_stock": 48,
-      "vivo_sales_out": 85,
-      "vivo_dos": 7.91,
+      "vivo_stock": 59,
+      "vivo_sales_out": 106,
+      "vivo_dos": 9.46,
       "vivo_by_type": [
         {
-          "model": "Y11d",
-          "stock": 16,
-          "sales_out": 26,
-          "dos": 8.62
-        },
-        {
-          "model": "Y31d Pro",
-          "stock": 8,
-          "sales_out": 10,
-          "dos": 11.2
-        },
-        {
           "model": "Y05",
-          "stock": 8,
-          "sales_out": 16,
-          "dos": 7.0
+          "stock": 15,
+          "sales_out": 20,
+          "dos": 12.75
+        },
+        {
+          "model": "Y11d",
+          "stock": 11,
+          "sales_out": 35,
+          "dos": 5.34
         },
         {
           "model": "Y05e",
-          "stock": 6,
-          "sales_out": 14,
-          "dos": 6.0
+          "stock": 7,
+          "sales_out": 17,
+          "dos": 7.0
         },
         {
           "model": "Y31d",
@@ -704,10 +704,28 @@
           "dos": null
         },
         {
+          "model": "Y31d Pro",
+          "stock": 5,
+          "sales_out": 13,
+          "dos": 6.54
+        },
+        {
+          "model": "V70 FE",
+          "stock": 5,
+          "sales_out": 6,
+          "dos": 14.17
+        },
+        {
+          "model": "V60 Lite",
+          "stock": 5,
+          "sales_out": 8,
+          "dos": 10.62
+        },
+        {
           "model": "Y500",
-          "stock": 3,
+          "stock": 5,
           "sales_out": 5,
-          "dos": 8.4
+          "dos": 17.0
         },
         {
           "model": "X300 Ultra",
@@ -716,40 +734,28 @@
           "dos": null
         },
         {
-          "model": "V60 Lite",
-          "stock": 1,
-          "sales_out": 7,
-          "dos": 2.0
-        },
-        {
           "model": "V70",
           "stock": 0,
           "sales_out": 2,
           "dos": 0.0
-        },
-        {
-          "model": "V70 FE",
-          "stock": 0,
-          "sales_out": 5,
-          "dos": 0.0
         }
       ],
-      "total_stock": 53,
-      "total_sales_out": 85,
-      "total_dos": 8.73
+      "total_stock": 64,
+      "total_sales_out": 106,
+      "total_dos": 10.26
     },
     {
       "store_id": "6010711",
       "store_name": "LIPPO MALL PURI 1FK02",
-      "iqoo_stock": 9,
-      "iqoo_sales_out": 3,
-      "iqoo_dos": 42,
+      "iqoo_stock": 8,
+      "iqoo_sales_out": 4,
+      "iqoo_dos": 34,
       "iqoo_by_type": [
         {
           "model": "IQOO Z11",
           "stock": 5,
           "sales_out": 2,
-          "dos": 35.0
+          "dos": 42.5
         },
         {
           "model": "IQOO Z11x",
@@ -759,9 +765,9 @@
         },
         {
           "model": "IQOO 15 R",
-          "stock": 2,
-          "sales_out": 0,
-          "dos": null
+          "stock": 1,
+          "sales_out": 1,
+          "dos": 17.0
         },
         {
           "model": "IQOO 15",
@@ -770,27 +776,21 @@
           "dos": 0.0
         }
       ],
-      "vivo_stock": 45,
-      "vivo_sales_out": 20,
-      "vivo_dos": 31.5,
+      "vivo_stock": 43,
+      "vivo_sales_out": 25,
+      "vivo_dos": 29.24,
       "vivo_by_type": [
         {
           "model": "Y11d",
           "stock": 9,
           "sales_out": 4,
-          "dos": 31.5
+          "dos": 38.25
         },
         {
           "model": "Y05",
-          "stock": 7,
-          "sales_out": 3,
-          "dos": 32.67
-        },
-        {
-          "model": "Y31d Pro",
           "stock": 6,
-          "sales_out": 5,
-          "dos": 16.8
+          "sales_out": 4,
+          "dos": 25.5
         },
         {
           "model": "V70 FE",
@@ -802,31 +802,37 @@
           "model": "X300 Ultra",
           "stock": 4,
           "sales_out": 3,
-          "dos": 18.67
+          "dos": 22.67
+        },
+        {
+          "model": "Y31d",
+          "stock": 4,
+          "sales_out": 0,
+          "dos": null
+        },
+        {
+          "model": "Y31d Pro",
+          "stock": 4,
+          "sales_out": 7,
+          "dos": 9.71
+        },
+        {
+          "model": "Y500",
+          "stock": 4,
+          "sales_out": 3,
+          "dos": 22.67
         },
         {
           "model": "Y05e",
           "stock": 4,
           "sales_out": 2,
-          "dos": 28.0
-        },
-        {
-          "model": "Y31d",
-          "stock": 3,
-          "sales_out": 0,
-          "dos": null
+          "dos": 34.0
         },
         {
           "model": "V70",
-          "stock": 3,
-          "sales_out": 0,
-          "dos": null
-        },
-        {
-          "model": "Y500",
-          "stock": 3,
-          "sales_out": 2,
-          "dos": 21.0
+          "stock": 2,
+          "sales_out": 1,
+          "dos": 34.0
         },
         {
           "model": "V60 Lite",
@@ -841,22 +847,22 @@
           "dos": 0.0
         }
       ],
-      "total_stock": 54,
-      "total_sales_out": 23,
-      "total_dos": 32.87
+      "total_stock": 51,
+      "total_sales_out": 29,
+      "total_dos": 29.9
     },
     {
       "store_id": "6010702",
       "store_name": "ME ROXY PAMERAN TIMUR",
       "iqoo_stock": 4,
       "iqoo_sales_out": 3,
-      "iqoo_dos": 18.67,
+      "iqoo_dos": 22.67,
       "iqoo_by_type": [
         {
           "model": "IQOO Z11",
           "stock": 4,
           "sales_out": 2,
-          "dos": 28.0
+          "dos": 34.0
         },
         {
           "model": "IQOO Z11x",
@@ -865,33 +871,27 @@
           "dos": 0.0
         }
       ],
-      "vivo_stock": 92,
-      "vivo_sales_out": 132,
-      "vivo_dos": 9.76,
+      "vivo_stock": 88,
+      "vivo_sales_out": 166,
+      "vivo_dos": 9.01,
       "vivo_by_type": [
         {
           "model": "Y05",
-          "stock": 25,
-          "sales_out": 23,
-          "dos": 15.22
+          "stock": 29,
+          "sales_out": 28,
+          "dos": 17.61
         },
         {
           "model": "Y05e",
-          "stock": 20,
-          "sales_out": 51,
-          "dos": 5.49
+          "stock": 19,
+          "sales_out": 65,
+          "dos": 4.97
         },
         {
           "model": "Y11d",
-          "stock": 14,
-          "sales_out": 27,
-          "dos": 7.26
-        },
-        {
-          "model": "Y31d Pro",
-          "stock": 11,
-          "sales_out": 23,
-          "dos": 6.7
+          "stock": 10,
+          "sales_out": 36,
+          "dos": 4.72
         },
         {
           "model": "Y31d",
@@ -903,19 +903,25 @@
           "model": "Y500",
           "stock": 8,
           "sales_out": 4,
-          "dos": 28.0
+          "dos": 34.0
+        },
+        {
+          "model": "Y31d Pro",
+          "stock": 6,
+          "sales_out": 29,
+          "dos": 3.52
         },
         {
           "model": "V70 FE",
-          "stock": 2,
+          "stock": 4,
           "sales_out": 1,
-          "dos": 28.0
+          "dos": 68.0
         },
         {
           "model": "V60 Lite",
           "stock": 2,
           "sales_out": 1,
-          "dos": 28.0
+          "dos": 34.0
         },
         {
           "model": "X300 Ultra",
@@ -927,25 +933,25 @@
           "model": "V70",
           "stock": 1,
           "sales_out": 2,
-          "dos": 7.0
+          "dos": 8.5
         }
       ],
-      "total_stock": 96,
-      "total_sales_out": 135,
-      "total_dos": 9.96
+      "total_stock": 92,
+      "total_sales_out": 169,
+      "total_dos": 9.25
     },
     {
       "store_id": "6020706",
       "store_name": "MVS CEMPAKA SHOWROOM 2 (454)",
-      "iqoo_stock": 2,
-      "iqoo_sales_out": 2,
-      "iqoo_dos": 14,
+      "iqoo_stock": 1,
+      "iqoo_sales_out": 3,
+      "iqoo_dos": 5.67,
       "iqoo_by_type": [
         {
           "model": "IQOO Z11",
-          "stock": 2,
-          "sales_out": 1,
-          "dos": 28.0
+          "stock": 1,
+          "sales_out": 2,
+          "dos": 8.5
         },
         {
           "model": "IQOO Z11x",
@@ -954,57 +960,57 @@
           "dos": 0.0
         }
       ],
-      "vivo_stock": 35,
-      "vivo_sales_out": 63,
-      "vivo_dos": 7.78,
+      "vivo_stock": 28,
+      "vivo_sales_out": 80,
+      "vivo_dos": 5.95,
       "vivo_by_type": [
         {
           "model": "Y05",
           "stock": 11,
-          "sales_out": 17,
-          "dos": 9.06
-        },
-        {
-          "model": "Y31d Pro",
-          "stock": 6,
-          "sales_out": 12,
-          "dos": 7.0
+          "sales_out": 21,
+          "dos": 8.9
         },
         {
           "model": "Y11d",
-          "stock": 4,
-          "sales_out": 11,
-          "dos": 5.09
-        },
-        {
-          "model": "Y31d",
-          "stock": 4,
-          "sales_out": 6,
-          "dos": 9.33
+          "stock": 5,
+          "sales_out": 12,
+          "dos": 7.08
         },
         {
           "model": "Y05e",
           "stock": 4,
-          "sales_out": 9,
-          "dos": 6.22
+          "sales_out": 12,
+          "dos": 5.67
         },
         {
-          "model": "V60 Lite",
+          "model": "Y31d Pro",
           "stock": 3,
-          "sales_out": 3,
-          "dos": 14.0
+          "sales_out": 16,
+          "dos": 3.19
         },
         {
-          "model": "Y500",
+          "model": "Y31d",
           "stock": 2,
-          "sales_out": 2,
-          "dos": 14.0
+          "sales_out": 8,
+          "dos": 4.25
         },
         {
           "model": "V70 FE",
           "stock": 1,
           "sales_out": 2,
-          "dos": 7.0
+          "dos": 8.5
+        },
+        {
+          "model": "V60 Lite",
+          "stock": 1,
+          "sales_out": 5,
+          "dos": 3.4
+        },
+        {
+          "model": "Y500",
+          "stock": 1,
+          "sales_out": 3,
+          "dos": 5.67
         },
         {
           "model": "V60 Lite 5G",
@@ -1013,75 +1019,75 @@
           "dos": 0.0
         }
       ],
-      "total_stock": 37,
-      "total_sales_out": 65,
-      "total_dos": 7.97
+      "total_stock": 29,
+      "total_sales_out": 83,
+      "total_dos": 5.94
     },
     {
       "store_id": "6080712",
       "store_name": "MVS ITC DEPOK VIVO STORE 2",
       "iqoo_stock": 4,
       "iqoo_sales_out": 3,
-      "iqoo_dos": 18.67,
+      "iqoo_dos": 22.67,
       "iqoo_by_type": [
         {
           "model": "IQOO Z11x",
           "stock": 2,
           "sales_out": 1,
-          "dos": 28.0
+          "dos": 34.0
         },
         {
           "model": "IQOO Z11",
           "stock": 2,
           "sales_out": 2,
-          "dos": 14.0
+          "dos": 17.0
         }
       ],
-      "vivo_stock": 39,
-      "vivo_sales_out": 50,
-      "vivo_dos": 10.92,
+      "vivo_stock": 35,
+      "vivo_sales_out": 59,
+      "vivo_dos": 10.08,
       "vivo_by_type": [
         {
-          "model": "Y11d",
-          "stock": 8,
-          "sales_out": 12,
-          "dos": 9.33
-        },
-        {
-          "model": "Y31d Pro",
-          "stock": 6,
-          "sales_out": 13,
-          "dos": 6.46
-        },
-        {
           "model": "Y05",
-          "stock": 6,
+          "stock": 8,
           "sales_out": 8,
-          "dos": 10.5
+          "dos": 17.0
+        },
+        {
+          "model": "Y11d",
+          "stock": 7,
+          "sales_out": 14,
+          "dos": 8.5
+        },
+        {
+          "model": "Y500",
+          "stock": 5,
+          "sales_out": 6,
+          "dos": 14.17
         },
         {
           "model": "Y05e",
           "stock": 5,
           "sales_out": 5,
-          "dos": 14.0
-        },
-        {
-          "model": "Y500",
-          "stock": 4,
-          "sales_out": 5,
-          "dos": 11.2
+          "dos": 17.0
         },
         {
           "model": "Y31d",
-          "stock": 3,
-          "sales_out": 0,
-          "dos": null
+          "stock": 2,
+          "sales_out": 1,
+          "dos": 34.0
+        },
+        {
+          "model": "Y31d Pro",
+          "stock": 2,
+          "sales_out": 17,
+          "dos": 2.0
         },
         {
           "model": "V70 FE",
-          "stock": 3,
-          "sales_out": 3,
-          "dos": 14.0
+          "stock": 2,
+          "sales_out": 4,
+          "dos": 8.5
         },
         {
           "model": "V60 Lite",
@@ -1093,60 +1099,78 @@
           "model": "V70",
           "stock": 1,
           "sales_out": 2,
-          "dos": 7.0
+          "dos": 8.5
         },
         {
           "model": "V60 Lite 5G",
           "stock": 1,
           "sales_out": 2,
-          "dos": 7.0
+          "dos": 8.5
         }
       ],
-      "total_stock": 43,
-      "total_sales_out": 53,
-      "total_dos": 11.36
+      "total_stock": 39,
+      "total_sales_out": 62,
+      "total_dos": 10.69
     },
     {
       "store_id": "6180706",
       "store_name": "MVS MALL CCM",
-      "iqoo_stock": 8,
-      "iqoo_sales_out": 3,
-      "iqoo_dos": 37.33,
+      "iqoo_stock": 6,
+      "iqoo_sales_out": 5,
+      "iqoo_dos": 20.4,
       "iqoo_by_type": [
         {
           "model": "IQOO Z11",
-          "stock": 6,
-          "sales_out": 1,
-          "dos": 84.0
-        },
-        {
-          "model": "IQOO Z11x",
-          "stock": 1,
+          "stock": 5,
           "sales_out": 2,
-          "dos": 7.0
+          "dos": 42.5
         },
         {
           "model": "IQOO 15 R",
           "stock": 1,
           "sales_out": 0,
           "dos": null
+        },
+        {
+          "model": "IQOO Z11x",
+          "stock": 0,
+          "sales_out": 3,
+          "dos": 0.0
         }
       ],
-      "vivo_stock": 32,
-      "vivo_sales_out": 48,
-      "vivo_dos": 9.33,
+      "vivo_stock": 28,
+      "vivo_sales_out": 61,
+      "vivo_dos": 7.8,
       "vivo_by_type": [
         {
+          "model": "Y05e",
+          "stock": 5,
+          "sales_out": 16,
+          "dos": 5.31
+        },
+        {
           "model": "Y11d",
-          "stock": 8,
-          "sales_out": 7,
-          "dos": 16.0
+          "stock": 4,
+          "sales_out": 12,
+          "dos": 5.67
+        },
+        {
+          "model": "Y31d Pro",
+          "stock": 4,
+          "sales_out": 8,
+          "dos": 8.5
         },
         {
           "model": "Y05",
-          "stock": 6,
-          "sales_out": 6,
-          "dos": 14.0
+          "stock": 4,
+          "sales_out": 8,
+          "dos": 8.5
+        },
+        {
+          "model": "Y500",
+          "stock": 4,
+          "sales_out": 2,
+          "dos": 34.0
         },
         {
           "model": "X300 Ultra",
@@ -1156,110 +1180,86 @@
         },
         {
           "model": "Y31d",
-          "stock": 3,
-          "sales_out": 1,
-          "dos": 42.0
-        },
-        {
-          "model": "Y31d Pro",
-          "stock": 3,
-          "sales_out": 7,
-          "dos": 6.0
-        },
-        {
-          "model": "Y500",
-          "stock": 3,
-          "sales_out": 2,
-          "dos": 21.0
-        },
-        {
-          "model": "V70 FE",
           "stock": 2,
-          "sales_out": 3,
-          "dos": 9.33
+          "sales_out": 2,
+          "dos": 17.0
         },
         {
           "model": "V60 Lite",
           "stock": 2,
-          "sales_out": 5,
-          "dos": 5.6
-        },
-        {
-          "model": "Y05e",
-          "stock": 2,
-          "sales_out": 15,
-          "dos": 1.87
+          "sales_out": 6,
+          "dos": 5.67
         },
         {
           "model": "V70",
           "stock": 0,
           "sales_out": 2,
           "dos": 0.0
+        },
+        {
+          "model": "V70 FE",
+          "stock": 0,
+          "sales_out": 5,
+          "dos": 0.0
         }
       ],
-      "total_stock": 40,
-      "total_sales_out": 51,
-      "total_dos": 10.98
+      "total_stock": 34,
+      "total_sales_out": 66,
+      "total_dos": 8.76
     },
     {
       "store_id": "6220701",
       "store_name": "MVS MBH-VIP VIVO STORE-DD284",
       "iqoo_stock": 10,
       "iqoo_sales_out": 3,
-      "iqoo_dos": 46.67,
+      "iqoo_dos": 56.67,
       "iqoo_by_type": [
         {
           "model": "IQOO Z11",
           "stock": 6,
           "sales_out": 1,
-          "dos": 84.0
+          "dos": 102.0
         },
         {
           "model": "IQOO Z11x",
           "stock": 3,
           "sales_out": 1,
-          "dos": 42.0
+          "dos": 51.0
         },
         {
           "model": "IQOO 15 R",
           "stock": 1,
           "sales_out": 1,
-          "dos": 14.0
+          "dos": 17.0
         }
       ],
       "vivo_stock": 46,
-      "vivo_sales_out": 33,
-      "vivo_dos": 19.52,
+      "vivo_sales_out": 45,
+      "vivo_dos": 17.38,
       "vivo_by_type": [
         {
-          "model": "Y31d Pro",
+          "model": "Y11d",
           "stock": 8,
-          "sales_out": 10,
-          "dos": 11.2
+          "sales_out": 12,
+          "dos": 11.33
         },
         {
           "model": "Y500",
-          "stock": 7,
+          "stock": 8,
           "sales_out": 2,
-          "dos": 49.0
+          "dos": 68.0
         },
         {
           "model": "Y05",
+          "stock": 7,
+          "sales_out": 13,
+          "dos": 9.15
+        },
+        {
+          "model": "Y31d Pro",
           "stock": 6,
-          "sales_out": 8,
-          "dos": 10.5
-        },
-        {
-          "model": "Y11d",
-          "stock": 5,
-          "sales_out": 10,
-          "dos": 7.0
-        },
-        {
-          "model": "Y05e",
-          "stock": 5,
-          "sales_out": 2,
-          "dos": 35.0
+          "sales_out": 12,
+          "dos": 8.5
         },
         {
           "model": "Y31d",
@@ -1268,16 +1268,22 @@
           "dos": null
         },
         {
-          "model": "V70",
+          "model": "V70 FE",
           "stock": 4,
           "sales_out": 0,
           "dos": null
         },
         {
-          "model": "V70 FE",
+          "model": "Y05e",
           "stock": 4,
-          "sales_out": 0,
-          "dos": null
+          "sales_out": 3,
+          "dos": 22.67
+        },
+        {
+          "model": "V70",
+          "stock": 2,
+          "sales_out": 2,
+          "dos": 17.0
         },
         {
           "model": "V60 Lite",
@@ -1299,21 +1305,21 @@
         }
       ],
       "total_stock": 56,
-      "total_sales_out": 36,
-      "total_dos": 21.78
+      "total_sales_out": 48,
+      "total_dos": 19.83
     },
     {
       "store_id": "6010701",
       "store_name": "MVS ROXY SHOWROOM 21",
-      "iqoo_stock": 4,
-      "iqoo_sales_out": 3,
-      "iqoo_dos": 18.67,
+      "iqoo_stock": 3,
+      "iqoo_sales_out": 4,
+      "iqoo_dos": 12.75,
       "iqoo_by_type": [
         {
           "model": "IQOO Z11",
-          "stock": 4,
-          "sales_out": 2,
-          "dos": 28.0
+          "stock": 3,
+          "sales_out": 3,
+          "dos": 17.0
         },
         {
           "model": "IQOO Z11x",
@@ -1322,63 +1328,63 @@
           "dos": 0.0
         }
       ],
-      "vivo_stock": 86,
-      "vivo_sales_out": 120,
-      "vivo_dos": 10.03,
+      "vivo_stock": 82,
+      "vivo_sales_out": 149,
+      "vivo_dos": 9.36,
       "vivo_by_type": [
         {
           "model": "Y05",
-          "stock": 28,
-          "sales_out": 25,
-          "dos": 15.68
+          "stock": 26,
+          "sales_out": 27,
+          "dos": 16.37
         },
         {
           "model": "Y05e",
-          "stock": 18,
-          "sales_out": 26,
-          "dos": 9.69
+          "stock": 25,
+          "sales_out": 30,
+          "dos": 14.17
         },
         {
           "model": "Y11d",
-          "stock": 12,
-          "sales_out": 24,
-          "dos": 7.0
+          "stock": 11,
+          "sales_out": 31,
+          "dos": 6.03
         },
         {
           "model": "Y500",
           "stock": 9,
-          "sales_out": 3,
-          "dos": 42.0
+          "sales_out": 4,
+          "dos": 38.25
         },
         {
           "model": "Y31d Pro",
-          "stock": 8,
-          "sales_out": 30,
-          "dos": 3.73
-        },
-        {
-          "model": "Y31d",
-          "stock": 6,
-          "sales_out": 3,
-          "dos": 28.0
+          "stock": 3,
+          "sales_out": 39,
+          "dos": 1.31
         },
         {
           "model": "X300 Ultra",
           "stock": 2,
           "sales_out": 1,
-          "dos": 28.0
+          "dos": 34.0
+        },
+        {
+          "model": "Y31d",
+          "stock": 2,
+          "sales_out": 7,
+          "dos": 4.86
+        },
+        {
+          "model": "V70 FE",
+          "stock": 2,
+          "sales_out": 7,
+          "dos": 4.86
         },
         {
           "model": "V60 Lite",
           "stock": 2,
           "sales_out": 1,
-          "dos": 28.0
-        },
-        {
-          "model": "V70 FE",
-          "stock": 1,
-          "sales_out": 5,
-          "dos": 2.8
+          "dos": 34.0
         },
         {
           "model": "V70",
@@ -1387,22 +1393,22 @@
           "dos": 0.0
         }
       ],
-      "total_stock": 90,
-      "total_sales_out": 123,
-      "total_dos": 10.24
+      "total_stock": 85,
+      "total_sales_out": 153,
+      "total_dos": 9.44
     },
     {
       "store_id": "6010708",
       "store_name": "MVS SHOWROOM CENTRAL PARK",
       "iqoo_stock": 10,
       "iqoo_sales_out": 2,
-      "iqoo_dos": 70,
+      "iqoo_dos": 85,
       "iqoo_by_type": [
         {
           "model": "IQOO Z11",
           "stock": 8,
           "sales_out": 1,
-          "dos": 112.0
+          "dos": 136.0
         },
         {
           "model": "IQOO 15 R",
@@ -1417,27 +1423,27 @@
           "dos": 0.0
         }
       ],
-      "vivo_stock": 61,
-      "vivo_sales_out": 33,
-      "vivo_dos": 25.88,
+      "vivo_stock": 57,
+      "vivo_sales_out": 42,
+      "vivo_dos": 23.07,
       "vivo_by_type": [
         {
-          "model": "Y11d",
-          "stock": 10,
-          "sales_out": 4,
-          "dos": 35.0
+          "model": "Y05",
+          "stock": 11,
+          "sales_out": 10,
+          "dos": 18.7
         },
         {
           "model": "Y31d Pro",
           "stock": 9,
           "sales_out": 6,
-          "dos": 21.0
+          "dos": 25.5
         },
         {
-          "model": "Y05",
-          "stock": 8,
-          "sales_out": 9,
-          "dos": 12.44
+          "model": "Y11d",
+          "stock": 7,
+          "sales_out": 7,
+          "dos": 17.0
         },
         {
           "model": "X300 Ultra",
@@ -1446,64 +1452,64 @@
           "dos": null
         },
         {
-          "model": "V60 Lite",
-          "stock": 6,
-          "sales_out": 4,
-          "dos": 21.0
-        },
-        {
           "model": "Y31d",
           "stock": 5,
           "sales_out": 0,
           "dos": null
         },
         {
-          "model": "V70 FE",
+          "model": "V60 Lite",
           "stock": 5,
-          "sales_out": 2,
-          "dos": 35.0
+          "sales_out": 5,
+          "dos": 17.0
         },
         {
           "model": "Y05e",
           "stock": 5,
-          "sales_out": 6,
-          "dos": 11.67
+          "sales_out": 7,
+          "dos": 12.14
+        },
+        {
+          "model": "V70 FE",
+          "stock": 4,
+          "sales_out": 3,
+          "dos": 22.67
         },
         {
           "model": "Y500",
           "stock": 4,
           "sales_out": 1,
-          "dos": 56.0
+          "dos": 68.0
         },
         {
           "model": "V70",
-          "stock": 2,
-          "sales_out": 1,
-          "dos": 28.0
+          "stock": 1,
+          "sales_out": 2,
+          "dos": 8.5
         },
         {
           "model": "V60 Lite 5G",
-          "stock": 1,
-          "sales_out": 0,
-          "dos": null
+          "stock": 0,
+          "sales_out": 1,
+          "dos": 0.0
         }
       ],
-      "total_stock": 71,
-      "total_sales_out": 35,
-      "total_dos": 28.4
+      "total_stock": 67,
+      "total_sales_out": 44,
+      "total_dos": 25.89
     },
     {
       "store_id": "6050701",
       "store_name": "MVS X6 DS0824",
       "iqoo_stock": 8,
       "iqoo_sales_out": 5,
-      "iqoo_dos": 22.4,
+      "iqoo_dos": 27.2,
       "iqoo_by_type": [
         {
           "model": "IQOO Z11",
           "stock": 5,
           "sales_out": 3,
-          "dos": 23.33
+          "dos": 28.33
         },
         {
           "model": "IQOO 15 R",
@@ -1515,30 +1521,30 @@
           "model": "IQOO Z11x",
           "stock": 1,
           "sales_out": 2,
-          "dos": 7.0
+          "dos": 8.5
         }
       ],
-      "vivo_stock": 52,
-      "vivo_sales_out": 14,
-      "vivo_dos": 52,
+      "vivo_stock": 51,
+      "vivo_sales_out": 18,
+      "vivo_dos": 48.17,
       "vivo_by_type": [
         {
           "model": "Y31d Pro",
-          "stock": 12,
-          "sales_out": 2,
-          "dos": 84.0
+          "stock": 11,
+          "sales_out": 3,
+          "dos": 62.33
         },
         {
           "model": "Y05",
           "stock": 10,
-          "sales_out": 1,
-          "dos": 140.0
+          "sales_out": 2,
+          "dos": 85.0
         },
         {
           "model": "Y11d",
-          "stock": 7,
-          "sales_out": 5,
-          "dos": 19.6
+          "stock": 8,
+          "sales_out": 6,
+          "dos": 22.67
         },
         {
           "model": "Y500",
@@ -1548,51 +1554,51 @@
         },
         {
           "model": "Y31d",
-          "stock": 5,
-          "sales_out": 0,
-          "dos": null
+          "stock": 4,
+          "sales_out": 1,
+          "dos": 68.0
         },
         {
           "model": "V70 FE",
           "stock": 4,
           "sales_out": 2,
-          "dos": 28.0
+          "dos": 34.0
         },
         {
           "model": "Y05e",
           "stock": 4,
           "sales_out": 1,
-          "dos": 56.0
+          "dos": 68.0
         },
         {
           "model": "V70",
           "stock": 2,
           "sales_out": 2,
-          "dos": 14.0
+          "dos": 17.0
         },
         {
           "model": "V60 Lite",
           "stock": 2,
           "sales_out": 1,
-          "dos": 28.0
+          "dos": 34.0
         }
       ],
-      "total_stock": 60,
-      "total_sales_out": 19,
-      "total_dos": 44.21
+      "total_stock": 59,
+      "total_sales_out": 23,
+      "total_dos": 43.61
     },
     {
       "store_id": "6140705",
       "store_name": "QUEENCITY 2F027",
-      "iqoo_stock": 9,
+      "iqoo_stock": 10,
       "iqoo_sales_out": 6,
-      "iqoo_dos": 21,
+      "iqoo_dos": 28.33,
       "iqoo_by_type": [
         {
           "model": "IQOO Z11",
-          "stock": 6,
+          "stock": 7,
           "sales_out": 4,
-          "dos": 21.0
+          "dos": 29.75
         },
         {
           "model": "IQOO 15 R",
@@ -1607,27 +1613,21 @@
           "dos": 0.0
         }
       ],
-      "vivo_stock": 51,
-      "vivo_sales_out": 16,
-      "vivo_dos": 44.62,
+      "vivo_stock": 49,
+      "vivo_sales_out": 24,
+      "vivo_dos": 34.71,
       "vivo_by_type": [
         {
           "model": "Y11d",
-          "stock": 10,
-          "sales_out": 2,
-          "dos": 70.0
+          "stock": 12,
+          "sales_out": 3,
+          "dos": 68.0
         },
         {
           "model": "Y31d Pro",
-          "stock": 9,
-          "sales_out": 5,
-          "dos": 25.2
-        },
-        {
-          "model": "Y05",
-          "stock": 6,
-          "sales_out": 0,
-          "dos": null
+          "stock": 11,
+          "sales_out": 6,
+          "dos": 31.17
         },
         {
           "model": "Y500",
@@ -1639,19 +1639,13 @@
           "model": "X300 Ultra",
           "stock": 4,
           "sales_out": 1,
-          "dos": 56.0
+          "dos": 68.0
         },
         {
-          "model": "V70 FE",
+          "model": "Y05",
           "stock": 4,
           "sales_out": 2,
-          "dos": 28.0
-        },
-        {
-          "model": "Y05e",
-          "stock": 4,
-          "sales_out": 3,
-          "dos": 18.67
+          "dos": 34.0
         },
         {
           "model": "Y31d",
@@ -1663,43 +1657,55 @@
           "model": "V70",
           "stock": 3,
           "sales_out": 2,
-          "dos": 21.0
+          "dos": 25.5
+        },
+        {
+          "model": "V70 FE",
+          "stock": 3,
+          "sales_out": 3,
+          "dos": 17.0
         },
         {
           "model": "V60 Lite",
           "stock": 2,
           "sales_out": 1,
-          "dos": 28.0
+          "dos": 34.0
+        },
+        {
+          "model": "Y05e",
+          "stock": 2,
+          "sales_out": 5,
+          "dos": 6.8
         },
         {
           "model": "V60 Lite 5G",
-          "stock": 1,
-          "sales_out": 0,
-          "dos": null
+          "stock": 0,
+          "sales_out": 1,
+          "dos": 0.0
         }
       ],
-      "total_stock": 60,
-      "total_sales_out": 22,
-      "total_dos": 38.18
+      "total_stock": 59,
+      "total_sales_out": 30,
+      "total_dos": 33.43
     },
     {
       "store_id": "6130702",
       "store_name": "RITA SUPERMALL SF36-37",
       "iqoo_stock": 8,
       "iqoo_sales_out": 5,
-      "iqoo_dos": 22.4,
+      "iqoo_dos": 27.2,
       "iqoo_by_type": [
         {
           "model": "IQOO Z11",
           "stock": 5,
           "sales_out": 2,
-          "dos": 35.0
+          "dos": 42.5
         },
         {
           "model": "IQOO Z11x",
           "stock": 3,
           "sales_out": 1,
-          "dos": 42.0
+          "dos": 51.0
         },
         {
           "model": "IQOO 15 R",
@@ -1708,57 +1714,45 @@
           "dos": 0.0
         }
       ],
-      "vivo_stock": 39,
-      "vivo_sales_out": 15,
-      "vivo_dos": 36.4,
+      "vivo_stock": 28,
+      "vivo_sales_out": 26,
+      "vivo_dos": 18.31,
       "vivo_by_type": [
         {
           "model": "Y05",
           "stock": 9,
           "sales_out": 2,
-          "dos": 63.0
-        },
-        {
-          "model": "Y11d",
-          "stock": 8,
-          "sales_out": 3,
-          "dos": 37.33
-        },
-        {
-          "model": "Y31d Pro",
-          "stock": 6,
-          "sales_out": 3,
-          "dos": 28.0
+          "dos": 76.5
         },
         {
           "model": "Y500",
           "stock": 5,
           "sales_out": 1,
-          "dos": 70.0
+          "dos": 85.0
+        },
+        {
+          "model": "Y31d Pro",
+          "stock": 4,
+          "sales_out": 5,
+          "dos": 13.6
+        },
+        {
+          "model": "Y11d",
+          "stock": 3,
+          "sales_out": 8,
+          "dos": 6.38
         },
         {
           "model": "V70",
-          "stock": 3,
-          "sales_out": 1,
-          "dos": 42.0
-        },
-        {
-          "model": "Y31d",
           "stock": 2,
-          "sales_out": 0,
-          "dos": null
+          "sales_out": 2,
+          "dos": 17.0
         },
         {
           "model": "V70 FE",
           "stock": 2,
           "sales_out": 2,
-          "dos": 14.0
-        },
-        {
-          "model": "V60 Lite",
-          "stock": 2,
-          "sales_out": 1,
-          "dos": 28.0
+          "dos": 17.0
         },
         {
           "model": "X300 Ultra",
@@ -1767,22 +1761,34 @@
           "dos": null
         },
         {
+          "model": "Y31d",
+          "stock": 1,
+          "sales_out": 1,
+          "dos": 17.0
+        },
+        {
           "model": "Y05e",
           "stock": 1,
           "sales_out": 2,
-          "dos": 7.0
+          "dos": 8.5
+        },
+        {
+          "model": "V60 Lite",
+          "stock": 0,
+          "sales_out": 3,
+          "dos": 0.0
         }
       ],
-      "total_stock": 47,
-      "total_sales_out": 20,
-      "total_dos": 32.9
+      "total_stock": 36,
+      "total_sales_out": 31,
+      "total_dos": 19.74
     },
     {
       "store_id": "6040703",
       "store_name": "SAWANGAN 1F1-0320",
       "iqoo_stock": 4,
       "iqoo_sales_out": 2,
-      "iqoo_dos": 28,
+      "iqoo_dos": 34,
       "iqoo_by_type": [
         {
           "model": "IQOO Z11",
@@ -1803,42 +1809,36 @@
           "dos": 0.0
         }
       ],
-      "vivo_stock": 37,
-      "vivo_sales_out": 12,
-      "vivo_dos": 43.17,
+      "vivo_stock": 33,
+      "vivo_sales_out": 16,
+      "vivo_dos": 35.06,
       "vivo_by_type": [
         {
           "model": "Y31d Pro",
           "stock": 8,
           "sales_out": 1,
-          "dos": 112.0
+          "dos": 136.0
         },
         {
           "model": "Y05",
-          "stock": 6,
-          "sales_out": 4,
-          "dos": 21.0
+          "stock": 5,
+          "sales_out": 5,
+          "dos": 17.0
         },
         {
           "model": "Y11d",
-          "stock": 5,
-          "sales_out": 2,
-          "dos": 35.0
+          "stock": 4,
+          "sales_out": 3,
+          "dos": 22.67
         },
         {
           "model": "Y500",
           "stock": 4,
           "sales_out": 1,
-          "dos": 56.0
+          "dos": 68.0
         },
         {
           "model": "Y31d",
-          "stock": 3,
-          "sales_out": 0,
-          "dos": null
-        },
-        {
-          "model": "V70",
           "stock": 3,
           "sales_out": 0,
           "dos": null
@@ -1859,24 +1859,30 @@
           "model": "Y05e",
           "stock": 2,
           "sales_out": 1,
-          "dos": 28.0
+          "dos": 34.0
         },
         {
           "model": "X300 Ultra",
           "stock": 1,
           "sales_out": 1,
-          "dos": 14.0
+          "dos": 17.0
+        },
+        {
+          "model": "V70",
+          "stock": 1,
+          "sales_out": 2,
+          "dos": 8.5
         },
         {
           "model": "V70 FE",
           "stock": 1,
           "sales_out": 2,
-          "dos": 7.0
+          "dos": 8.5
         }
       ],
-      "total_stock": 41,
-      "total_sales_out": 14,
-      "total_dos": 41.0
+      "total_stock": 37,
+      "total_sales_out": 18,
+      "total_dos": 34.94
     },
     {
       "store_id": "6180707",
@@ -1886,26 +1892,26 @@
       "iqoo_dos": null,
       "iqoo_by_type": [],
       "vivo_stock": 21,
-      "vivo_sales_out": 10,
-      "vivo_dos": 29.4,
+      "vivo_sales_out": 13,
+      "vivo_dos": 27.46,
       "vivo_by_type": [
         {
           "model": "Y31d Pro",
           "stock": 5,
           "sales_out": 1,
-          "dos": 70.0
-        },
-        {
-          "model": "Y11d",
-          "stock": 4,
-          "sales_out": 4,
-          "dos": 14.0
+          "dos": 85.0
         },
         {
           "model": "Y05",
+          "stock": 4,
+          "sales_out": 3,
+          "dos": 22.67
+        },
+        {
+          "model": "Y11d",
           "stock": 3,
-          "sales_out": 2,
-          "dos": 21.0
+          "sales_out": 5,
+          "dos": 10.2
         },
         {
           "model": "Y05e",
@@ -1917,7 +1923,7 @@
           "model": "Y31d",
           "stock": 2,
           "sales_out": 1,
-          "dos": 28.0
+          "dos": 34.0
         },
         {
           "model": "Y500",
@@ -1940,127 +1946,26 @@
         {
           "model": "V70 FE",
           "stock": 0,
-          "sales_out": 2,
+          "sales_out": 3,
           "dos": 0.0
         }
       ],
       "total_stock": 21,
-      "total_sales_out": 10,
-      "total_dos": 29.4
+      "total_sales_out": 13,
+      "total_dos": 27.46
     },
     {
       "store_id": "6240706",
       "store_name": "SUPERMALL 1FC3A",
-      "iqoo_stock": 3,
-      "iqoo_sales_out": 1,
-      "iqoo_dos": 42,
+      "iqoo_stock": 2,
+      "iqoo_sales_out": 2,
+      "iqoo_dos": 17,
       "iqoo_by_type": [
         {
           "model": "IQOO Z11",
-          "stock": 2,
-          "sales_out": 1,
-          "dos": 28.0
-        },
-        {
-          "model": "IQOO 15 R",
           "stock": 1,
-          "sales_out": 0,
-          "dos": null
-        }
-      ],
-      "vivo_stock": 36,
-      "vivo_sales_out": 23,
-      "vivo_dos": 21.91,
-      "vivo_by_type": [
-        {
-          "model": "Y11d",
-          "stock": 7,
-          "sales_out": 8,
-          "dos": 12.25
-        },
-        {
-          "model": "Y31d Pro",
-          "stock": 6,
-          "sales_out": 5,
-          "dos": 16.8
-        },
-        {
-          "model": "Y05",
-          "stock": 5,
-          "sales_out": 4,
-          "dos": 17.5
-        },
-        {
-          "model": "V70",
-          "stock": 3,
-          "sales_out": 1,
-          "dos": 42.0
-        },
-        {
-          "model": "V60 Lite 5G",
-          "stock": 3,
-          "sales_out": 0,
-          "dos": null
-        },
-        {
-          "model": "Y500",
-          "stock": 3,
-          "sales_out": 0,
-          "dos": null
-        },
-        {
-          "model": "Y05e",
-          "stock": 3,
-          "sales_out": 3,
-          "dos": 14.0
-        },
-        {
-          "model": "X300 Ultra",
-          "stock": 2,
-          "sales_out": 0,
-          "dos": null
-        },
-        {
-          "model": "Y31d",
-          "stock": 2,
-          "sales_out": 0,
-          "dos": null
-        },
-        {
-          "model": "V70 FE",
-          "stock": 2,
-          "sales_out": 1,
-          "dos": 28.0
-        },
-        {
-          "model": "V60 Lite",
-          "stock": 0,
-          "sales_out": 1,
-          "dos": 0.0
-        }
-      ],
-      "total_stock": 39,
-      "total_sales_out": 24,
-      "total_dos": 22.75
-    },
-    {
-      "store_id": "6040702",
-      "store_name": "TRAN STUDIO MALL 2F059",
-      "iqoo_stock": 3,
-      "iqoo_sales_out": 3,
-      "iqoo_dos": 14,
-      "iqoo_by_type": [
-        {
-          "model": "IQOO Z11x",
-          "stock": 1,
-          "sales_out": 0,
-          "dos": null
-        },
-        {
-          "model": "IQOO Z11",
-          "stock": 1,
-          "sales_out": 3,
-          "dos": 4.67
+          "sales_out": 2,
+          "dos": 8.5
         },
         {
           "model": "IQOO 15 R",
@@ -2070,38 +1975,139 @@
         }
       ],
       "vivo_stock": 30,
-      "vivo_sales_out": 14,
-      "vivo_dos": 30,
+      "vivo_sales_out": 35,
+      "vivo_dos": 14.57,
       "vivo_by_type": [
         {
           "model": "Y11d",
-          "stock": 6,
-          "sales_out": 2,
-          "dos": 42.0
-        },
-        {
-          "model": "Y31d Pro",
-          "stock": 6,
-          "sales_out": 0,
-          "dos": null
+          "stock": 8,
+          "sales_out": 9,
+          "dos": 15.11
         },
         {
           "model": "Y05",
-          "stock": 5,
-          "sales_out": 2,
-          "dos": 35.0
+          "stock": 6,
+          "sales_out": 5,
+          "dos": 20.4
         },
         {
-          "model": "Y500",
-          "stock": 4,
-          "sales_out": 2,
-          "dos": 28.0
+          "model": "Y31d Pro",
+          "stock": 5,
+          "sales_out": 7,
+          "dos": 12.14
         },
         {
           "model": "V70",
           "stock": 3,
           "sales_out": 1,
-          "dos": 42.0
+          "dos": 51.0
+        },
+        {
+          "model": "X300 Ultra",
+          "stock": 2,
+          "sales_out": 0,
+          "dos": null
+        },
+        {
+          "model": "V70 FE",
+          "stock": 2,
+          "sales_out": 2,
+          "dos": 17.0
+        },
+        {
+          "model": "Y31d",
+          "stock": 1,
+          "sales_out": 1,
+          "dos": 17.0
+        },
+        {
+          "model": "V60 Lite 5G",
+          "stock": 1,
+          "sales_out": 2,
+          "dos": 8.5
+        },
+        {
+          "model": "Y500",
+          "stock": 1,
+          "sales_out": 2,
+          "dos": 8.5
+        },
+        {
+          "model": "Y05e",
+          "stock": 1,
+          "sales_out": 5,
+          "dos": 3.4
+        },
+        {
+          "model": "V60 Lite",
+          "stock": 0,
+          "sales_out": 1,
+          "dos": 0.0
+        }
+      ],
+      "total_stock": 32,
+      "total_sales_out": 37,
+      "total_dos": 14.7
+    },
+    {
+      "store_id": "6040702",
+      "store_name": "TRAN STUDIO MALL 2F059",
+      "iqoo_stock": 3,
+      "iqoo_sales_out": 3,
+      "iqoo_dos": 17,
+      "iqoo_by_type": [
+        {
+          "model": "IQOO Z11x",
+          "stock": 1,
+          "sales_out": 0,
+          "dos": null
+        },
+        {
+          "model": "IQOO Z11",
+          "stock": 1,
+          "sales_out": 3,
+          "dos": 5.67
+        },
+        {
+          "model": "IQOO 15 R",
+          "stock": 1,
+          "sales_out": 0,
+          "dos": null
+        }
+      ],
+      "vivo_stock": 23,
+      "vivo_sales_out": 21,
+      "vivo_dos": 18.62,
+      "vivo_by_type": [
+        {
+          "model": "Y11d",
+          "stock": 5,
+          "sales_out": 3,
+          "dos": 28.33
+        },
+        {
+          "model": "Y31d Pro",
+          "stock": 5,
+          "sales_out": 1,
+          "dos": 85.0
+        },
+        {
+          "model": "Y500",
+          "stock": 4,
+          "sales_out": 2,
+          "dos": 34.0
+        },
+        {
+          "model": "V70",
+          "stock": 3,
+          "sales_out": 1,
+          "dos": 51.0
+        },
+        {
+          "model": "Y05",
+          "stock": 3,
+          "sales_out": 4,
+          "dos": 12.75
         },
         {
           "model": "X300 Ultra",
@@ -2111,288 +2117,288 @@
         },
         {
           "model": "Y31d",
-          "stock": 2,
-          "sales_out": 1,
-          "dos": 28.0
-        },
-        {
-          "model": "Y05e",
-          "stock": 2,
-          "sales_out": 5,
-          "dos": 5.6
+          "stock": 1,
+          "sales_out": 2,
+          "dos": 8.5
         },
         {
           "model": "V70 FE",
           "stock": 0,
           "sales_out": 1,
           "dos": 0.0
+        },
+        {
+          "model": "Y05e",
+          "stock": 0,
+          "sales_out": 7,
+          "dos": 0.0
         }
       ],
-      "total_stock": 33,
-      "total_sales_out": 17,
-      "total_dos": 27.18
+      "total_stock": 26,
+      "total_sales_out": 24,
+      "total_dos": 18.42
     },
     {
       "store_id": "6190704",
       "store_name": "VIVO STORE 1 BEC",
-      "iqoo_stock": 8,
-      "iqoo_sales_out": 7,
-      "iqoo_dos": 16,
+      "iqoo_stock": 5,
+      "iqoo_sales_out": 10,
+      "iqoo_dos": 8.5,
       "iqoo_by_type": [
         {
           "model": "IQOO Z11",
-          "stock": 6,
-          "sales_out": 2,
-          "dos": 42.0
+          "stock": 4,
+          "sales_out": 4,
+          "dos": 17.0
         },
         {
           "model": "IQOO Z11x",
           "stock": 1,
           "sales_out": 2,
-          "dos": 7.0
+          "dos": 8.5
         },
         {
           "model": "IQOO 15 R",
-          "stock": 1,
-          "sales_out": 3,
-          "dos": 4.67
+          "stock": 0,
+          "sales_out": 4,
+          "dos": 0.0
         }
       ],
-      "vivo_stock": 82,
-      "vivo_sales_out": 111,
-      "vivo_dos": 10.34,
+      "vivo_stock": 69,
+      "vivo_sales_out": 138,
+      "vivo_dos": 8.5,
       "vivo_by_type": [
-        {
-          "model": "Y11d",
-          "stock": 18,
-          "sales_out": 27,
-          "dos": 9.33
-        },
         {
           "model": "Y05",
           "stock": 16,
-          "sales_out": 21,
-          "dos": 10.67
+          "sales_out": 25,
+          "dos": 10.88
+        },
+        {
+          "model": "Y11d",
+          "stock": 15,
+          "sales_out": 35,
+          "dos": 7.29
         },
         {
           "model": "Y31d Pro",
-          "stock": 13,
-          "sales_out": 20,
-          "dos": 9.1
+          "stock": 10,
+          "sales_out": 25,
+          "dos": 6.8
         },
         {
           "model": "V70 FE",
-          "stock": 8,
-          "sales_out": 5,
-          "dos": 22.4
+          "stock": 7,
+          "sales_out": 6,
+          "dos": 19.83
         },
         {
           "model": "Y05e",
           "stock": 7,
-          "sales_out": 30,
-          "dos": 3.27
-        },
-        {
-          "model": "Y31d",
-          "stock": 6,
-          "sales_out": 0,
-          "dos": null
+          "sales_out": 33,
+          "dos": 3.61
         },
         {
           "model": "V60 Lite",
           "stock": 6,
           "sales_out": 3,
-          "dos": 28.0
+          "dos": 34.0
+        },
+        {
+          "model": "Y31d",
+          "stock": 3,
+          "sales_out": 3,
+          "dos": 17.0
         },
         {
           "model": "Y500",
-          "stock": 4,
-          "sales_out": 2,
-          "dos": 28.0
-        },
-        {
-          "model": "V70",
           "stock": 3,
           "sales_out": 3,
-          "dos": 14.0
+          "dos": 17.0
         },
         {
           "model": "X300 Ultra",
           "stock": 1,
           "sales_out": 0,
           "dos": null
+        },
+        {
+          "model": "V70",
+          "stock": 1,
+          "sales_out": 5,
+          "dos": 3.4
         }
       ],
-      "total_stock": 90,
-      "total_sales_out": 118,
-      "total_dos": 10.68
+      "total_stock": 74,
+      "total_sales_out": 148,
+      "total_dos": 8.5
     },
     {
       "store_id": "6190701",
       "store_name": "VIVO STORE UG",
-      "iqoo_stock": 12,
-      "iqoo_sales_out": 5,
-      "iqoo_dos": 33.6,
+      "iqoo_stock": 10,
+      "iqoo_sales_out": 7,
+      "iqoo_dos": 24.29,
       "iqoo_by_type": [
         {
           "model": "IQOO Z11",
-          "stock": 8,
-          "sales_out": 3,
-          "dos": 37.33
-        },
-        {
-          "model": "IQOO Z11x",
-          "stock": 2,
-          "sales_out": 1,
-          "dos": 28.0
+          "stock": 7,
+          "sales_out": 4,
+          "dos": 29.75
         },
         {
           "model": "IQOO 15 R",
           "stock": 2,
           "sales_out": 1,
-          "dos": 28.0
-        }
-      ],
-      "vivo_stock": 65,
-      "vivo_sales_out": 93,
-      "vivo_dos": 9.78,
-      "vivo_by_type": [
-        {
-          "model": "Y31d Pro",
-          "stock": 14,
-          "sales_out": 22,
-          "dos": 8.91
+          "dos": 34.0
         },
         {
+          "model": "IQOO Z11x",
+          "stock": 1,
+          "sales_out": 2,
+          "dos": 8.5
+        }
+      ],
+      "vivo_stock": 58,
+      "vivo_sales_out": 113,
+      "vivo_dos": 8.73,
+      "vivo_by_type": [
+        {
           "model": "Y05",
-          "stock": 14,
-          "sales_out": 15,
-          "dos": 13.07
+          "stock": 18,
+          "sales_out": 17,
+          "dos": 18.0
         },
         {
           "model": "Y11d",
-          "stock": 13,
-          "sales_out": 28,
-          "dos": 6.5
+          "stock": 8,
+          "sales_out": 36,
+          "dos": 3.78
+        },
+        {
+          "model": "Y05e",
+          "stock": 8,
+          "sales_out": 15,
+          "dos": 9.07
+        },
+        {
+          "model": "Y31d Pro",
+          "stock": 6,
+          "sales_out": 30,
+          "dos": 3.4
         },
         {
           "model": "Y500",
           "stock": 6,
           "sales_out": 4,
-          "dos": 21.0
-        },
-        {
-          "model": "Y05e",
-          "stock": 6,
-          "sales_out": 13,
-          "dos": 6.46
+          "dos": 25.5
         },
         {
           "model": "V70",
           "stock": 5,
           "sales_out": 2,
-          "dos": 35.0
+          "dos": 42.5
         },
         {
           "model": "V70 FE",
           "stock": 3,
           "sales_out": 4,
-          "dos": 10.5
+          "dos": 12.75
         },
         {
           "model": "V60 Lite",
           "stock": 3,
           "sales_out": 3,
-          "dos": 14.0
+          "dos": 17.0
         },
         {
           "model": "X300 Ultra",
           "stock": 1,
           "sales_out": 2,
-          "dos": 7.0
+          "dos": 8.5
         }
       ],
-      "total_stock": 77,
-      "total_sales_out": 98,
-      "total_dos": 11.0
+      "total_stock": 68,
+      "total_sales_out": 120,
+      "total_dos": 9.63
     },
     {
       "store_id": "6010703",
       "store_name": "VIVO STORE WINSHOP",
-      "iqoo_stock": 5,
-      "iqoo_sales_out": 5,
-      "iqoo_dos": 14,
+      "iqoo_stock": 4,
+      "iqoo_sales_out": 6,
+      "iqoo_dos": 11.33,
       "iqoo_by_type": [
         {
           "model": "IQOO Z11",
-          "stock": 4,
-          "sales_out": 1,
-          "dos": 56.0
+          "stock": 3,
+          "sales_out": 2,
+          "dos": 25.5
         },
         {
           "model": "IQOO Z11x",
           "stock": 1,
           "sales_out": 4,
-          "dos": 3.5
+          "dos": 4.25
         }
       ],
-      "vivo_stock": 129,
-      "vivo_sales_out": 315,
-      "vivo_dos": 5.73,
+      "vivo_stock": 97,
+      "vivo_sales_out": 405,
+      "vivo_dos": 4.07,
       "vivo_by_type": [
         {
-          "model": "Y05e",
-          "stock": 56,
-          "sales_out": 146,
-          "dos": 5.37
+          "model": "Y11d",
+          "stock": 22,
+          "sales_out": 73,
+          "dos": 5.12
         },
         {
           "model": "Y05",
-          "stock": 26,
-          "sales_out": 46,
-          "dos": 7.91
+          "stock": 22,
+          "sales_out": 59,
+          "dos": 6.34
         },
         {
           "model": "Y31d Pro",
-          "stock": 14,
-          "sales_out": 29,
-          "dos": 6.76
+          "stock": 17,
+          "sales_out": 32,
+          "dos": 9.03
         },
         {
-          "model": "Y11d",
-          "stock": 10,
-          "sales_out": 60,
-          "dos": 2.33
-        },
-        {
-          "model": "Y31d",
-          "stock": 7,
-          "sales_out": 16,
-          "dos": 6.12
+          "model": "Y05e",
+          "stock": 16,
+          "sales_out": 201,
+          "dos": 1.35
         },
         {
           "model": "Y500",
           "stock": 7,
           "sales_out": 7,
-          "dos": 14.0
+          "dos": 17.0
+        },
+        {
+          "model": "Y31d",
+          "stock": 6,
+          "sales_out": 20,
+          "dos": 5.1
         },
         {
           "model": "V70 FE",
-          "stock": 4,
-          "sales_out": 4,
-          "dos": 14.0
-        },
-        {
-          "model": "V60 Lite",
           "stock": 3,
           "sales_out": 5,
-          "dos": 8.4
+          "dos": 10.2
         },
         {
           "model": "X300 Ultra",
           "stock": 2,
           "sales_out": 0,
           "dos": null
+        },
+        {
+          "model": "V60 Lite",
+          "stock": 2,
+          "sales_out": 6,
+          "dos": 5.67
         },
         {
           "model": "V70",
@@ -2401,45 +2407,45 @@
           "dos": 0.0
         }
       ],
-      "total_stock": 134,
-      "total_sales_out": 320,
-      "total_dos": 5.86
+      "total_stock": 101,
+      "total_sales_out": 411,
+      "total_dos": 4.18
     },
     {
       "store_id": "6100702",
       "store_name": "VS Jogja City Mall",
-      "iqoo_stock": 7,
-      "iqoo_sales_out": 1,
-      "iqoo_dos": 98,
+      "iqoo_stock": 6,
+      "iqoo_sales_out": 2,
+      "iqoo_dos": 51,
       "iqoo_by_type": [
         {
           "model": "IQOO Z11",
-          "stock": 5,
-          "sales_out": 0,
-          "dos": null
+          "stock": 4,
+          "sales_out": 1,
+          "dos": 68.0
         },
         {
           "model": "IQOO 15 R",
           "stock": 2,
           "sales_out": 1,
-          "dos": 28.0
+          "dos": 34.0
         }
       ],
-      "vivo_stock": 43,
-      "vivo_sales_out": 11,
-      "vivo_dos": 54.73,
+      "vivo_stock": 41,
+      "vivo_sales_out": 13,
+      "vivo_dos": 53.62,
       "vivo_by_type": [
-        {
-          "model": "Y31d Pro",
-          "stock": 8,
-          "sales_out": 2,
-          "dos": 56.0
-        },
         {
           "model": "Y11d",
           "stock": 7,
           "sales_out": 2,
-          "dos": 49.0
+          "dos": 59.5
+        },
+        {
+          "model": "Y31d Pro",
+          "stock": 6,
+          "sales_out": 4,
+          "dos": 25.5
         },
         {
           "model": "Y05",
@@ -2463,7 +2469,7 @@
           "model": "V70",
           "stock": 3,
           "sales_out": 1,
-          "dos": 42.0
+          "dos": 51.0
         },
         {
           "model": "V70 FE",
@@ -2475,37 +2481,37 @@
           "model": "V60 Lite",
           "stock": 3,
           "sales_out": 2,
-          "dos": 21.0
+          "dos": 25.5
         },
         {
           "model": "Y05e",
           "stock": 3,
           "sales_out": 1,
-          "dos": 42.0
+          "dos": 51.0
         },
         {
           "model": "Y31d",
           "stock": 2,
           "sales_out": 3,
-          "dos": 9.33
+          "dos": 11.33
         }
       ],
-      "total_stock": 50,
-      "total_sales_out": 12,
-      "total_dos": 58.33
+      "total_stock": 47,
+      "total_sales_out": 15,
+      "total_dos": 53.27
     },
     {
       "store_id": "6020711",
       "store_name": "vivostore emporium",
-      "iqoo_stock": 11,
-      "iqoo_sales_out": 2,
-      "iqoo_dos": 77,
+      "iqoo_stock": 8,
+      "iqoo_sales_out": 5,
+      "iqoo_dos": 27.2,
       "iqoo_by_type": [
         {
           "model": "IQOO Z11",
-          "stock": 6,
-          "sales_out": 1,
-          "dos": 84.0
+          "stock": 4,
+          "sales_out": 3,
+          "dos": 22.67
         },
         {
           "model": "IQOO Z11x",
@@ -2515,151 +2521,123 @@
         },
         {
           "model": "IQOO 15 R",
-          "stock": 2,
-          "sales_out": 1,
-          "dos": 28.0
+          "stock": 1,
+          "sales_out": 2,
+          "dos": 8.5
         }
       ],
-      "vivo_stock": 50,
-      "vivo_sales_out": 39,
-      "vivo_dos": 17.95,
+      "vivo_stock": 47,
+      "vivo_sales_out": 50,
+      "vivo_dos": 15.98,
       "vivo_by_type": [
+        {
+          "model": "Y05",
+          "stock": 12,
+          "sales_out": 7,
+          "dos": 29.14
+        },
         {
           "model": "Y11d",
           "stock": 11,
-          "sales_out": 8,
-          "dos": 19.25
-        },
-        {
-          "model": "Y05",
-          "stock": 11,
-          "sales_out": 7,
-          "dos": 22.0
+          "sales_out": 11,
+          "dos": 17.0
         },
         {
           "model": "Y31d Pro",
-          "stock": 8,
-          "sales_out": 5,
-          "dos": 22.4
+          "stock": 7,
+          "sales_out": 6,
+          "dos": 19.83
         },
         {
           "model": "X300 Ultra",
           "stock": 4,
-          "sales_out": 4,
-          "dos": 14.0
-        },
-        {
-          "model": "Y05e",
-          "stock": 4,
-          "sales_out": 3,
-          "dos": 18.67
+          "sales_out": 5,
+          "dos": 13.6
         },
         {
           "model": "Y31d",
           "stock": 3,
           "sales_out": 1,
-          "dos": 42.0
-        },
-        {
-          "model": "V70 FE",
-          "stock": 3,
-          "sales_out": 5,
-          "dos": 8.4
+          "dos": 51.0
         },
         {
           "model": "Y500",
           "stock": 3,
-          "sales_out": 1,
-          "dos": 42.0
+          "sales_out": 2,
+          "dos": 25.5
+        },
+        {
+          "model": "Y05e",
+          "stock": 3,
+          "sales_out": 4,
+          "dos": 12.75
+        },
+        {
+          "model": "V70 FE",
+          "stock": 2,
+          "sales_out": 7,
+          "dos": 4.86
         },
         {
           "model": "V60 Lite",
           "stock": 2,
-          "sales_out": 2,
-          "dos": 14.0
+          "sales_out": 3,
+          "dos": 11.33
         },
         {
           "model": "V70",
-          "stock": 1,
-          "sales_out": 3,
-          "dos": 4.67
+          "stock": 0,
+          "sales_out": 4,
+          "dos": 0.0
         }
       ],
-      "total_stock": 61,
-      "total_sales_out": 41,
-      "total_dos": 20.83
+      "total_stock": 55,
+      "total_sales_out": 55,
+      "total_dos": 17.0
     }
   ],
   "types_by_brand": {
     "IQOO": [
       {
         "model": "IQOO Z11",
-        "stock": 119,
-        "sales_out": 39,
-        "dos": 42.72,
+        "stock": 107,
+        "sales_out": 52,
+        "dos": 34.98,
         "stores": [
           {
             "store_name": "MVS SHOWROOM CENTRAL PARK",
             "store_id": "6010708",
             "stock": 8,
             "sales_out": 1,
-            "dos": 112.0
+            "dos": 136.0
+          },
+          {
+            "store_name": "QUEENCITY 2F027",
+            "store_id": "6140705",
+            "stock": 7,
+            "sales_out": 4,
+            "dos": 29.75
           },
           {
             "store_name": "VIVO STORE UG",
             "store_id": "6190701",
-            "stock": 8,
-            "sales_out": 3,
-            "dos": 37.33
-          },
-          {
-            "store_name": "23 SEMARANG MALL 1F065-66",
-            "store_id": "6140706",
-            "stock": 6,
-            "sales_out": 0,
-            "dos": null
-          },
-          {
-            "store_name": "MVS MALL CCM",
-            "store_id": "6180706",
-            "stock": 6,
-            "sales_out": 1,
-            "dos": 84.0
+            "stock": 7,
+            "sales_out": 4,
+            "dos": 29.75
           },
           {
             "store_name": "MVS MBH-VIP VIVO STORE-DD284",
             "store_id": "6220701",
             "stock": 6,
             "sales_out": 1,
-            "dos": 84.0
-          },
-          {
-            "store_name": "QUEENCITY 2F027",
-            "store_id": "6140705",
-            "stock": 6,
-            "sales_out": 4,
-            "dos": 21.0
-          },
-          {
-            "store_name": "VIVO STORE 1 BEC",
-            "store_id": "6190704",
-            "stock": 6,
-            "sales_out": 2,
-            "dos": 42.0
-          },
-          {
-            "store_name": "vivostore emporium",
-            "store_id": "6020711",
-            "stock": 6,
-            "sales_out": 1,
-            "dos": 84.0
+            "dos": 102.0
           },
           {
             "store_name": "AEON MALL DELTAMAS 1F081",
             "store_id": "6050706",
             "stock": 5,
             "sales_out": 1,
-            "dos": 70.0
+            "dos": 85.0
           },
           {
             "store_name": "ITC BSD 1F09-14",
@@ -2673,42 +2651,49 @@
             "store_id": "6240701",
             "stock": 5,
             "sales_out": 2,
-            "dos": 35.0
+            "dos": 42.5
           },
           {
             "store_name": "LIPPO MALL PURI 1FK02",
             "store_id": "6010711",
             "stock": 5,
             "sales_out": 2,
-            "dos": 35.0
+            "dos": 42.5
+          },
+          {
+            "store_name": "MVS MALL CCM",
+            "store_id": "6180706",
+            "stock": 5,
+            "sales_out": 2,
+            "dos": 42.5
           },
           {
             "store_name": "MVS X6 DS0824",
             "store_id": "6050701",
             "stock": 5,
             "sales_out": 3,
-            "dos": 23.33
+            "dos": 28.33
           },
           {
             "store_name": "RITA SUPERMALL SF36-37",
             "store_id": "6130702",
             "stock": 5,
             "sales_out": 2,
-            "dos": 35.0
+            "dos": 42.5
           },
           {
-            "store_name": "VS Jogja City Mall",
-            "store_id": "6100702",
-            "stock": 5,
-            "sales_out": 0,
-            "dos": null
+            "store_name": "23 SEMARANG MALL 1F065-66",
+            "store_id": "6140706",
+            "stock": 4,
+            "sales_out": 2,
+            "dos": 34.0
           },
           {
             "store_name": "CIPUTRA 2FC15",
             "store_id": "6240705",
             "stock": 4,
             "sales_out": 3,
-            "dos": 18.67
+            "dos": 22.67
           },
           {
             "store_name": "LG BLOK D NO. 01D",
@@ -2722,21 +2707,35 @@
             "store_id": "6010702",
             "stock": 4,
             "sales_out": 2,
-            "dos": 28.0
+            "dos": 34.0
+          },
+          {
+            "store_name": "VIVO STORE 1 BEC",
+            "store_id": "6190704",
+            "stock": 4,
+            "sales_out": 4,
+            "dos": 17.0
+          },
+          {
+            "store_name": "VS Jogja City Mall",
+            "store_id": "6100702",
+            "stock": 4,
+            "sales_out": 1,
+            "dos": 68.0
+          },
+          {
+            "store_name": "vivostore emporium",
+            "store_id": "6020711",
+            "stock": 4,
+            "sales_out": 3,
+            "dos": 22.67
           },
           {
             "store_name": "MVS ROXY SHOWROOM 21",
             "store_id": "6010701",
-            "stock": 4,
-            "sales_out": 2,
-            "dos": 28.0
-          },
-          {
-            "store_name": "VIVO STORE WINSHOP",
-            "store_id": "6010703",
-            "stock": 4,
-            "sales_out": 1,
-            "dos": 56.0
+            "stock": 3,
+            "sales_out": 3,
+            "dos": 17.0
           },
           {
             "store_name": "SAWANGAN 1F1-0320",
@@ -2746,32 +2745,25 @@
             "dos": null
           },
           {
-            "store_name": "MVS CEMPAKA SHOWROOM 2 (454)",
-            "store_id": "6020706",
-            "stock": 2,
-            "sales_out": 1,
-            "dos": 28.0
+            "store_name": "VIVO STORE WINSHOP",
+            "store_id": "6010703",
+            "stock": 3,
+            "sales_out": 2,
+            "dos": 25.5
           },
           {
             "store_name": "MVS ITC DEPOK VIVO STORE 2",
             "store_id": "6080712",
             "stock": 2,
             "sales_out": 2,
-            "dos": 14.0
-          },
-          {
-            "store_name": "SUPERMALL 1FC3A",
-            "store_id": "6240706",
-            "stock": 2,
-            "sales_out": 1,
-            "dos": 28.0
+            "dos": 17.0
           },
           {
             "store_name": "4004 MVS-BNT-CCM STORE",
             "store_id": "6170703",
             "stock": 1,
             "sales_out": 1,
-            "dos": 14.0
+            "dos": 17.0
           },
           {
             "store_name": "GRANMALL SC GF-11",
@@ -2781,33 +2773,47 @@
             "dos": null
           },
           {
+            "store_name": "MVS CEMPAKA SHOWROOM 2 (454)",
+            "store_id": "6020706",
+            "stock": 1,
+            "sales_out": 2,
+            "dos": 8.5
+          },
+          {
+            "store_name": "SUPERMALL 1FC3A",
+            "store_id": "6240706",
+            "stock": 1,
+            "sales_out": 2,
+            "dos": 8.5
+          },
+          {
             "store_name": "TRAN STUDIO MALL 2F059",
             "store_id": "6040702",
             "stock": 1,
             "sales_out": 3,
-            "dos": 4.67
+            "dos": 5.67
           }
         ]
       },
       {
         "model": "IQOO Z11x",
-        "stock": 29,
-        "sales_out": 24,
-        "dos": 16.92,
+        "stock": 27,
+        "sales_out": 26,
+        "dos": 17.65,
         "stores": [
           {
             "store_name": "MVS MBH-VIP VIVO STORE-DD284",
             "store_id": "6220701",
             "stock": 3,
             "sales_out": 1,
-            "dos": 42.0
+            "dos": 51.0
           },
           {
             "store_name": "RITA SUPERMALL SF36-37",
             "store_id": "6130702",
             "stock": 3,
             "sales_out": 1,
-            "dos": 42.0
+            "dos": 51.0
           },
           {
             "store_name": "vivostore emporium",
@@ -2835,7 +2841,7 @@
             "store_id": "6240708",
             "stock": 2,
             "sales_out": 1,
-            "dos": 28.0
+            "dos": 34.0
           },
           {
             "store_name": "LIPPO MALL PURI 1FK02",
@@ -2849,14 +2855,7 @@
             "store_id": "6080712",
             "stock": 2,
             "sales_out": 1,
-            "dos": 28.0
-          },
-          {
-            "store_name": "VIVO STORE UG",
-            "store_id": "6190701",
-            "stock": 2,
-            "sales_out": 1,
-            "dos": 28.0
+            "dos": 34.0
           },
           {
             "store_name": "4004 MVS-BNT-CCM STORE",
@@ -2877,21 +2876,14 @@
             "store_id": "6240701",
             "stock": 1,
             "sales_out": 1,
-            "dos": 14.0
-          },
-          {
-            "store_name": "MVS MALL CCM",
-            "store_id": "6180706",
-            "stock": 1,
-            "sales_out": 2,
-            "dos": 7.0
+            "dos": 17.0
           },
           {
             "store_name": "MVS X6 DS0824",
             "store_id": "6050701",
             "stock": 1,
             "sales_out": 2,
-            "dos": 7.0
+            "dos": 8.5
           },
           {
             "store_name": "TRAN STUDIO MALL 2F059",
@@ -2905,14 +2897,21 @@
             "store_id": "6190704",
             "stock": 1,
             "sales_out": 2,
-            "dos": 7.0
+            "dos": 8.5
+          },
+          {
+            "store_name": "VIVO STORE UG",
+            "store_id": "6190701",
+            "stock": 1,
+            "sales_out": 2,
+            "dos": 8.5
           },
           {
             "store_name": "VIVO STORE WINSHOP",
             "store_id": "6010703",
             "stock": 1,
             "sales_out": 4,
-            "dos": 3.5
+            "dos": 4.25
           },
           {
             "store_name": "ME ROXY PAMERAN TIMUR",
@@ -2926,6 +2925,13 @@
             "store_id": "6020706",
             "stock": 0,
             "sales_out": 1,
+            "dos": 0.0
+          },
+          {
+            "store_name": "MVS MALL CCM",
+            "store_id": "6180706",
+            "stock": 0,
+            "sales_out": 3,
             "dos": 0.0
           },
           {
@@ -2960,17 +2966,10 @@
       },
       {
         "model": "IQOO 15 R",
-        "stock": 28,
-        "sales_out": 11,
-        "dos": 35.64,
+        "stock": 24,
+        "sales_out": 15,
+        "dos": 27.2,
         "stores": [
-          {
-            "store_name": "23 SEMARANG MALL 1F065-66",
-            "store_id": "6140706",
-            "stock": 3,
-            "sales_out": 0,
-            "dos": null
-          },
           {
             "store_name": "QUEENCITY 2F027",
             "store_id": "6140705",
@@ -2979,11 +2978,11 @@
             "dos": null
           },
           {
-            "store_name": "LIPPO MALL PURI 1FK02",
-            "store_id": "6010711",
+            "store_name": "23 SEMARANG MALL 1F065-66",
+            "store_id": "6140706",
             "stock": 2,
-            "sales_out": 0,
-            "dos": null
+            "sales_out": 1,
+            "dos": 34.0
           },
           {
             "store_name": "MVS SHOWROOM CENTRAL PARK",
@@ -3004,21 +3003,14 @@
             "store_id": "6190701",
             "stock": 2,
             "sales_out": 1,
-            "dos": 28.0
+            "dos": 34.0
           },
           {
             "store_name": "VS Jogja City Mall",
             "store_id": "6100702",
             "stock": 2,
             "sales_out": 1,
-            "dos": 28.0
-          },
-          {
-            "store_name": "vivostore emporium",
-            "store_id": "6020711",
-            "stock": 2,
-            "sales_out": 1,
-            "dos": 28.0
+            "dos": 34.0
           },
           {
             "store_name": "GRANMALL SC GF-11",
@@ -3049,6 +3041,13 @@
             "dos": null
           },
           {
+            "store_name": "LIPPO MALL PURI 1FK02",
+            "store_id": "6010711",
+            "stock": 1,
+            "sales_out": 1,
+            "dos": 17.0
+          },
+          {
             "store_name": "MVS MALL CCM",
             "store_id": "6180706",
             "stock": 1,
@@ -3060,7 +3059,7 @@
             "store_id": "6220701",
             "stock": 1,
             "sales_out": 1,
-            "dos": 14.0
+            "dos": 17.0
           },
           {
             "store_name": "SAWANGAN 1F1-0320",
@@ -3084,11 +3083,11 @@
             "dos": null
           },
           {
-            "store_name": "VIVO STORE 1 BEC",
-            "store_id": "6190704",
+            "store_name": "vivostore emporium",
+            "store_id": "6020711",
             "stock": 1,
-            "sales_out": 3,
-            "dos": 4.67
+            "sales_out": 2,
+            "dos": 8.5
           },
           {
             "store_name": "4004 MVS-BNT-CCM STORE",
@@ -3109,6 +3108,13 @@
             "store_id": "6130702",
             "stock": 0,
             "sales_out": 2,
+            "dos": 0.0
+          },
+          {
+            "store_name": "VIVO STORE 1 BEC",
+            "store_id": "6190704",
+            "stock": 0,
+            "sales_out": 4,
             "dos": 0.0
           }
         ]
@@ -3132,156 +3138,142 @@
     "VIVO": [
       {
         "model": "Y05",
-        "stock": 270,
-        "sales_out": 253,
-        "dos": 14.94,
+        "stock": 282,
+        "sales_out": 319,
+        "dos": 15.03,
         "stores": [
+          {
+            "store_name": "ME ROXY PAMERAN TIMUR",
+            "store_id": "6010702",
+            "stock": 29,
+            "sales_out": 28,
+            "dos": 17.61
+          },
           {
             "store_name": "MVS ROXY SHOWROOM 21",
             "store_id": "6010701",
-            "stock": 28,
-            "sales_out": 25,
-            "dos": 15.68
+            "stock": 26,
+            "sales_out": 27,
+            "dos": 16.37
           },
           {
             "store_name": "VIVO STORE WINSHOP",
             "store_id": "6010703",
-            "stock": 26,
-            "sales_out": 46,
-            "dos": 7.91
+            "stock": 22,
+            "sales_out": 59,
+            "dos": 6.34
           },
           {
-            "store_name": "ME ROXY PAMERAN TIMUR",
-            "store_id": "6010702",
-            "stock": 25,
-            "sales_out": 23,
-            "dos": 15.22
+            "store_name": "VIVO STORE UG",
+            "store_id": "6190701",
+            "stock": 18,
+            "sales_out": 17,
+            "dos": 18.0
           },
           {
             "store_name": "VIVO STORE 1 BEC",
             "store_id": "6190704",
             "stock": 16,
-            "sales_out": 21,
-            "dos": 10.67
+            "sales_out": 25,
+            "dos": 10.88
           },
           {
-            "store_name": "VIVO STORE UG",
-            "store_id": "6190701",
-            "stock": 14,
-            "sales_out": 15,
-            "dos": 13.07
+            "store_name": "LG BLOK D NO. 01D",
+            "store_id": "6170707",
+            "stock": 15,
+            "sales_out": 20,
+            "dos": 12.75
+          },
+          {
+            "store_name": "LG BLOK A-B NO. 12",
+            "store_id": "6240701",
+            "stock": 12,
+            "sales_out": 35,
+            "dos": 5.83
+          },
+          {
+            "store_name": "vivostore emporium",
+            "store_id": "6020711",
+            "stock": 12,
+            "sales_out": 7,
+            "dos": 29.14
+          },
+          {
+            "store_name": "ITC BSD 1F09-14",
+            "store_id": "6240708",
+            "stock": 11,
+            "sales_out": 1,
+            "dos": 187.0
           },
           {
             "store_name": "MVS CEMPAKA SHOWROOM 2 (454)",
             "store_id": "6020706",
             "stock": 11,
-            "sales_out": 17,
-            "dos": 9.06
+            "sales_out": 21,
+            "dos": 8.9
           },
           {
-            "store_name": "vivostore emporium",
-            "store_id": "6020711",
+            "store_name": "MVS SHOWROOM CENTRAL PARK",
+            "store_id": "6010708",
             "stock": 11,
-            "sales_out": 7,
-            "dos": 22.0
-          },
-          {
-            "store_name": "CIPUTRA 2FC15",
-            "store_id": "6240705",
-            "stock": 10,
-            "sales_out": 1,
-            "dos": 140.0
-          },
-          {
-            "store_name": "ITC BSD 1F09-14",
-            "store_id": "6240708",
-            "stock": 10,
-            "sales_out": 1,
-            "dos": 140.0
+            "sales_out": 10,
+            "dos": 18.7
           },
           {
             "store_name": "MVS X6 DS0824",
             "store_id": "6050701",
             "stock": 10,
-            "sales_out": 1,
-            "dos": 140.0
+            "sales_out": 2,
+            "dos": 85.0
           },
           {
-            "store_name": "LG BLOK A-B NO. 12",
-            "store_id": "6240701",
+            "store_name": "AEON MALL DELTAMAS 1F081",
+            "store_id": "6050706",
             "stock": 9,
-            "sales_out": 24,
-            "dos": 5.25
+            "sales_out": 6,
+            "dos": 25.5
+          },
+          {
+            "store_name": "CIPUTRA 2FC15",
+            "store_id": "6240705",
+            "stock": 9,
+            "sales_out": 2,
+            "dos": 76.5
           },
           {
             "store_name": "RITA SUPERMALL SF36-37",
             "store_id": "6130702",
             "stock": 9,
             "sales_out": 2,
-            "dos": 63.0
-          },
-          {
-            "store_name": "LG BLOK D NO. 01D",
-            "store_id": "6170707",
-            "stock": 8,
-            "sales_out": 16,
-            "dos": 7.0
-          },
-          {
-            "store_name": "MVS SHOWROOM CENTRAL PARK",
-            "store_id": "6010708",
-            "stock": 8,
-            "sales_out": 9,
-            "dos": 12.44
-          },
-          {
-            "store_name": "AEON MALL DELTAMAS 1F081",
-            "store_id": "6050706",
-            "stock": 7,
-            "sales_out": 6,
-            "dos": 16.33
-          },
-          {
-            "store_name": "LIPPO MALL PURI 1FK02",
-            "store_id": "6010711",
-            "stock": 7,
-            "sales_out": 3,
-            "dos": 32.67
+            "dos": 76.5
           },
           {
             "store_name": "MVS ITC DEPOK VIVO STORE 2",
             "store_id": "6080712",
-            "stock": 6,
+            "stock": 8,
             "sales_out": 8,
-            "dos": 10.5
-          },
-          {
-            "store_name": "MVS MALL CCM",
-            "store_id": "6180706",
-            "stock": 6,
-            "sales_out": 6,
-            "dos": 14.0
+            "dos": 17.0
           },
           {
             "store_name": "MVS MBH-VIP VIVO STORE-DD284",
             "store_id": "6220701",
-            "stock": 6,
-            "sales_out": 8,
-            "dos": 10.5
+            "stock": 7,
+            "sales_out": 13,
+            "dos": 9.15
           },
           {
-            "store_name": "QUEENCITY 2F027",
-            "store_id": "6140705",
-            "stock": 6,
-            "sales_out": 0,
-            "dos": null
-          },
-          {
-            "store_name": "SAWANGAN 1F1-0320",
-            "store_id": "6040703",
+            "store_name": "LIPPO MALL PURI 1FK02",
+            "store_id": "6010711",
             "stock": 6,
             "sales_out": 4,
-            "dos": 21.0
+            "dos": 25.5
+          },
+          {
+            "store_name": "SUPERMALL 1FC3A",
+            "store_id": "6240706",
+            "stock": 6,
+            "sales_out": 5,
+            "dos": 20.4
           },
           {
             "store_name": "VS Jogja City Mall",
@@ -3291,243 +3283,236 @@
             "dos": null
           },
           {
+            "store_name": "SAWANGAN 1F1-0320",
+            "store_id": "6040703",
+            "stock": 5,
+            "sales_out": 5,
+            "dos": 17.0
+          },
+          {
+            "store_name": "MVS MALL CCM",
+            "store_id": "6180706",
+            "stock": 4,
+            "sales_out": 8,
+            "dos": 8.5
+          },
+          {
+            "store_name": "QUEENCITY 2F027",
+            "store_id": "6140705",
+            "stock": 4,
+            "sales_out": 2,
+            "dos": 34.0
+          },
+          {
+            "store_name": "SC BTM",
+            "store_id": "6180707",
+            "stock": 4,
+            "sales_out": 3,
+            "dos": 22.67
+          },
+          {
             "store_name": "23 SEMARANG MALL 1F065-66",
             "store_id": "6140706",
-            "stock": 5,
-            "sales_out": 0,
-            "dos": null
-          },
-          {
-            "store_name": "SUPERMALL 1FC3A",
-            "store_id": "6240706",
-            "stock": 5,
-            "sales_out": 4,
-            "dos": 17.5
-          },
-          {
-            "store_name": "TRAN STUDIO MALL 2F059",
-            "store_id": "6040702",
-            "stock": 5,
+            "stock": 3,
             "sales_out": 2,
-            "dos": 35.0
+            "dos": 25.5
           },
           {
             "store_name": "4004 MVS-BNT-CCM STORE",
             "store_id": "6170703",
-            "stock": 4,
-            "sales_out": 1,
-            "dos": 56.0
+            "stock": 3,
+            "sales_out": 2,
+            "dos": 25.5
           },
           {
             "store_name": "GRANMALL SC GF-11",
             "store_id": "6150702",
             "stock": 3,
             "sales_out": 1,
-            "dos": 42.0
+            "dos": 51.0
           },
           {
-            "store_name": "SC BTM",
-            "store_id": "6180707",
+            "store_name": "TRAN STUDIO MALL 2F059",
+            "store_id": "6040702",
             "stock": 3,
-            "sales_out": 2,
-            "dos": 21.0
+            "sales_out": 4,
+            "dos": 12.75
           }
         ]
       },
       {
         "model": "Y11d",
-        "stock": 238,
-        "sales_out": 344,
-        "dos": 9.69,
+        "stock": 230,
+        "sales_out": 440,
+        "dos": 8.89,
         "stores": [
+          {
+            "store_name": "VIVO STORE WINSHOP",
+            "store_id": "6010703",
+            "stock": 22,
+            "sales_out": 73,
+            "dos": 5.12
+          },
+          {
+            "store_name": "LG BLOK A-B NO. 12",
+            "store_id": "6240701",
+            "stock": 17,
+            "sales_out": 58,
+            "dos": 4.98
+          },
           {
             "store_name": "VIVO STORE 1 BEC",
             "store_id": "6190704",
-            "stock": 18,
-            "sales_out": 27,
-            "dos": 9.33
+            "stock": 15,
+            "sales_out": 35,
+            "dos": 7.29
+          },
+          {
+            "store_name": "QUEENCITY 2F027",
+            "store_id": "6140705",
+            "stock": 12,
+            "sales_out": 3,
+            "dos": 68.0
           },
           {
             "store_name": "LG BLOK D NO. 01D",
             "store_id": "6170707",
-            "stock": 16,
-            "sales_out": 26,
-            "dos": 8.62
-          },
-          {
-            "store_name": "ME ROXY PAMERAN TIMUR",
-            "store_id": "6010702",
-            "stock": 14,
-            "sales_out": 27,
-            "dos": 7.26
-          },
-          {
-            "store_name": "VIVO STORE UG",
-            "store_id": "6190701",
-            "stock": 13,
-            "sales_out": 28,
-            "dos": 6.5
+            "stock": 11,
+            "sales_out": 35,
+            "dos": 5.34
           },
           {
             "store_name": "MVS ROXY SHOWROOM 21",
             "store_id": "6010701",
-            "stock": 12,
-            "sales_out": 24,
-            "dos": 7.0
+            "stock": 11,
+            "sales_out": 31,
+            "dos": 6.03
           },
           {
             "store_name": "vivostore emporium",
             "store_id": "6020711",
             "stock": 11,
-            "sales_out": 8,
-            "dos": 19.25
+            "sales_out": 11,
+            "dos": 17.0
           },
           {
             "store_name": "ITC BSD 1F09-14",
             "store_id": "6240708",
             "stock": 10,
             "sales_out": 4,
-            "dos": 35.0
+            "dos": 42.5
           },
           {
-            "store_name": "MVS SHOWROOM CENTRAL PARK",
-            "store_id": "6010708",
+            "store_name": "ME ROXY PAMERAN TIMUR",
+            "store_id": "6010702",
             "stock": 10,
-            "sales_out": 4,
-            "dos": 35.0
-          },
-          {
-            "store_name": "QUEENCITY 2F027",
-            "store_id": "6140705",
-            "stock": 10,
-            "sales_out": 2,
-            "dos": 70.0
-          },
-          {
-            "store_name": "VIVO STORE WINSHOP",
-            "store_id": "6010703",
-            "stock": 10,
-            "sales_out": 60,
-            "dos": 2.33
-          },
-          {
-            "store_name": "LG BLOK A-B NO. 12",
-            "store_id": "6240701",
-            "stock": 9,
-            "sales_out": 48,
-            "dos": 2.62
+            "sales_out": 36,
+            "dos": 4.72
           },
           {
             "store_name": "LIPPO MALL PURI 1FK02",
             "store_id": "6010711",
             "stock": 9,
             "sales_out": 4,
-            "dos": 31.5
+            "dos": 38.25
+          },
+          {
+            "store_name": "MVS MBH-VIP VIVO STORE-DD284",
+            "store_id": "6220701",
+            "stock": 8,
+            "sales_out": 12,
+            "dos": 11.33
+          },
+          {
+            "store_name": "MVS X6 DS0824",
+            "store_id": "6050701",
+            "stock": 8,
+            "sales_out": 6,
+            "dos": 22.67
+          },
+          {
+            "store_name": "SUPERMALL 1FC3A",
+            "store_id": "6240706",
+            "stock": 8,
+            "sales_out": 9,
+            "dos": 15.11
+          },
+          {
+            "store_name": "VIVO STORE UG",
+            "store_id": "6190701",
+            "stock": 8,
+            "sales_out": 36,
+            "dos": 3.78
           },
           {
             "store_name": "23 SEMARANG MALL 1F065-66",
             "store_id": "6140706",
-            "stock": 8,
-            "sales_out": 2,
-            "dos": 56.0
-          },
-          {
-            "store_name": "MVS ITC DEPOK VIVO STORE 2",
-            "store_id": "6080712",
-            "stock": 8,
-            "sales_out": 12,
-            "dos": 9.33
-          },
-          {
-            "store_name": "MVS MALL CCM",
-            "store_id": "6180706",
-            "stock": 8,
-            "sales_out": 7,
-            "dos": 16.0
-          },
-          {
-            "store_name": "RITA SUPERMALL SF36-37",
-            "store_id": "6130702",
-            "stock": 8,
+            "stock": 7,
             "sales_out": 3,
-            "dos": 37.33
+            "dos": 39.67
           },
           {
             "store_name": "AEON MALL DELTAMAS 1F081",
             "store_id": "6050706",
             "stock": 7,
-            "sales_out": 8,
-            "dos": 12.25
+            "sales_out": 9,
+            "dos": 13.22
           },
           {
-            "store_name": "MVS X6 DS0824",
-            "store_id": "6050701",
+            "store_name": "MVS ITC DEPOK VIVO STORE 2",
+            "store_id": "6080712",
             "stock": 7,
-            "sales_out": 5,
-            "dos": 19.6
+            "sales_out": 14,
+            "dos": 8.5
           },
           {
-            "store_name": "SUPERMALL 1FC3A",
-            "store_id": "6240706",
+            "store_name": "MVS SHOWROOM CENTRAL PARK",
+            "store_id": "6010708",
             "stock": 7,
-            "sales_out": 8,
-            "dos": 12.25
+            "sales_out": 7,
+            "dos": 17.0
           },
           {
             "store_name": "VS Jogja City Mall",
             "store_id": "6100702",
             "stock": 7,
             "sales_out": 2,
-            "dos": 49.0
-          },
-          {
-            "store_name": "TRAN STUDIO MALL 2F059",
-            "store_id": "6040702",
-            "stock": 6,
-            "sales_out": 2,
-            "dos": 42.0
+            "dos": 59.5
           },
           {
             "store_name": "CIPUTRA 2FC15",
             "store_id": "6240705",
-            "stock": 5,
-            "sales_out": 4,
-            "dos": 17.5
-          },
-          {
-            "store_name": "MVS MBH-VIP VIVO STORE-DD284",
-            "store_id": "6220701",
-            "stock": 5,
-            "sales_out": 10,
-            "dos": 7.0
-          },
-          {
-            "store_name": "SAWANGAN 1F1-0320",
-            "store_id": "6040703",
-            "stock": 5,
-            "sales_out": 2,
-            "dos": 35.0
-          },
-          {
-            "store_name": "4004 MVS-BNT-CCM STORE",
-            "store_id": "6170703",
-            "stock": 4,
-            "sales_out": 2,
-            "dos": 28.0
+            "stock": 6,
+            "sales_out": 5,
+            "dos": 20.4
           },
           {
             "store_name": "MVS CEMPAKA SHOWROOM 2 (454)",
             "store_id": "6020706",
-            "stock": 4,
-            "sales_out": 11,
-            "dos": 5.09
+            "stock": 5,
+            "sales_out": 12,
+            "dos": 7.08
           },
           {
-            "store_name": "SC BTM",
-            "store_id": "6180707",
+            "store_name": "TRAN STUDIO MALL 2F059",
+            "store_id": "6040702",
+            "stock": 5,
+            "sales_out": 3,
+            "dos": 28.33
+          },
+          {
+            "store_name": "MVS MALL CCM",
+            "store_id": "6180706",
             "stock": 4,
-            "sales_out": 4,
-            "dos": 14.0
+            "sales_out": 12,
+            "dos": 5.67
+          },
+          {
+            "store_name": "SAWANGAN 1F1-0320",
+            "store_id": "6040703",
+            "stock": 4,
+            "sales_out": 3,
+            "dos": 22.67
           },
           {
             "store_name": "GRANMALL SC GF-11",
@@ -3535,337 +3520,351 @@
             "stock": 3,
             "sales_out": 0,
             "dos": null
+          },
+          {
+            "store_name": "RITA SUPERMALL SF36-37",
+            "store_id": "6130702",
+            "stock": 3,
+            "sales_out": 8,
+            "dos": 6.38
+          },
+          {
+            "store_name": "SC BTM",
+            "store_id": "6180707",
+            "stock": 3,
+            "sales_out": 5,
+            "dos": 10.2
+          },
+          {
+            "store_name": "4004 MVS-BNT-CCM STORE",
+            "store_id": "6170703",
+            "stock": 2,
+            "sales_out": 4,
+            "dos": 8.5
           }
         ]
       },
       {
         "model": "Y31d Pro",
-        "stock": 216,
-        "sales_out": 248,
-        "dos": 12.19,
+        "stock": 173,
+        "sales_out": 315,
+        "dos": 9.34,
         "stores": [
-          {
-            "store_name": "VIVO STORE UG",
-            "store_id": "6190701",
-            "stock": 14,
-            "sales_out": 22,
-            "dos": 8.91
-          },
           {
             "store_name": "VIVO STORE WINSHOP",
             "store_id": "6010703",
-            "stock": 14,
-            "sales_out": 29,
-            "dos": 6.76
-          },
-          {
-            "store_name": "VIVO STORE 1 BEC",
-            "store_id": "6190704",
-            "stock": 13,
-            "sales_out": 20,
-            "dos": 9.1
+            "stock": 17,
+            "sales_out": 32,
+            "dos": 9.03
           },
           {
             "store_name": "MVS X6 DS0824",
             "store_id": "6050701",
-            "stock": 12,
-            "sales_out": 2,
-            "dos": 84.0
-          },
-          {
-            "store_name": "ME ROXY PAMERAN TIMUR",
-            "store_id": "6010702",
             "stock": 11,
-            "sales_out": 23,
-            "dos": 6.7
+            "sales_out": 3,
+            "dos": 62.33
           },
           {
-            "store_name": "AEON MALL DELTAMAS 1F081",
-            "store_id": "6050706",
+            "store_name": "QUEENCITY 2F027",
+            "store_id": "6140705",
+            "stock": 11,
+            "sales_out": 6,
+            "dos": 31.17
+          },
+          {
+            "store_name": "VIVO STORE 1 BEC",
+            "store_id": "6190704",
             "stock": 10,
-            "sales_out": 2,
-            "dos": 70.0
+            "sales_out": 25,
+            "dos": 6.8
           },
           {
             "store_name": "MVS SHOWROOM CENTRAL PARK",
             "store_id": "6010708",
             "stock": 9,
             "sales_out": 6,
-            "dos": 21.0
+            "dos": 25.5
           },
           {
-            "store_name": "QUEENCITY 2F027",
-            "store_id": "6140705",
-            "stock": 9,
-            "sales_out": 5,
-            "dos": 25.2
-          },
-          {
-            "store_name": "LG BLOK D NO. 01D",
-            "store_id": "6170707",
+            "store_name": "AEON MALL DELTAMAS 1F081",
+            "store_id": "6050706",
             "stock": 8,
-            "sales_out": 10,
-            "dos": 11.2
-          },
-          {
-            "store_name": "MVS MBH-VIP VIVO STORE-DD284",
-            "store_id": "6220701",
-            "stock": 8,
-            "sales_out": 10,
-            "dos": 11.2
-          },
-          {
-            "store_name": "MVS ROXY SHOWROOM 21",
-            "store_id": "6010701",
-            "stock": 8,
-            "sales_out": 30,
-            "dos": 3.73
+            "sales_out": 4,
+            "dos": 34.0
           },
           {
             "store_name": "SAWANGAN 1F1-0320",
             "store_id": "6040703",
             "stock": 8,
             "sales_out": 1,
-            "dos": 112.0
-          },
-          {
-            "store_name": "VS Jogja City Mall",
-            "store_id": "6100702",
-            "stock": 8,
-            "sales_out": 2,
-            "dos": 56.0
+            "dos": 136.0
           },
           {
             "store_name": "vivostore emporium",
             "store_id": "6020711",
-            "stock": 8,
-            "sales_out": 5,
-            "dos": 22.4
+            "stock": 7,
+            "sales_out": 6,
+            "dos": 19.83
           },
           {
             "store_name": "23 SEMARANG MALL 1F065-66",
             "store_id": "6140706",
             "stock": 6,
             "sales_out": 1,
-            "dos": 84.0
+            "dos": 102.0
+          },
+          {
+            "store_name": "ME ROXY PAMERAN TIMUR",
+            "store_id": "6010702",
+            "stock": 6,
+            "sales_out": 29,
+            "dos": 3.52
+          },
+          {
+            "store_name": "MVS MBH-VIP VIVO STORE-DD284",
+            "store_id": "6220701",
+            "stock": 6,
+            "sales_out": 12,
+            "dos": 8.5
+          },
+          {
+            "store_name": "VIVO STORE UG",
+            "store_id": "6190701",
+            "stock": 6,
+            "sales_out": 30,
+            "dos": 3.4
+          },
+          {
+            "store_name": "VS Jogja City Mall",
+            "store_id": "6100702",
+            "stock": 6,
+            "sales_out": 4,
+            "dos": 25.5
           },
           {
             "store_name": "4004 MVS-BNT-CCM STORE",
             "store_id": "6170703",
-            "stock": 6,
-            "sales_out": 0,
-            "dos": null
-          },
-          {
-            "store_name": "CIPUTRA 2FC15",
-            "store_id": "6240705",
-            "stock": 6,
+            "stock": 5,
             "sales_out": 1,
-            "dos": 84.0
-          },
-          {
-            "store_name": "LIPPO MALL PURI 1FK02",
-            "store_id": "6010711",
-            "stock": 6,
-            "sales_out": 5,
-            "dos": 16.8
-          },
-          {
-            "store_name": "MVS CEMPAKA SHOWROOM 2 (454)",
-            "store_id": "6020706",
-            "stock": 6,
-            "sales_out": 12,
-            "dos": 7.0
-          },
-          {
-            "store_name": "MVS ITC DEPOK VIVO STORE 2",
-            "store_id": "6080712",
-            "stock": 6,
-            "sales_out": 13,
-            "dos": 6.46
-          },
-          {
-            "store_name": "RITA SUPERMALL SF36-37",
-            "store_id": "6130702",
-            "stock": 6,
-            "sales_out": 3,
-            "dos": 28.0
-          },
-          {
-            "store_name": "SUPERMALL 1FC3A",
-            "store_id": "6240706",
-            "stock": 6,
-            "sales_out": 5,
-            "dos": 16.8
-          },
-          {
-            "store_name": "TRAN STUDIO MALL 2F059",
-            "store_id": "6040702",
-            "stock": 6,
-            "sales_out": 0,
-            "dos": null
+            "dos": 85.0
           },
           {
             "store_name": "ITC BSD 1F09-14",
             "store_id": "6240708",
             "stock": 5,
-            "sales_out": 8,
-            "dos": 8.75
+            "sales_out": 9,
+            "dos": 9.44
           },
           {
-            "store_name": "LG BLOK A-B NO. 12",
-            "store_id": "6240701",
+            "store_name": "LG BLOK D NO. 01D",
+            "store_id": "6170707",
             "stock": 5,
-            "sales_out": 24,
-            "dos": 2.92
+            "sales_out": 13,
+            "dos": 6.54
           },
           {
             "store_name": "SC BTM",
             "store_id": "6180707",
             "stock": 5,
             "sales_out": 1,
-            "dos": 70.0
+            "dos": 85.0
+          },
+          {
+            "store_name": "SUPERMALL 1FC3A",
+            "store_id": "6240706",
+            "stock": 5,
+            "sales_out": 7,
+            "dos": 12.14
+          },
+          {
+            "store_name": "TRAN STUDIO MALL 2F059",
+            "store_id": "6040702",
+            "stock": 5,
+            "sales_out": 1,
+            "dos": 85.0
+          },
+          {
+            "store_name": "CIPUTRA 2FC15",
+            "store_id": "6240705",
+            "stock": 4,
+            "sales_out": 3,
+            "dos": 22.67
           },
           {
             "store_name": "GRANMALL SC GF-11",
             "store_id": "6150702",
             "stock": 4,
             "sales_out": 1,
-            "dos": 56.0
+            "dos": 68.0
+          },
+          {
+            "store_name": "LG BLOK A-B NO. 12",
+            "store_id": "6240701",
+            "stock": 4,
+            "sales_out": 28,
+            "dos": 2.43
+          },
+          {
+            "store_name": "LIPPO MALL PURI 1FK02",
+            "store_id": "6010711",
+            "stock": 4,
+            "sales_out": 7,
+            "dos": 9.71
           },
           {
             "store_name": "MVS MALL CCM",
             "store_id": "6180706",
+            "stock": 4,
+            "sales_out": 8,
+            "dos": 8.5
+          },
+          {
+            "store_name": "RITA SUPERMALL SF36-37",
+            "store_id": "6130702",
+            "stock": 4,
+            "sales_out": 5,
+            "dos": 13.6
+          },
+          {
+            "store_name": "MVS CEMPAKA SHOWROOM 2 (454)",
+            "store_id": "6020706",
             "stock": 3,
-            "sales_out": 7,
-            "dos": 6.0
+            "sales_out": 16,
+            "dos": 3.19
+          },
+          {
+            "store_name": "MVS ROXY SHOWROOM 21",
+            "store_id": "6010701",
+            "stock": 3,
+            "sales_out": 39,
+            "dos": 1.31
+          },
+          {
+            "store_name": "MVS ITC DEPOK VIVO STORE 2",
+            "store_id": "6080712",
+            "stock": 2,
+            "sales_out": 17,
+            "dos": 2.0
           }
         ]
       },
       {
         "model": "Y05e",
-        "stock": 191,
-        "sales_out": 360,
-        "dos": 7.43,
+        "stock": 157,
+        "sales_out": 456,
+        "dos": 5.85,
         "stores": [
           {
-            "store_name": "VIVO STORE WINSHOP",
-            "store_id": "6010703",
-            "stock": 56,
-            "sales_out": 146,
-            "dos": 5.37
+            "store_name": "MVS ROXY SHOWROOM 21",
+            "store_id": "6010701",
+            "stock": 25,
+            "sales_out": 30,
+            "dos": 14.17
           },
           {
             "store_name": "ME ROXY PAMERAN TIMUR",
             "store_id": "6010702",
-            "stock": 20,
-            "sales_out": 51,
-            "dos": 5.49
+            "stock": 19,
+            "sales_out": 65,
+            "dos": 4.97
           },
           {
-            "store_name": "MVS ROXY SHOWROOM 21",
-            "store_id": "6010701",
-            "stock": 18,
-            "sales_out": 26,
-            "dos": 9.69
+            "store_name": "VIVO STORE WINSHOP",
+            "store_id": "6010703",
+            "stock": 16,
+            "sales_out": 201,
+            "dos": 1.35
           },
           {
             "store_name": "ITC BSD 1F09-14",
             "store_id": "6240708",
-            "stock": 7,
+            "stock": 8,
             "sales_out": 1,
-            "dos": 98.0
+            "dos": 136.0
+          },
+          {
+            "store_name": "LG BLOK A-B NO. 12",
+            "store_id": "6240701",
+            "stock": 8,
+            "sales_out": 20,
+            "dos": 6.8
+          },
+          {
+            "store_name": "VIVO STORE UG",
+            "store_id": "6190701",
+            "stock": 8,
+            "sales_out": 15,
+            "dos": 9.07
+          },
+          {
+            "store_name": "LG BLOK D NO. 01D",
+            "store_id": "6170707",
+            "stock": 7,
+            "sales_out": 17,
+            "dos": 7.0
           },
           {
             "store_name": "VIVO STORE 1 BEC",
             "store_id": "6190704",
             "stock": 7,
-            "sales_out": 30,
-            "dos": 3.27
+            "sales_out": 33,
+            "dos": 3.61
           },
           {
             "store_name": "AEON MALL DELTAMAS 1F081",
             "store_id": "6050706",
-            "stock": 6,
-            "sales_out": 0,
-            "dos": null
-          },
-          {
-            "store_name": "LG BLOK A-B NO. 12",
-            "store_id": "6240701",
-            "stock": 6,
-            "sales_out": 19,
-            "dos": 4.42
-          },
-          {
-            "store_name": "LG BLOK D NO. 01D",
-            "store_id": "6170707",
-            "stock": 6,
-            "sales_out": 14,
-            "dos": 6.0
-          },
-          {
-            "store_name": "VIVO STORE UG",
-            "store_id": "6190701",
-            "stock": 6,
-            "sales_out": 13,
-            "dos": 6.46
+            "stock": 5,
+            "sales_out": 1,
+            "dos": 85.0
           },
           {
             "store_name": "MVS ITC DEPOK VIVO STORE 2",
             "store_id": "6080712",
             "stock": 5,
             "sales_out": 5,
-            "dos": 14.0
+            "dos": 17.0
           },
           {
-            "store_name": "MVS MBH-VIP VIVO STORE-DD284",
-            "store_id": "6220701",
+            "store_name": "MVS MALL CCM",
+            "store_id": "6180706",
             "stock": 5,
-            "sales_out": 2,
-            "dos": 35.0
+            "sales_out": 16,
+            "dos": 5.31
           },
           {
             "store_name": "MVS SHOWROOM CENTRAL PARK",
             "store_id": "6010708",
             "stock": 5,
-            "sales_out": 6,
-            "dos": 11.67
+            "sales_out": 7,
+            "dos": 12.14
           },
           {
             "store_name": "LIPPO MALL PURI 1FK02",
             "store_id": "6010711",
             "stock": 4,
             "sales_out": 2,
-            "dos": 28.0
+            "dos": 34.0
           },
           {
             "store_name": "MVS CEMPAKA SHOWROOM 2 (454)",
             "store_id": "6020706",
             "stock": 4,
-            "sales_out": 9,
-            "dos": 6.22
+            "sales_out": 12,
+            "dos": 5.67
+          },
+          {
+            "store_name": "MVS MBH-VIP VIVO STORE-DD284",
+            "store_id": "6220701",
+            "stock": 4,
+            "sales_out": 3,
+            "dos": 22.67
           },
           {
             "store_name": "MVS X6 DS0824",
             "store_id": "6050701",
             "stock": 4,
             "sales_out": 1,
-            "dos": 56.0
-          },
-          {
-            "store_name": "QUEENCITY 2F027",
-            "store_id": "6140705",
-            "stock": 4,
-            "sales_out": 3,
-            "dos": 18.67
-          },
-          {
-            "store_name": "vivostore emporium",
-            "store_id": "6020711",
-            "stock": 4,
-            "sales_out": 3,
-            "dos": 18.67
+            "dos": 68.0
           },
           {
             "store_name": "SC BTM",
@@ -3875,25 +3874,25 @@
             "dos": null
           },
           {
-            "store_name": "SUPERMALL 1FC3A",
-            "store_id": "6240706",
-            "stock": 3,
-            "sales_out": 3,
-            "dos": 14.0
-          },
-          {
             "store_name": "VS Jogja City Mall",
             "store_id": "6100702",
             "stock": 3,
             "sales_out": 1,
-            "dos": 42.0
+            "dos": 51.0
+          },
+          {
+            "store_name": "vivostore emporium",
+            "store_id": "6020711",
+            "stock": 3,
+            "sales_out": 4,
+            "dos": 12.75
           },
           {
             "store_name": "23 SEMARANG MALL 1F065-66",
             "store_id": "6140706",
             "stock": 2,
             "sales_out": 1,
-            "dos": 28.0
+            "dos": 34.0
           },
           {
             "store_name": "4004 MVS-BNT-CCM STORE",
@@ -3907,7 +3906,7 @@
             "store_id": "6240705",
             "stock": 2,
             "sales_out": 1,
-            "dos": 28.0
+            "dos": 34.0
           },
           {
             "store_name": "GRANMALL SC GF-11",
@@ -3917,82 +3916,89 @@
             "dos": null
           },
           {
-            "store_name": "MVS MALL CCM",
-            "store_id": "6180706",
+            "store_name": "QUEENCITY 2F027",
+            "store_id": "6140705",
             "stock": 2,
-            "sales_out": 15,
-            "dos": 1.87
+            "sales_out": 5,
+            "dos": 6.8
           },
           {
             "store_name": "SAWANGAN 1F1-0320",
             "store_id": "6040703",
             "stock": 2,
             "sales_out": 1,
-            "dos": 28.0
-          },
-          {
-            "store_name": "TRAN STUDIO MALL 2F059",
-            "store_id": "6040702",
-            "stock": 2,
-            "sales_out": 5,
-            "dos": 5.6
+            "dos": 34.0
           },
           {
             "store_name": "RITA SUPERMALL SF36-37",
             "store_id": "6130702",
             "stock": 1,
             "sales_out": 2,
-            "dos": 7.0
+            "dos": 8.5
+          },
+          {
+            "store_name": "SUPERMALL 1FC3A",
+            "store_id": "6240706",
+            "stock": 1,
+            "sales_out": 5,
+            "dos": 3.4
+          },
+          {
+            "store_name": "TRAN STUDIO MALL 2F059",
+            "store_id": "6040702",
+            "stock": 0,
+            "sales_out": 7,
+            "dos": 0.0
           }
         ]
       },
       {
         "model": "Y500",
         "stock": 129,
-        "sales_out": 56,
+        "sales_out": 68,
         "dos": 32.25,
         "stores": [
           {
             "store_name": "MVS ROXY SHOWROOM 21",
             "store_id": "6010701",
             "stock": 9,
-            "sales_out": 3,
-            "dos": 42.0
-          },
-          {
-            "store_name": "23 SEMARANG MALL 1F065-66",
-            "store_id": "6140706",
-            "stock": 8,
-            "sales_out": 0,
-            "dos": null
+            "sales_out": 4,
+            "dos": 38.25
           },
           {
             "store_name": "ME ROXY PAMERAN TIMUR",
             "store_id": "6010702",
             "stock": 8,
             "sales_out": 4,
-            "dos": 28.0
+            "dos": 34.0
+          },
+          {
+            "store_name": "MVS MBH-VIP VIVO STORE-DD284",
+            "store_id": "6220701",
+            "stock": 8,
+            "sales_out": 2,
+            "dos": 68.0
+          },
+          {
+            "store_name": "23 SEMARANG MALL 1F065-66",
+            "store_id": "6140706",
+            "stock": 7,
+            "sales_out": 1,
+            "dos": 119.0
           },
           {
             "store_name": "AEON MALL DELTAMAS 1F081",
             "store_id": "6050706",
             "stock": 7,
             "sales_out": 3,
-            "dos": 32.67
-          },
-          {
-            "store_name": "MVS MBH-VIP VIVO STORE-DD284",
-            "store_id": "6220701",
-            "stock": 7,
-            "sales_out": 2,
-            "dos": 49.0
+            "dos": 39.67
           },
           {
             "store_name": "VIVO STORE WINSHOP",
             "store_id": "6010703",
             "stock": 7,
             "sales_out": 7,
-            "dos": 14.0
+            "dos": 17.0
           },
           {
             "store_name": "MVS X6 DS0824",
@@ -4006,14 +4012,28 @@
             "store_id": "6190701",
             "stock": 6,
             "sales_out": 4,
-            "dos": 21.0
+            "dos": 25.5
           },
           {
             "store_name": "LG BLOK A-B NO. 12",
             "store_id": "6240701",
             "stock": 5,
-            "sales_out": 3,
-            "dos": 23.33
+            "sales_out": 4,
+            "dos": 21.25
+          },
+          {
+            "store_name": "LG BLOK D NO. 01D",
+            "store_id": "6170707",
+            "stock": 5,
+            "sales_out": 5,
+            "dos": 17.0
+          },
+          {
+            "store_name": "MVS ITC DEPOK VIVO STORE 2",
+            "store_id": "6080712",
+            "stock": 5,
+            "sales_out": 6,
+            "dos": 14.17
           },
           {
             "store_name": "QUEENCITY 2F027",
@@ -4027,56 +4047,49 @@
             "store_id": "6130702",
             "stock": 5,
             "sales_out": 1,
-            "dos": 70.0
+            "dos": 85.0
           },
           {
             "store_name": "CIPUTRA 2FC15",
             "store_id": "6240705",
             "stock": 4,
+            "sales_out": 4,
+            "dos": 17.0
+          },
+          {
+            "store_name": "LIPPO MALL PURI 1FK02",
+            "store_id": "6010711",
+            "stock": 4,
             "sales_out": 3,
-            "dos": 18.67
+            "dos": 22.67
           },
           {
-            "store_name": "ITC BSD 1F09-14",
-            "store_id": "6240708",
+            "store_name": "MVS MALL CCM",
+            "store_id": "6180706",
             "stock": 4,
-            "sales_out": 1,
-            "dos": 56.0
-          },
-          {
-            "store_name": "MVS ITC DEPOK VIVO STORE 2",
-            "store_id": "6080712",
-            "stock": 4,
-            "sales_out": 5,
-            "dos": 11.2
+            "sales_out": 2,
+            "dos": 34.0
           },
           {
             "store_name": "MVS SHOWROOM CENTRAL PARK",
             "store_id": "6010708",
             "stock": 4,
             "sales_out": 1,
-            "dos": 56.0
+            "dos": 68.0
           },
           {
             "store_name": "SAWANGAN 1F1-0320",
             "store_id": "6040703",
             "stock": 4,
             "sales_out": 1,
-            "dos": 56.0
+            "dos": 68.0
           },
           {
             "store_name": "TRAN STUDIO MALL 2F059",
             "store_id": "6040702",
             "stock": 4,
             "sales_out": 2,
-            "dos": 28.0
-          },
-          {
-            "store_name": "VIVO STORE 1 BEC",
-            "store_id": "6190704",
-            "stock": 4,
-            "sales_out": 2,
-            "dos": 28.0
+            "dos": 34.0
           },
           {
             "store_name": "VS Jogja City Mall",
@@ -4090,56 +4103,35 @@
             "store_id": "6150702",
             "stock": 3,
             "sales_out": 1,
-            "dos": 42.0
+            "dos": 51.0
           },
           {
-            "store_name": "LG BLOK D NO. 01D",
-            "store_id": "6170707",
-            "stock": 3,
-            "sales_out": 5,
-            "dos": 8.4
-          },
-          {
-            "store_name": "LIPPO MALL PURI 1FK02",
-            "store_id": "6010711",
+            "store_name": "ITC BSD 1F09-14",
+            "store_id": "6240708",
             "stock": 3,
             "sales_out": 2,
-            "dos": 21.0
+            "dos": 25.5
           },
           {
-            "store_name": "MVS MALL CCM",
-            "store_id": "6180706",
+            "store_name": "VIVO STORE 1 BEC",
+            "store_id": "6190704",
             "stock": 3,
-            "sales_out": 2,
-            "dos": 21.0
-          },
-          {
-            "store_name": "SUPERMALL 1FC3A",
-            "store_id": "6240706",
-            "stock": 3,
-            "sales_out": 0,
-            "dos": null
+            "sales_out": 3,
+            "dos": 17.0
           },
           {
             "store_name": "vivostore emporium",
             "store_id": "6020711",
             "stock": 3,
-            "sales_out": 1,
-            "dos": 42.0
+            "sales_out": 2,
+            "dos": 25.5
           },
           {
             "store_name": "4004 MVS-BNT-CCM STORE",
             "store_id": "6170703",
             "stock": 2,
             "sales_out": 1,
-            "dos": 28.0
-          },
-          {
-            "store_name": "MVS CEMPAKA SHOWROOM 2 (454)",
-            "store_id": "6020706",
-            "stock": 2,
-            "sales_out": 2,
-            "dos": 14.0
+            "dos": 34.0
           },
           {
             "store_name": "SC BTM",
@@ -4147,14 +4139,28 @@
             "stock": 2,
             "sales_out": 0,
             "dos": null
+          },
+          {
+            "store_name": "MVS CEMPAKA SHOWROOM 2 (454)",
+            "store_id": "6020706",
+            "stock": 1,
+            "sales_out": 3,
+            "dos": 5.67
+          },
+          {
+            "store_name": "SUPERMALL 1FC3A",
+            "store_id": "6240706",
+            "stock": 1,
+            "sales_out": 2,
+            "dos": 8.5
           }
         ]
       },
       {
         "model": "Y31d",
-        "stock": 101,
-        "sales_out": 37,
-        "dos": 38.22,
+        "stock": 87,
+        "sales_out": 58,
+        "dos": 25.5,
         "stores": [
           {
             "store_name": "ME ROXY PAMERAN TIMUR",
@@ -4164,25 +4170,18 @@
             "dos": null
           },
           {
+            "store_name": "LG BLOK A-B NO. 12",
+            "store_id": "6240701",
+            "stock": 6,
+            "sales_out": 5,
+            "dos": 20.4
+          },
+          {
             "store_name": "VIVO STORE WINSHOP",
             "store_id": "6010703",
-            "stock": 7,
-            "sales_out": 16,
-            "dos": 6.12
-          },
-          {
-            "store_name": "MVS ROXY SHOWROOM 21",
-            "store_id": "6010701",
             "stock": 6,
-            "sales_out": 3,
-            "dos": 28.0
-          },
-          {
-            "store_name": "VIVO STORE 1 BEC",
-            "store_id": "6190704",
-            "stock": 6,
-            "sales_out": 0,
-            "dos": null
+            "sales_out": 20,
+            "dos": 5.1
           },
           {
             "store_name": "AEON MALL DELTAMAS 1F081",
@@ -4190,13 +4189,6 @@
             "stock": 5,
             "sales_out": 0,
             "dos": null
-          },
-          {
-            "store_name": "LG BLOK A-B NO. 12",
-            "store_id": "6240701",
-            "stock": 5,
-            "sales_out": 3,
-            "dos": 23.33
           },
           {
             "store_name": "LG BLOK D NO. 01D",
@@ -4208,13 +4200,6 @@
           {
             "store_name": "MVS SHOWROOM CENTRAL PARK",
             "store_id": "6010708",
-            "stock": 5,
-            "sales_out": 0,
-            "dos": null
-          },
-          {
-            "store_name": "MVS X6 DS0824",
-            "store_id": "6050701",
             "stock": 5,
             "sales_out": 0,
             "dos": null
@@ -4234,11 +4219,11 @@
             "dos": null
           },
           {
-            "store_name": "MVS CEMPAKA SHOWROOM 2 (454)",
-            "store_id": "6020706",
+            "store_name": "LIPPO MALL PURI 1FK02",
+            "store_id": "6010711",
             "stock": 4,
-            "sales_out": 6,
-            "dos": 9.33
+            "sales_out": 0,
+            "dos": null
           },
           {
             "store_name": "MVS MBH-VIP VIVO STORE-DD284",
@@ -4248,32 +4233,18 @@
             "dos": null
           },
           {
+            "store_name": "MVS X6 DS0824",
+            "store_id": "6050701",
+            "stock": 4,
+            "sales_out": 1,
+            "dos": 68.0
+          },
+          {
             "store_name": "GRANMALL SC GF-11",
             "store_id": "6150702",
             "stock": 3,
             "sales_out": 1,
-            "dos": 42.0
-          },
-          {
-            "store_name": "LIPPO MALL PURI 1FK02",
-            "store_id": "6010711",
-            "stock": 3,
-            "sales_out": 0,
-            "dos": null
-          },
-          {
-            "store_name": "MVS ITC DEPOK VIVO STORE 2",
-            "store_id": "6080712",
-            "stock": 3,
-            "sales_out": 0,
-            "dos": null
-          },
-          {
-            "store_name": "MVS MALL CCM",
-            "store_id": "6180706",
-            "stock": 3,
-            "sales_out": 1,
-            "dos": 42.0
+            "dos": 51.0
           },
           {
             "store_name": "QUEENCITY 2F027",
@@ -4290,11 +4261,18 @@
             "dos": null
           },
           {
+            "store_name": "VIVO STORE 1 BEC",
+            "store_id": "6190704",
+            "stock": 3,
+            "sales_out": 3,
+            "dos": 17.0
+          },
+          {
             "store_name": "vivostore emporium",
             "store_id": "6020711",
             "stock": 3,
             "sales_out": 1,
-            "dos": 42.0
+            "dos": 51.0
           },
           {
             "store_name": "CIPUTRA 2FC15",
@@ -4304,39 +4282,67 @@
             "dos": null
           },
           {
-            "store_name": "RITA SUPERMALL SF36-37",
-            "store_id": "6130702",
+            "store_name": "MVS CEMPAKA SHOWROOM 2 (454)",
+            "store_id": "6020706",
             "stock": 2,
-            "sales_out": 0,
-            "dos": null
+            "sales_out": 8,
+            "dos": 4.25
+          },
+          {
+            "store_name": "MVS ITC DEPOK VIVO STORE 2",
+            "store_id": "6080712",
+            "stock": 2,
+            "sales_out": 1,
+            "dos": 34.0
+          },
+          {
+            "store_name": "MVS MALL CCM",
+            "store_id": "6180706",
+            "stock": 2,
+            "sales_out": 2,
+            "dos": 17.0
+          },
+          {
+            "store_name": "MVS ROXY SHOWROOM 21",
+            "store_id": "6010701",
+            "stock": 2,
+            "sales_out": 7,
+            "dos": 4.86
           },
           {
             "store_name": "SC BTM",
             "store_id": "6180707",
             "stock": 2,
             "sales_out": 1,
-            "dos": 28.0
-          },
-          {
-            "store_name": "SUPERMALL 1FC3A",
-            "store_id": "6240706",
-            "stock": 2,
-            "sales_out": 0,
-            "dos": null
-          },
-          {
-            "store_name": "TRAN STUDIO MALL 2F059",
-            "store_id": "6040702",
-            "stock": 2,
-            "sales_out": 1,
-            "dos": 28.0
+            "dos": 34.0
           },
           {
             "store_name": "VS Jogja City Mall",
             "store_id": "6100702",
             "stock": 2,
             "sales_out": 3,
-            "dos": 9.33
+            "dos": 11.33
+          },
+          {
+            "store_name": "RITA SUPERMALL SF36-37",
+            "store_id": "6130702",
+            "stock": 1,
+            "sales_out": 1,
+            "dos": 17.0
+          },
+          {
+            "store_name": "SUPERMALL 1FC3A",
+            "store_id": "6240706",
+            "stock": 1,
+            "sales_out": 1,
+            "dos": 17.0
+          },
+          {
+            "store_name": "TRAN STUDIO MALL 2F059",
+            "store_id": "6040702",
+            "stock": 1,
+            "sales_out": 2,
+            "dos": 8.5
           },
           {
             "store_name": "4004 MVS-BNT-CCM STORE",
@@ -4349,17 +4355,10 @@
       },
       {
         "model": "V70 FE",
-        "stock": 83,
-        "sales_out": 62,
-        "dos": 18.74,
+        "stock": 82,
+        "sales_out": 79,
+        "dos": 17.65,
         "stores": [
-          {
-            "store_name": "VIVO STORE 1 BEC",
-            "store_id": "6190704",
-            "stock": 8,
-            "sales_out": 5,
-            "dos": 22.4
-          },
           {
             "store_name": "23 SEMARANG MALL 1F065-66",
             "store_id": "6140706",
@@ -4368,11 +4367,25 @@
             "dos": null
           },
           {
+            "store_name": "VIVO STORE 1 BEC",
+            "store_id": "6190704",
+            "stock": 7,
+            "sales_out": 6,
+            "dos": 19.83
+          },
+          {
             "store_name": "AEON MALL DELTAMAS 1F081",
             "store_id": "6050706",
-            "stock": 6,
-            "sales_out": 1,
-            "dos": 84.0
+            "stock": 5,
+            "sales_out": 2,
+            "dos": 42.5
+          },
+          {
+            "store_name": "LG BLOK D NO. 01D",
+            "store_id": "6170707",
+            "stock": 5,
+            "sales_out": 6,
+            "dos": 14.17
           },
           {
             "store_name": "LIPPO MALL PURI 1FK02",
@@ -4382,18 +4395,18 @@
             "dos": null
           },
           {
-            "store_name": "MVS SHOWROOM CENTRAL PARK",
-            "store_id": "6010708",
-            "stock": 5,
-            "sales_out": 2,
-            "dos": 35.0
-          },
-          {
             "store_name": "LG BLOK A-B NO. 12",
             "store_id": "6240701",
             "stock": 4,
-            "sales_out": 4,
-            "dos": 14.0
+            "sales_out": 5,
+            "dos": 13.6
+          },
+          {
+            "store_name": "ME ROXY PAMERAN TIMUR",
+            "store_id": "6010702",
+            "stock": 4,
+            "sales_out": 1,
+            "dos": 68.0
           },
           {
             "store_name": "MVS MBH-VIP VIVO STORE-DD284",
@@ -4403,53 +4416,53 @@
             "dos": null
           },
           {
+            "store_name": "MVS SHOWROOM CENTRAL PARK",
+            "store_id": "6010708",
+            "stock": 4,
+            "sales_out": 3,
+            "dos": 22.67
+          },
+          {
             "store_name": "MVS X6 DS0824",
             "store_id": "6050701",
             "stock": 4,
             "sales_out": 2,
-            "dos": 28.0
-          },
-          {
-            "store_name": "QUEENCITY 2F027",
-            "store_id": "6140705",
-            "stock": 4,
-            "sales_out": 2,
-            "dos": 28.0
-          },
-          {
-            "store_name": "VIVO STORE WINSHOP",
-            "store_id": "6010703",
-            "stock": 4,
-            "sales_out": 4,
-            "dos": 14.0
+            "dos": 34.0
           },
           {
             "store_name": "4004 MVS-BNT-CCM STORE",
             "store_id": "6170703",
             "stock": 3,
             "sales_out": 1,
-            "dos": 42.0
+            "dos": 51.0
           },
           {
-            "store_name": "CIPUTRA 2FC15",
-            "store_id": "6240705",
-            "stock": 3,
-            "sales_out": 2,
-            "dos": 21.0
-          },
-          {
-            "store_name": "MVS ITC DEPOK VIVO STORE 2",
-            "store_id": "6080712",
+            "store_name": "ITC BSD 1F09-14",
+            "store_id": "6240708",
             "stock": 3,
             "sales_out": 3,
-            "dos": 14.0
+            "dos": 17.0
+          },
+          {
+            "store_name": "QUEENCITY 2F027",
+            "store_id": "6140705",
+            "stock": 3,
+            "sales_out": 3,
+            "dos": 17.0
           },
           {
             "store_name": "VIVO STORE UG",
             "store_id": "6190701",
             "stock": 3,
             "sales_out": 4,
-            "dos": 10.5
+            "dos": 12.75
+          },
+          {
+            "store_name": "VIVO STORE WINSHOP",
+            "store_id": "6010703",
+            "stock": 3,
+            "sales_out": 5,
+            "dos": 10.2
           },
           {
             "store_name": "VS Jogja City Mall",
@@ -4459,46 +4472,46 @@
             "dos": null
           },
           {
-            "store_name": "vivostore emporium",
-            "store_id": "6020711",
-            "stock": 3,
-            "sales_out": 5,
-            "dos": 8.4
-          },
-          {
-            "store_name": "ITC BSD 1F09-14",
-            "store_id": "6240708",
+            "store_name": "CIPUTRA 2FC15",
+            "store_id": "6240705",
             "stock": 2,
             "sales_out": 3,
-            "dos": 9.33
+            "dos": 11.33
           },
           {
-            "store_name": "ME ROXY PAMERAN TIMUR",
-            "store_id": "6010702",
+            "store_name": "MVS ITC DEPOK VIVO STORE 2",
+            "store_id": "6080712",
             "stock": 2,
-            "sales_out": 1,
-            "dos": 28.0
+            "sales_out": 4,
+            "dos": 8.5
           },
           {
-            "store_name": "MVS MALL CCM",
-            "store_id": "6180706",
+            "store_name": "MVS ROXY SHOWROOM 21",
+            "store_id": "6010701",
             "stock": 2,
-            "sales_out": 3,
-            "dos": 9.33
+            "sales_out": 7,
+            "dos": 4.86
           },
           {
             "store_name": "RITA SUPERMALL SF36-37",
             "store_id": "6130702",
             "stock": 2,
             "sales_out": 2,
-            "dos": 14.0
+            "dos": 17.0
           },
           {
             "store_name": "SUPERMALL 1FC3A",
             "store_id": "6240706",
             "stock": 2,
-            "sales_out": 1,
-            "dos": 28.0
+            "sales_out": 2,
+            "dos": 17.0
+          },
+          {
+            "store_name": "vivostore emporium",
+            "store_id": "6020711",
+            "stock": 2,
+            "sales_out": 7,
+            "dos": 4.86
           },
           {
             "store_name": "GRANMALL SC GF-11",
@@ -4512,25 +4525,18 @@
             "store_id": "6020706",
             "stock": 1,
             "sales_out": 2,
-            "dos": 7.0
-          },
-          {
-            "store_name": "MVS ROXY SHOWROOM 21",
-            "store_id": "6010701",
-            "stock": 1,
-            "sales_out": 5,
-            "dos": 2.8
+            "dos": 8.5
           },
           {
             "store_name": "SAWANGAN 1F1-0320",
             "store_id": "6040703",
             "stock": 1,
             "sales_out": 2,
-            "dos": 7.0
+            "dos": 8.5
           },
           {
-            "store_name": "LG BLOK D NO. 01D",
-            "store_id": "6170707",
+            "store_name": "MVS MALL CCM",
+            "store_id": "6180706",
             "stock": 0,
             "sales_out": 5,
             "dos": 0.0
@@ -4539,7 +4545,7 @@
             "store_name": "SC BTM",
             "store_id": "6180707",
             "stock": 0,
-            "sales_out": 2,
+            "sales_out": 3,
             "dos": 0.0
           },
           {
@@ -4553,184 +4559,177 @@
       },
       {
         "model": "V60 Lite",
-        "stock": 64,
-        "sales_out": 45,
-        "dos": 19.91,
+        "stock": 61,
+        "sales_out": 56,
+        "dos": 18.52,
         "stores": [
-          {
-            "store_name": "MVS SHOWROOM CENTRAL PARK",
-            "store_id": "6010708",
-            "stock": 6,
-            "sales_out": 4,
-            "dos": 21.0
-          },
           {
             "store_name": "VIVO STORE 1 BEC",
             "store_id": "6190704",
             "stock": 6,
             "sales_out": 3,
-            "dos": 28.0
+            "dos": 34.0
+          },
+          {
+            "store_name": "LG BLOK D NO. 01D",
+            "store_id": "6170707",
+            "stock": 5,
+            "sales_out": 8,
+            "dos": 10.62
+          },
+          {
+            "store_name": "MVS SHOWROOM CENTRAL PARK",
+            "store_id": "6010708",
+            "stock": 5,
+            "sales_out": 5,
+            "dos": 17.0
           },
           {
             "store_name": "LG BLOK A-B NO. 12",
             "store_id": "6240701",
             "stock": 4,
-            "sales_out": 5,
-            "dos": 11.2
+            "sales_out": 6,
+            "dos": 11.33
           },
           {
             "store_name": "AEON MALL DELTAMAS 1F081",
             "store_id": "6050706",
             "stock": 3,
+            "sales_out": 0,
+            "dos": null
+          },
+          {
+            "store_name": "VIVO STORE UG",
+            "store_id": "6190701",
+            "stock": 3,
+            "sales_out": 3,
+            "dos": 17.0
+          },
+          {
+            "store_name": "VS Jogja City Mall",
+            "store_id": "6100702",
+            "stock": 3,
+            "sales_out": 2,
+            "dos": 25.5
+          },
+          {
+            "store_name": "23 SEMARANG MALL 1F065-66",
+            "store_id": "6140706",
+            "stock": 2,
+            "sales_out": 0,
+            "dos": null
+          },
+          {
+            "store_name": "4004 MVS-BNT-CCM STORE",
+            "store_id": "6170703",
+            "stock": 2,
+            "sales_out": 0,
+            "dos": null
+          },
+          {
+            "store_name": "CIPUTRA 2FC15",
+            "store_id": "6240705",
+            "stock": 2,
+            "sales_out": 0,
+            "dos": null
+          },
+          {
+            "store_name": "GRANMALL SC GF-11",
+            "store_id": "6150702",
+            "stock": 2,
+            "sales_out": 0,
+            "dos": null
+          },
+          {
+            "store_name": "ME ROXY PAMERAN TIMUR",
+            "store_id": "6010702",
+            "stock": 2,
+            "sales_out": 1,
+            "dos": 34.0
+          },
+          {
+            "store_name": "MVS ITC DEPOK VIVO STORE 2",
+            "store_id": "6080712",
+            "stock": 2,
+            "sales_out": 0,
+            "dos": null
+          },
+          {
+            "store_name": "MVS MALL CCM",
+            "store_id": "6180706",
+            "stock": 2,
+            "sales_out": 6,
+            "dos": 5.67
+          },
+          {
+            "store_name": "MVS MBH-VIP VIVO STORE-DD284",
+            "store_id": "6220701",
+            "stock": 2,
+            "sales_out": 0,
+            "dos": null
+          },
+          {
+            "store_name": "MVS ROXY SHOWROOM 21",
+            "store_id": "6010701",
+            "stock": 2,
+            "sales_out": 1,
+            "dos": 34.0
+          },
+          {
+            "store_name": "MVS X6 DS0824",
+            "store_id": "6050701",
+            "stock": 2,
+            "sales_out": 1,
+            "dos": 34.0
+          },
+          {
+            "store_name": "QUEENCITY 2F027",
+            "store_id": "6140705",
+            "stock": 2,
+            "sales_out": 1,
+            "dos": 34.0
+          },
+          {
+            "store_name": "SAWANGAN 1F1-0320",
+            "store_id": "6040703",
+            "stock": 2,
+            "sales_out": 0,
+            "dos": null
+          },
+          {
+            "store_name": "VIVO STORE WINSHOP",
+            "store_id": "6010703",
+            "stock": 2,
+            "sales_out": 6,
+            "dos": 5.67
+          },
+          {
+            "store_name": "vivostore emporium",
+            "store_id": "6020711",
+            "stock": 2,
+            "sales_out": 3,
+            "dos": 11.33
+          },
+          {
+            "store_name": "ITC BSD 1F09-14",
+            "store_id": "6240708",
+            "stock": 1,
+            "sales_out": 1,
+            "dos": 17.0
+          },
+          {
+            "store_name": "LIPPO MALL PURI 1FK02",
+            "store_id": "6010711",
+            "stock": 1,
             "sales_out": 0,
             "dos": null
           },
           {
             "store_name": "MVS CEMPAKA SHOWROOM 2 (454)",
             "store_id": "6020706",
-            "stock": 3,
-            "sales_out": 3,
-            "dos": 14.0
-          },
-          {
-            "store_name": "VIVO STORE UG",
-            "store_id": "6190701",
-            "stock": 3,
-            "sales_out": 3,
-            "dos": 14.0
-          },
-          {
-            "store_name": "VIVO STORE WINSHOP",
-            "store_id": "6010703",
-            "stock": 3,
-            "sales_out": 5,
-            "dos": 8.4
-          },
-          {
-            "store_name": "VS Jogja City Mall",
-            "store_id": "6100702",
-            "stock": 3,
-            "sales_out": 2,
-            "dos": 21.0
-          },
-          {
-            "store_name": "23 SEMARANG MALL 1F065-66",
-            "store_id": "6140706",
-            "stock": 2,
-            "sales_out": 0,
-            "dos": null
-          },
-          {
-            "store_name": "4004 MVS-BNT-CCM STORE",
-            "store_id": "6170703",
-            "stock": 2,
-            "sales_out": 0,
-            "dos": null
-          },
-          {
-            "store_name": "CIPUTRA 2FC15",
-            "store_id": "6240705",
-            "stock": 2,
-            "sales_out": 0,
-            "dos": null
-          },
-          {
-            "store_name": "GRANMALL SC GF-11",
-            "store_id": "6150702",
-            "stock": 2,
-            "sales_out": 0,
-            "dos": null
-          },
-          {
-            "store_name": "ITC BSD 1F09-14",
-            "store_id": "6240708",
-            "stock": 2,
-            "sales_out": 0,
-            "dos": null
-          },
-          {
-            "store_name": "ME ROXY PAMERAN TIMUR",
-            "store_id": "6010702",
-            "stock": 2,
-            "sales_out": 1,
-            "dos": 28.0
-          },
-          {
-            "store_name": "MVS ITC DEPOK VIVO STORE 2",
-            "store_id": "6080712",
-            "stock": 2,
-            "sales_out": 0,
-            "dos": null
-          },
-          {
-            "store_name": "MVS MALL CCM",
-            "store_id": "6180706",
-            "stock": 2,
-            "sales_out": 5,
-            "dos": 5.6
-          },
-          {
-            "store_name": "MVS MBH-VIP VIVO STORE-DD284",
-            "store_id": "6220701",
-            "stock": 2,
-            "sales_out": 0,
-            "dos": null
-          },
-          {
-            "store_name": "MVS ROXY SHOWROOM 21",
-            "store_id": "6010701",
-            "stock": 2,
-            "sales_out": 1,
-            "dos": 28.0
-          },
-          {
-            "store_name": "MVS X6 DS0824",
-            "store_id": "6050701",
-            "stock": 2,
-            "sales_out": 1,
-            "dos": 28.0
-          },
-          {
-            "store_name": "QUEENCITY 2F027",
-            "store_id": "6140705",
-            "stock": 2,
-            "sales_out": 1,
-            "dos": 28.0
-          },
-          {
-            "store_name": "RITA SUPERMALL SF36-37",
-            "store_id": "6130702",
-            "stock": 2,
-            "sales_out": 1,
-            "dos": 28.0
-          },
-          {
-            "store_name": "SAWANGAN 1F1-0320",
-            "store_id": "6040703",
-            "stock": 2,
-            "sales_out": 0,
-            "dos": null
-          },
-          {
-            "store_name": "vivostore emporium",
-            "store_id": "6020711",
-            "stock": 2,
-            "sales_out": 2,
-            "dos": 14.0
-          },
-          {
-            "store_name": "LG BLOK D NO. 01D",
-            "store_id": "6170707",
             "stock": 1,
-            "sales_out": 7,
-            "dos": 2.0
-          },
-          {
-            "store_name": "LIPPO MALL PURI 1FK02",
-            "store_id": "6010711",
-            "stock": 1,
-            "sales_out": 0,
-            "dos": null
+            "sales_out": 5,
+            "dos": 3.4
           },
           {
             "store_name": "SC BTM",
@@ -4740,216 +4739,26 @@
             "dos": null
           },
           {
-            "store_name": "SUPERMALL 1FC3A",
-            "store_id": "6240706",
-            "stock": 0,
-            "sales_out": 1,
-            "dos": 0.0
-          }
-        ]
-      },
-      {
-        "model": "V70",
-        "stock": 54,
-        "sales_out": 35,
-        "dos": 21.6,
-        "stores": [
-          {
-            "store_name": "VIVO STORE UG",
-            "store_id": "6190701",
-            "stock": 5,
-            "sales_out": 2,
-            "dos": 35.0
-          },
-          {
-            "store_name": "23 SEMARANG MALL 1F065-66",
-            "store_id": "6140706",
-            "stock": 4,
-            "sales_out": 1,
-            "dos": 56.0
-          },
-          {
-            "store_name": "ITC BSD 1F09-14",
-            "store_id": "6240708",
-            "stock": 4,
-            "sales_out": 0,
-            "dos": null
-          },
-          {
-            "store_name": "MVS MBH-VIP VIVO STORE-DD284",
-            "store_id": "6220701",
-            "stock": 4,
-            "sales_out": 0,
-            "dos": null
-          },
-          {
-            "store_name": "AEON MALL DELTAMAS 1F081",
-            "store_id": "6050706",
-            "stock": 3,
-            "sales_out": 0,
-            "dos": null
-          },
-          {
-            "store_name": "LIPPO MALL PURI 1FK02",
-            "store_id": "6010711",
-            "stock": 3,
-            "sales_out": 0,
-            "dos": null
-          },
-          {
-            "store_name": "QUEENCITY 2F027",
-            "store_id": "6140705",
-            "stock": 3,
-            "sales_out": 2,
-            "dos": 21.0
-          },
-          {
             "store_name": "RITA SUPERMALL SF36-37",
             "store_id": "6130702",
-            "stock": 3,
-            "sales_out": 1,
-            "dos": 42.0
-          },
-          {
-            "store_name": "SAWANGAN 1F1-0320",
-            "store_id": "6040703",
-            "stock": 3,
-            "sales_out": 0,
-            "dos": null
+            "stock": 0,
+            "sales_out": 3,
+            "dos": 0.0
           },
           {
             "store_name": "SUPERMALL 1FC3A",
             "store_id": "6240706",
-            "stock": 3,
-            "sales_out": 1,
-            "dos": 42.0
-          },
-          {
-            "store_name": "TRAN STUDIO MALL 2F059",
-            "store_id": "6040702",
-            "stock": 3,
-            "sales_out": 1,
-            "dos": 42.0
-          },
-          {
-            "store_name": "VIVO STORE 1 BEC",
-            "store_id": "6190704",
-            "stock": 3,
-            "sales_out": 3,
-            "dos": 14.0
-          },
-          {
-            "store_name": "VS Jogja City Mall",
-            "store_id": "6100702",
-            "stock": 3,
-            "sales_out": 1,
-            "dos": 42.0
-          },
-          {
-            "store_name": "GRANMALL SC GF-11",
-            "store_id": "6150702",
-            "stock": 2,
-            "sales_out": 0,
-            "dos": null
-          },
-          {
-            "store_name": "MVS SHOWROOM CENTRAL PARK",
-            "store_id": "6010708",
-            "stock": 2,
-            "sales_out": 1,
-            "dos": 28.0
-          },
-          {
-            "store_name": "MVS X6 DS0824",
-            "store_id": "6050701",
-            "stock": 2,
-            "sales_out": 2,
-            "dos": 14.0
-          },
-          {
-            "store_name": "ME ROXY PAMERAN TIMUR",
-            "store_id": "6010702",
-            "stock": 1,
-            "sales_out": 2,
-            "dos": 7.0
-          },
-          {
-            "store_name": "MVS ITC DEPOK VIVO STORE 2",
-            "store_id": "6080712",
-            "stock": 1,
-            "sales_out": 2,
-            "dos": 7.0
-          },
-          {
-            "store_name": "SC BTM",
-            "store_id": "6180707",
-            "stock": 1,
-            "sales_out": 0,
-            "dos": null
-          },
-          {
-            "store_name": "vivostore emporium",
-            "store_id": "6020711",
-            "stock": 1,
-            "sales_out": 3,
-            "dos": 4.67
-          },
-          {
-            "store_name": "4004 MVS-BNT-CCM STORE",
-            "store_id": "6170703",
             "stock": 0,
             "sales_out": 1,
-            "dos": 0.0
-          },
-          {
-            "store_name": "CIPUTRA 2FC15",
-            "store_id": "6240705",
-            "stock": 0,
-            "sales_out": 2,
-            "dos": 0.0
-          },
-          {
-            "store_name": "LG BLOK A-B NO. 12",
-            "store_id": "6240701",
-            "stock": 0,
-            "sales_out": 2,
-            "dos": 0.0
-          },
-          {
-            "store_name": "LG BLOK D NO. 01D",
-            "store_id": "6170707",
-            "stock": 0,
-            "sales_out": 2,
-            "dos": 0.0
-          },
-          {
-            "store_name": "MVS MALL CCM",
-            "store_id": "6180706",
-            "stock": 0,
-            "sales_out": 2,
-            "dos": 0.0
-          },
-          {
-            "store_name": "MVS ROXY SHOWROOM 21",
-            "store_id": "6010701",
-            "stock": 0,
-            "sales_out": 2,
-            "dos": 0.0
-          },
-          {
-            "store_name": "VIVO STORE WINSHOP",
-            "store_id": "6010703",
-            "stock": 0,
-            "sales_out": 2,
             "dos": 0.0
           }
         ]
       },
       {
         "model": "X300 Ultra",
-        "stock": 47,
-        "sales_out": 14,
-        "dos": 47.0,
+        "stock": 48,
+        "sales_out": 15,
+        "dos": 54.4,
         "stores": [
           {
             "store_name": "MVS SHOWROOM CENTRAL PARK",
@@ -4963,14 +4772,14 @@
             "store_id": "6010711",
             "stock": 4,
             "sales_out": 3,
-            "dos": 18.67
+            "dos": 22.67
           },
           {
             "store_name": "QUEENCITY 2F027",
             "store_id": "6140705",
             "stock": 4,
             "sales_out": 1,
-            "dos": 56.0
+            "dos": 68.0
           },
           {
             "store_name": "VS Jogja City Mall",
@@ -4983,15 +4792,15 @@
             "store_name": "vivostore emporium",
             "store_id": "6020711",
             "stock": 4,
-            "sales_out": 4,
-            "dos": 14.0
+            "sales_out": 5,
+            "dos": 13.6
           },
           {
             "store_name": "23 SEMARANG MALL 1F065-66",
             "store_id": "6140706",
             "stock": 3,
             "sales_out": 1,
-            "dos": 42.0
+            "dos": 51.0
           },
           {
             "store_name": "MVS MALL CCM",
@@ -5005,14 +4814,14 @@
             "store_id": "6240701",
             "stock": 2,
             "sales_out": 1,
-            "dos": 28.0
+            "dos": 34.0
           },
           {
             "store_name": "MVS ROXY SHOWROOM 21",
             "store_id": "6010701",
             "stock": 2,
             "sales_out": 1,
-            "dos": 28.0
+            "dos": 34.0
           },
           {
             "store_name": "SUPERMALL 1FC3A",
@@ -5050,6 +4859,13 @@
             "dos": null
           },
           {
+            "store_name": "ITC BSD 1F09-14",
+            "store_id": "6240708",
+            "stock": 1,
+            "sales_out": 0,
+            "dos": null
+          },
+          {
             "store_name": "LG BLOK D NO. 01D",
             "store_id": "6170707",
             "stock": 1,
@@ -5082,7 +4898,7 @@
             "store_id": "6040703",
             "stock": 1,
             "sales_out": 1,
-            "dos": 14.0
+            "dos": 17.0
           },
           {
             "store_name": "VIVO STORE 1 BEC",
@@ -5096,23 +4912,213 @@
             "store_id": "6190701",
             "stock": 1,
             "sales_out": 2,
-            "dos": 7.0
+            "dos": 8.5
+          }
+        ]
+      },
+      {
+        "model": "V70",
+        "stock": 44,
+        "sales_out": 45,
+        "dos": 16.62,
+        "stores": [
+          {
+            "store_name": "VIVO STORE UG",
+            "store_id": "6190701",
+            "stock": 5,
+            "sales_out": 2,
+            "dos": 42.5
+          },
+          {
+            "store_name": "23 SEMARANG MALL 1F065-66",
+            "store_id": "6140706",
+            "stock": 4,
+            "sales_out": 1,
+            "dos": 68.0
+          },
+          {
+            "store_name": "ITC BSD 1F09-14",
+            "store_id": "6240708",
+            "stock": 4,
+            "sales_out": 0,
+            "dos": null
+          },
+          {
+            "store_name": "AEON MALL DELTAMAS 1F081",
+            "store_id": "6050706",
+            "stock": 3,
+            "sales_out": 0,
+            "dos": null
+          },
+          {
+            "store_name": "QUEENCITY 2F027",
+            "store_id": "6140705",
+            "stock": 3,
+            "sales_out": 2,
+            "dos": 25.5
+          },
+          {
+            "store_name": "SUPERMALL 1FC3A",
+            "store_id": "6240706",
+            "stock": 3,
+            "sales_out": 1,
+            "dos": 51.0
+          },
+          {
+            "store_name": "TRAN STUDIO MALL 2F059",
+            "store_id": "6040702",
+            "stock": 3,
+            "sales_out": 1,
+            "dos": 51.0
+          },
+          {
+            "store_name": "VS Jogja City Mall",
+            "store_id": "6100702",
+            "stock": 3,
+            "sales_out": 1,
+            "dos": 51.0
+          },
+          {
+            "store_name": "GRANMALL SC GF-11",
+            "store_id": "6150702",
+            "stock": 2,
+            "sales_out": 0,
+            "dos": null
+          },
+          {
+            "store_name": "LIPPO MALL PURI 1FK02",
+            "store_id": "6010711",
+            "stock": 2,
+            "sales_out": 1,
+            "dos": 34.0
+          },
+          {
+            "store_name": "MVS MBH-VIP VIVO STORE-DD284",
+            "store_id": "6220701",
+            "stock": 2,
+            "sales_out": 2,
+            "dos": 17.0
+          },
+          {
+            "store_name": "MVS X6 DS0824",
+            "store_id": "6050701",
+            "stock": 2,
+            "sales_out": 2,
+            "dos": 17.0
+          },
+          {
+            "store_name": "RITA SUPERMALL SF36-37",
+            "store_id": "6130702",
+            "stock": 2,
+            "sales_out": 2,
+            "dos": 17.0
+          },
+          {
+            "store_name": "ME ROXY PAMERAN TIMUR",
+            "store_id": "6010702",
+            "stock": 1,
+            "sales_out": 2,
+            "dos": 8.5
+          },
+          {
+            "store_name": "MVS ITC DEPOK VIVO STORE 2",
+            "store_id": "6080712",
+            "stock": 1,
+            "sales_out": 2,
+            "dos": 8.5
+          },
+          {
+            "store_name": "MVS SHOWROOM CENTRAL PARK",
+            "store_id": "6010708",
+            "stock": 1,
+            "sales_out": 2,
+            "dos": 8.5
+          },
+          {
+            "store_name": "SAWANGAN 1F1-0320",
+            "store_id": "6040703",
+            "stock": 1,
+            "sales_out": 2,
+            "dos": 8.5
+          },
+          {
+            "store_name": "SC BTM",
+            "store_id": "6180707",
+            "stock": 1,
+            "sales_out": 0,
+            "dos": null
+          },
+          {
+            "store_name": "VIVO STORE 1 BEC",
+            "store_id": "6190704",
+            "stock": 1,
+            "sales_out": 5,
+            "dos": 3.4
+          },
+          {
+            "store_name": "4004 MVS-BNT-CCM STORE",
+            "store_id": "6170703",
+            "stock": 0,
+            "sales_out": 1,
+            "dos": 0.0
+          },
+          {
+            "store_name": "CIPUTRA 2FC15",
+            "store_id": "6240705",
+            "stock": 0,
+            "sales_out": 2,
+            "dos": 0.0
+          },
+          {
+            "store_name": "LG BLOK A-B NO. 12",
+            "store_id": "6240701",
+            "stock": 0,
+            "sales_out": 2,
+            "dos": 0.0
+          },
+          {
+            "store_name": "LG BLOK D NO. 01D",
+            "store_id": "6170707",
+            "stock": 0,
+            "sales_out": 2,
+            "dos": 0.0
+          },
+          {
+            "store_name": "MVS MALL CCM",
+            "store_id": "6180706",
+            "stock": 0,
+            "sales_out": 2,
+            "dos": 0.0
+          },
+          {
+            "store_name": "MVS ROXY SHOWROOM 21",
+            "store_id": "6010701",
+            "stock": 0,
+            "sales_out": 2,
+            "dos": 0.0
+          },
+          {
+            "store_name": "VIVO STORE WINSHOP",
+            "store_id": "6010703",
+            "stock": 0,
+            "sales_out": 2,
+            "dos": 0.0
+          },
+          {
+            "store_name": "vivostore emporium",
+            "store_id": "6020711",
+            "stock": 0,
+            "sales_out": 4,
+            "dos": 0.0
           }
         ]
       },
       {
         "model": "V60 Lite 5G",
-        "stock": 9,
-        "sales_out": 5,
-        "dos": 25.2,
+        "stock": 5,
+        "sales_out": 9,
+        "dos": 9.44,
         "stores": [
-          {
-            "store_name": "SUPERMALL 1FC3A",
-            "store_id": "6240706",
-            "stock": 3,
-            "sales_out": 0,
-            "dos": null
-          },
           {
             "store_name": "SAWANGAN 1F1-0320",
             "store_id": "6040703",
@@ -5132,21 +5138,14 @@
             "store_id": "6080712",
             "stock": 1,
             "sales_out": 2,
-            "dos": 7.0
+            "dos": 8.5
           },
           {
-            "store_name": "MVS SHOWROOM CENTRAL PARK",
-            "store_id": "6010708",
+            "store_name": "SUPERMALL 1FC3A",
+            "store_id": "6240706",
             "stock": 1,
-            "sales_out": 0,
-            "dos": null
-          },
-          {
-            "store_name": "QUEENCITY 2F027",
-            "store_id": "6140705",
-            "stock": 1,
-            "sales_out": 0,
-            "dos": null
+            "sales_out": 2,
+            "dos": 8.5
           },
           {
             "store_name": "LIPPO MALL PURI 1FK02",
@@ -5165,6 +5164,20 @@
           {
             "store_name": "MVS MBH-VIP VIVO STORE-DD284",
             "store_id": "6220701",
+            "stock": 0,
+            "sales_out": 1,
+            "dos": 0.0
+          },
+          {
+            "store_name": "MVS SHOWROOM CENTRAL PARK",
+            "store_id": "6010708",
+            "stock": 0,
+            "sales_out": 1,
+            "dos": 0.0
+          },
+          {
+            "store_name": "QUEENCITY 2F027",
+            "store_id": "6140705",
             "stock": 0,
             "sales_out": 1,
             "dos": 0.0

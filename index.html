@@ -44,81 +44,106 @@
   .num, .mono{ font-family:'JetBrains Mono', ui-monospace, monospace; font-variant-numeric: tabular-nums; }
   h1,h2,h3{ font-family:'Space Grotesk', 'Inter', sans-serif; margin:0; letter-spacing:-0.01em;}
 
-  /* ===== HEADER ===== */
+  /* ===== APP SHELL (sidebar layout) ===== */
+  .app-shell{ display:flex; min-height:100vh; align-items:stretch; }
+
+  .sidebar{
+    width:236px; flex:none; background:var(--navy); color:#fff;
+    display:flex; flex-direction:column; position:sticky; top:0; height:100vh; overflow-y:auto;
+  }
+  .sidebar-brand{
+    display:flex; align-items:center; gap:11px; padding:22px 20px 20px;
+    border-bottom:1px solid rgba(255,255,255,0.08);
+  }
+  .sidebar-logo{
+    width:34px; height:34px; border-radius:9px; background:#5B8CFF; color:#fff;
+    display:flex; align-items:center; justify-content:center; font-weight:700;
+    font-family:'Space Grotesk',sans-serif; font-size:15px; flex:none;
+  }
+  .sidebar-brand-text{ min-width:0; line-height:1.35; }
+  .sidebar-brand-title{ font-size:13.5px; font-weight:700; color:#fff; font-family:'Space Grotesk',sans-serif; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+  .sidebar-brand-sub{ font-size:10px; color:#8EA3D8; letter-spacing:0.04em; text-transform:uppercase; margin-top:1px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+
+  .sidebar-nav-label{
+    padding:18px 20px 6px; font-size:10.5px; font-weight:700; color:#5E6D96;
+    text-transform:uppercase; letter-spacing:0.07em;
+  }
+  .sidebar-nav{ display:flex; flex-direction:column; gap:2px; padding:0 12px; }
+  .sidebar-nav .section-tab{
+    display:flex; align-items:center; gap:11px; width:100%; text-align:left;
+    padding:10px 12px; border-radius:8px; border:none; background:transparent;
+    color:#9AA6C4; font-size:13.5px; font-weight:600; cursor:pointer;
+    font-family:'Inter',sans-serif; transition:all .12s ease;
+  }
+  .sidebar-nav .section-tab:hover{ background:rgba(255,255,255,0.07); color:#fff; }
+  .sidebar-nav .section-tab.active{ background:#5B8CFF; color:#fff; }
+  .sidebar-nav .nav-icon{ font-size:15px; flex:none; width:18px; text-align:center; }
+
+  .sidebar-footer{
+    margin-top:auto; padding:16px 20px 20px; border-top:1px solid rgba(255,255,255,0.08);
+    font-size:11px; color:#5E6D96; line-height:1.5;
+  }
+
+  .main-area{ flex:1; min-width:0; display:flex; flex-direction:column; }
+
+  /* ===== TOPBAR (light, content header) ===== */
   .topbar{
-    background:var(--navy);
-    color:#fff;
-    padding:22px 32px 18px;
+    background:var(--surface); border-bottom:1px solid var(--line);
+    padding:20px 32px; display:flex; align-items:center; justify-content:space-between;
+    gap:20px; flex-wrap:wrap;
   }
-  .topbar-inner{
-    max-width:1400px;
-    margin:0 auto;
-    display:flex;
-    align-items:flex-end;
-    justify-content:space-between;
-    gap:24px;
-    flex-wrap:wrap;
-  }
-  .brand-eyebrow{
-    font-size:11px;
-    letter-spacing:0.14em;
-    text-transform:uppercase;
-    color:#8EA3D8;
-    font-weight:600;
-    margin-bottom:6px;
-  }
-  .brand-title{ font-size:26px; font-weight:700; color:#fff; }
-  .brand-sub{ font-size:13px; color:#A9B4CC; margin-top:4px; }
+  .topbar-left{ min-width:0; }
+  .topbar-left .brand-title{ font-size:20px; font-weight:700; color:var(--ink); font-family:'Space Grotesk',sans-serif; }
+  .topbar-meta{ display:flex; gap:14px; flex-wrap:wrap; margin-top:5px; }
+  .topbar-meta span{ font-size:12.5px; color:var(--ink-faint); }
+  .topbar-right{ display:flex; align-items:center; gap:14px; flex-wrap:wrap; }
 
   .pace{
-    display:flex;
-    align-items:center;
-    gap:14px;
-    background:rgba(255,255,255,0.06);
-    border:1px solid rgba(255,255,255,0.12);
-    border-radius:12px;
-    padding:10px 18px 10px 14px;
+    display:flex; align-items:center; gap:12px;
+    background:var(--bg); border:1px solid var(--line); border-radius:12px;
+    padding:7px 16px 7px 10px;
   }
-  .pace-ring{ position:relative; width:52px; height:52px; flex:none; }
-  .pace-ring svg{ transform:rotate(-90deg); }
-  .pace-ring-track{ fill:none; stroke:rgba(255,255,255,0.15); stroke-width:5; }
-  .pace-ring-fill{ fill:none; stroke:#5B8CFF; stroke-width:5; stroke-linecap:round; transition:stroke-dashoffset 0.6s ease; }
+  .pace-ring{ position:relative; width:44px; height:44px; flex:none; }
+  .pace-ring svg{ transform:rotate(-90deg); width:44px; height:44px; }
+  .pace-ring-track{ fill:none; stroke:var(--line-strong); stroke-width:5; }
+  .pace-ring-fill{ fill:none; stroke:var(--accent); stroke-width:5; stroke-linecap:round; transition:stroke-dashoffset 0.6s ease; }
   .pace-ring-label{
     position:absolute; inset:0; display:flex; align-items:center; justify-content:center;
-    font-family:'JetBrains Mono',monospace; font-size:11px; font-weight:600; color:#fff;
+    font-family:'JetBrains Mono',monospace; font-size:10px; font-weight:700; color:var(--ink);
   }
-  .pace-text{ font-size:12px; color:#C4CDE3; line-height:1.4; }
-  .pace-text b{ color:#fff; }
+  .pace-text{ font-size:11.5px; color:var(--ink-faint); line-height:1.35; }
+  .pace-text b{ color:var(--ink); }
 
-  /* section-level nav (Performance / Stock) */
-  .section-tabs{
-    max-width:1400px; margin:18px auto 0; display:flex; gap:8px; align-items:center; justify-content:space-between;
-  }
-  .section-tabs-left{ display:flex; gap:8px; }
   .export-group{ display:flex; gap:8px; }
   .export-btn{
-    padding:8px 14px; border-radius:9px; border:1px solid rgba(255,255,255,0.14);
-    background:rgba(255,255,255,0.03); color:#B9C2DA; font-size:12.5px; font-weight:600;
+    padding:8px 14px; border-radius:9px; border:1px solid var(--line-strong);
+    background:var(--surface); color:var(--ink-soft); font-size:12.5px; font-weight:600;
     cursor:pointer; transition:all .12s ease; font-family:'Inter',sans-serif;
     display:inline-flex; align-items:center; gap:6px;
   }
-  .export-btn:hover{ border-color:rgba(255,255,255,0.4); color:#fff; background:rgba(255,255,255,0.08); }
-  .section-tab{
-    padding:9px 20px; border-radius:10px; border:1px solid rgba(255,255,255,0.14);
-    background:rgba(255,255,255,0.03); color:#9AA6C4; font-size:13.5px; font-weight:700;
-    cursor:pointer; transition:all .12s ease; font-family:'Space Grotesk',sans-serif;
+  .export-btn:hover{ border-color:var(--accent); color:var(--accent-ink); background:var(--accent-soft); }
+
+  .user-badge{
+    display:flex; align-items:center; gap:9px; padding:5px 14px 5px 5px;
+    border:1px solid var(--line); border-radius:100px; background:var(--surface);
   }
-  .section-tab:hover{ border-color:rgba(255,255,255,0.35); color:#fff; }
-  .section-tab.active{ background:#5B8CFF; border-color:#5B8CFF; color:#fff; }
+  .user-badge-avatar{
+    width:30px; height:30px; border-radius:50%; background:var(--accent); color:#fff;
+    display:flex; align-items:center; justify-content:center; font-weight:700; font-size:13px;
+    font-family:'Space Grotesk',sans-serif; flex:none;
+  }
+  .user-badge-info{ line-height:1.3; }
+  .user-badge-email{ font-size:12px; font-weight:600; color:var(--ink); max-width:170px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+  .user-badge-scope{ font-size:10.5px; color:var(--ink-faint); }
 
   @media print{
-    .section-tabs, .month-row, .toolbar, .export-btn, .pace, footer{ display:none !important; }
+    .sidebar, .month-row, .toolbar, .export-btn, .pace, .user-badge, footer{ display:none !important; }
     body{ background:#fff; }
     .page{ display:none !important; }
     .page.active{ display:block !important; }
-    .topbar{ background:#fff !important; color:#12182B !important; padding:0 0 14px; }
-    .brand-title, .brand-eyebrow, .brand-sub{ color:#12182B !important; }
-    .brand-eyebrow{ color:#5C6478 !important; }
+    .app-shell{ display:block !important; }
+    .topbar{ border:none; padding:0 0 14px; }
+    .brand-title, .topbar-meta span{ color:#12182B !important; }
     .kpi-card, .table-card, .chart-card{ box-shadow:none !important; border:1px solid #ccc !important; break-inside:avoid; }
     .wrap{ padding:16px 0; }
     table{ font-size:11px; }
@@ -126,18 +151,19 @@
   }
 
   .month-row{
-    max-width:1400px; margin:14px auto 0; display:flex; gap:8px; flex-wrap:wrap;
+    background:var(--surface); border-bottom:1px solid var(--line);
+    padding:12px 32px; display:flex; gap:8px; flex-wrap:wrap; overflow-x:auto;
   }
   .month-pill{
-    padding:7px 16px; border-radius:100px; border:1px solid rgba(255,255,255,0.16);
-    background:rgba(255,255,255,0.04); color:#B9C2DA; font-size:12.5px; font-weight:600;
-    cursor:pointer; transition:all .12s ease;
+    padding:7px 16px; border-radius:100px; border:1px solid var(--line-strong);
+    background:var(--bg); color:var(--ink-soft); font-size:12.5px; font-weight:600;
+    cursor:pointer; transition:all .12s ease; flex:none; white-space:nowrap;
   }
-  .month-pill:hover{ border-color:rgba(255,255,255,0.35); color:#fff; }
-  .month-pill.active{ background:#5B8CFF; border-color:#5B8CFF; color:#fff; }
+  .month-pill:hover{ border-color:var(--accent); color:var(--accent-ink); }
+  .month-pill.active{ background:var(--accent); border-color:var(--accent); color:#fff; }
 
   /* ===== LAYOUT ===== */
-  .wrap{ max-width:1400px; margin:0 auto; padding:28px 32px 64px; }
+  .wrap{ max-width:1400px; margin:0 auto; padding:28px 32px 64px; width:100%; }
   .page{ display:none; }
   .page.active{ display:block; }
 
@@ -308,18 +334,27 @@
 
   /* ===================== MOBILE (≤760px) ===================== */
   @media (max-width: 760px){
-    .topbar{ padding:16px 16px 20px; }
-    .brand-title{ font-size:20px; }
-    .wrap{ padding:18px 14px 56px; }
-    .topbar-inner{ flex-direction:column; align-items:flex-start; gap:14px; }
-    .pace{ align-self:stretch; }
+    .app-shell{ flex-direction:column; }
 
-    /* section tabs + export: wrap & full-width-ish */
-    .section-tabs{ flex-direction:column; align-items:stretch; gap:10px; margin-top:14px; }
-    .section-tabs-left{ overflow-x:auto; -webkit-overflow-scrolling:touch; padding-bottom:2px; }
-    .section-tab{ flex:1; white-space:nowrap; padding:9px 14px; font-size:13px; }
-    .export-group{ justify-content:stretch; }
+    /* sidebar collapses into a horizontal top strip */
+    .sidebar{ width:100%; height:auto; position:relative; flex-direction:row; align-items:stretch; overflow-x:auto; -webkit-overflow-scrolling:touch; }
+    .sidebar-brand{ flex:none; border-bottom:none; border-right:1px solid rgba(255,255,255,0.08); padding:12px 14px; }
+    .sidebar-brand-sub{ display:none; }
+    .sidebar-nav-label{ display:none; }
+    .sidebar-nav{ flex-direction:row; padding:8px 10px; gap:4px; align-items:center; }
+    .sidebar-nav .section-tab{ white-space:nowrap; flex:none; padding:8px 12px; font-size:12.5px; }
+    .sidebar-footer{ display:none; }
+
+    .topbar{ padding:14px 16px; flex-direction:column; align-items:flex-start; gap:12px; }
+    .topbar-left .brand-title{ font-size:18px; }
+    .topbar-right{ width:100%; justify-content:space-between; }
+    .export-group{ order:3; width:100%; }
     .export-btn{ flex:1; justify-content:center; }
+    .pace{ order:1; }
+    .user-badge{ order:2; }
+    .user-badge-email{ max-width:110px; }
+
+    .wrap{ padding:18px 14px 56px; }
 
     .kpi-grid{ grid-template-columns:1fr 1fr; gap:10px; }
     .kpi-card{ padding:14px; }
@@ -367,7 +402,7 @@
     .mini-table th, .mini-table td{ padding:5px 6px; }
 
     /* month pills scroll horizontally */
-    .month-row{ flex-wrap:nowrap; overflow-x:auto; -webkit-overflow-scrolling:touch; padding-bottom:4px; }
+    .month-row{ padding:10px 14px; flex-wrap:nowrap; overflow-x:auto; -webkit-overflow-scrolling:touch; }
     .month-pill{ flex:none; }
     .chip-row{ flex-wrap:wrap; }
   }
@@ -375,41 +410,65 @@
 </head>
 <body>
 
-<div class="topbar">
-  <div class="topbar-inner">
-    <div>
-      <div class="brand-eyebrow">PT Zhi Sheng Indonesia · Store Operations</div>
-      <div class="brand-title" id="brand-title">Store Performance Dashboard</div>
-      <div class="brand-sub" id="period-sub">Memuat data periode…</div>
-      <div class="brand-sub" id="updated-sub" style="margin-top:2px;"></div>
-      <div class="brand-sub" id="access-sub" style="margin-top:2px;color:#8EA3D8;"></div>
-    </div>
-    <div class="pace">
-      <div class="pace-ring">
-        <svg width="52" height="52" viewBox="0 0 52 52">
-          <circle class="pace-ring-track" cx="26" cy="26" r="21"></circle>
-          <circle class="pace-ring-fill" id="pace-ring-fill" cx="26" cy="26" r="21" stroke-dasharray="132" stroke-dashoffset="132"></circle>
-        </svg>
-        <div class="pace-ring-label" id="pace-ring-label">–</div>
-      </div>
-      <div class="pace-text">Time gone bulan ini<br><b id="pace-detail">–</b></div>
-    </div>
-  </div>
-  <div class="section-tabs" id="section-tabs">
-    <div class="section-tabs-left">
-      <button class="section-tab active" data-section="performance">📈 Performance</button>
-      <button class="section-tab" data-section="stock">📦 Stock</button>
-      <button class="section-tab" data-section="salestype">🏷️ Sales per Tipe</button>
-    </div>
-    <div class="export-group">
-      <button class="export-btn" id="export-excel-btn">⬇ Export Excel</button>
-      <button class="export-btn" id="export-pdf-btn">🖨 Export PDF</button>
-    </div>
-  </div>
-  <div class="month-row" id="month-row"></div>
-</div>
+<div class="app-shell">
 
-<div class="wrap">
+  <aside class="sidebar">
+    <div class="sidebar-brand">
+      <div class="sidebar-logo">Z</div>
+      <div class="sidebar-brand-text">
+        <div class="sidebar-brand-title">PT Zhi Sheng Indonesia</div>
+        <div class="sidebar-brand-sub">Store Operations</div>
+      </div>
+    </div>
+
+    <div class="sidebar-nav-label">Dashboard</div>
+    <nav class="sidebar-nav" id="section-tabs">
+      <button class="section-tab active" data-section="performance"><span class="nav-icon">📈</span><span>Performance</span></button>
+      <button class="section-tab" data-section="stock"><span class="nav-icon">📦</span><span>Stock</span></button>
+      <button class="section-tab" data-section="salestype"><span class="nav-icon">🏷️</span><span>Sales per Tipe</span></button>
+    </nav>
+
+    <div class="sidebar-footer">Store Dashboard<br>© 2026 PT Zhi Sheng Indonesia</div>
+  </aside>
+
+  <div class="main-area">
+
+    <header class="topbar">
+      <div class="topbar-left">
+        <div class="brand-title" id="brand-title">Store Performance Dashboard</div>
+        <div class="topbar-meta">
+          <span id="period-sub">Memuat data periode…</span>
+          <span id="updated-sub"></span>
+        </div>
+      </div>
+      <div class="topbar-right">
+        <div class="export-group">
+          <button class="export-btn" id="export-excel-btn">⬇ Export Excel</button>
+          <button class="export-btn" id="export-pdf-btn">🖨 Export PDF</button>
+        </div>
+        <div class="pace">
+          <div class="pace-ring">
+            <svg width="44" height="44" viewBox="0 0 52 52">
+              <circle class="pace-ring-track" cx="26" cy="26" r="21"></circle>
+              <circle class="pace-ring-fill" id="pace-ring-fill" cx="26" cy="26" r="21" stroke-dasharray="132" stroke-dashoffset="132"></circle>
+            </svg>
+            <div class="pace-ring-label" id="pace-ring-label">–</div>
+          </div>
+          <div class="pace-text">Time gone bulan ini<br><b id="pace-detail">–</b></div>
+        </div>
+        <div class="user-badge" id="user-badge">
+          <div class="user-badge-avatar" id="user-badge-avatar">?</div>
+          <div class="user-badge-info">
+            <div class="user-badge-email" id="user-badge-email">Memuat…</div>
+            <div class="user-badge-scope" id="user-badge-scope"></div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <div class="month-row" id="month-row"></div>
+
+    <main class="wrap">
 
   <!-- ================= PERFORMANCE PAGE ================= -->
   <div class="page active" id="page-performance">
@@ -657,6 +716,10 @@
 
   </div>
 
+    </main>
+
+  </div>
+
 </div>
 
 
@@ -770,15 +833,24 @@ function filterStoresByAccess(stores){
 }
 
 function renderAccessBanner(){
-  const el = document.getElementById('access-sub');
-  if(!el) return;
+  const avatarEl = document.getElementById('user-badge-avatar');
+  const emailEl = document.getElementById('user-badge-email');
+  const scopeEl = document.getElementById('user-badge-scope');
+  if(!avatarEl || !emailEl || !scopeEl) return;
+
+  const email = ACCESS_EMAIL || 'guest';
+  avatarEl.textContent = email.charAt(0).toUpperCase();
+  emailEl.textContent = email;
+
   if(ACCESS_SCOPE === 'ALL'){
-    el.textContent = '';
+    scopeEl.textContent = 'Akses semua toko';
+    scopeEl.style.color = '';
   } else if(ACCESS_SCOPE === 'NONE'){
-    el.textContent = `Akses untuk ${ACCESS_EMAIL} belum diatur — hubungi admin`;
-    el.style.color = '#FF9B9B';
+    scopeEl.textContent = 'Belum diatur — hubungi admin';
+    scopeEl.style.color = 'var(--bad)';
   } else {
-    el.textContent = `Akses: ${ACCESS_SCOPE.size} toko (${ACCESS_EMAIL})`;
+    scopeEl.textContent = `Akses ${ACCESS_SCOPE.size} toko`;
+    scopeEl.style.color = '';
   }
 }
 

@@ -68,6 +68,68 @@ def month_number(period_name):
     return now.month
 
 
+def find_promoter_sheet(wb):
+    """Cari sheet yang punya kolom 'PROMOTOR' di salah satu baris header
+    (baris 1-6) -- gak bergantung pada nama sheet, karena bisa berubah
+    (contoh sekarang: 'Sheet2')."""
+    for name in wb.sheetnames:
+        ws = wb[name]
+        for r in range(1, 7):
+            for c in range(1, ws.max_column + 1):
+                v = ws.cell(r, c).value
+                if v and str(v).strip().upper() == "PROMOTOR":
+                    return ws
+    return None
+
+
+def parse_promoters(wb):
+    ws = find_promoter_sheet(wb)
+    if ws is None:
+        return None
+
+    def v(row, col):
+        val = ws.cell(row, col).value
+        return val if val is not None else 0
+
+    promoters = []
+    for r in range(5, ws.max_row + 1):
+        store_id = ws.cell(r, 2).value
+        promoter_name = ws.cell(r, 6).value
+        if not store_id or not promoter_name:
+            continue
+        if not isinstance(store_id, (int, float)):
+            continue  # skip baris TOTAL / bukan data promotor
+
+        promoters.append({
+            "area": clean_area(ws.cell(r, 1).value),
+            "store_id": store_id,
+            "headstore": ws.cell(r, 3).value,
+            "store_name": clean_store_name(ws.cell(r, 5).value),
+            "promoter_name": str(promoter_name).strip(),
+            "mio3_target": v(r, 7),
+            "mio3_ach": v(r, 8),
+            "mio3_pct": v(r, 9),
+            "mio3_est": v(r, 10),
+            "all_target": v(r, 11),
+            "all_ach": v(r, 12),
+            "all_pct": v(r, 13),
+            "all_est": v(r, 14),
+            "mix_pct": v(r, 15),
+            "value": v(r, 16),
+            "asp": v(r, 17),
+            "mio3_qty_prev": v(r, 18),
+            "mio3_qty_curr": v(r, 19),
+            "mio3_qty_gap": v(r, 20),
+            "mio3_qty_pct": v(r, 21),
+            "all_qty_prev": v(r, 22),
+            "all_qty_curr": v(r, 23),
+            "all_qty_gap": v(r, 24),
+            "all_qty_pct": v(r, 25),
+        })
+
+    return promoters
+
+
 def main():
     if not INPUT_PATH.exists():
         print(f"ERROR: {INPUT_PATH} tidak ditemukan. Upload file Excel ke source/dashboard_data.xlsx dulu.")
@@ -172,6 +234,7 @@ def main():
         "updated_at": format_updated_at(),
         "stores": stores,
         "total": total_row,
+        "promoters": parse_promoters(wb),
     }
 
     out_path = DATA_DIR / f"{period_key}.json"

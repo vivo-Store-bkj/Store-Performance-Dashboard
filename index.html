@@ -222,6 +222,14 @@
     color:var(--ink-faint); font-size:15px; font-weight:700;
   }
   .chip-row{ display:flex; gap:7px; flex-wrap:wrap; }
+  .seg{ display:inline-flex; gap:4px; background:var(--bg); border:1px solid var(--line); border-radius:10px; padding:4px; }
+  .seg button{
+    padding:7px 16px; border-radius:7px; border:none; background:transparent;
+    color:var(--ink-soft); font-size:12.5px; font-weight:600; cursor:pointer;
+    font-family:'Inter',sans-serif; transition:all .12s ease;
+  }
+  .seg button:hover{ color:var(--accent-ink); }
+  .seg button.active{ background:var(--surface); color:var(--accent-ink); box-shadow:var(--shadow); }
   .chip{
     padding:7px 13px; border-radius:100px; border:1px solid var(--line-strong);
     background:var(--surface); font-size:12.5px; font-weight:600; color:var(--ink-soft);
@@ -475,67 +483,131 @@
 
     <div class="kpi-grid" id="kpi-grid"></div>
 
-    <div class="section-head">
-      <h2>Semua Toko (<span id="store-count">0</span>)</h2>
-      <span class="hint">Klik baris untuk lihat detail VAS &amp; growth per toko</span>
-    </div>
-
     <div class="toolbar">
-      <div class="search-box"><input type="text" id="search-input" placeholder="Cari nama toko atau manager…"></div>
-      <div class="chip-row" id="area-chips"></div>
-    </div>
-
-    <div class="table-card">
-      <table id="store-table" class="mobile-cards">
-        <thead>
-          <tr>
-            <th data-key="no">No</th>
-            <th data-key="store_name">Toko</th>
-            <th data-key="area">Area</th>
-            <th data-key="target_unit" class="num">Target (unit)</th>
-            <th data-key="ach_unit" class="num">Ach (unit)</th>
-            <th data-key="ach_pct" class="num sorted">% Ach</th>
-            <th data-key="ach_value_pct" class="num">% Value</th>
-            <th data-key="mio3_pct" class="num">% 3MIO+</th>
-            <th data-key="vas_avg" class="num">Attach VAS</th>
-            <th data-key="growth_all_pct" class="num">Growth MoM</th>
-          </tr>
-        </thead>
-        <tbody id="table-body"></tbody>
-      </table>
-    </div>
-
-    <div class="section-head">
-      <h2>Analisis Jaringan</h2>
-      <span class="hint">Agregat seluruh toko</span>
-    </div>
-
-    <div class="chart-grid">
-      <div class="chart-card">
-        <h3>% Achievement per Area</h3>
-        <span class="hint">Total achievement vs target unit, per area</span>
-        <canvas id="chart-area" height="230"></canvas>
-        <div class="chart-legend" id="area-legend"></div>
-      </div>
-      <div class="chart-card">
-        <h3>Attach Rate VAS per Provider</h3>
-        <span class="hint">Total achievement vs target, seluruh jaringan</span>
-        <canvas id="chart-vas" height="230"></canvas>
-        <div class="chart-legend" id="vas-legend"></div>
+      <div class="seg" id="perf-view-seg">
+        <button data-view="toko" class="active">📍 Per Toko</button>
+        <button data-view="promotor">🙋 Per Promotor</button>
       </div>
     </div>
 
-    <div class="chart-grid" style="margin-top:16px;">
-      <div class="chart-card">
-        <h3>Top 5 Toko</h3>
-        <span class="hint">Berdasarkan % achievement unit</span>
-        <ul class="rank-list" id="top5-list"></ul>
+    <!-- ---- VIEW: PER TOKO ---- -->
+    <div id="perf-view-toko">
+
+      <div class="section-head">
+        <h2>Semua Toko (<span id="store-count">0</span>)</h2>
+        <span class="hint">Klik baris untuk lihat detail VAS &amp; growth per toko</span>
       </div>
-      <div class="chart-card">
-        <h3>5 Toko Perlu Perhatian</h3>
-        <span class="hint">Achievement terendah — kandidat diagnosa funnel</span>
-        <ul class="rank-list" id="bottom5-list"></ul>
+
+      <div class="toolbar">
+        <div class="search-box"><input type="text" id="search-input" placeholder="Cari nama toko atau manager…"></div>
+        <div class="chip-row" id="area-chips"></div>
       </div>
+
+      <div class="table-card">
+        <table id="store-table" class="mobile-cards">
+          <thead>
+            <tr>
+              <th data-key="no">No</th>
+              <th data-key="store_name">Toko</th>
+              <th data-key="area">Area</th>
+              <th data-key="target_unit" class="num">Target (unit)</th>
+              <th data-key="ach_unit" class="num">Ach (unit)</th>
+              <th data-key="ach_pct" class="num sorted">% Ach</th>
+              <th data-key="ach_value_pct" class="num">% Value</th>
+              <th data-key="mio3_pct" class="num">% 3MIO+</th>
+              <th data-key="vas_avg" class="num">Attach VAS</th>
+              <th data-key="growth_all_pct" class="num">Growth MoM</th>
+            </tr>
+          </thead>
+          <tbody id="table-body"></tbody>
+        </table>
+      </div>
+
+      <div class="section-head">
+        <h2>Analisis Jaringan</h2>
+        <span class="hint">Agregat seluruh toko</span>
+      </div>
+
+      <div class="chart-grid">
+        <div class="chart-card">
+          <h3>% Achievement per Area</h3>
+          <span class="hint">Total achievement vs target unit, per area</span>
+          <canvas id="chart-area" height="230"></canvas>
+          <div class="chart-legend" id="area-legend"></div>
+        </div>
+        <div class="chart-card">
+          <h3>Attach Rate VAS per Provider</h3>
+          <span class="hint">Total achievement vs target, seluruh jaringan</span>
+          <canvas id="chart-vas" height="230"></canvas>
+          <div class="chart-legend" id="vas-legend"></div>
+        </div>
+      </div>
+
+      <div class="chart-grid" style="margin-top:16px;">
+        <div class="chart-card">
+          <h3>Top 5 Toko</h3>
+          <span class="hint">Berdasarkan % achievement unit</span>
+          <ul class="rank-list" id="top5-list"></ul>
+        </div>
+        <div class="chart-card">
+          <h3>5 Toko Perlu Perhatian</h3>
+          <span class="hint">Achievement terendah — kandidat diagnosa funnel</span>
+          <ul class="rank-list" id="bottom5-list"></ul>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- ---- VIEW: PER PROMOTOR ---- -->
+    <div id="perf-view-promotor" style="display:none;">
+
+      <div class="section-head">
+        <h2>Semua Promotor (<span id="promotor-count">0</span>)</h2>
+        <span class="hint">Klik baris untuk lihat detail 3MIO+ &amp; growth per promotor</span>
+      </div>
+
+      <div class="toolbar">
+        <div class="search-box"><input type="text" id="promotor-search-input" placeholder="Cari nama promotor atau toko…"></div>
+        <div class="chip-row" id="promotor-area-chips"></div>
+      </div>
+
+      <div class="table-card">
+        <table id="promotor-table" class="mobile-cards">
+          <thead>
+            <tr>
+              <th data-key="promoter_name">Promotor</th>
+              <th data-key="store_name">Toko</th>
+              <th data-key="area">Area</th>
+              <th data-key="all_target" class="num">Target (unit)</th>
+              <th data-key="all_ach" class="num">Ach (unit)</th>
+              <th data-key="all_pct" class="num sorted">% Ach</th>
+              <th data-key="value" class="num">Value</th>
+              <th data-key="mix_pct" class="num">Mix 3MIO+</th>
+              <th data-key="all_qty_pct" class="num">Growth MoM</th>
+            </tr>
+          </thead>
+          <tbody id="promotor-table-body"></tbody>
+        </table>
+      </div>
+
+      <div class="section-head">
+        <h2>Analisis Promotor</h2>
+        <span class="hint">Agregat seluruh promotor terlihat (sesuai akses)</span>
+      </div>
+
+      <div class="chart-grid" style="margin-top:0;">
+        <div class="chart-card">
+          <h3>Top 5 Promotor</h3>
+          <span class="hint">Berdasarkan % achievement ALL TYPE</span>
+          <ul class="rank-list" id="promotor-top5-list"></ul>
+        </div>
+        <div class="chart-card">
+          <h3>5 Promotor Perlu Perhatian</h3>
+          <span class="hint">Achievement terendah — kandidat coaching</span>
+          <ul class="rank-list" id="promotor-bottom5-list"></ul>
+        </div>
+      </div>
+
     </div>
 
   </div>
@@ -747,6 +819,11 @@ let sortKey = 'ach_pct';
 let sortDir = -1;
 let activeArea = 'ALL';
 let searchTerm = '';
+let perfView = 'toko';
+let promotorSortKey = 'all_pct';
+let promotorSortDir = -1;
+let promotorArea = 'ALL';
+let promotorSearchTerm = '';
 
 /* ================= STOCK STATE ================= */
 let STOCK_DATA = null;
@@ -923,7 +1000,7 @@ const EXPORT_BUILDERS = {
   performance: () => {
     const list = getFiltered();
     const vasLabels = {acc:'ACC', qoala:'Qoala', bca_insurance:'BCA Insurance', indosat:'Indosat', telkomsel:'Telkomsel'};
-    return [{
+    const storeSheet = {
       sheet: 'Store Performance',
       rows: list.map((s,i)=>{
         const row = {
@@ -950,7 +1027,32 @@ const EXPORT_BUILDERS = {
         row['Growth MoM (%)'] = pctNum(s.growth_all_pct);
         return row;
       }),
-    }];
+    };
+
+    const promotorList = getPromotorFiltered();
+    const promotorSheet = {
+      sheet: 'Performance per Promotor',
+      rows: promotorList.map((p,i)=>({
+        'No': i+1,
+        'Promotor': p.promoter_name,
+        'Toko': p.store_name,
+        'Headstore': p.headstore,
+        'Area': p.area,
+        'Target 3MIO+': p.mio3_target,
+        'Achievement 3MIO+': p.mio3_ach,
+        '% Achievement 3MIO+': pctNum(p.mio3_pct),
+        'Target ALL TYPE': p.all_target,
+        'Achievement ALL TYPE': p.all_ach,
+        '% Achievement ALL TYPE': pctNum(p.all_pct),
+        'Mix 3MIO+ (%)': pctNum(p.mix_pct),
+        'Value (Rp)': p.value,
+        'ASP (Rp)': Math.round(p.asp),
+        'Growth Qty 3MIO+ (%)': pctNum(p.mio3_qty_pct),
+        'Growth Qty ALL TYPE (%)': pctNum(p.all_qty_pct),
+      })),
+    };
+
+    return [storeSheet, promotorSheet];
   },
 
   stock: () => {
@@ -1215,6 +1317,7 @@ function loadPerfPeriod(key){
     PERF_DATA = json;
     perfCurrentKey = key;
     PERF_DATA.stores = filterStoresByAccess(PERF_DATA.stores);
+    PERF_DATA.promoters = PERF_DATA.promoters ? filterStoresByAccess(PERF_DATA.promoters) : [];
     if(ACCESS_SCOPE !== 'ALL') PERF_DATA.total = recomputeTotalFromStores(PERF_DATA.stores);
     PERF_DATA.stores.forEach(s => {
       const vasVals = Object.values(s.vas).map(v => v.pct);
@@ -1234,6 +1337,10 @@ function initPerf(){
   try{ renderCharts(); }catch(e){ console.error('renderCharts failed', e); }
   try{ renderRankings(); }catch(e){ console.error('renderRankings failed', e); }
 
+  try{ renderPromotorChips(); }catch(e){ console.error('renderPromotorChips failed', e); }
+  try{ renderPromotorTable(); }catch(e){ console.error('renderPromotorTable failed', e); }
+  try{ renderPromotorRankings(); }catch(e){ console.error('renderPromotorRankings failed', e); }
+
   document.getElementById('search-input').oninput = e=>{
     searchTerm = e.target.value.toLowerCase();
     renderTable();
@@ -1247,6 +1354,30 @@ function initPerf(){
       renderTable();
     };
   });
+
+  document.getElementById('promotor-search-input').oninput = e=>{
+    promotorSearchTerm = e.target.value.toLowerCase();
+    renderPromotorTable();
+  };
+  document.querySelectorAll('#promotor-table thead th[data-key]').forEach(th=>{
+    th.onclick = ()=>{
+      const key = th.dataset.key;
+      if(promotorSortKey===key){ promotorSortDir *= -1; } else { promotorSortKey = key; promotorSortDir = -1; }
+      document.querySelectorAll('#promotor-table thead th').forEach(t=>t.classList.remove('sorted'));
+      th.classList.add('sorted');
+      renderPromotorTable();
+    };
+  });
+
+  document.getElementById('perf-view-seg').onclick = e=>{
+    const btn = e.target.closest('button');
+    if(!btn) return;
+    document.querySelectorAll('#perf-view-seg button').forEach(b=>b.classList.remove('active'));
+    btn.classList.add('active');
+    perfView = btn.dataset.view;
+    document.getElementById('perf-view-toko').style.display = perfView==='toko' ? '' : 'none';
+    document.getElementById('perf-view-promotor').style.display = perfView==='promotor' ? '' : 'none';
+  };
 }
 
 function renderKPIs(){
@@ -1330,13 +1461,13 @@ function renderTable(){
     `;
   }).join('');
 
-  document.querySelectorAll('#page-performance .store-row').forEach(row=>{
+  document.querySelectorAll('#perf-view-toko .store-row').forEach(row=>{
     row.onclick = ()=>{
       const id = row.dataset.id;
       const detail = document.getElementById('detail-'+id);
       const isOpen = detail.classList.contains('open');
-      document.querySelectorAll('#page-performance .detail-row').forEach(d=>d.classList.remove('open'));
-      document.querySelectorAll('#page-performance .store-row').forEach(r=>r.classList.remove('expanded'));
+      document.querySelectorAll('#perf-view-toko .detail-row').forEach(d=>d.classList.remove('open'));
+      document.querySelectorAll('#perf-view-toko .store-row').forEach(r=>r.classList.remove('expanded'));
       if(!isOpen){ detail.classList.add('open'); row.classList.add('expanded'); }
     };
   });
@@ -1455,6 +1586,121 @@ function renderRankings(){
     </li>`).join('');
   document.getElementById('top5-list').innerHTML = renderList(top5);
   document.getElementById('bottom5-list').innerHTML = renderList(bottom5);
+}
+
+/* ================================================================ */
+/* ======================== PROMOTOR (VIEW) ========================= */
+/* ================================================================ */
+function renderPromotorChips(){
+  const areas = ['ALL', ...new Set((PERF_DATA.promoters||[]).map(p=>p.area))];
+  document.getElementById('promotor-area-chips').innerHTML = areas.map(a=>
+    `<div class="chip ${a===promotorArea?'active':''}" data-area="${a}">${a==='ALL'?'Semua Area':a}</div>`
+  ).join('');
+  document.querySelectorAll('#promotor-area-chips .chip').forEach(chip=>{
+    chip.onclick = ()=>{
+      promotorArea = chip.dataset.area;
+      document.querySelectorAll('#promotor-area-chips .chip').forEach(c=>c.classList.remove('active'));
+      chip.classList.add('active');
+      renderPromotorTable();
+    };
+  });
+}
+
+function getPromotorFiltered(){
+  let list = (PERF_DATA.promoters||[]).filter(p=>{
+    if(promotorArea!=='ALL' && p.area!==promotorArea) return false;
+    if(promotorSearchTerm && !(p.promoter_name.toLowerCase().includes(promotorSearchTerm) || p.store_name.toLowerCase().includes(promotorSearchTerm))) return false;
+    return true;
+  });
+  list.sort((a,b)=> (a[promotorSortKey]>b[promotorSortKey]?1:-1)*promotorSortDir);
+  return list;
+}
+
+function renderPromotorTable(){
+  const list = getPromotorFiltered();
+  document.getElementById('promotor-count').textContent = list.length;
+  document.getElementById('promotor-table-body').innerHTML = list.map((p,i)=>{
+    const rowId = 'promotor-row-'+i;
+    const sc = statusColor(p.all_pct);
+    return `
+    <tr class="promotor-row data-row" data-id="${rowId}">
+      <td class="cell-primary">
+        <div class="store-name">${p.promoter_name}</div>
+      </td>
+      <td data-label="Toko">${p.store_name}</td>
+      <td data-label="Area"><span class="area-pill">${p.area}</span></td>
+      <td class="num mono" data-label="Target">${Number(p.all_target).toLocaleString('id-ID')}</td>
+      <td class="num mono" data-label="Ach (unit)">${Number(p.all_ach).toLocaleString('id-ID')}</td>
+      <td class="num" data-label="% Ach">
+        <div class="pct-cell" style="justify-content:flex-end;">
+          <span class="status-dot" style="background:${colorHex[sc]}"></span>
+          <span class="mono" style="font-weight:700;">${pct(p.all_pct)}</span>
+        </div>
+      </td>
+      <td class="num mono" data-label="Value">${money(p.value)}</td>
+      <td class="num mono" data-label="Mix 3MIO+">${pct(p.mix_pct)}</td>
+      <td class="num mono" data-label="Growth MoM" style="color:${p.all_qty_pct>=0?colorHex.good:colorHex.bad}">${p.all_qty_pct>=0?'+':''}${pct(p.all_qty_pct)}</td>
+    </tr>
+    <tr class="detail-row" id="detail-${rowId}"><td colspan="9">${promotorDetailHTML(p)}</td></tr>
+    `;
+  }).join('');
+
+  document.querySelectorAll('#perf-view-promotor .promotor-row').forEach(row=>{
+    row.onclick = ()=>{
+      const id = row.dataset.id;
+      const detail = document.getElementById('detail-'+id);
+      const isOpen = detail.classList.contains('open');
+      document.querySelectorAll('#perf-view-promotor .detail-row').forEach(d=>d.classList.remove('open'));
+      document.querySelectorAll('#perf-view-promotor .promotor-row').forEach(r=>r.classList.remove('expanded'));
+      if(!isOpen){ detail.classList.add('open'); row.classList.add('expanded'); }
+    };
+  });
+}
+
+function promotorDetailHTML(p){
+  return `
+    <div class="detail-inner">
+      <div class="detail-block">
+        <h4>3MIO+ vs ALL TYPE</h4>
+        <div class="vas-grid">
+          <div class="vas-item">
+            <div class="vas-item-label">3MIO+</div>
+            <div class="vas-item-val" style="color:${colorHex[statusColor(p.mio3_pct)]}">${pct(p.mio3_pct)}</div>
+            <div class="vas-item-detail">Ach ${Number(p.mio3_ach).toLocaleString('id-ID')} / Target ${Number(p.mio3_target).toLocaleString('id-ID')}</div>
+          </div>
+          <div class="vas-item">
+            <div class="vas-item-label">ALL TYPE</div>
+            <div class="vas-item-val" style="color:${colorHex[statusColor(p.all_pct)]}">${pct(p.all_pct)}</div>
+            <div class="vas-item-detail">Ach ${Number(p.all_ach).toLocaleString('id-ID')} / Target ${Number(p.all_target).toLocaleString('id-ID')}</div>
+          </div>
+        </div>
+      </div>
+      <div class="detail-block">
+        <h4>Growth Bulan Lalu → Bulan Ini</h4>
+        <div class="growth-row"><span class="growth-label">Qty 3MIO+</span><span class="growth-val">${Number(p.mio3_qty_prev).toLocaleString('id-ID')} → ${Number(p.mio3_qty_curr).toLocaleString('id-ID')}</span></div>
+        <div class="growth-row"><span class="growth-label">Qty ALL TYPE</span><span class="growth-val">${Number(p.all_qty_prev).toLocaleString('id-ID')} → ${Number(p.all_qty_curr).toLocaleString('id-ID')}</span></div>
+        <div class="growth-row"><span class="growth-label">ASP</span><span class="growth-val">${money(p.asp)}</span></div>
+        <div class="growth-row"><span class="growth-label">Headstore</span><span class="growth-val">${p.headstore}</span></div>
+      </div>
+    </div>`;
+}
+
+function renderPromotorRankings(){
+  const list = (PERF_DATA.promoters||[]);
+  const sorted = [...list].sort((a,b)=>b.all_pct-a.all_pct);
+  const top5 = sorted.slice(0,5);
+  const bottom5 = sorted.slice(-5).reverse();
+  const renderList = (arr) => arr.map((p,i)=>`
+    <li>
+      <span class="rank-num">${i+1}</span>
+      <div class="rank-name">
+        <div class="n">${p.promoter_name}</div>
+        <div class="a">${p.store_name} · ${p.area}</div>
+      </div>
+      <span class="rank-pct" style="color:${colorHex[statusColor(p.all_pct)]}">${pct(p.all_pct)}</span>
+    </li>`).join('');
+  document.getElementById('promotor-top5-list').innerHTML = renderList(top5);
+  document.getElementById('promotor-bottom5-list').innerHTML = renderList(bottom5);
 }
 
 /* ================================================================ */

@@ -77,7 +77,7 @@
   }
   .sidebar-nav .section-tab:hover{ background:rgba(255,255,255,0.07); color:#fff; }
   .sidebar-nav .section-tab.active{ background:#5B8CFF; color:#fff; }
-  .sidebar-nav .nav-icon{ font-size:15px; flex:none; width:18px; text-align:center; }
+  .sidebar-nav .nav-icon{ flex:none; width:18px; display:inline-flex; align-items:center; justify-content:center; }
 
   .sidebar-footer{
     margin-top:auto; padding:16px 20px 20px; border-top:1px solid rgba(255,255,255,0.08);
@@ -227,6 +227,7 @@
     padding:7px 16px; border-radius:7px; border:none; background:transparent;
     color:var(--ink-soft); font-size:12.5px; font-weight:600; cursor:pointer;
     font-family:'Inter',sans-serif; transition:all .12s ease;
+    display:inline-flex; align-items:center; gap:6px;
   }
   .seg button:hover{ color:var(--accent-ink); }
   .seg button.active{ background:var(--surface); color:var(--accent-ink); box-shadow:var(--shadow); }
@@ -322,8 +323,8 @@
   .cc-card{ background:var(--surface); border:1px solid var(--line); border-radius:var(--radius); overflow:hidden; box-shadow:var(--shadow); }
   .cc-head{ padding:14px 18px; border-bottom:1px solid var(--line); display:flex; align-items:center; gap:10px; }
   .cc-head .cc-icon{ width:30px; height:30px; border-radius:8px; display:flex; align-items:center; justify-content:center; font-size:15px; flex:none; }
-  .cc-head.over .cc-icon{ background:var(--warn-soft); }
-  .cc-head.under .cc-icon{ background:var(--bad-soft); }
+  .cc-head.over .cc-icon{ background:var(--warn-soft); color:var(--warn); }
+  .cc-head.under .cc-icon{ background:var(--bad-soft); color:var(--bad); }
   .cc-head h3{ font-size:14.5px; font-weight:700; margin:0; }
   .cc-head .cc-sub{ font-size:11.5px; color:var(--ink-faint); margin-top:1px; }
   .cc-body{ padding:6px 0; }
@@ -431,9 +432,9 @@
 
     <div class="sidebar-nav-label">Dashboard</div>
     <nav class="sidebar-nav" id="section-tabs">
-      <button class="section-tab active" data-section="performance"><span class="nav-icon">📈</span><span>Performance</span></button>
-      <button class="section-tab" data-section="stock"><span class="nav-icon">📦</span><span>Stock</span></button>
-      <button class="section-tab" data-section="salestype"><span class="nav-icon">🏷️</span><span>Sales per Tipe</span></button>
+      <button class="section-tab active" data-section="performance"><span class="nav-icon"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="4,17 9,11 13,14 20,6"/><circle cx="4" cy="17" r="1.3" fill="currentColor" stroke="none"/><circle cx="9" cy="11" r="1.3" fill="currentColor" stroke="none"/><circle cx="13" cy="14" r="1.3" fill="currentColor" stroke="none"/><circle cx="20" cy="6" r="1.3" fill="currentColor" stroke="none"/></svg></span><span>Performance</span></button>
+      <button class="section-tab" data-section="stock"><span class="nav-icon"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="9" width="16" height="11" rx="1"/><polyline points="4,9 12,4 20,9"/><line x1="12" y1="9" x2="12" y2="20"/></svg></span><span>Stock</span></button>
+      <button class="section-tab" data-section="salestype"><span class="nav-icon"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="3,4 14,4 21,11 14,18 3,18"/><circle cx="8" cy="8" r="1.2" fill="currentColor" stroke="none"/></svg></span><span>Sales per Tipe</span></button>
     </nav>
 
     <div class="sidebar-footer">Store Dashboard<br>© 2026 PT Zhi Sheng Indonesia</div>
@@ -451,8 +452,8 @@
       </div>
       <div class="topbar-right">
         <div class="export-group">
-          <button class="export-btn" id="export-excel-btn">⬇ Export Excel</button>
-          <button class="export-btn" id="export-pdf-btn">🖨 Export PDF</button>
+          <button class="export-btn" id="export-excel-btn"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="3" x2="12" y2="15"/><polyline points="7,10 12,15 17,10"/><polyline points="5,19 5,21 19,21 19,19"/></svg> Export Excel</button>
+          <button class="export-btn" id="export-pdf-btn"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6,9 6,3 18,3 18,9"/><rect x="4" y="9" width="16" height="8" rx="1"/><rect x="7" y="15" width="10" height="6"/></svg> Export PDF</button>
         </div>
         <div class="pace">
           <div class="pace-ring">
@@ -485,8 +486,8 @@
 
     <div class="toolbar">
       <div class="seg" id="perf-view-seg">
-        <button data-view="toko" class="active">📍 Per Toko</button>
-        <button data-view="promotor">🙋 Per Promotor</button>
+        <button data-view="toko" class="active"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3,9 3,5 21,5 21,9"/><rect x="4" y="9" width="16" height="11" rx="1"/><line x1="9" y1="20" x2="9" y2="14"/><line x1="15" y1="20" x2="15" y2="14"/><line x1="9" y1="14" x2="15" y2="14"/></svg> Per Toko</button>
+        <button data-view="promotor"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="7.5" r="3.2"/><path d="M4.5 20a7.5 7.5 0 0 1 15 0"/></svg> Per Promotor</button>
       </div>
     </div>
 
@@ -619,7 +620,7 @@
 
     <div id="stockout-section" style="display:none;">
       <div class="section-head">
-        <h2>⚠️ Risiko Stockout per Tipe <span class="hint" style="font-weight:400;">(deteksi dini per tipe di tiap toko)</span></h2>
+        <h2><svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-3px;margin-right:4px;"><polygon points="12,3 22,20 2,20"/><line x1="12" y1="9" x2="12" y2="14"/><circle cx="12" cy="17" r="0.9" fill="currentColor" stroke="none"/></svg>Risiko Stockout per Tipe <span class="hint" style="font-weight:400;">(deteksi dini per tipe di tiap toko)</span></h2>
         <span class="hint" id="stockout-hint"></span>
       </div>
       <div class="crosscheck-grid" id="stockout-grid"></div>
@@ -627,8 +628,8 @@
 
     <div class="toolbar">
       <div class="seg" id="stock-view-seg">
-        <button data-view="toko" class="active">📍 Per Toko</button>
-        <button data-view="tipe">🏷️ Per Tipe</button>
+        <button data-view="toko" class="active"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3,9 3,5 21,5 21,9"/><rect x="4" y="9" width="16" height="11" rx="1"/><line x1="9" y1="20" x2="9" y2="14"/><line x1="15" y1="20" x2="15" y2="14"/><line x1="9" y1="14" x2="15" y2="14"/></svg> Per Toko</button>
+        <button data-view="tipe"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="3,4 14,4 21,11 14,18 3,18"/><circle cx="8" cy="8" r="1.2" fill="currentColor" stroke="none"/></svg> Per Tipe</button>
       </div>
       <div class="chip-row" id="stock-brand-chips"></div>
     </div>
@@ -1256,8 +1257,10 @@ function renderStockoutRisk(){
       </div>
     </div>`;
 
+  const ICON_CHECK = '<svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-2px;margin-right:3px;"><circle cx="12" cy="12" r="9"/><polyline points="8,12.5 11,15.5 16,9"/></svg>';
+
   const cap = (arr, kind) => {
-    if(!arr.length) return `<div class="cc-empty">Tidak ada 👍</div>`;
+    if(!arr.length) return `<div class="cc-empty">${ICON_CHECK}Tidak ada</div>`;
     const shown = arr.slice(0, SO_MAX_ROWS).map(r=>rowHTML(r,kind)).join('');
     const extra = arr.length > SO_MAX_ROWS
       ? `<div class="cc-empty">+${arr.length-SO_MAX_ROWS} tipe lainnya — lihat di tabel per toko di bawah</div>`
@@ -1268,14 +1271,14 @@ function renderStockoutRisk(){
   document.getElementById('stockout-grid').innerHTML = `
     <div class="cc-card">
       <div class="cc-head under">
-        <div class="cc-icon">🚨</div>
+        <div class="cc-icon"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="8,2 16,2 22,8 22,16 16,22 8,22 2,16 2,8"/><line x1="12" y1="7" x2="12" y2="13"/><circle cx="12" cy="16.5" r="1" fill="currentColor" stroke="none"/></svg></div>
         <div><h3>Sudah habis — stok 0, masih ada demand</h3><div class="cc-sub">Restock secepatnya · urut dari sales terbanyak</div></div>
       </div>
       <div class="cc-body">${cap(habis,'habis')}</div>
     </div>
     <div class="cc-card">
       <div class="cc-head over">
-        <div class="cc-icon">⏳</div>
+        <div class="cc-icon"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><polyline points="12,7 12,12 16,14"/></svg></div>
         <div><h3>Menipis — habis dalam &lt; ${SO_DOS_RISK} hari</h3><div class="cc-sub">Siapkan restock · urut dari paling mendesak</div></div>
       </div>
       <div class="cc-body">${cap(berisiko,'berisiko')}</div>

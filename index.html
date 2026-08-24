@@ -1356,8 +1356,20 @@ function renderReportCardContent(email){
     });
     const achP = safeDiv(a,t);
     const paceP = safeDiv(achP, safeDiv(p.to_date_day, PERF_DATA.total_days));
-    return { date: p.date, ach_pct: achP, pace: paceP };
+    return { date: p.date, ach_pct: achP, pace: paceP, ach_unit: a, target_unit: t };
   });
+  trendSeries.forEach((pt,i)=>{
+    pt.daily_unit = i===0 ? null : pt.ach_unit - trendSeries[i-1].ach_unit;
+  });
+
+  const trendHintEl = document.getElementById('rc-trend-hint');
+  if(trendSeries.length){
+    const last = trendSeries[trendSeries.length-1];
+    const lastDate = new Date(last.date);
+    trendHintEl.textContent = `Total s.d. ${lastDate.getDate()}/${lastDate.getMonth()+1}: ${fmt(last.ach_unit)} / ${fmt(last.target_unit)} unit (${pct(last.ach_pct)}) — arahkan kursor ke titik buat lihat detail harian`;
+  } else {
+    trendHintEl.textContent = 'Diambil dari tiap kali data di-upload';
+  }
 
   const trendCard = document.getElementById('rc-trend-card');
   const trendEmpty = document.getElementById('rc-trend-empty');
@@ -1378,7 +1390,19 @@ function renderReportCardContent(email){
           }]
         },
         options: {
-          plugins:{ legend:{display:false}, tooltip:{callbacks:{label:c=>'Achievement '+c.parsed.y+'%'}} },
+          plugins:{
+            legend:{display:false},
+            tooltip:{ callbacks:{ label: c=>{
+              const pt = trendSeries[c.dataIndex];
+              const lines = [
+                `Kumulatif: ${fmt(pt.ach_unit)} / ${fmt(pt.target_unit)} unit (${c.parsed.y}%)`,
+              ];
+              lines.push(pt.daily_unit===null
+                ? 'Terjual s.d. tanggal ini (titik pertama)'
+                : `Terjual tanggal ini: ${pt.daily_unit>=0?'+':''}${fmt(pt.daily_unit)} unit`);
+              return lines;
+            } } }
+          },
           scales:{ y:{ beginAtZero:true, ticks:{callback:v=>v+'%'} }, x:{ grid:{display:false} } }
         }
       });

@@ -1201,17 +1201,31 @@ function renderAccessPage(){
 /* ================================================================ */
 /* ======================== REPORT CARD PAGE ========================= */
 /* ================================================================ */
+function headstoreNameForEmail(email){
+  const rule = ACCESS_MAP[email];
+  if(!Array.isArray(rule) || !rule.length) return email;
+  for(const sid of rule){
+    const store = (PERF_DATA?.stores||[]).find(s=>String(s.store_id)===String(sid));
+    if(store?.manager) return store.manager;
+  }
+  return email;
+}
+
 function populateReportCardSelect(){
   const sel = document.getElementById('reportcard-select');
-  if(!sel || sel.dataset.populated) return;
+  if(!sel) return;
   const headstoreEmails = Object.entries(ACCESS_MAP)
     .filter(([e,r])=>r!=='ALL')
     .map(([e])=>e)
-    .sort();
+    .sort((a,b)=> headstoreNameForEmail(a).localeCompare(headstoreNameForEmail(b)));
+  const prevValue = sel.value;
   sel.innerHTML = '<option value="">— Pilih headstore —</option>' +
-    headstoreEmails.map(e=>`<option value="${e}">${e}</option>`).join('');
-  sel.dataset.populated = '1';
-  sel.onchange = ()=> renderReportCardContent(sel.value);
+    headstoreEmails.map(e=>`<option value="${e}">${headstoreNameForEmail(e)}</option>`).join('');
+  sel.value = prevValue;
+  if(!sel.dataset.bound){
+    sel.onchange = ()=> renderReportCardContent(sel.value);
+    sel.dataset.bound = '1';
+  }
 }
 
 function renderReportCardContent(email){
@@ -1240,9 +1254,10 @@ function renderReportCardContent(email){
   const promoters = (PERF_DATA?.promoters||[]).filter(p=>storeIds.has(String(p.store_id)));
   const stockStores = (STOCK_DATA?.stores||[]).filter(s=>storeIds.has(String(s.store_id)));
 
-  document.getElementById('rc-email').textContent = email;
+  const headstoreName = headstoreNameForEmail(email);
+  document.getElementById('rc-email').textContent = headstoreName;
   const areas = [...new Set(stores.map(s=>s.area))];
-  document.getElementById('rc-meta').textContent = `${stores.length} toko · ${areas.join(', ')}`;
+  document.getElementById('rc-meta').textContent = `${stores.length} toko · ${areas.join(', ')} · ${email}`;
   document.getElementById('rc-period').textContent = PERF_DATA.period_label
     ? `Periode ${PERF_DATA.period_label} · hari ke-${PERF_DATA.to_date_day} dari ${PERF_DATA.total_days}`
     : '';

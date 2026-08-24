@@ -28,6 +28,9 @@ import sys
 from datetime import datetime
 from pathlib import Path
 
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from validate import Validator
+
 try:
     from zoneinfo import ZoneInfo
     JAKARTA = ZoneInfo("Asia/Jakarta")
@@ -208,10 +211,11 @@ def main():
     DATA_DIR.mkdir(exist_ok=True)
     wb = openpyxl.load_workbook(INPUT_PATH, data_only=True)
 
+    v_stock = Validator("Stock")
     parsed = {}
     for brand, sheetname in SHEETS:
         if sheetname not in wb.sheetnames:
-            print(f"WARNING: sheet '{sheetname}' tidak ditemukan, dilewati.")
+            v_stock.check(False, f"Sheet '{sheetname}' tidak ditemukan di file — data {brand} bakal kosong", level="FAIL")
             continue
         parsed[brand] = parse_sheet(wb[sheetname])
 
@@ -289,6 +293,13 @@ def main():
     period_label = f"{BULAN_ID[now.month]} {now.year}"
 
     ref = next(iter(parsed.values()))
+
+    v_stock.check(15 <= len(stores) <= 45, f"Jumlah toko/gudang yang terbaca {len(stores)}, biasanya sekitar 28")
+    v_stock.check(1 <= ref["hari_berjalan"] <= ref["total_hari"] <= 31, f"hari_berjalan={ref['hari_berjalan']} / total_hari={ref['total_hari']}, di luar rentang wajar")
+    for brand, data in parsed.items():
+        v_stock.check(len(data["rows"]) > 0, f"Sheet {brand} kebaca tapi 0 baris toko — cek header 'Nama Gudang / Toko'")
+    v_stock.report()
+
     payload = {
         "period": period_key,
         "period_key": period_key,

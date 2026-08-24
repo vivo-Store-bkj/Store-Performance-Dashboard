@@ -17,6 +17,9 @@ import sys
 from datetime import datetime
 from pathlib import Path
 
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from validate import Validator
+
 try:
     from zoneinfo import ZoneInfo
     JAKARTA = ZoneInfo("Asia/Jakarta")
@@ -140,6 +143,13 @@ def main():
     wb = openpyxl.load_workbook(INPUT_PATH, data_only=True)
     ws = wb.worksheets[0]  # selalu ambil sheet pertama
 
+    v_perf = Validator("Store Performance (Sheet1)")
+    v_perf.expect_header(ws, 3, 1, "NO")
+    v_perf.expect_header(ws, 3, 2, "AREA")
+    v_perf.expect_header(ws, 3, 3, "ID STORE")
+    v_perf.expect_header(ws, 3, 4, "NAMA TOKO")
+    v_perf.expect_header(ws, 3, 5, "HEADSTORE")
+
     # --- pacing info (baris 1-2), posisinya tetap sama tiap bulan ---
     title = ws.cell(1, 1).value or ""
     total_days = ws.cell(2, 4).value or 30   # D2 = TOTAL DATE
@@ -148,6 +158,9 @@ def main():
     time_gone = time_gone_raw if time_gone_raw is not None else (
         to_date_day / total_days if total_days else 0
     )
+    v_perf.check(1 <= total_days <= 31, f"TOTAL DATE (D2) = {total_days}, di luar rentang wajar 1-31")
+    v_perf.check(0 <= to_date_day <= total_days, f"TO DATE (E2) = {to_date_day}, harusnya di antara 0 dan {total_days}")
+    v_perf.check(-0.01 <= time_gone <= 1.05, f"TIME GONE (F2) = {time_gone}, harusnya rasio 0-1")
 
     period = parse_period(title)
     m_num = month_number(period)
@@ -223,6 +236,21 @@ def main():
             "vas": vas_block(r),
         })
 
+    v_perf.check(30 <= len(stores) <= 60, f"Jumlah toko yang terbaca {len(stores)}, biasanya sekitar 43 — cek apakah ada baris yang kelewat/kebaca ganda", level="WARN" if 20 <= len(stores) <= 70 else "FAIL")
+    v_perf.check(total_row is not None, "Baris TOTAL tidak ketemu di Sheet1 — KPI network-wide bakal kosong", level="FAIL")
+
+    promoters = parse_promoters(wb)
+    if promoters is not None:
+        store_ids = {s["store_id"] for s in stores}
+        orphan_ids = {p["store_id"] for p in promoters} - store_ids
+        v_perf.check(
+            len(orphan_ids) == 0,
+            f"{len(orphan_ids)} store_id di sheet promotor gak ketemu di Sheet1 (contoh: {sorted(orphan_ids)[:5]}) — promotor itu gak akan muncul di dashboard toko manapun",
+        )
+        v_perf.check(len(promoters) > 0, "Sheet promotor ketemu tapi isinya 0 baris — cek apakah kolom ID Store/PROMOTOR kosong semua")
+
+    v_perf.report()
+
     data = {
         "period": period,
         "period_key": period_key,
@@ -234,7 +262,7 @@ def main():
         "updated_at": format_updated_at(),
         "stores": stores,
         "total": total_row,
-        "promoters": parse_promoters(wb),
+        "promoters": promoters,
     }
 
     out_path = DATA_DIR / f"{period_key}.json"

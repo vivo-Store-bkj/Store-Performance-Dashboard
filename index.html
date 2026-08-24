@@ -873,6 +873,7 @@
         <h3>Tren Achievement Dalam Bulan Ini</h3>
         <span class="hint" id="rc-trend-hint">Diambil dari tiap kali data di-upload</span>
         <canvas id="rc-trend-chart" height="180"></canvas>
+        <div class="chart-legend" id="rc-trend-legend" style="border-top:none; padding-top:10px;"></div>
       </div>
       <div class="table-card" id="rc-trend-empty" style="padding:16px 20px; margin:20px 0; display:none; font-size:12.5px; color:var(--ink-faint);">
         Riwayat baru mulai terkumpul — grafik tren akan muncul setelah data ini di-upload beberapa kali lagi bulan ini.
@@ -1386,14 +1387,30 @@ function renderReportCardContent(email){
     trendHintEl.textContent = 'Diambil dari tiap kali data di-upload';
   }
 
+  // per-toko: dipisah per garis kalau headstore ini pegang lebih dari 1 toko,
+  // biar kelihatan toko mana yang naik/turun -- bukan digabung jadi 1 angka.
+  const STORE_COLORS = ['#2a78d6','#eb6834','#1baf7a','#eda100','#e87ba4','#4a3aa7'];
+  const perStoreSeries = stores.map((s,idx)=>{
+    const sid = String(s.store_id);
+    const series = histPoints.map(p=>{
+      const rec = p.stores[sid];
+      const a = rec ? rec.ach_unit : 0;
+      const t = rec ? rec.target_unit : (s.target_unit || 0);
+      return { date: p.date, ach_pct: safeDiv(a,t), ach_unit: a, target_unit: t };
+    });
+    return { store_id: sid, store_name: s.store_name, color: STORE_COLORS[idx % STORE_COLORS.length], series };
+  });
+
   const trendCard = document.getElementById('rc-trend-card');
   const trendEmpty = document.getElementById('rc-trend-empty');
+  const trendLegendEl = document.getElementById('rc-trend-legend');
   try{
     if(rcTrendChart){ rcTrendChart.destroy(); rcTrendChart = null; }
 
-    if(trendSeries.length >= 2){
+    if(trendSeries.length >= 2 && stores.length === 1){
       trendCard.style.display = '';
       trendEmpty.style.display = 'none';
+      trendLegendEl.innerHTML = '';
       rcTrendChart = new Chart(document.getElementById('rc-trend-chart'), {
         type: 'line',
         data: {
@@ -1416,6 +1433,37 @@ function renderReportCardContent(email){
                 ? 'Terjual s.d. tanggal ini (titik pertama)'
                 : `Terjual tanggal ini: ${pt.daily_unit>=0?'+':''}${fmt(pt.daily_unit)} unit`);
               return lines;
+            } } }
+          },
+          scales:{ y:{ beginAtZero:true, ticks:{callback:v=>v+'%'} }, x:{ grid:{display:false} } }
+        }
+      });
+    } else if(trendSeries.length >= 2 && stores.length > 1){
+      trendCard.style.display = '';
+      trendEmpty.style.display = 'none';
+      trendLegendEl.innerHTML = perStoreSeries.map(ps=>`
+        <span style="display:inline-flex;align-items:center;gap:5px;margin-right:14px;font-size:11.5px;color:var(--ink-soft);">
+          <span style="width:9px;height:9px;border-radius:2px;background:${ps.color};display:inline-block;"></span>${ps.store_name}
+        </span>`).join('');
+      rcTrendChart = new Chart(document.getElementById('rc-trend-chart'), {
+        type: 'line',
+        data: {
+          labels: histPoints.map(p=>{ const d=new Date(p.date); return d.getDate()+'/'+(d.getMonth()+1); }),
+          datasets: perStoreSeries.map(ps=>({
+            label: ps.store_name,
+            data: ps.series.map(t=>Math.round(t.ach_pct*1000)/10),
+            borderColor: ps.color, backgroundColor: ps.color+'14',
+            fill: false, tension: 0.3, pointRadius: 3, borderWidth: 2,
+          }))
+        },
+        options: {
+          interaction: { mode: 'index', intersect: false },
+          plugins:{
+            legend:{display:false},
+            tooltip:{ callbacks:{ label: c=>{
+              const ps = perStoreSeries[c.datasetIndex];
+              const pt = ps.series[c.dataIndex];
+              return `${ps.store_name}: ${c.parsed.y}% (${fmt(pt.ach_unit)}/${fmt(pt.target_unit)} unit)`;
             } } }
           },
           scales:{ y:{ beginAtZero:true, ticks:{callback:v=>v+'%'} }, x:{ grid:{display:false} } }

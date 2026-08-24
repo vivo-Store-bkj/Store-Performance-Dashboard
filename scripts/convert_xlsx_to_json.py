@@ -134,6 +134,122 @@ def parse_promoters(wb):
     return promoters
 
 
+def find_daily_sales_sheet(wb):
+    """Cari sheet pivot 'penjualan per tanggal' -- dikenali dari isi (teks
+    'Segment Price' di salah satu sel header), bukan dari nama sheet, karena
+    nama sheet suka geser (Sheet2 jadi Sheet3, dst) tiap kali template diubah."""
+    for name in wb.sheetnames:
+        ws = wb[name]
+        for r in range(1, 5):
+            for c in range(1, min(ws.max_column, 10) + 1):
+                v = ws.cell(r, c).value
+                if v and str(v).strip() == "Segment Price":
+                    return ws
+    return None
+
+
+def parse_daily_sales(wb):
+    """Baca sheet pivot harian: qty & value TOTAL (3mio< + 3mio>) per toko,
+    per tanggal -- ini angka penjualan HARI ITU doang (bukan kumulatif).
+    Return: { 'YYYY-MM-DD': { 'store_id_str': {'qty':.., 'value':..} } }
+    atau None kalau sheet-nya gak ada di file ini."""
+    ws = find_daily_sales_sheet(wb)
+    if ws is None:
+        return None
+
+    date_blocks = []
+    for c in range(1, ws.max_column + 1):
+        v = ws.cell(2, c).value
+        if isinstance(v, datetime):
+            date_blocks.append((c, v.date().isoformat()))
+    if not date_blocks:
+        return None
+
+    result = {}
+    for start_col, date_iso in date_blocks:
+        day_data = {}
+        for r in range(5, ws.max_row + 1):
+            store_id = ws.cell(r, 2).value
+            if not isinstance(store_id, (int, float)):
+                continue
+            qty = ws.cell(r, start_col + 4).value or 0
+            value = ws.cell(r, start_col + 5).value or 0
+            day_data[str(int(store_id))] = {"qty": qty, "value": value}
+        result[date_iso] = day_data
+
+    return result
+
+
+def update_history_from_daily_sales(period_key, stores, daily_sales):
+    """Backfill BANYAK titik history sekaligus dari sheet penjualan harian:
+    kumulatifkan qty & value per toko sampai tiap tanggal, bagi target
+    bulanan (dari Sheet1) buat dapetin achievement % di tanggal itu. Jauh
+    lebih presisi & lengkap daripada 1 titik per upload -- 1 file bisa
+    langsung ngisi puluhan hari riwayat sekaligus."""
+    if HISTORY_PATH.exists():
+        history = json.loads(HISTORY_PATH.read_text(encoding="utf-8"))
+    else:
+        history = {"points": []}
+
+    target_unit_by_store = {str(s["store_id"]): s["target_unit"] for s in stores}
+    target_value_by_store = {str(s["store_id"]): s["target_value"] for s in stores}
+    sorted_dates = sorted(daily_sales.keys())
+
+    cum_qty = {sid: 0 for sid in target_unit_by_store}
+    cum_value = {sid: 0 for sid in target_unit_by_store}
+    existing_by_date = {p["date"]: p for p in history["points"]}
+
+    for date_iso in sorted_dates:
+        day = daily_sales[date_iso]
+        for sid, vals in day.items():
+            if sid in cum_qty:
+                cum_qty[sid] += vals["qty"] or 0
+                cum_value[sid] += vals["value"] or 0
+
+        store_snapshot = {}
+        total_target_unit = total_ach_unit = total_target_value = total_ach_value = 0
+        for sid, target_unit in target_unit_by_store.items():
+            target_value = target_value_by_store.get(sid, 0)
+            ach_unit = cum_qty.get(sid, 0)
+            ach_value = cum_value.get(sid, 0)
+            store_snapshot[sid] = {
+                "target_unit": target_unit,
+                "ach_unit": ach_unit,
+                "ach_pct": (ach_unit / target_unit) if target_unit else 0,
+                "target_value": target_value,
+                "ach_value": ach_value,
+                "ach_value_pct": (ach_value / target_value) if target_value else 0,
+            }
+            total_target_unit += target_unit
+            total_ach_unit += ach_unit
+            total_target_value += target_value
+            total_ach_value += ach_value
+
+        day_num = int(date_iso.split("-")[2])
+        existing_by_date[date_iso] = {
+            "date": date_iso,
+            "period_key": period_key,
+            "to_date_day": day_num,
+            "source": "daily_sales",
+            "stores": store_snapshot,
+            "network": {
+                "target_unit": total_target_unit,
+                "ach_unit": total_ach_unit,
+                "ach_pct": (total_ach_unit / total_target_unit) if total_target_unit else 0,
+                "target_value": total_target_value,
+                "ach_value": total_ach_value,
+                "ach_value_pct": (total_ach_value / total_target_value) if total_target_value else 0,
+            },
+        }
+
+    history["points"] = sorted(existing_by_date.values(), key=lambda p: p["date"])
+    with open(HISTORY_PATH, "w", encoding="utf-8") as f:
+        json.dump(history, f, indent=2, ensure_ascii=False)
+
+    n_this_month = len([p for p in history["points"] if p["period_key"] == period_key])
+    print(f"OK: history.json (dari sheet penjualan harian) -> {n_this_month} titik untuk {period_key} ({len(history['points'])} total sepanjang waktu)")
+
+
 def update_history(period_key, to_date_day, stores, total_row):
     """Simpan snapshot ringan (target/achievement unit per toko) setiap kali
     script ini jalan, satu titik per HARI upload (bukan per bulan). Ini yang
@@ -141,7 +257,11 @@ def update_history(period_key, to_date_day, stores, total_row):
     terpisah total dari data/<bulan>.json yang tetap cuma nyimpen versi
     TERBARU seperti biasa. File ini murni tambahan, gak pernah menghapus
     titik lama, cuma numpuk (dan menimpa titik hari yang sama kalau upload
-    ulang di hari yang sama)."""
+    ulang di hari yang sama).
+
+    Ini FALLBACK -- dipakai cuma kalau sheet penjualan harian (lihat
+    parse_daily_sales) gak ketemu di file. Kalau ketemu, itu yang dipakai
+    duluan karena jauh lebih presisi (lihat update_history_from_daily_sales)."""
     if HISTORY_PATH.exists():
         history = json.loads(HISTORY_PATH.read_text(encoding="utf-8"))
     else:
@@ -169,6 +289,7 @@ def update_history(period_key, to_date_day, stores, total_row):
         "date": today,
         "period_key": period_key,
         "to_date_day": to_date_day,
+        "source": "upload_snapshot",
         "stores": store_snapshot,
         "network": network_snapshot,
     }
@@ -182,7 +303,7 @@ def update_history(period_key, to_date_day, stores, total_row):
         json.dump(history, f, indent=2, ensure_ascii=False)
 
     points_this_month = [p for p in history["points"] if p["period_key"] == period_key]
-    print(f"OK: history.json -> {len(points_this_month)} titik riwayat untuk {period_key} ({len(history['points'])} total sepanjang waktu)")
+    print(f"OK: history.json (snapshot upload) -> {len(points_this_month)} titik riwayat untuk {period_key} ({len(history['points'])} total sepanjang waktu)")
 
 
 def main():
@@ -301,6 +422,20 @@ def main():
         )
         v_perf.check(len(promoters) > 0, "Sheet promotor ketemu tapi isinya 0 baris — cek apakah kolom ID Store/PROMOTOR kosong semua")
 
+    daily_sales_preview = parse_daily_sales(wb)
+    if daily_sales_preview is not None:
+        sum_qty = sum(
+            (vals.get("qty") or 0)
+            for day in daily_sales_preview.values()
+            for vals in day.values()
+        )
+        ref_ach = total_row.get("ach_unit", 0) if total_row else 0
+        v_perf.check(
+            sum_qty == ref_ach,
+            f"Total qty dari sheet penjualan harian ({sum_qty}) beda dari baris TOTAL Sheet1 ({ref_ach}) — kemungkinan rentang tanggalnya gak lengkap/dobel",
+        )
+        v_perf.check(len(daily_sales_preview) > 0, "Sheet penjualan harian ketemu tapi 0 blok tanggal terdeteksi")
+
     v_perf.report()
 
     data = {
@@ -341,7 +476,11 @@ def main():
     print(f"OK: {len(stores)} toko diproses -> {out_path}")
     print(f"Manifest updated -> {MANIFEST_PATH} ({len(manifest['periods'])} bulan tersedia)")
 
-    update_history(period_key, to_date_day, stores, total_row)
+    daily_sales = parse_daily_sales(wb)
+    if daily_sales:
+        update_history_from_daily_sales(period_key, stores, daily_sales)
+    else:
+        update_history(period_key, to_date_day, stores, total_row)
 
 
 if __name__ == "__main__":

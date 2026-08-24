@@ -30,6 +30,7 @@ REPO_ROOT = Path(__file__).resolve().parent.parent
 INPUT_PATH = REPO_ROOT / "source" / "dashboard_data.xlsx"
 DATA_DIR = REPO_ROOT / "data"
 MANIFEST_PATH = DATA_DIR / "manifest.json"
+HISTORY_PATH = DATA_DIR / "history.json"
 
 BULAN_ID = [
     "", "Januari", "Februari", "Maret", "April", "Mei", "Juni",
@@ -131,6 +132,57 @@ def parse_promoters(wb):
         })
 
     return promoters
+
+
+def update_history(period_key, to_date_day, stores, total_row):
+    """Simpan snapshot ringan (target/achievement unit per toko) setiap kali
+    script ini jalan, satu titik per HARI upload (bukan per bulan). Ini yang
+    dipakai dashboard buat grafik tren dalam-bulan (mingguan/harian) --
+    terpisah total dari data/<bulan>.json yang tetap cuma nyimpen versi
+    TERBARU seperti biasa. File ini murni tambahan, gak pernah menghapus
+    titik lama, cuma numpuk (dan menimpa titik hari yang sama kalau upload
+    ulang di hari yang sama)."""
+    if HISTORY_PATH.exists():
+        history = json.loads(HISTORY_PATH.read_text(encoding="utf-8"))
+    else:
+        history = {"points": []}
+
+    today = (datetime.now(JAKARTA) if JAKARTA else datetime.utcnow()).date().isoformat()
+
+    store_snapshot = {
+        str(s["store_id"]): {
+            "target_unit": s["target_unit"],
+            "ach_unit": s["ach_unit"],
+            "ach_pct": s["ach_pct"],
+        }
+        for s in stores
+    }
+    network_snapshot = None
+    if total_row:
+        network_snapshot = {
+            "target_unit": total_row.get("target_unit", 0),
+            "ach_unit": total_row.get("ach_unit", 0),
+            "ach_pct": total_row.get("ach_pct", 0),
+        }
+
+    new_point = {
+        "date": today,
+        "period_key": period_key,
+        "to_date_day": to_date_day,
+        "stores": store_snapshot,
+        "network": network_snapshot,
+    }
+
+    # dedup: kalau hari ini sudah pernah upload, timpa titik itu -- jangan dobel
+    history["points"] = [p for p in history["points"] if p["date"] != today]
+    history["points"].append(new_point)
+    history["points"].sort(key=lambda p: p["date"])
+
+    with open(HISTORY_PATH, "w", encoding="utf-8") as f:
+        json.dump(history, f, indent=2, ensure_ascii=False)
+
+    points_this_month = [p for p in history["points"] if p["period_key"] == period_key]
+    print(f"OK: history.json -> {len(points_this_month)} titik riwayat untuk {period_key} ({len(history['points'])} total sepanjang waktu)")
 
 
 def main():
@@ -288,6 +340,8 @@ def main():
 
     print(f"OK: {len(stores)} toko diproses -> {out_path}")
     print(f"Manifest updated -> {MANIFEST_PATH} ({len(manifest['periods'])} bulan tersedia)")
+
+    update_history(period_key, to_date_day, stores, total_row)
 
 
 if __name__ == "__main__":

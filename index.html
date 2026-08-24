@@ -435,6 +435,7 @@
       <button class="section-tab active" data-section="performance"><span class="nav-icon"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="4,17 9,11 13,14 20,6"/><circle cx="4" cy="17" r="1.3" fill="currentColor" stroke="none"/><circle cx="9" cy="11" r="1.3" fill="currentColor" stroke="none"/><circle cx="13" cy="14" r="1.3" fill="currentColor" stroke="none"/><circle cx="20" cy="6" r="1.3" fill="currentColor" stroke="none"/></svg></span><span>Performance</span></button>
       <button class="section-tab" data-section="stock"><span class="nav-icon"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="9" width="16" height="11" rx="1"/><polyline points="4,9 12,4 20,9"/><line x1="12" y1="9" x2="12" y2="20"/></svg></span><span>Stock</span></button>
       <button class="section-tab" data-section="salestype"><span class="nav-icon"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="3,4 14,4 21,11 14,18 3,18"/><circle cx="8" cy="8" r="1.2" fill="currentColor" stroke="none"/></svg></span><span>Sales per Tipe</span></button>
+      <button class="section-tab" data-section="priority" id="nav-priority-btn" style="display:none;"><span class="nav-icon"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12,3 22,20 2,20"/><line x1="12" y1="9" x2="12" y2="14"/><circle cx="12" cy="17" r="0.9" fill="currentColor" stroke="none"/></svg></span><span>Prioritas</span></button>
       <button class="section-tab" data-section="access" id="nav-access-btn" style="display:none;"><span class="nav-icon"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="7" cy="15" r="4"/><line x1="10" y1="12" x2="20" y2="2"/><line x1="15" y1="7" x2="18" y2="4"/><line x1="17" y1="9" x2="20" y2="6"/></svg></span><span>Akses</span></button>
       <button class="section-tab" data-section="reportcard" id="nav-reportcard-btn" style="display:none;"><span class="nav-icon"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="18" rx="1"/><line x1="8" y1="8" x2="16" y2="8"/><line x1="8" y1="12" x2="16" y2="12"/><line x1="8" y1="16" x2="12" y2="16"/></svg></span><span>Report Card</span></button>
     </nav>
@@ -791,6 +792,42 @@
 
   </div>
 
+  <!-- ================= PRIORITAS HARI INI (hanya untuk akses ALL) ================= -->
+  <div class="page" id="page-priority">
+
+    <div class="kpi-grid" id="priority-kpi-grid"></div>
+
+    <div class="section-head">
+      <h2>Toko Stockout Kritis</h2>
+      <span class="hint">Diurutkan dari jumlah tipe produk yang sudah habis, terbanyak dulu</span>
+    </div>
+    <div class="table-card">
+      <div id="priority-stockout-body" style="padding:4px 0;"></div>
+    </div>
+
+    <div class="section-head">
+      <h2>Pace Menurun</h2>
+      <span class="hint">Toko dengan tren achievement melambat dibanding beberapa titik data sebelumnya</span>
+    </div>
+    <div class="table-card">
+      <div id="priority-declining-body" style="padding:4px 0;"></div>
+    </div>
+
+    <div class="chart-grid" style="margin-top:16px;">
+      <div class="chart-card">
+        <h3>Promotor Perlu Perhatian</h3>
+        <span class="hint">Achievement ALL TYPE terendah, seluruh jaringan</span>
+        <ul class="rank-list" id="priority-promotor-weak"></ul>
+      </div>
+      <div class="chart-card">
+        <h3>Toko Momentum Bagus</h3>
+        <span class="hint">Tren achievement paling naik dibanding beberapa titik sebelumnya</span>
+        <ul class="rank-list" id="priority-momentum-good"></ul>
+      </div>
+    </div>
+
+  </div>
+
   <!-- ================= ACCESS REFERENCE PAGE (hanya untuk akses ALL) ================= -->
   <div class="page" id="page-access">
 
@@ -1092,6 +1129,8 @@ function renderAccessBanner(){
   if(navBtn) navBtn.style.display = isAdmin ? '' : 'none';
   const navRcBtn = document.getElementById('nav-reportcard-btn');
   if(navRcBtn) navRcBtn.style.display = isAdmin ? '' : 'none';
+  const navPrBtn = document.getElementById('nav-priority-btn');
+  if(navPrBtn) navPrBtn.style.display = isAdmin ? '' : 'none';
 }
 
 /* ================================================================ */
@@ -1179,6 +1218,130 @@ function renderAccessTable(){
       <td data-label="Toko">${storesBadges || '<span class="hint">-</span>'}</td>
     </tr>`;
   }).join('');
+}
+
+/* ================================================================ */
+/* ===================== PRIORITAS HARI INI (page) ================== */
+/* ================================================================ */
+function headstoreNameForStore(store_id){
+  const sid = String(store_id);
+  for(const [email, rule] of Object.entries(ACCESS_MAP)){
+    if(rule === 'ALL') continue;
+    if(rule.map(String).includes(sid)) return headstoreNameForEmail(email);
+  }
+  return '-';
+}
+
+function computeStoreStockoutCount(s){
+  let habis = 0, menipis = 0;
+  ['iqoo','vivo'].forEach(brand=>{
+    (s[`${brand}_by_type`]||[]).forEach(t=>{
+      const salesQ = t.sales_out||0, stockQ = t.stock||0;
+      if(salesQ<=0) return;
+      if(stockQ<=0) habis++;
+      else if(t.dos!=null && t.dos<7) menipis++;
+    });
+  });
+  return { habis, menipis };
+}
+
+function computeStorePaceTrend(store_id, fallbackTarget, histPoints){
+  const sid = String(store_id);
+  const series = histPoints.map(p=>{
+    const rec = p.stores[sid];
+    const a = rec ? rec.ach_unit : 0;
+    const t = rec ? rec.target_unit : fallbackTarget;
+    const achP = safeDiv(a,t);
+    const paceP = safeDiv(achP, safeDiv(p.to_date_day, PERF_DATA.total_days));
+    return { date: p.date, pace: paceP };
+  });
+  if(series.length < 3) return null;
+  const windowSize = 4;
+  const last = series[series.length-1].pace;
+  const compareIdx = Math.max(0, series.length-1-windowSize);
+  const compare = series[compareIdx].pace;
+  return { delta: last-compare, last_pace: last, points: series.length };
+}
+
+function renderPriorityPage(){
+  if(!PERF_DATA || !PERF_DATA.stores){
+    document.getElementById('priority-stockout-body').innerHTML = '<div class="cc-empty">Data belum siap.</div>';
+    return;
+  }
+
+  // --- 1. Toko stockout kritis ---
+  const stockoutRows = (STOCK_DATA?.stores||[]).map(s=>{
+    const c = computeStoreStockoutCount(s);
+    return { store_name: s.store_name, headstore: headstoreNameForStore(s.store_id), ...c };
+  }).filter(r=>r.habis>0).sort((a,b)=> b.habis-a.habis || b.menipis-a.menipis).slice(0,8);
+
+  document.getElementById('priority-stockout-body').innerHTML = stockoutRows.length
+    ? stockoutRows.map(r=>`
+      <div class="cc-row">
+        <div class="cc-name"><div class="n">${r.store_name}</div><div class="a">${r.headstore}</div></div>
+        <div class="cc-metric dos-under"><span class="big">${r.habis} habis</span><span>${r.menipis} menipis</span></div>
+      </div>`).join('')
+    : '<div class="cc-empty">Tidak ada toko dengan stockout kritis saat ini.</div>';
+
+  // --- 2 & 4. Tren pace per toko dari riwayat ---
+  const histPoints = (HISTORY_DATA?.points||[])
+    .filter(p=>p.period_key===PERF_DATA.period_key)
+    .sort((a,b)=> a.date<b.date?-1:(a.date>b.date?1:0));
+
+  const trendRows = PERF_DATA.stores.map(s=>{
+    const t = computeStorePaceTrend(s.store_id, s.target_unit, histPoints);
+    if(!t) return null;
+    return { store_name: s.store_name, headstore: headstoreNameForStore(s.store_id), ...t };
+  }).filter(Boolean);
+
+  const declining = trendRows.filter(r=>r.delta <= -0.08).sort((a,b)=>a.delta-b.delta).slice(0,6);
+  const improving = trendRows.filter(r=>r.delta >= 0.08).sort((a,b)=>b.delta-a.delta).slice(0,6);
+
+  document.getElementById('priority-declining-body').innerHTML = declining.length
+    ? declining.map(r=>`
+      <div class="cc-row">
+        <div class="cc-name"><div class="n">${r.store_name}</div><div class="a">${r.headstore}</div></div>
+        <div class="cc-metric dos-under"><span class="big">${(r.delta*100).toFixed(0)}pp</span><span>pace skrg ${pct(r.last_pace)}</span></div>
+      </div>`).join('')
+    : '<div class="cc-empty">Tidak ada toko dengan pace menurun signifikan saat ini.</div>';
+
+  document.getElementById('priority-momentum-good').innerHTML = improving.length
+    ? improving.map((r,i)=>`
+      <li>
+        <span class="rank-num">${i+1}</span>
+        <div class="rank-name"><div class="n">${r.store_name}</div><div class="a">${r.headstore}</div></div>
+        <span class="rank-pct" style="color:${colorHex.good}">+${(r.delta*100).toFixed(0)}pp</span>
+      </li>`).join('')
+    : '<li style="color:var(--ink-faint);font-size:12.5px;padding:8px 0;">Belum ada toko dengan lonjakan signifikan</li>';
+
+  // --- 3. Promotor perlu perhatian (seluruh jaringan) ---
+  const weakPromoters = [...(PERF_DATA.promoters||[])]
+    .filter(p=>p.all_pct < 0.35)
+    .sort((a,b)=>a.all_pct-b.all_pct)
+    .slice(0,6);
+
+  document.getElementById('priority-promotor-weak').innerHTML = weakPromoters.length
+    ? weakPromoters.map((p,i)=>`
+      <li>
+        <span class="rank-num">${i+1}</span>
+        <div class="rank-name"><div class="n">${p.promoter_name}</div><div class="a">${p.store_name}</div></div>
+        <span class="rank-pct" style="color:${colorHex.bad}">${pct(p.all_pct)}</span>
+      </li>`).join('')
+    : '<li style="color:var(--ink-faint);font-size:12.5px;padding:8px 0;">Tidak ada promotor di bawah 35% saat ini</li>';
+
+  // --- KPI ringkasan ---
+  const cards = [
+    {label:'Toko Stockout Kritis', value:String(stockoutRows.length), sub:'toko dengan minimal 1 tipe habis', cls: stockoutRows.length?'bad':'good'},
+    {label:'Toko Pace Menurun', value:String(declining.length), sub:'turun ≥8pp dari beberapa titik lalu', cls: declining.length?'bad':'good'},
+    {label:'Promotor Perlu Perhatian', value:String(weakPromoters.length), sub:'achievement di bawah 35%', cls: weakPromoters.length?'warn':'good'},
+    {label:'Toko Momentum Bagus', value:String(improving.length), sub:'naik ≥8pp — layak diapresiasi', cls:'good'},
+  ];
+  document.getElementById('priority-kpi-grid').innerHTML = cards.map(c=>`
+    <div class="kpi-card">
+      <div class="kpi-label">${c.label}</div>
+      <div class="kpi-value ${c.cls}">${c.value}</div>
+      <div class="kpi-sub">${c.sub}</div>
+    </div>`).join('');
 }
 
 function renderAccessPage(){
@@ -1574,6 +1737,7 @@ document.getElementById('section-tabs').addEventListener('click', e=>{
     salestype: 'Sales per Tipe — Value & Qty',
     access: 'Referensi Akses per Email',
     reportcard: 'Report Card per Headstore',
+    priority: 'Prioritas Hari Ini',
   };
   document.getElementById('brand-title').textContent = titles[activeSection];
   renderMonthRow();
@@ -1772,6 +1936,10 @@ function updatePaceRingForActiveSection(){
     setPaceRing(0, '—', 'Halaman referensi');
     document.getElementById('period-sub').textContent = PERF_DATA ? `Data periode ${PERF_DATA.period_label || PERF_DATA.period}` : 'Pilih headstore di bawah';
     document.getElementById('updated-sub').textContent = '';
+  } else if(activeSection==='priority'){
+    setPaceRing(0, '—', 'Halaman referensi');
+    document.getElementById('period-sub').textContent = PERF_DATA ? `Ringkasan seluruh jaringan · ${PERF_DATA.period_label || PERF_DATA.period}` : '';
+    document.getElementById('updated-sub').textContent = '';
   }
 }
 
@@ -1929,6 +2097,7 @@ function loadPerfPeriod(key){
       const rcSel = document.getElementById('reportcard-select');
       if(rcSel && rcSel.value) renderReportCardContent(rcSel.value);
     }catch(e){ console.error('report card refresh failed', e); }
+    try{ renderPriorityPage(); }catch(e){ console.error('renderPriorityPage failed', e); }
   });
 }
 
@@ -2347,6 +2516,7 @@ function loadStockPeriod(key, isInitial){
     if(activeSection==='stock') renderMonthRow();
     initStock();
     renderStockoutRisk();
+    try{ renderPriorityPage(); }catch(e){ console.error('renderPriorityPage failed', e); }
   });
 }
 

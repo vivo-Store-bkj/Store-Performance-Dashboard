@@ -33,6 +33,9 @@ import sys
 from datetime import datetime
 from pathlib import Path
 
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from validate import Validator
+
 try:
     from zoneinfo import ZoneInfo
     JAKARTA = ZoneInfo("Asia/Jakarta")
@@ -159,6 +162,12 @@ def main():
         {"model": name, **b} for name, b in network_by_model.items()
     ]
     totals_by_type.sort(key=lambda t: -t["value"])
+
+    v_st = Validator("Sales per Type")
+    v_st.check(15 <= len(model_groups) <= 40, f"Jumlah tipe produk terdeteksi {len(model_groups)}, biasanya sekitar 25 — cek apakah header row 3 masih berupa grup 6-kolom per tipe")
+    v_st.check(30 <= len(stores) <= 60, f"Jumlah toko yang terbaca {len(stores)}, biasanya sekitar 43")
+    v_st.check(network_total is not None, "Baris TOTAL (agregat network) gak ketemu — KPI ringkasan bakal 0/kosong", level="FAIL")
+    v_st.report()
 
     # period tag: reuse Sheet1's title if present ("DATA SALES ON <MONTH>"),
     # otherwise fall back to the current run month

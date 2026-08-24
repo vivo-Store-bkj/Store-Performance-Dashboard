@@ -992,6 +992,10 @@ let salesTypeSearchTerm = '';
 // Value array = daftar store_id yang boleh dilihat (dicocokkan sebagai string,
 // karena store_id di dataset Stock formatnya string sementara Performance/Sales
 // per Tipe formatnya angka).
+// Terpisah dari ACCESS_MAP: ini yang boleh lihat menu "Akses" & "Report Card"
+// (alat manajemen/coaching) -- gak otomatis ngikutin siapa yang scope-nya 'ALL'.
+const ADMIN_EMAILS = ['mikefumar@gmail.com'];
+
 const ACCESS_MAP = {
   'mikefumar@gmail.com': 'ALL',
   'zoomforjeje@gmail.com': 'ALL',
@@ -1064,10 +1068,6 @@ function renderAccessBanner(){
   if(ACCESS_SCOPE === 'ALL'){
     scopeEl.textContent = 'Akses semua toko';
     scopeEl.style.color = '';
-    const navBtn = document.getElementById('nav-access-btn');
-    if(navBtn) navBtn.style.display = '';
-    const navRcBtn = document.getElementById('nav-reportcard-btn');
-    if(navRcBtn) navRcBtn.style.display = '';
   } else if(ACCESS_SCOPE === 'NONE'){
     scopeEl.textContent = 'Belum diatur — hubungi admin';
     scopeEl.style.color = 'var(--bad)';
@@ -1075,6 +1075,12 @@ function renderAccessBanner(){
     scopeEl.textContent = `Akses ${ACCESS_SCOPE.size} toko`;
     scopeEl.style.color = '';
   }
+
+  const isAdmin = ADMIN_EMAILS.includes(email);
+  const navBtn = document.getElementById('nav-access-btn');
+  if(navBtn) navBtn.style.display = isAdmin ? '' : 'none';
+  const navRcBtn = document.getElementById('nav-reportcard-btn');
+  if(navRcBtn) navRcBtn.style.display = isAdmin ? '' : 'none';
 }
 
 /* ================================================================ */

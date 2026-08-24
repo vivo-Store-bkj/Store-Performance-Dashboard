@@ -869,6 +869,15 @@
 
       <div class="kpi-grid" id="rc-kpi-grid"></div>
 
+      <div class="chart-card" id="rc-trend-card" style="margin:20px 0; display:none;">
+        <h3>Tren Achievement Dalam Bulan Ini</h3>
+        <span class="hint" id="rc-trend-hint">Diambil dari tiap kali data di-upload</span>
+        <canvas id="rc-trend-chart" height="180"></canvas>
+      </div>
+      <div class="table-card" id="rc-trend-empty" style="padding:16px 20px; margin:20px 0; display:none; font-size:12.5px; color:var(--ink-faint);">
+        Riwayat baru mulai terkumpul — grafik tren akan muncul setelah data ini di-upload beberapa kali lagi bulan ini.
+      </div>
+
       <div class="table-card" id="rc-points-card" style="padding:20px 22px; margin:20px 0; border-left:3px solid var(--accent);">
         <h3 style="font-size:14px; margin-bottom:12px;">Talking Points</h3>
         <ul id="rc-points-list" style="margin:0; padding-left:18px; font-size:13.5px; line-height:1.9; color:var(--ink-soft);"></ul>
@@ -950,6 +959,7 @@ let PERF_MANIFEST = null;
 let perfCurrentKey = null;
 let areaChart = null;
 let vasChart = null;
+let rcTrendChart = null;
 let sortKey = 'ach_pct';
 let sortDir = -1;
 let activeArea = 'ALL';
@@ -1333,6 +1343,55 @@ function renderReportCardContent(email){
     stockSection.style.display = 'none';
   }
 
+  // --- tren dari riwayat (history.json) — 1 titik per hari upload ---
+  const histPoints = (HISTORY_DATA?.points || [])
+    .filter(p => p.period_key === PERF_DATA.period_key)
+    .sort((a,b)=> a.date < b.date ? -1 : (a.date > b.date ? 1 : 0));
+
+  const trendSeries = histPoints.map(p=>{
+    let t=0, a=0;
+    storeIds.forEach(sid=>{
+      const s = p.stores[sid];
+      if(s){ t += s.target_unit; a += s.ach_unit; }
+    });
+    const achP = safeDiv(a,t);
+    const paceP = safeDiv(achP, safeDiv(p.to_date_day, PERF_DATA.total_days));
+    return { date: p.date, ach_pct: achP, pace: paceP };
+  });
+
+  const trendCard = document.getElementById('rc-trend-card');
+  const trendEmpty = document.getElementById('rc-trend-empty');
+  try{
+    if(rcTrendChart){ rcTrendChart.destroy(); rcTrendChart = null; }
+
+    if(trendSeries.length >= 2){
+      trendCard.style.display = '';
+      trendEmpty.style.display = 'none';
+      rcTrendChart = new Chart(document.getElementById('rc-trend-chart'), {
+        type: 'line',
+        data: {
+          labels: trendSeries.map(t=>{ const d=new Date(t.date); return d.getDate()+'/'+(d.getMonth()+1); }),
+          datasets: [{
+            data: trendSeries.map(t=>Math.round(t.ach_pct*1000)/10),
+            borderColor: '#1F4FD8', backgroundColor: 'rgba(31,79,216,0.08)',
+            fill: true, tension: 0.3, pointRadius: 4, borderWidth: 2,
+          }]
+        },
+        options: {
+          plugins:{ legend:{display:false}, tooltip:{callbacks:{label:c=>'Achievement '+c.parsed.y+'%'}} },
+          scales:{ y:{ beginAtZero:true, ticks:{callback:v=>v+'%'} }, x:{ grid:{display:false} } }
+        }
+      });
+    } else {
+      trendCard.style.display = 'none';
+      trendEmpty.style.display = '';
+    }
+  }catch(e){
+    console.error('rc-trend-chart failed', e);
+    trendCard.style.display = 'none';
+    trendEmpty.style.display = '';
+  }
+
   const points = [];
   if(pace < 0.85){
     points.push(`Achievement unit ${pct(achPct)} — di bawah tempo bulan ini (pace ${pace.toFixed(2)}x), padahal sudah hari ke-${PERF_DATA.to_date_day} dari ${PERF_DATA.total_days}.`);
@@ -1349,6 +1408,19 @@ function renderReportCardContent(email){
   if(growthPct < -0.1){
     points.push(`Growth MoM turun ${pct(growthPct)} dibanding bulan lalu.`);
   }
+  if(trendSeries.length >= 3){
+    const first = trendSeries[0].pace, last = trendSeries[trendSeries.length-1].pace;
+    const delta = last - first;
+    const paceVals = trendSeries.map(t=>t.pace);
+    const range = Math.max(...paceVals) - Math.min(...paceVals);
+    if(delta > 0.15){
+      points.push(`Pace membaik konsisten sepanjang bulan ini (${(first*100).toFixed(0)}% → ${(last*100).toFixed(0)}% dari tempo, dari ${trendSeries.length} titik data).`);
+    } else if(delta < -0.15){
+      points.push(`Pace menurun sepanjang bulan ini (${(first*100).toFixed(0)}% → ${(last*100).toFixed(0)}% dari tempo) — layak ditelusuri kenapa.`);
+    } else if(range < 0.1){
+      points.push(`Pace stagnan di sekitar ${(last*100).toFixed(0)}% dari tempo sepanjang bulan ini — belum ada perbaikan berarti antar-titik data.`);
+    }
+  }
   if(sortedStrong.length && sortedStrong[0].all_pct >= 1){
     points.push(`Promotor ${sortedStrong[0].promoter_name} (${sortedStrong[0].store_name}) achievement ${pct(sortedStrong[0].all_pct)} — layak diapresiasi.`);
   }
@@ -1364,7 +1436,11 @@ function renderReportCardContent(email){
 const noCache = url => url + (url.includes('?') ? '&' : '?') + 'v=' + Date.now();
 const fetchFresh = url => fetch(noCache(url), {cache:'no-store'});
 
+let HISTORY_DATA = null;
+
 resolveAccessScope().finally(() => {
+
+fetchFresh('data/history.json').then(r=>r.json()).then(h=>{ HISTORY_DATA = h; }).catch(()=>{ HISTORY_DATA = {points:[]}; });
 
 fetchFresh('data/manifest.json').then(r => r.json()).then(manifest => {
   PERF_MANIFEST = manifest;

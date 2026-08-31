@@ -799,7 +799,7 @@
 
     <div class="section-head">
       <h2>Toko Stockout Kritis</h2>
-      <span class="hint">Diurutkan dari jumlah tipe produk yang sudah habis, terbanyak dulu</span>
+      <span class="hint">Diurutkan dari jumlah tipe produk yang sudah habis, terbanyak dulu · klik baris toko buat lihat tipe produknya</span>
     </div>
     <div class="table-card">
       <div id="priority-stockout-body" style="padding:4px 0;"></div>
@@ -1233,15 +1233,23 @@ function headstoreNameForStore(store_id){
 
 function computeStoreStockoutCount(s){
   let habis = 0, menipis = 0;
+  const habisItems = [], menipisItems = [];
   ['iqoo','vivo'].forEach(brand=>{
     (s[`${brand}_by_type`]||[]).forEach(t=>{
       const salesQ = t.sales_out||0, stockQ = t.stock||0;
       if(salesQ<=0) return;
-      if(stockQ<=0) habis++;
-      else if(t.dos!=null && t.dos<7) menipis++;
+      if(stockQ<=0){
+        habis++;
+        habisItems.push({model:t.model, brand:brand.toUpperCase(), sales:salesQ});
+      } else if(t.dos!=null && t.dos<7){
+        menipis++;
+        menipisItems.push({model:t.model, brand:brand.toUpperCase(), dos:t.dos, stock:stockQ});
+      }
     });
   });
-  return { habis, menipis };
+  habisItems.sort((a,b)=>b.sales-a.sales);
+  menipisItems.sort((a,b)=>a.dos-b.dos);
+  return { habis, menipis, habisItems, menipisItems };
 }
 
 function computeStorePaceTrend(store_id, fallbackTarget, histPoints){
@@ -1275,12 +1283,39 @@ function renderPriorityPage(){
   }).filter(r=>r.habis>0).sort((a,b)=> b.habis-a.habis || b.menipis-a.menipis).slice(0,8);
 
   document.getElementById('priority-stockout-body').innerHTML = stockoutRows.length
-    ? stockoutRows.map(r=>`
-      <div class="cc-row">
-        <div class="cc-name"><div class="n">${r.store_name}</div><div class="a">${r.headstore}</div></div>
-        <div class="cc-metric dos-under"><span class="big">${r.habis} habis</span><span>${r.menipis} menipis</span></div>
-      </div>`).join('')
+    ? stockoutRows.map((r,i)=>{
+        const itemRow = (item, kind) => `
+          <div class="cc-row" style="padding-left:32px;">
+            <div class="cc-name">
+              <div class="n">${item.model} <span style="color:var(--ink-faint);font-weight:400;font-size:11px;">· ${item.brand}</span></div>
+            </div>
+            <div class="cc-metric ${kind==='habis'?'dos-under':'dos-over'}">
+              ${kind==='habis'
+                ? `<span class="big">Stock 0</span><span>${fmt(item.sales)} terjual</span>`
+                : `<span class="big">${item.dos.toFixed(1)} hari</span><span>sisa ${fmt(item.stock)} unit</span>`}
+            </div>
+          </div>`;
+        const detailHTML = [
+          ...r.habisItems.map(it=>itemRow(it,'habis')),
+          ...r.menipisItems.map(it=>itemRow(it,'menipis')),
+        ].join('');
+        return `
+        <div class="cc-row priority-stockout-row" data-idx="${i}" style="cursor:pointer;">
+          <div class="cc-name"><div class="n">${r.store_name}</div><div class="a">${r.headstore}</div></div>
+          <div class="cc-metric dos-under"><span class="big">${r.habis} habis</span><span>${r.menipis} menipis</span></div>
+        </div>
+        <div class="priority-stockout-detail" id="priority-stockout-detail-${i}" style="display:none; background:var(--bg);">${detailHTML}</div>
+        `;
+      }).join('')
     : '<div class="cc-empty">Tidak ada toko dengan stockout kritis saat ini.</div>';
+
+  document.querySelectorAll('.priority-stockout-row').forEach(row=>{
+    row.onclick = ()=>{
+      const detail = document.getElementById('priority-stockout-detail-'+row.dataset.idx);
+      const isOpen = detail.style.display !== 'none';
+      detail.style.display = isOpen ? 'none' : '';
+    };
+  });
 
   // --- 2 & 4. Tren pace per toko dari riwayat ---
   const histPoints = (HISTORY_DATA?.points||[])

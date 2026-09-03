@@ -345,6 +345,37 @@ def main():
         val = ws.cell(row, col).value
         return val if val is not None else 0
 
+    # --- deteksi otomatis posisi kolom blok utama target/achievement ---
+    # Struktur (per Sep 2026): kol7=target ALL TYPE(qty), kol8=target VALUE,
+    # lalu blok achievement VALUE (ach/%/gap) dan blok achievement ALL TYPE
+    # (ach/%/gap) muncul di posisi berbeda. Sebelumnya (s.d. Agu 2026) unit
+    # yang jadi blok utama. Karena bisa ketuker lagi, kita cari lewat row4
+    # (sub-header) daripada hardcode -- jadi gak langsung rusak kalau geser.
+    def find_ach_blocks():
+        # Cari pasangan (VALUE, %, GAP) dan (ALL TYPE, %, GAP) di antara kol 7-26.
+        # Kolom % selalu tepat setelah kolom ach, GAP setelah %.
+        cols = {}
+        for c in range(7, 27):
+            label = str(ws.cell(4, c).value or "").strip().upper()
+            nxt = str(ws.cell(4, c + 1).value or "").strip().upper()
+            nxt2 = str(ws.cell(4, c + 2).value or "").strip().upper()
+            # blok achievement VALUE: kolomnya VALUE, diikuti % lalu GAP
+            if label == "VALUE" and nxt == "%" and nxt2 == "GAP" and "ach_value" not in cols:
+                cols["ach_value"] = c
+            # blok achievement ALL TYPE: kolomnya ALL TYPE, diikuti % lalu GAP
+            if label == "ALL TYPE" and nxt == "%" and nxt2 == "GAP" and "ach_unit" not in cols:
+                cols["ach_unit"] = c
+        return cols
+
+    ACH = find_ach_blocks()
+    # fallback ke posisi lama (Agu 2026) kalau deteksi gagal
+    col_ach_value = ACH.get("ach_value", 18)
+    col_ach_unit = ACH.get("ach_unit", 9)
+
+    def v(row, col):
+        val = ws.cell(row, col).value
+        return val if val is not None else 0
+
     def vas_block(r):
         return {
             "acc": {"target": v(r, 55), "ach": v(r, 56), "pct": v(r, 57)},
@@ -352,6 +383,17 @@ def main():
             "bca_insurance": {"target": v(r, 61), "ach": v(r, 62), "pct": v(r, 63)},
             "indosat": {"target": v(r, 64), "ach": v(r, 65), "pct": v(r, 66)},
             "telkomsel": {"target": v(r, 67), "ach": v(r, 68), "pct": v(r, 69)},
+        }
+
+    def ach_block(r):
+        """Ambil achievement value & unit dari posisi yang sudah dideteksi."""
+        return {
+            "ach_value": v(r, col_ach_value),
+            "ach_value_pct": v(r, col_ach_value + 1),
+            "gap_value": v(r, col_ach_value + 2),
+            "ach_unit": v(r, col_ach_unit),
+            "ach_pct": v(r, col_ach_unit + 1),
+            "gap_unit": v(r, col_ach_unit + 2),
         }
 
     stores = []
@@ -364,10 +406,9 @@ def main():
         if str(a).strip().upper() == "TOTAL":
             total_row = {
                 "target_unit": v(r, 7), "target_value": v(r, 8),
-                "ach_unit": v(r, 9), "ach_pct": v(r, 10), "gap_unit": v(r, 11),
+                **ach_block(r),
                 "mio3_unit": v(r, 13), "mio3_pct": v(r, 14),
                 "iqoo_unit": v(r, 15), "iqoo_pct": v(r, 16),
-                "ach_value": v(r, 18), "ach_value_pct": v(r, 19), "gap_value": v(r, 20),
                 "growth_all_prev": v(r, 35), "growth_all_curr": v(r, 36),
                 "growth_all_gap": v(r, 37), "growth_all_pct": v(r, 38),
                 "growth_value_prev": v(r, 47), "growth_value_curr": v(r, 48),
@@ -388,16 +429,11 @@ def main():
             "jml_pc": v(r, 6),
             "target_unit": v(r, 7),
             "target_value": v(r, 8),
-            "ach_unit": v(r, 9),
-            "ach_pct": v(r, 10),
-            "gap_unit": v(r, 11),
+            **ach_block(r),
             "mio3_unit": v(r, 13),
             "mio3_pct": v(r, 14),
             "iqoo_unit": v(r, 15),
             "iqoo_pct": v(r, 16),
-            "ach_value": v(r, 18),
-            "ach_value_pct": v(r, 19),
-            "gap_value": v(r, 20),
             "growth_all_prev": v(r, 35),
             "growth_all_curr": v(r, 36),
             "growth_all_gap": v(r, 37),

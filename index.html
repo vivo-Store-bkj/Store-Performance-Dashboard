@@ -514,13 +514,13 @@
               <th data-key="no">No</th>
               <th data-key="store_name">Toko</th>
               <th data-key="area">Area</th>
-              <th data-key="target_unit" class="num">Target (unit)</th>
+              <th data-key="ach_value" class="num">Value (Rp)</th>
+              <th data-key="ach_value_pct" class="num sorted">% Value</th>
               <th data-key="ach_unit" class="num">Ach (unit)</th>
-              <th data-key="ach_pct" class="num sorted">% Ach</th>
-              <th data-key="ach_value_pct" class="num">% Value</th>
+              <th data-key="ach_pct" class="num">% Unit</th>
               <th data-key="mio3_pct" class="num">% 3MIO+</th>
               <th data-key="vas_avg" class="num">Attach VAS</th>
-              <th data-key="growth_all_pct" class="num">Growth MoM</th>
+              <th data-key="growth_value_pct" class="num">Growth Value</th>
             </tr>
           </thead>
           <tbody id="table-body"></tbody>
@@ -534,8 +534,8 @@
 
       <div class="chart-grid">
         <div class="chart-card">
-          <h3>% Achievement per Area</h3>
-          <span class="hint">Total achievement vs target unit, per area</span>
+          <h3>% Achievement Value per Area</h3>
+          <span class="hint">Total achievement vs target value (Rp), per area</span>
           <canvas id="chart-area" height="230"></canvas>
           <div class="chart-legend" id="area-legend"></div>
         </div>
@@ -602,12 +602,12 @@
       <div class="chart-grid" style="margin-top:0;">
         <div class="chart-card">
           <h3>Top 5 Promotor</h3>
-          <span class="hint">Berdasarkan % achievement ALL TYPE</span>
+          <span class="hint">Berdasarkan value (Rp) tertinggi</span>
           <ul class="rank-list" id="promotor-top5-list"></ul>
         </div>
         <div class="chart-card">
           <h3>5 Promotor Perlu Perhatian</h3>
-          <span class="hint">Achievement terendah — kandidat coaching</span>
+          <span class="hint">Value (Rp) terendah — kandidat coaching</span>
           <ul class="rank-list" id="promotor-bottom5-list"></ul>
         </div>
       </div>
@@ -906,7 +906,7 @@
       <div class="kpi-grid" id="rc-kpi-grid"></div>
 
       <div class="chart-card" id="rc-trend-card" style="margin:20px 0; display:none;">
-        <h3>Tren Achievement Dalam Bulan Ini</h3>
+        <h3>Tren Achievement Value Dalam Bulan Ini</h3>
         <span class="hint" id="rc-trend-hint">Diambil dari tiap kali data di-upload</span>
         <canvas id="rc-trend-chart" height="180"></canvas>
         <div class="chart-legend" id="rc-trend-legend" style="border-top:none; padding-top:10px;"></div>
@@ -924,7 +924,7 @@
         <div class="section-head"><h2>Per Toko</h2></div>
         <div class="table-card">
           <table class="mobile-cards">
-            <thead><tr><th>Toko</th><th class="num">Target</th><th class="num">Ach</th><th class="num">% Ach</th><th class="num">Growth MoM</th></tr></thead>
+            <thead><tr><th>Toko</th><th class="num">Value (Rp)</th><th class="num">% Value</th><th class="num">Ach (unit)</th><th class="num">Growth Value</th></tr></thead>
             <tbody id="rc-stores-table-body"></tbody>
           </table>
         </div>
@@ -997,12 +997,12 @@ let perfCurrentKey = null;
 let areaChart = null;
 let vasChart = null;
 let rcTrendChart = null;
-let sortKey = 'ach_pct';
+let sortKey = 'ach_value_pct';
 let sortDir = -1;
 let activeArea = 'ALL';
 let searchTerm = '';
 let perfView = 'toko';
-let promotorSortKey = 'all_pct';
+let promotorSortKey = 'value';
 let promotorSortDir = -1;
 let promotorArea = 'ALL';
 let promotorSearchTerm = '';
@@ -1252,12 +1252,12 @@ function computeStoreStockoutCount(s){
   return { habis, menipis, habisItems, menipisItems };
 }
 
-function computeStorePaceTrend(store_id, fallbackTarget, histPoints){
+function computeStorePaceTrend(store_id, fallbackTargetValue, histPoints){
   const sid = String(store_id);
   const series = histPoints.map(p=>{
     const rec = p.stores[sid];
-    const a = rec ? rec.ach_unit : 0;
-    const t = rec ? rec.target_unit : fallbackTarget;
+    const a = rec ? (rec.ach_value||0) : 0;
+    const t = rec ? (rec.target_value||0) : fallbackTargetValue;
     const achP = safeDiv(a,t);
     const paceP = safeDiv(achP, safeDiv(p.to_date_day, PERF_DATA.total_days));
     return { date: p.date, pace: paceP };
@@ -1323,7 +1323,7 @@ function renderPriorityPage(){
     .sort((a,b)=> a.date<b.date?-1:(a.date>b.date?1:0));
 
   const trendRows = PERF_DATA.stores.map(s=>{
-    const t = computeStorePaceTrend(s.store_id, s.target_unit, histPoints);
+    const t = computeStorePaceTrend(s.store_id, s.target_value, histPoints);
     if(!t) return null;
     return { store_name: s.store_name, headstore: headstoreNameForStore(s.store_id), ...t };
   }).filter(Boolean);
@@ -1349,9 +1349,11 @@ function renderPriorityPage(){
     : '<li style="color:var(--ink-faint);font-size:12.5px;padding:8px 0;">Belum ada toko dengan lonjakan signifikan</li>';
 
   // --- 3. Promotor perlu perhatian (seluruh jaringan) ---
+  // Diurut dari value (Rp) terendah. Batasi ke promotor yang PUNYA target
+  // (all_target > 0) supaya baris kosong/non-aktif gak ikut.
   const weakPromoters = [...(PERF_DATA.promoters||[])]
-    .filter(p=>p.all_pct < 0.35)
-    .sort((a,b)=>a.all_pct-b.all_pct)
+    .filter(p=>(p.all_target||0) > 0)
+    .sort((a,b)=>a.value-b.value)
     .slice(0,6);
 
   document.getElementById('priority-promotor-weak').innerHTML = weakPromoters.length
@@ -1359,16 +1361,16 @@ function renderPriorityPage(){
       <li>
         <span class="rank-num">${i+1}</span>
         <div class="rank-name"><div class="n">${p.promoter_name}</div><div class="a">${p.store_name}</div></div>
-        <span class="rank-pct" style="color:${colorHex.bad}">${pct(p.all_pct)}</span>
+        <span class="rank-pct" style="color:${colorHex.bad}">${money(p.value)}</span>
       </li>`).join('')
-    : '<li style="color:var(--ink-faint);font-size:12.5px;padding:8px 0;">Tidak ada promotor di bawah 35% saat ini</li>';
+    : '<li style="color:var(--ink-faint);font-size:12.5px;padding:8px 0;">Belum ada data promotor.</li>';
 
   // --- KPI ringkasan ---
   const cards = [
     {label:'Toko Stockout Kritis', value:String(stockoutRows.length), sub:'toko dengan minimal 1 tipe habis', cls: stockoutRows.length?'bad':'good'},
-    {label:'Toko Pace Menurun', value:String(declining.length), sub:'turun ≥8pp dari beberapa titik lalu', cls: declining.length?'bad':'good'},
-    {label:'Promotor Perlu Perhatian', value:String(weakPromoters.length), sub:'achievement di bawah 35%', cls: weakPromoters.length?'warn':'good'},
-    {label:'Toko Momentum Bagus', value:String(improving.length), sub:'naik ≥8pp — layak diapresiasi', cls:'good'},
+    {label:'Toko Pace Menurun', value:String(declining.length), sub:'value melambat ≥8pp dari beberapa titik lalu', cls: declining.length?'bad':'good'},
+    {label:'Promotor Value Terendah', value:String(weakPromoters.length), sub:'kandidat coaching', cls: weakPromoters.length?'warn':'good'},
+    {label:'Toko Momentum Bagus', value:String(improving.length), sub:'value naik ≥8pp — layak diapresiasi', cls:'good'},
   ];
   document.getElementById('priority-kpi-grid').innerHTML = cards.map(c=>`
     <div class="kpi-card">
@@ -1465,16 +1467,16 @@ function renderReportCardContent(email){
   const achPct = safeDiv(achUnit, targetUnit);
   const targetVal = sum(s=>s.target_value), achVal = sum(s=>s.ach_value);
   const achValPct = safeDiv(achVal, targetVal);
-  const gPrev = sum(s=>s.growth_all_prev), gCurr = sum(s=>s.growth_all_curr);
-  const growthPct = safeDiv(gCurr-gPrev, gPrev);
+  const gPrevV = sum(s=>s.growth_value_prev), gCurrV = sum(s=>s.growth_value_curr);
+  const growthValPct = safeDiv(gCurrV-gPrevV, gPrevV);
   const timeGone = PERF_DATA.time_gone || 1;
-  const pace = safeDiv(achPct, timeGone);
+  const pace = safeDiv(achValPct, timeGone);
 
   const kpiCards = [
-    {label:'Achievement Unit', value: pct(achPct), sub:`${fmt(achUnit)} / ${fmt(targetUnit)} unit`, cls: statusColor(achPct)},
     {label:'Achievement Value', value: pct(achValPct), sub: money(achVal)+' / '+money(targetVal), cls: statusColor(achValPct)},
-    {label:'Pace vs Tempo', value: pace.toFixed(2)+'x', sub: pace>=1 ? 'sesuai/di atas tempo' : 'di bawah tempo bulan ini', cls: pace>=1?'good':(pace>=0.85?'warn':'bad')},
-    {label:'Growth MoM', value: (growthPct>=0?'+':'')+pct(growthPct), sub:`${fmt(gPrev)} → ${fmt(gCurr)} unit`, cls: growthPct>=0?'good':'bad'},
+    {label:'Achievement Unit', value: pct(achPct), sub:`${fmt(achUnit)} / ${fmt(targetUnit)} unit`, cls: statusColor(achPct)},
+    {label:'Pace vs Tempo (value)', value: pace.toFixed(2)+'x', sub: pace>=1 ? 'sesuai/di atas tempo' : 'di bawah tempo bulan ini', cls: pace>=1?'good':(pace>=0.85?'warn':'bad')},
+    {label:'Growth MoM (value)', value: (growthValPct>=0?'+':'')+pct(growthValPct), sub:`${money(gPrevV)} → ${money(gCurrV)}`, cls: growthValPct>=0?'good':'bad'},
   ];
   document.getElementById('rc-kpi-grid').innerHTML = kpiCards.map(c=>`
     <div class="kpi-card">
@@ -1486,10 +1488,10 @@ function renderReportCardContent(email){
   document.getElementById('rc-stores-table-body').innerHTML = stores.map(s=>`
     <tr class="data-row">
       <td class="cell-primary"><div class="store-name">${s.store_name}</div></td>
-      <td class="num mono" data-label="Target">${fmt(s.target_unit)}</td>
-      <td class="num mono" data-label="Ach">${fmt(s.ach_unit)}</td>
-      <td class="num" data-label="% Ach"><span class="tag ${statusColor(s.ach_pct)}">${pct(s.ach_pct)}</span></td>
-      <td class="num mono" data-label="Growth MoM" style="color:${s.growth_all_pct>=0?colorHex.good:colorHex.bad}">${s.growth_all_pct>=0?'+':''}${pct(s.growth_all_pct)}</td>
+      <td class="num mono" data-label="Value (Rp)">${money(s.ach_value)}</td>
+      <td class="num" data-label="% Value"><span class="tag ${statusColor(s.ach_value_pct)}">${pct(s.ach_value_pct)}</span></td>
+      <td class="num mono" data-label="Ach (unit)">${fmt(s.ach_unit)}</td>
+      <td class="num mono" data-label="Growth Value" style="color:${s.growth_value_pct>=0?colorHex.good:colorHex.bad}">${s.growth_value_pct>=0?'+':''}${pct(s.growth_value_pct)}</td>
     </tr>`).join('');
   document.getElementById('rc-stores-section').style.display = stores.length>1 ? '' : 'none';
 
@@ -1507,19 +1509,19 @@ function renderReportCardContent(email){
       <span class="lg-pct" style="color:${colorHex[statusColor(v.pct)]}">${pct(v.pct)}</span>
     </div>`).join('');
 
-  const sortedWeak = [...promoters].sort((a,b)=>a.all_pct-b.all_pct).slice(0,5);
-  const sortedStrong = [...promoters].sort((a,b)=>b.all_pct-a.all_pct).slice(0,5);
-  const renderPromList = (arr) => arr.length ? arr.map((p,i)=>`
+  const sortedWeak = [...promoters].sort((a,b)=>a.value-b.value).slice(0,5);
+  const sortedStrong = [...promoters].sort((a,b)=>b.value-a.value).slice(0,5);
+  const renderPromList = (arr, isStrong) => arr.length ? arr.map((p,i)=>`
     <li>
       <span class="rank-num">${i+1}</span>
       <div class="rank-name">
         <div class="n">${p.promoter_name}</div>
         <div class="a">${p.store_name}</div>
       </div>
-      <span class="rank-pct" style="color:${colorHex[statusColor(p.all_pct)]}">${pct(p.all_pct)}</span>
+      <span class="rank-pct" style="color:${isStrong?colorHex.good:colorHex.bad}">${money(p.value)}</span>
     </li>`).join('') : '<li style="color:var(--ink-faint);font-size:12.5px;padding:8px 0;">Belum ada data promotor untuk toko ini</li>';
-  document.getElementById('rc-promotor-weak').innerHTML = renderPromList(sortedWeak);
-  document.getElementById('rc-promotor-strong').innerHTML = renderPromList(sortedStrong);
+  document.getElementById('rc-promotor-weak').innerHTML = renderPromList(sortedWeak, false);
+  document.getElementById('rc-promotor-strong').innerHTML = renderPromList(sortedStrong, true);
 
   const habisItems = [], menipisItems = [];
   stockStores.forEach(s=>{
@@ -1565,21 +1567,21 @@ function renderReportCardContent(email){
     let t=0, a=0;
     storeIds.forEach(sid=>{
       const s = p.stores[sid];
-      if(s){ t += s.target_unit; a += s.ach_unit; }
+      if(s){ t += (s.target_value||0); a += (s.ach_value||0); }
     });
     const achP = safeDiv(a,t);
     const paceP = safeDiv(achP, safeDiv(p.to_date_day, PERF_DATA.total_days));
-    return { date: p.date, ach_pct: achP, pace: paceP, ach_unit: a, target_unit: t };
+    return { date: p.date, ach_pct: achP, pace: paceP, ach_value: a, target_value: t };
   });
   trendSeries.forEach((pt,i)=>{
-    pt.daily_unit = i===0 ? null : pt.ach_unit - trendSeries[i-1].ach_unit;
+    pt.daily_value = i===0 ? null : pt.ach_value - trendSeries[i-1].ach_value;
   });
 
   const trendHintEl = document.getElementById('rc-trend-hint');
   if(trendSeries.length){
     const last = trendSeries[trendSeries.length-1];
     const lastDate = new Date(last.date);
-    trendHintEl.textContent = `Total s.d. ${lastDate.getDate()}/${lastDate.getMonth()+1}: ${fmt(last.ach_unit)} / ${fmt(last.target_unit)} unit (${pct(last.ach_pct)}) — arahkan kursor ke titik buat lihat detail harian`;
+    trendHintEl.textContent = `Total value s.d. ${lastDate.getDate()}/${lastDate.getMonth()+1}: ${money(last.ach_value)} / ${money(last.target_value)} (${pct(last.ach_pct)}) — arahkan kursor ke titik buat lihat detail harian`;
   } else {
     trendHintEl.textContent = 'Diambil dari tiap kali data di-upload';
   }
@@ -1591,9 +1593,9 @@ function renderReportCardContent(email){
     const sid = String(s.store_id);
     const series = histPoints.map(p=>{
       const rec = p.stores[sid];
-      const a = rec ? rec.ach_unit : 0;
-      const t = rec ? rec.target_unit : (s.target_unit || 0);
-      return { date: p.date, ach_pct: safeDiv(a,t), ach_unit: a, target_unit: t };
+      const a = rec ? (rec.ach_value||0) : 0;
+      const t = rec ? (rec.target_value||0) : (s.target_value || 0);
+      return { date: p.date, ach_pct: safeDiv(a,t), ach_value: a, target_value: t };
     });
     return { store_id: sid, store_name: s.store_name, color: STORE_COLORS[idx % STORE_COLORS.length], series };
   });
@@ -1624,11 +1626,11 @@ function renderReportCardContent(email){
             tooltip:{ callbacks:{ label: c=>{
               const pt = trendSeries[c.dataIndex];
               const lines = [
-                `Kumulatif: ${fmt(pt.ach_unit)} / ${fmt(pt.target_unit)} unit (${c.parsed.y}%)`,
+                `Kumulatif: ${money(pt.ach_value)} / ${money(pt.target_value)} (${c.parsed.y}%)`,
               ];
-              lines.push(pt.daily_unit===null
-                ? 'Terjual s.d. tanggal ini (titik pertama)'
-                : `Terjual tanggal ini: ${pt.daily_unit>=0?'+':''}${fmt(pt.daily_unit)} unit`);
+              lines.push(pt.daily_value===null
+                ? 'Value s.d. tanggal ini (titik pertama)'
+                : `Value tanggal ini: ${pt.daily_value>=0?'+':''}${money(pt.daily_value)}`);
               return lines;
             } } }
           },
@@ -1660,7 +1662,7 @@ function renderReportCardContent(email){
             tooltip:{ callbacks:{ label: c=>{
               const ps = perStoreSeries[c.datasetIndex];
               const pt = ps.series[c.dataIndex];
-              return `${ps.store_name}: ${c.parsed.y}% (${fmt(pt.ach_unit)}/${fmt(pt.target_unit)} unit)`;
+              return `${ps.store_name}: ${c.parsed.y}% (${money(pt.ach_value)})`;
             } } }
           },
           scales:{ y:{ beginAtZero:true, ticks:{callback:v=>v+'%'} }, x:{ grid:{display:false} } }
@@ -1678,19 +1680,19 @@ function renderReportCardContent(email){
 
   const points = [];
   if(pace < 0.85){
-    points.push(`Achievement unit ${pct(achPct)} — di bawah tempo bulan ini (pace ${pace.toFixed(2)}x), padahal sudah hari ke-${PERF_DATA.to_date_day} dari ${PERF_DATA.total_days}.`);
+    points.push(`Achievement value ${pct(achValPct)} — di bawah tempo bulan ini (pace ${pace.toFixed(2)}x), padahal sudah hari ke-${PERF_DATA.to_date_day} dari ${PERF_DATA.total_days}.`);
   }
   if(vasAgg.length && vasAgg[0].pct < 0.5){
     points.push(`Attach rate ${vasAgg[0].label} cuma ${pct(vasAgg[0].pct)} — paling lemah dari 5 provider, layak jadi fokus.`);
   }
-  if(sortedWeak.length && sortedWeak[0].all_pct < 0.4){
-    points.push(`Promotor ${sortedWeak[0].promoter_name} (${sortedWeak[0].store_name}) achievement cuma ${pct(sortedWeak[0].all_pct)} — kandidat coaching intensif.`);
+  if(sortedWeak.length){
+    points.push(`Promotor value terendah: ${sortedWeak[0].promoter_name} (${sortedWeak[0].store_name}) baru ${money(sortedWeak[0].value)} — kandidat coaching.`);
   }
   if(habisItems.length){
     points.push(`${habisItems.length} tipe produk sudah stockout di toko-toko ini — perlu restock segera.`);
   }
-  if(growthPct < -0.1){
-    points.push(`Growth MoM turun ${pct(growthPct)} dibanding bulan lalu.`);
+  if(growthValPct < -0.1){
+    points.push(`Growth value MoM turun ${pct(growthValPct)} dibanding bulan lalu.`);
   }
   if(trendSeries.length >= 3){
     const first = trendSeries[0].pace, last = trendSeries[trendSeries.length-1].pace;
@@ -1698,15 +1700,15 @@ function renderReportCardContent(email){
     const paceVals = trendSeries.map(t=>t.pace);
     const range = Math.max(...paceVals) - Math.min(...paceVals);
     if(delta > 0.15){
-      points.push(`Pace membaik konsisten sepanjang bulan ini (${(first*100).toFixed(0)}% → ${(last*100).toFixed(0)}% dari tempo, dari ${trendSeries.length} titik data).`);
+      points.push(`Pace value membaik konsisten sepanjang bulan ini (${(first*100).toFixed(0)}% → ${(last*100).toFixed(0)}% dari tempo, dari ${trendSeries.length} titik data).`);
     } else if(delta < -0.15){
-      points.push(`Pace menurun sepanjang bulan ini (${(first*100).toFixed(0)}% → ${(last*100).toFixed(0)}% dari tempo) — layak ditelusuri kenapa.`);
+      points.push(`Pace value menurun sepanjang bulan ini (${(first*100).toFixed(0)}% → ${(last*100).toFixed(0)}% dari tempo) — layak ditelusuri kenapa.`);
     } else if(range < 0.1){
-      points.push(`Pace stagnan di sekitar ${(last*100).toFixed(0)}% dari tempo sepanjang bulan ini — belum ada perbaikan berarti antar-titik data.`);
+      points.push(`Pace value stagnan di sekitar ${(last*100).toFixed(0)}% dari tempo sepanjang bulan ini — belum ada perbaikan berarti antar-titik data.`);
     }
   }
-  if(sortedStrong.length && sortedStrong[0].all_pct >= 1){
-    points.push(`Promotor ${sortedStrong[0].promoter_name} (${sortedStrong[0].store_name}) achievement ${pct(sortedStrong[0].all_pct)} — layak diapresiasi.`);
+  if(sortedStrong.length){
+    points.push(`Promotor value tertinggi: ${sortedStrong[0].promoter_name} (${sortedStrong[0].store_name}) ${money(sortedStrong[0].value)} — layak diapresiasi.`);
   }
   if(points.length===0){
     points.push('Gak ada red flag signifikan bulan ini — pertahankan performa yang sudah baik.');
@@ -1794,13 +1796,14 @@ const EXPORT_BUILDERS = {
           'Toko': s.store_name,
           'Manager': s.manager,
           'Area': s.area,
+          'Target Value (Rp)': s.target_value,
+          'Achievement Value (Rp)': s.ach_value,
+          '% Achievement Value': pctNum(s.ach_value_pct),
+          'Gap Value (Rp)': s.gap_value,
           'Target Unit': s.target_unit,
           'Achievement Unit': s.ach_unit,
           '% Achievement Unit': pctNum(s.ach_pct),
           'Gap Unit': s.gap_unit,
-          'Target Value (Rp)': s.target_value,
-          'Achievement Value (Rp)': s.ach_value,
-          '% Achievement Value': pctNum(s.ach_value_pct),
           '% 3MIO+': pctNum(s.mio3_pct),
         };
         Object.entries(vasLabels).forEach(([key,label])=>{
@@ -1810,7 +1813,8 @@ const EXPORT_BUILDERS = {
           row[`${label} %`] = pctNum(v.pct);
         });
         row['Attach Rate VAS Rata-rata (%)'] = pctNum(s.vas_avg);
-        row['Growth MoM (%)'] = pctNum(s.growth_all_pct);
+        row['Growth Value (%)'] = pctNum(s.growth_value_pct);
+        row['Growth Unit (%)'] = pctNum(s.growth_all_pct);
         return row;
       }),
     };
@@ -2189,13 +2193,14 @@ function initPerf(){
 
 function renderKPIs(){
   const t = PERF_DATA.total;
-  const belowTarget = PERF_DATA.stores.filter(s=>s.ach_pct<1).length;
+  const belowTarget = PERF_DATA.stores.filter(s=>s.ach_value_pct<1).length;
   const vasAvgNet = Object.values(t.vas).reduce((a,v)=>a+v.pct,0)/5;
   const cards = [
-    {label:'Achievement Unit', value: pct(t.ach_pct), sub:`${t.ach_unit.toLocaleString('id-ID')} / ${t.target_unit.toLocaleString('id-ID')} unit`, cls: statusColor(t.ach_pct)},
     {label:'Achievement Value', value: pct(t.ach_value_pct), sub: money(t.ach_value)+' / '+money(t.target_value), cls: statusColor(t.ach_value_pct)},
-    {label:'Toko di bawah target', value: belowTarget+' / '+PERF_DATA.stores.length, sub:'toko belum capai 100%', cls: belowTarget>PERF_DATA.stores.length/2?'bad':'warn'},
-    {label:'Growth MoM (unit)', value:(t.growth_all_pct>=0?'+':'')+pct(t.growth_all_pct), sub:`Bulan lalu ${t.growth_all_prev.toLocaleString('id-ID')} → Bulan ini ${t.growth_all_curr.toLocaleString('id-ID')}`, cls: t.growth_all_pct>=0?'good':'bad'},
+    {label:'Achievement Unit', value: pct(t.ach_pct), sub:`${t.ach_unit.toLocaleString('id-ID')} / ${t.target_unit.toLocaleString('id-ID')} unit`, cls: statusColor(t.ach_pct)},
+    {label:'Toko di bawah target', value: belowTarget+' / '+PERF_DATA.stores.length, sub:'toko belum capai 100% value', cls: belowTarget>PERF_DATA.stores.length/2?'bad':'warn'},
+    {label:'Growth MoM (value)', value:(t.growth_value_pct>=0?'+':'')+pct(t.growth_value_pct), sub:`${money(t.growth_value_prev)} → ${money(t.growth_value_curr)}`, cls: t.growth_value_pct>=0?'good':'bad'},
+    {label:'Growth MoM (unit)', value:(t.growth_all_pct>=0?'+':'')+pct(t.growth_all_pct), sub:`${t.growth_all_prev.toLocaleString('id-ID')} → ${t.growth_all_curr.toLocaleString('id-ID')} unit`, cls: t.growth_all_pct>=0?'good':'bad'},
     {label:'Attach Rate VAS (avg)', value: pct(vasAvgNet), sub:'rata-rata 5 provider', cls: statusColor(vasAvgNet)},
     {label:'3MIO+ Mix', value: pct(t.mio3_pct), sub: t.mio3_unit.toLocaleString('id-ID')+' unit dari total achievement', cls: statusColor(t.mio3_pct*1.4)},
   ];
@@ -2246,15 +2251,15 @@ function renderTable(){
         <div class="store-meta">${s.manager}</div>
       </td>
       <td data-label="Area"><span class="area-pill">${s.area}</span></td>
-      <td class="num mono" data-label="Target">${s.target_unit.toLocaleString('id-ID')}</td>
-      <td class="num mono" data-label="Ach (unit)">${s.ach_unit.toLocaleString('id-ID')}</td>
-      <td class="num" data-label="% Ach">
+      <td class="num mono" data-label="Value (Rp)">${money(s.ach_value)}</td>
+      <td class="num" data-label="% Value">
         <div class="pct-cell" style="justify-content:flex-end;">
-          <span class="status-dot" style="background:${colorHex[sc]}"></span>
-          <span class="mono" style="font-weight:700;">${pct(s.ach_pct)}</span>
+          <span class="status-dot" style="background:${colorHex[vc]}"></span>
+          <span class="mono" style="font-weight:700;">${pct(s.ach_value_pct)}</span>
         </div>
       </td>
-      <td class="num" data-label="% Value"><span class="tag ${vc}">${pct(s.ach_value_pct)}</span></td>
+      <td class="num mono" data-label="Ach (unit)">${s.ach_unit.toLocaleString('id-ID')}</td>
+      <td class="num" data-label="% Unit"><span class="tag ${sc}">${pct(s.ach_pct)}</span></td>
       <td class="num mono" data-label="% 3MIO+">${pct(s.mio3_pct)}</td>
       <td class="num" data-label="Attach VAS">
         <div class="pct-cell" style="justify-content:flex-end;">
@@ -2262,7 +2267,7 @@ function renderTable(){
           <span class="mono">${pct(s.vas_avg)}</span>
         </div>
       </td>
-      <td class="num mono" data-label="Growth MoM" style="color:${s.growth_all_pct>=0?colorHex.good:colorHex.bad}">${s.growth_all_pct>=0?'+':''}${pct(s.growth_all_pct)}</td>
+      <td class="num mono" data-label="Growth Value" style="color:${s.growth_value_pct>=0?colorHex.good:colorHex.bad}">${s.growth_value_pct>=0?'+':''}${pct(s.growth_value_pct)}</td>
     </tr>
     <tr class="detail-row" id="detail-${s.store_id}"><td colspan="10">${detailHTML(s)}</td></tr>
     `;
@@ -2309,8 +2314,8 @@ function renderCharts(){
   const areaMap = {};
   PERF_DATA.stores.forEach(s=>{
     if(!areaMap[s.area]) areaMap[s.area] = {target:0, ach:0};
-    areaMap[s.area].target += s.target_unit;
-    areaMap[s.area].ach += s.ach_unit;
+    areaMap[s.area].target += s.target_value;
+    areaMap[s.area].ach += s.ach_value;
   });
   const areaLabels = Object.keys(areaMap);
   const areaVals = areaLabels.map(a => areaMap[a].target > 0 ? (areaMap[a].ach/areaMap[a].target*100) : 0);
@@ -2327,7 +2332,7 @@ function renderCharts(){
       plugins:{legend:{display:false}, tooltip:{callbacks:{
         label:c=>{
           const a = areaMap[c.label];
-          return [`${c.parsed.y.toFixed(1)}%`, `Ach ${a.ach.toLocaleString('id-ID')} / Target ${a.target.toLocaleString('id-ID')} unit`];
+          return [`${c.parsed.y.toFixed(1)}%`, `Ach ${money(a.ach)} / Target ${money(a.target)}`];
         }
       }}},
       scales:{ y:{ beginAtZero:true, ticks:{callback:v=>v+'%'}, grid:{color:'#EEF0F4'} }, x:{ grid:{display:false} } }
@@ -2339,7 +2344,7 @@ function renderCharts(){
     const p = v.target>0 ? v.ach/v.target : 0;
     return `<div class="chart-legend-row">
       <span class="lg-label">${a}</span>
-      <span class="lg-nums">${v.ach.toLocaleString('id-ID')} / ${v.target.toLocaleString('id-ID')} unit</span>
+      <span class="lg-nums">${money(v.ach)} / ${money(v.target)}</span>
       <span class="lg-pct" style="color:${colorHex[statusColor(p)]}">${(p*100).toFixed(1)}%</span>
     </div>`;
   }).join('');
@@ -2379,7 +2384,7 @@ function renderCharts(){
 }
 
 function renderRankings(){
-  const sorted = [...PERF_DATA.stores].sort((a,b)=>b.ach_pct-a.ach_pct);
+  const sorted = [...PERF_DATA.stores].sort((a,b)=>b.ach_value_pct-a.ach_value_pct);
   const top5 = sorted.slice(0,5);
   const bottom5 = sorted.slice(-5).reverse();
   const renderList = (arr) => arr.map((s,i)=>`
@@ -2387,9 +2392,9 @@ function renderRankings(){
       <span class="rank-num">${i+1}</span>
       <div class="rank-name">
         <div class="n">${s.store_name}</div>
-        <div class="a">${s.area} · ${s.manager}</div>
+        <div class="a">${s.area} · ${money(s.ach_value)}</div>
       </div>
-      <span class="rank-pct" style="color:${colorHex[statusColor(s.ach_pct)]}">${pct(s.ach_pct)}</span>
+      <span class="rank-pct" style="color:${colorHex[statusColor(s.ach_value_pct)]}">${pct(s.ach_value_pct)}</span>
     </li>`).join('');
   document.getElementById('top5-list').innerHTML = renderList(top5);
   document.getElementById('bottom5-list').innerHTML = renderList(bottom5);
@@ -2494,20 +2499,20 @@ function promotorDetailHTML(p){
 
 function renderPromotorRankings(){
   const list = (PERF_DATA.promoters||[]);
-  const sorted = [...list].sort((a,b)=>b.all_pct-a.all_pct);
+  const sorted = [...list].sort((a,b)=>b.value-a.value);
   const top5 = sorted.slice(0,5);
   const bottom5 = sorted.slice(-5).reverse();
-  const renderList = (arr) => arr.map((p,i)=>`
+  const renderList = (arr, isTop) => arr.map((p,i)=>`
     <li>
       <span class="rank-num">${i+1}</span>
       <div class="rank-name">
         <div class="n">${p.promoter_name}</div>
         <div class="a">${p.store_name} · ${p.area}</div>
       </div>
-      <span class="rank-pct" style="color:${colorHex[statusColor(p.all_pct)]}">${pct(p.all_pct)}</span>
+      <span class="rank-pct" style="color:${isTop?colorHex.good:colorHex.bad}">${money(p.value)}</span>
     </li>`).join('');
-  document.getElementById('promotor-top5-list').innerHTML = renderList(top5);
-  document.getElementById('promotor-bottom5-list').innerHTML = renderList(bottom5);
+  document.getElementById('promotor-top5-list').innerHTML = renderList(top5, true);
+  document.getElementById('promotor-bottom5-list').innerHTML = renderList(bottom5, false);
 }
 
 /* ================================================================ */

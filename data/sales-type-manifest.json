@@ -4,6 +4,11 @@
       "key": "2026-08",
       "label": "Agustus 2026",
       "file": "data/sales-type-2026-08.json"
+    },
+    {
+      "key": "2026-09",
+      "label": "September 2026",
+      "file": "data/sales-type-2026-09.json"
     }
   ]
 }

@@ -2,151 +2,151 @@
   "period_key": "2026-09",
   "period_label": "September 2026",
   "updated_by": "Michael Fumar",
-  "updated_at": "4 September 2026, 00:04 WIB",
+  "updated_at": "4 September 2026, 00:15 WIB",
   "totals_by_type": [
     {
       "model": "Y11d",
-      "qty": 46,
-      "qty_prev": 47,
-      "qty_delta": -1,
-      "value": 122754000,
-      "value_prev": 124353000,
-      "value_delta": -1599000
+      "qty": 82,
+      "qty_prev": 123,
+      "qty_delta": -41,
+      "value": 216318000,
+      "value_prev": 328277000,
+      "value_delta": -111959000
     },
     {
       "model": "Y05",
-      "qty": 36,
-      "qty_prev": 32,
-      "qty_delta": 4,
-      "value": 89064000,
-      "value_prev": 77768000,
-      "value_delta": 11296000
+      "qty": 50,
+      "qty_prev": 66,
+      "qty_delta": -16,
+      "value": 123350000,
+      "value_prev": 160734000,
+      "value_delta": -37384000
     },
     {
       "model": "Y31d Pro",
-      "qty": 19,
-      "qty_prev": 2,
-      "qty_delta": 17,
-      "value": 83081000,
-      "value_prev": 8598000,
-      "value_delta": 74483000
+      "qty": 25,
+      "qty_prev": 4,
+      "qty_delta": 21,
+      "value": 108675000,
+      "value_prev": 17196000,
+      "value_delta": 91479000
     },
     {
       "model": "V60 Lite",
-      "qty": 10,
-      "qty_prev": 0,
-      "qty_delta": 10,
-      "value": 59590000,
-      "value_prev": 0,
-      "value_delta": 59590000
-    },
-    {
-      "model": "Y05e",
-      "qty": 25,
-      "qty_prev": 42,
-      "qty_delta": -17,
-      "value": 52475000,
-      "value_prev": 88158000,
-      "value_delta": -35683000
+      "qty": 18,
+      "qty_prev": 1,
+      "qty_delta": 17,
+      "value": 106782000,
+      "value_prev": 5899000,
+      "value_delta": 100883000
     },
     {
       "model": "V70",
-      "qty": 4,
-      "qty_prev": 4,
-      "qty_delta": 0,
-      "value": 39996000,
-      "value_prev": 39996000,
-      "value_delta": 0
+      "qty": 10,
+      "qty_prev": 11,
+      "qty_delta": -1,
+      "value": 99990000,
+      "value_prev": 109989000,
+      "value_delta": -9999000
     },
     {
-      "model": "V70 FE",
-      "qty": 4,
-      "qty_prev": 1,
-      "qty_delta": 3,
-      "value": 31996000,
-      "value_prev": 7999000,
-      "value_delta": 23997000
-    },
-    {
-      "model": "Y500",
-      "qty": 5,
-      "qty_prev": 1,
-      "qty_delta": 4,
-      "value": 29895000,
-      "value_prev": 5499000,
-      "value_delta": 24396000
+      "model": "Y05e",
+      "qty": 34,
+      "qty_prev": 106,
+      "qty_delta": -72,
+      "value": 71366000,
+      "value_prev": 222494000,
+      "value_delta": -151128000
     },
     {
       "model": "X300 Ultra",
-      "qty": 1,
-      "qty_prev": 0,
-      "qty_delta": 1,
-      "value": 25999000,
-      "value_prev": 0,
-      "value_delta": 25999000
+      "qty": 2,
+      "qty_prev": 4,
+      "qty_delta": -2,
+      "value": 51998000,
+      "value_prev": 107996000,
+      "value_delta": -55998000
     },
     {
-      "model": "Y31d (v1)",
-      "qty": 4,
-      "qty_prev": 5,
-      "qty_delta": -1,
-      "value": 14396000,
-      "value_prev": 17995000,
-      "value_delta": -3599000
+      "model": "Y500",
+      "qty": 7,
+      "qty_prev": 12,
+      "qty_delta": -5,
+      "value": 40893000,
+      "value_prev": 70788000,
+      "value_delta": -29895000
     },
     {
-      "model": "Y31d (v2)",
-      "qty": 4,
-      "qty_prev": 2,
-      "qty_delta": 2,
-      "value": 14396000,
-      "value_prev": 7198000,
-      "value_delta": 7198000
+      "model": "V70 FE",
+      "qty": 5,
+      "qty_prev": 8,
+      "qty_delta": -3,
+      "value": 38995000,
+      "value_prev": 59992000,
+      "value_delta": -20997000
     },
     {
       "model": "IQOO Z11",
-      "qty": 2,
-      "qty_prev": 3,
-      "qty_delta": -1,
-      "value": 13798000,
-      "value_prev": 22197000,
-      "value_delta": -8399000
+      "qty": 4,
+      "qty_prev": 9,
+      "qty_delta": -5,
+      "value": 29096000,
+      "value_prev": 63591000,
+      "value_delta": -34495000
+    },
+    {
+      "model": "Y31d (v2)",
+      "qty": 8,
+      "qty_prev": 4,
+      "qty_delta": 4,
+      "value": 28792000,
+      "value_prev": 14396000,
+      "value_delta": 14396000
+    },
+    {
+      "model": "Y11d (3mio>)",
+      "qty": 5,
+      "qty_prev": 2,
+      "qty_delta": 3,
+      "value": 17995000,
+      "value_prev": 7198000,
+      "value_delta": 10797000
+    },
+    {
+      "model": "Y31d (v1)",
+      "qty": 5,
+      "qty_prev": 9,
+      "qty_delta": -4,
+      "value": 17995000,
+      "value_prev": 32391000,
+      "value_delta": -14396000
     },
     {
       "model": "IQOO 15R",
       "qty": 1,
-      "qty_prev": 1,
-      "qty_delta": 0,
-      "value": 11999000,
-      "value_prev": 11999000,
-      "value_delta": 0
-    },
-    {
-      "model": "Y11d (3mio>)",
-      "qty": 3,
       "qty_prev": 2,
-      "qty_delta": 1,
-      "value": 10797000,
-      "value_prev": 7198000,
-      "value_delta": 3599000
+      "qty_delta": -1,
+      "value": 11999000,
+      "value_prev": 23998000,
+      "value_delta": -11999000
     },
     {
       "model": "IQOO Z11x",
-      "qty": 1,
-      "qty_prev": 2,
-      "qty_delta": -1,
-      "value": 5699000,
-      "value_prev": 11398000,
-      "value_delta": -5699000
+      "qty": 2,
+      "qty_prev": 4,
+      "qty_delta": -2,
+      "value": 11398000,
+      "value_prev": 22796000,
+      "value_delta": -11398000
     },
     {
       "model": "Watch GT 2",
       "qty": 0,
-      "qty_prev": 0,
-      "qty_delta": 0,
+      "qty_prev": 1,
+      "qty_delta": -1,
       "value": 0,
-      "value_prev": 0,
-      "value_delta": 0
+      "value_prev": 1799000,
+      "value_delta": -1799000
     },
     {
       "model": "IQOO 15",
@@ -204,12 +204,12 @@
     }
   ],
   "network_total": {
-    "qty": 165,
-    "qty_prev": 144,
-    "qty_delta": 21,
-    "value": 605935000,
-    "value_prev": 430356000,
-    "value_delta": 175579000
+    "qty": 258,
+    "qty_prev": 366,
+    "qty_delta": -108,
+    "value": 975642000,
+    "value_prev": 1249534000,
+    "value_delta": -273892000
   },
   "stores": [
     {
@@ -218,9 +218,57 @@
       "area": "Semarang",
       "headstore": "VICKY DINDA INEZ",
       "total_qty": 2,
-      "total_qty_prev": 0,
+      "total_qty_prev": 3,
       "total_value": 13598000,
-      "total_value_prev": 0,
+      "total_value_prev": 38797000,
+      "by_type": [
+        {
+          "model": "V70",
+          "qty": 1,
+          "qty_prev": 1,
+          "qty_delta": 0,
+          "value": 9999000,
+          "value_prev": 9999000,
+          "value_delta": 0
+        },
+        {
+          "model": "Y11d (3mio>)",
+          "qty": 1,
+          "qty_prev": 0,
+          "qty_delta": 1,
+          "value": 3599000,
+          "value_prev": 0,
+          "value_delta": 3599000
+        },
+        {
+          "model": "Y11d",
+          "qty": 0,
+          "qty_prev": 1,
+          "qty_delta": -1,
+          "value": 0,
+          "value_prev": 2799000,
+          "value_delta": -2799000
+        },
+        {
+          "model": "X300 Ultra",
+          "qty": 0,
+          "qty_prev": 1,
+          "qty_delta": -1,
+          "value": 0,
+          "value_prev": 25999000,
+          "value_delta": -25999000
+        }
+      ]
+    },
+    {
+      "store_id": 6050706,
+      "store_name": "AEON MALL DELTAMAS 1F081",
+      "area": "BEKASI",
+      "headstore": "M RIZKI",
+      "total_qty": 4,
+      "total_qty_prev": 12,
+      "total_value": 21196000,
+      "total_value_prev": 34988000,
       "by_type": [
         {
           "model": "V70",
@@ -232,43 +280,22 @@
           "value_delta": 9999000
         },
         {
-          "model": "Y11d (3mio>)",
-          "qty": 1,
-          "qty_prev": 0,
-          "qty_delta": 1,
-          "value": 3599000,
-          "value_prev": 0,
-          "value_delta": 3599000
-        }
-      ]
-    },
-    {
-      "store_id": 6050706,
-      "store_name": "AEON MALL DELTAMAS 1F081",
-      "area": "BEKASI",
-      "headstore": "M RIZKI",
-      "total_qty": 3,
-      "total_qty_prev": 2,
-      "total_value": 11197000,
-      "total_value_prev": 4698000,
-      "by_type": [
-        {
           "model": "Y500",
           "qty": 1,
-          "qty_prev": 0,
-          "qty_delta": 1,
+          "qty_prev": 1,
+          "qty_delta": 0,
           "value": 6299000,
-          "value_prev": 0,
-          "value_delta": 6299000
+          "value_prev": 6299000,
+          "value_delta": 0
         },
         {
           "model": "Y11d",
           "qty": 1,
-          "qty_prev": 1,
-          "qty_delta": 0,
+          "qty_prev": 6,
+          "qty_delta": -5,
           "value": 2799000,
-          "value_prev": 2399000,
-          "value_delta": 400000
+          "value_prev": 15994000,
+          "value_delta": -13195000
         },
         {
           "model": "Y05e",
@@ -282,11 +309,11 @@
         {
           "model": "Y05",
           "qty": 0,
-          "qty_prev": 1,
-          "qty_delta": -1,
+          "qty_prev": 5,
+          "qty_delta": -5,
           "value": 0,
-          "value_prev": 2299000,
-          "value_delta": -2299000
+          "value_prev": 12695000,
+          "value_delta": -12695000
         }
       ]
     },
@@ -295,19 +322,37 @@
       "store_name": "BCP VS X6 DS0824",
       "area": "BEKASI",
       "headstore": "M RIZKI",
-      "total_qty": 2,
-      "total_qty_prev": 3,
-      "total_value": 5098000,
-      "total_value_prev": 14897000,
+      "total_qty": 5,
+      "total_qty_prev": 7,
+      "total_value": 29395000,
+      "total_value_prev": 30193000,
       "by_type": [
+        {
+          "model": "V70",
+          "qty": 2,
+          "qty_prev": 1,
+          "qty_delta": 1,
+          "value": 19998000,
+          "value_prev": 9999000,
+          "value_delta": 9999000
+        },
+        {
+          "model": "Y31d Pro",
+          "qty": 1,
+          "qty_prev": 0,
+          "qty_delta": 1,
+          "value": 4299000,
+          "value_prev": 0,
+          "value_delta": 4299000
+        },
         {
           "model": "Y11d",
           "qty": 1,
-          "qty_prev": 1,
-          "qty_delta": 0,
+          "qty_prev": 4,
+          "qty_delta": -3,
           "value": 2799000,
-          "value_prev": 2799000,
-          "value_delta": 0
+          "value_prev": 11196000,
+          "value_delta": -8397000
         },
         {
           "model": "Y05",
@@ -328,13 +373,13 @@
           "value_delta": -2099000
         },
         {
-          "model": "V70",
+          "model": "IQOO Z11",
           "qty": 0,
           "qty_prev": 1,
           "qty_delta": -1,
           "value": 0,
-          "value_prev": 9999000,
-          "value_delta": -9999000
+          "value_prev": 6899000,
+          "value_delta": -6899000
         }
       ]
     },
@@ -344,9 +389,9 @@
       "area": "BDG KOTA",
       "headstore": "NENG TOTOH",
       "total_qty": 3,
-      "total_qty_prev": 0,
+      "total_qty_prev": 1,
       "total_value": 12497000,
-      "total_value_prev": 0,
+      "total_value_prev": 9999000,
       "by_type": [
         {
           "model": "V60 Lite",
@@ -374,6 +419,15 @@
           "value": 2299000,
           "value_prev": 0,
           "value_delta": 2299000
+        },
+        {
+          "model": "V70",
+          "qty": 0,
+          "qty_prev": 1,
+          "qty_delta": -1,
+          "value": 0,
+          "value_prev": 9999000,
+          "value_delta": -9999000
         }
       ]
     },
@@ -382,19 +436,37 @@
       "store_name": "BEC VIVO STORE 1",
       "area": "BDG KOTA",
       "headstore": "NENG TOTOH",
-      "total_qty": 5,
-      "total_qty_prev": 0,
-      "total_value": 17095000,
-      "total_value_prev": 0,
+      "total_qty": 10,
+      "total_qty_prev": 14,
+      "total_value": 36890000,
+      "total_value_prev": 37886000,
       "by_type": [
         {
           "model": "Y11d",
-          "qty": 3,
+          "qty": 5,
+          "qty_prev": 5,
+          "qty_delta": 0,
+          "value": 12795000,
+          "value_prev": 13195000,
+          "value_delta": -400000
+        },
+        {
+          "model": "IQOO Z11",
+          "qty": 1,
           "qty_prev": 0,
-          "qty_delta": 3,
-          "value": 7597000,
+          "qty_delta": 1,
+          "value": 8399000,
           "value_prev": 0,
-          "value_delta": 7597000
+          "value_delta": 8399000
+        },
+        {
+          "model": "Y31d (v2)",
+          "qty": 2,
+          "qty_prev": 0,
+          "qty_delta": 2,
+          "value": 7198000,
+          "value_prev": 0,
+          "value_delta": 7198000
         },
         {
           "model": "V60 Lite",
@@ -406,13 +478,40 @@
           "value_delta": 5899000
         },
         {
-          "model": "Y31d (v2)",
+          "model": "Y05",
           "qty": 1,
-          "qty_prev": 0,
-          "qty_delta": 1,
-          "value": 3599000,
-          "value_prev": 0,
-          "value_delta": 3599000
+          "qty_prev": 1,
+          "qty_delta": 0,
+          "value": 2599000,
+          "value_prev": 2299000,
+          "value_delta": 300000
+        },
+        {
+          "model": "Y05e",
+          "qty": 0,
+          "qty_prev": 6,
+          "qty_delta": -6,
+          "value": 0,
+          "value_prev": 12594000,
+          "value_delta": -12594000
+        },
+        {
+          "model": "Y31d Pro",
+          "qty": 0,
+          "qty_prev": 1,
+          "qty_delta": -1,
+          "value": 0,
+          "value_prev": 4299000,
+          "value_delta": -4299000
+        },
+        {
+          "model": "Y500",
+          "qty": 0,
+          "qty_prev": 1,
+          "qty_delta": -1,
+          "value": 0,
+          "value_prev": 5499000,
+          "value_delta": -5499000
         }
       ]
     },
@@ -421,11 +520,29 @@
       "store_name": "BEC VIVO STORE 4",
       "area": "BDG KOTA",
       "headstore": "EKO PURWANTO",
-      "total_qty": 7,
-      "total_qty_prev": 0,
-      "total_value": 21293000,
-      "total_value_prev": 0,
+      "total_qty": 12,
+      "total_qty_prev": 4,
+      "total_value": 41188000,
+      "total_value_prev": 13796000,
       "by_type": [
+        {
+          "model": "Y11d",
+          "qty": 4,
+          "qty_prev": 2,
+          "qty_delta": 2,
+          "value": 10396000,
+          "value_prev": 4798000,
+          "value_delta": 5598000
+        },
+        {
+          "model": "Y05",
+          "qty": 4,
+          "qty_prev": 0,
+          "qty_delta": 4,
+          "value": 9796000,
+          "value_prev": 0,
+          "value_delta": 9796000
+        },
         {
           "model": "Y31d Pro",
           "qty": 2,
@@ -436,22 +553,31 @@
           "value_delta": 8598000
         },
         {
-          "model": "Y05",
-          "qty": 3,
-          "qty_prev": 0,
-          "qty_delta": 3,
-          "value": 7497000,
-          "value_prev": 0,
-          "value_delta": 7497000
+          "model": "IQOO Z11",
+          "qty": 1,
+          "qty_prev": 1,
+          "qty_delta": 0,
+          "value": 6899000,
+          "value_prev": 6899000,
+          "value_delta": 0
         },
         {
-          "model": "Y11d",
-          "qty": 2,
+          "model": "Y500",
+          "qty": 1,
           "qty_prev": 0,
-          "qty_delta": 2,
-          "value": 5198000,
+          "qty_delta": 1,
+          "value": 5499000,
           "value_prev": 0,
-          "value_delta": 5198000
+          "value_delta": 5499000
+        },
+        {
+          "model": "Y05e",
+          "qty": 0,
+          "qty_prev": 1,
+          "qty_delta": -1,
+          "value": 0,
+          "value_prev": 2099000,
+          "value_delta": -2099000
         }
       ]
     },
@@ -460,9 +586,9 @@
       "store_name": "BEC VIVO STORE LG F20",
       "area": "BDG KOTA",
       "headstore": "NENG TOTOH",
-      "total_qty": 3,
+      "total_qty": 6,
       "total_qty_prev": 0,
-      "total_value": 12597000,
+      "total_value": 20994000,
       "total_value_prev": 0,
       "by_type": [
         {
@@ -475,6 +601,15 @@
           "value_delta": 7999000
         },
         {
+          "model": "Y11d",
+          "qty": 2,
+          "qty_prev": 0,
+          "qty_delta": 2,
+          "value": 4798000,
+          "value_prev": 0,
+          "value_delta": 4798000
+        },
+        {
           "model": "Y05",
           "qty": 2,
           "qty_prev": 0,
@@ -482,36 +617,6 @@
           "value": 4598000,
           "value_prev": 0,
           "value_delta": 4598000
-        }
-      ]
-    },
-    {
-      "store_id": 6190707,
-      "store_name": "BEC VIVO STORE LU",
-      "area": "BDG KOTA",
-      "headstore": "NENG TOTOH",
-      "total_qty": 7,
-      "total_qty_prev": 0,
-      "total_value": 23493000,
-      "total_value_prev": 0,
-      "by_type": [
-        {
-          "model": "Y11d",
-          "qty": 5,
-          "qty_prev": 0,
-          "qty_delta": 5,
-          "value": 13595000,
-          "value_prev": 0,
-          "value_delta": 13595000
-        },
-        {
-          "model": "Y500",
-          "qty": 1,
-          "qty_prev": 0,
-          "qty_delta": 1,
-          "value": 6299000,
-          "value_prev": 0,
-          "value_delta": 6299000
         },
         {
           "model": "Y31d (v2)",
@@ -525,32 +630,116 @@
       ]
     },
     {
+      "store_id": 6190707,
+      "store_name": "BEC VIVO STORE LU",
+      "area": "BDG KOTA",
+      "headstore": "NENG TOTOH",
+      "total_qty": 12,
+      "total_qty_prev": 14,
+      "total_value": 44288000,
+      "total_value_prev": 39186000,
+      "by_type": [
+        {
+          "model": "Y11d",
+          "qty": 6,
+          "qty_prev": 6,
+          "qty_delta": 0,
+          "value": 16394000,
+          "value_prev": 15994000,
+          "value_delta": 400000
+        },
+        {
+          "model": "V60 Lite",
+          "qty": 2,
+          "qty_prev": 0,
+          "qty_delta": 2,
+          "value": 11798000,
+          "value_prev": 0,
+          "value_delta": 11798000
+        },
+        {
+          "model": "Y500",
+          "qty": 1,
+          "qty_prev": 0,
+          "qty_delta": 1,
+          "value": 6299000,
+          "value_prev": 0,
+          "value_delta": 6299000
+        },
+        {
+          "model": "Y11d (3mio>)",
+          "qty": 1,
+          "qty_prev": 0,
+          "qty_delta": 1,
+          "value": 3599000,
+          "value_prev": 0,
+          "value_delta": 3599000
+        },
+        {
+          "model": "Y31d (v2)",
+          "qty": 1,
+          "qty_prev": 0,
+          "qty_delta": 1,
+          "value": 3599000,
+          "value_prev": 0,
+          "value_delta": 3599000
+        },
+        {
+          "model": "Y05",
+          "qty": 1,
+          "qty_prev": 5,
+          "qty_delta": -4,
+          "value": 2599000,
+          "value_prev": 12095000,
+          "value_delta": -9496000
+        },
+        {
+          "model": "Y05e",
+          "qty": 0,
+          "qty_prev": 2,
+          "qty_delta": -2,
+          "value": 0,
+          "value_prev": 4198000,
+          "value_delta": -4198000
+        },
+        {
+          "model": "IQOO Z11",
+          "qty": 0,
+          "qty_prev": 1,
+          "qty_delta": -1,
+          "value": 0,
+          "value_prev": 6899000,
+          "value_delta": -6899000
+        }
+      ]
+    },
+    {
       "store_id": 6190701,
       "store_name": "BEC VIVO STORE UG",
       "area": "BDG KOTA",
       "headstore": "EKO PURWANTO",
       "total_qty": 2,
-      "total_qty_prev": 0,
+      "total_qty_prev": 3,
       "total_value": 4898000,
-      "total_value_prev": 0,
+      "total_value_prev": 7697000,
       "by_type": [
         {
           "model": "Y11d",
           "qty": 1,
-          "qty_prev": 0,
-          "qty_delta": 1,
+          "qty_prev": 2,
+          "qty_delta": -1,
           "value": 2799000,
-          "value_prev": 0,
-          "value_delta": 2799000
+          "value_prev": 5598000,
+          "value_delta": -2799000
         },
         {
           "model": "Y05e",
           "qty": 1,
-          "qty_prev": 0,
-          "qty_delta": 1,
+          "qty_prev": 1,
+          "qty_delta": 0,
           "value": 2099000,
-          "value_prev": 0,
-          "value_delta": 2099000
+          "value_prev": 2099000,
+          "value_delta": 0
         }
       ]
     },
@@ -581,9 +770,9 @@
       "area": "BOGOR",
       "headstore": "DANDI SURYA",
       "total_qty": 1,
-      "total_qty_prev": 0,
+      "total_qty_prev": 1,
       "total_value": 4299000,
-      "total_value_prev": 0,
+      "total_value_prev": 2799000,
       "by_type": [
         {
           "model": "Y31d Pro",
@@ -593,6 +782,15 @@
           "value": 4299000,
           "value_prev": 0,
           "value_delta": 4299000
+        },
+        {
+          "model": "Y11d",
+          "qty": 0,
+          "qty_prev": 1,
+          "qty_delta": -1,
+          "value": 0,
+          "value_prev": 2799000,
+          "value_delta": -2799000
         }
       ]
     },
@@ -601,10 +799,10 @@
       "store_name": "CEMPAKA SHOWROOM 14(8TOKO)",
       "area": "JKT BU",
       "headstore": "NOVIA HARYANTI",
-      "total_qty": 2,
-      "total_qty_prev": 4,
-      "total_value": 10598000,
-      "total_value_prev": 15596000,
+      "total_qty": 3,
+      "total_qty_prev": 5,
+      "total_value": 12997000,
+      "total_value_prev": 18395000,
       "by_type": [
         {
           "model": "V70 FE",
@@ -626,12 +824,12 @@
         },
         {
           "model": "Y11d",
-          "qty": 0,
-          "qty_prev": 1,
+          "qty": 1,
+          "qty_prev": 2,
           "qty_delta": -1,
-          "value": 0,
-          "value_prev": 2799000,
-          "value_delta": -2799000
+          "value": 2399000,
+          "value_prev": 5598000,
+          "value_delta": -3199000
         },
         {
           "model": "Y31d (v1)",
@@ -658,28 +856,37 @@
       "store_name": "CEMPAKA SHOWROOM 2 (454)",
       "area": "JKT BU",
       "headstore": "NOVIA HARYANTI",
-      "total_qty": 9,
-      "total_qty_prev": 4,
-      "total_value": 21791000,
-      "total_value_prev": 10696000,
+      "total_qty": 13,
+      "total_qty_prev": 6,
+      "total_value": 34487000,
+      "total_value_prev": 16894000,
       "by_type": [
         {
           "model": "Y11d",
-          "qty": 4,
+          "qty": 6,
           "qty_prev": 3,
-          "qty_delta": 1,
-          "value": 10396000,
+          "qty_delta": 3,
+          "value": 15194000,
           "value_prev": 8397000,
-          "value_delta": 1999000
+          "value_delta": 6797000
         },
         {
           "model": "Y05",
           "qty": 3,
-          "qty_prev": 1,
-          "qty_delta": 2,
+          "qty_prev": 2,
+          "qty_delta": 1,
           "value": 7197000,
-          "value_prev": 2299000,
-          "value_delta": 4898000
+          "value_prev": 4898000,
+          "value_delta": 2299000
+        },
+        {
+          "model": "Y31d Pro",
+          "qty": 1,
+          "qty_prev": 0,
+          "qty_delta": 1,
+          "value": 4299000,
+          "value_prev": 0,
+          "value_delta": 4299000
         },
         {
           "model": "Y05e",
@@ -689,6 +896,24 @@
           "value": 4198000,
           "value_prev": 0,
           "value_delta": 4198000
+        },
+        {
+          "model": "Y31d (v2)",
+          "qty": 1,
+          "qty_prev": 0,
+          "qty_delta": 1,
+          "value": 3599000,
+          "value_prev": 0,
+          "value_delta": 3599000
+        },
+        {
+          "model": "Y31d (v1)",
+          "qty": 0,
+          "qty_prev": 1,
+          "qty_delta": -1,
+          "value": 0,
+          "value_prev": 3599000,
+          "value_delta": -3599000
         }
       ]
     },
@@ -697,19 +922,28 @@
       "store_name": "CENTRAL PARK SHOWROOM",
       "area": "JKT BU",
       "headstore": "NANDI FEBRIANA",
-      "total_qty": 5,
-      "total_qty_prev": 6,
-      "total_value": 14095000,
-      "total_value_prev": 29194000,
+      "total_qty": 7,
+      "total_qty_prev": 7,
+      "total_value": 22393000,
+      "total_value_prev": 31293000,
       "by_type": [
         {
           "model": "Y11d",
-          "qty": 2,
+          "qty": 3,
           "qty_prev": 1,
-          "qty_delta": 1,
-          "value": 4798000,
+          "qty_delta": 2,
+          "value": 7197000,
           "value_prev": 2399000,
-          "value_delta": 2399000
+          "value_delta": 4798000
+        },
+        {
+          "model": "V60 Lite",
+          "qty": 1,
+          "qty_prev": 0,
+          "qty_delta": 1,
+          "value": 5899000,
+          "value_prev": 0,
+          "value_delta": 5899000
         },
         {
           "model": "Y11d (3mio>)",
@@ -732,11 +966,11 @@
         {
           "model": "Y05e",
           "qty": 1,
-          "qty_prev": 1,
-          "qty_delta": 0,
+          "qty_prev": 2,
+          "qty_delta": -1,
           "value": 2099000,
-          "value_prev": 2099000,
-          "value_delta": 0
+          "value_prev": 4198000,
+          "value_delta": -2099000
         },
         {
           "model": "Y05",
@@ -781,10 +1015,10 @@
       "store_name": "CIPUTRA 2FC15",
       "area": "BANTEN",
       "headstore": "DHANI EKO NUGROHO",
-      "total_qty": 2,
-      "total_qty_prev": 3,
-      "total_value": 7798000,
-      "total_value_prev": 12297000,
+      "total_qty": 3,
+      "total_qty_prev": 4,
+      "total_value": 10597000,
+      "total_value_prev": 17796000,
       "by_type": [
         {
           "model": "Y31d Pro",
@@ -796,6 +1030,15 @@
           "value_delta": 7798000
         },
         {
+          "model": "Y11d",
+          "qty": 1,
+          "qty_prev": 1,
+          "qty_delta": 0,
+          "value": 2799000,
+          "value_prev": 2799000,
+          "value_delta": 0
+        },
+        {
           "model": "Y05",
           "qty": 0,
           "qty_prev": 1,
@@ -805,13 +1048,13 @@
           "value_delta": -2599000
         },
         {
-          "model": "Y11d",
+          "model": "Y500",
           "qty": 0,
           "qty_prev": 1,
           "qty_delta": -1,
           "value": 0,
-          "value_prev": 2799000,
-          "value_delta": -2799000
+          "value_prev": 5499000,
+          "value_delta": -5499000
         },
         {
           "model": "IQOO Z11",
@@ -829,28 +1072,73 @@
       "store_name": "EMPORIUM VIVO STORE",
       "area": "JKT BU",
       "headstore": "M KHOIRUDIN",
-      "total_qty": 4,
-      "total_qty_prev": 0,
-      "total_value": 10196000,
-      "total_value_prev": 0,
+      "total_qty": 6,
+      "total_qty_prev": 7,
+      "total_value": 41094000,
+      "total_value_prev": 36193000,
       "by_type": [
+        {
+          "model": "X300 Ultra",
+          "qty": 1,
+          "qty_prev": 0,
+          "qty_delta": 1,
+          "value": 25999000,
+          "value_prev": 0,
+          "value_delta": 25999000
+        },
         {
           "model": "Y11d",
           "qty": 3,
-          "qty_prev": 0,
-          "qty_delta": 3,
+          "qty_prev": 2,
+          "qty_delta": 1,
           "value": 7597000,
+          "value_prev": 4798000,
+          "value_delta": 2799000
+        },
+        {
+          "model": "Y31d Pro",
+          "qty": 1,
+          "qty_prev": 0,
+          "qty_delta": 1,
+          "value": 4899000,
           "value_prev": 0,
-          "value_delta": 7597000
+          "value_delta": 4899000
         },
         {
           "model": "Y05",
           "qty": 1,
-          "qty_prev": 0,
-          "qty_delta": 1,
+          "qty_prev": 1,
+          "qty_delta": 0,
           "value": 2599000,
-          "value_prev": 0,
-          "value_delta": 2599000
+          "value_prev": 2299000,
+          "value_delta": 300000
+        },
+        {
+          "model": "Y05e",
+          "qty": 0,
+          "qty_prev": 1,
+          "qty_delta": -1,
+          "value": 0,
+          "value_prev": 2099000,
+          "value_delta": -2099000
+        },
+        {
+          "model": "V70",
+          "qty": 0,
+          "qty_prev": 2,
+          "qty_delta": -2,
+          "value": 0,
+          "value_prev": 19998000,
+          "value_delta": -19998000
+        },
+        {
+          "model": "V70 FE",
+          "qty": 0,
+          "qty_prev": 1,
+          "qty_delta": -1,
+          "value": 0,
+          "value_prev": 6999000,
+          "value_delta": -6999000
         }
       ]
     },
@@ -859,9 +1147,9 @@
       "store_name": "GRANMALL SC GF-11",
       "area": "SOLO",
       "headstore": "BIRILYAN KUSWARA",
-      "total_qty": 1,
+      "total_qty": 2,
       "total_qty_prev": 0,
-      "total_value": 6899000,
+      "total_value": 12798000,
       "total_value_prev": 0,
       "by_type": [
         {
@@ -872,6 +1160,15 @@
           "value": 6899000,
           "value_prev": 0,
           "value_delta": 6899000
+        },
+        {
+          "model": "V60 Lite",
+          "qty": 1,
+          "qty_prev": 0,
+          "qty_delta": 1,
+          "value": 5899000,
+          "value_prev": 0,
+          "value_delta": 5899000
         }
       ]
     },
@@ -880,19 +1177,28 @@
       "store_name": "ITC BSD 1F09-14",
       "area": "BANTEN",
       "headstore": "ARIES FITRIYANTO",
-      "total_qty": 1,
-      "total_qty_prev": 1,
-      "total_value": 2299000,
-      "total_value_prev": 3599000,
+      "total_qty": 3,
+      "total_qty_prev": 4,
+      "total_value": 7397000,
+      "total_value_prev": 17196000,
       "by_type": [
         {
           "model": "Y05",
-          "qty": 1,
+          "qty": 2,
           "qty_prev": 0,
-          "qty_delta": 1,
-          "value": 2299000,
+          "qty_delta": 2,
+          "value": 4598000,
           "value_prev": 0,
-          "value_delta": 2299000
+          "value_delta": 4598000
+        },
+        {
+          "model": "Y11d",
+          "qty": 1,
+          "qty_prev": 2,
+          "qty_delta": -1,
+          "value": 2799000,
+          "value_prev": 5598000,
+          "value_delta": -2799000
         },
         {
           "model": "Y11d (3mio>)",
@@ -902,6 +1208,15 @@
           "value": 0,
           "value_prev": 3599000,
           "value_delta": -3599000
+        },
+        {
+          "model": "V70 FE",
+          "qty": 0,
+          "qty_prev": 1,
+          "qty_delta": -1,
+          "value": 0,
+          "value_prev": 7999000,
+          "value_delta": -7999000
         }
       ]
     },
@@ -911,9 +1226,9 @@
       "area": "BANTEN",
       "headstore": "ARIES FITRIYANTO",
       "total_qty": 1,
-      "total_qty_prev": 0,
+      "total_qty_prev": 2,
       "total_value": 3599000,
-      "total_value_prev": 0,
+      "total_value_prev": 4698000,
       "by_type": [
         {
           "model": "Y31d (v1)",
@@ -923,6 +1238,24 @@
           "value": 3599000,
           "value_prev": 0,
           "value_delta": 3599000
+        },
+        {
+          "model": "Y05",
+          "qty": 0,
+          "qty_prev": 1,
+          "qty_delta": -1,
+          "value": 0,
+          "value_prev": 2299000,
+          "value_delta": -2299000
+        },
+        {
+          "model": "Y11d",
+          "qty": 0,
+          "qty_prev": 1,
+          "qty_delta": -1,
+          "value": 0,
+          "value_prev": 2399000,
+          "value_delta": -2399000
         }
       ]
     },
@@ -932,9 +1265,9 @@
       "area": "JKT TS",
       "headstore": "Erlangga Praditya",
       "total_qty": 2,
-      "total_qty_prev": 0,
+      "total_qty_prev": 7,
       "total_value": 6198000,
-      "total_value_prev": 0,
+      "total_value_prev": 30093000,
       "by_type": [
         {
           "model": "Y31d (v1)",
@@ -948,11 +1281,38 @@
         {
           "model": "Y05",
           "qty": 1,
-          "qty_prev": 0,
-          "qty_delta": 1,
+          "qty_prev": 3,
+          "qty_delta": -2,
           "value": 2599000,
-          "value_prev": 0,
-          "value_delta": 2599000
+          "value_prev": 7797000,
+          "value_delta": -5198000
+        },
+        {
+          "model": "Y11d",
+          "qty": 0,
+          "qty_prev": 1,
+          "qty_delta": -1,
+          "value": 0,
+          "value_prev": 2799000,
+          "value_delta": -2799000
+        },
+        {
+          "model": "V70 FE",
+          "qty": 0,
+          "qty_prev": 2,
+          "qty_delta": -2,
+          "value": 0,
+          "value_prev": 13998000,
+          "value_delta": -13998000
+        },
+        {
+          "model": "Y500",
+          "qty": 0,
+          "qty_prev": 1,
+          "qty_delta": -1,
+          "value": 0,
+          "value_prev": 5499000,
+          "value_delta": -5499000
         }
       ]
     },
@@ -962,9 +1322,9 @@
       "area": "JKT TS",
       "headstore": "Erlangga Praditya",
       "total_qty": 2,
-      "total_qty_prev": 0,
+      "total_qty_prev": 3,
       "total_value": 6498000,
-      "total_value_prev": 0,
+      "total_value_prev": 8397000,
       "by_type": [
         {
           "model": "Y31d Pro",
@@ -983,6 +1343,15 @@
           "value": 2599000,
           "value_prev": 0,
           "value_delta": 2599000
+        },
+        {
+          "model": "Y11d",
+          "qty": 0,
+          "qty_prev": 3,
+          "qty_delta": -3,
+          "value": 0,
+          "value_prev": 8397000,
+          "value_delta": -8397000
         }
       ]
     },
@@ -991,11 +1360,20 @@
       "store_name": "Jogja City Mall VIVO STORE",
       "area": "Semarang",
       "headstore": "BIRILYAN KUSWARA",
-      "total_qty": 0,
+      "total_qty": 1,
       "total_qty_prev": 4,
-      "total_value": 0,
+      "total_value": 9999000,
       "total_value_prev": 19296000,
       "by_type": [
+        {
+          "model": "V70",
+          "qty": 1,
+          "qty_prev": 0,
+          "qty_delta": 1,
+          "value": 9999000,
+          "value_prev": 0,
+          "value_delta": 9999000
+        },
         {
           "model": "Y11d",
           "qty": 0,
@@ -1031,9 +1409,9 @@
       "area": "BANTEN",
       "headstore": "ADE RIVALDI L",
       "total_qty": 4,
-      "total_qty_prev": 0,
+      "total_qty_prev": 1,
       "total_value": 19196000,
-      "total_value_prev": 0,
+      "total_value_prev": 2399000,
       "by_type": [
         {
           "model": "V70 FE",
@@ -1070,6 +1448,15 @@
           "value": 2099000,
           "value_prev": 0,
           "value_delta": 2099000
+        },
+        {
+          "model": "Y11d",
+          "qty": 0,
+          "qty_prev": 1,
+          "qty_delta": -1,
+          "value": 0,
+          "value_prev": 2399000,
+          "value_delta": -2399000
         }
       ]
     },
@@ -1079,18 +1466,18 @@
       "area": "BANTEN",
       "headstore": "ADE RIVALDI L",
       "total_qty": 2,
-      "total_qty_prev": 0,
+      "total_qty_prev": 3,
       "total_value": 5398000,
-      "total_value_prev": 0,
+      "total_value_prev": 7697000,
       "by_type": [
         {
           "model": "Y11d",
           "qty": 1,
-          "qty_prev": 0,
-          "qty_delta": 1,
+          "qty_prev": 2,
+          "qty_delta": -1,
           "value": 2799000,
-          "value_prev": 0,
-          "value_delta": 2799000
+          "value_prev": 5598000,
+          "value_delta": -2799000
         },
         {
           "model": "Y05",
@@ -1100,6 +1487,15 @@
           "value": 2599000,
           "value_prev": 0,
           "value_delta": 2599000
+        },
+        {
+          "model": "Y05e",
+          "qty": 0,
+          "qty_prev": 1,
+          "qty_delta": -1,
+          "value": 0,
+          "value_prev": 2099000,
+          "value_delta": -2099000
         }
       ]
     },
@@ -1108,21 +1504,67 @@
       "store_name": "LIPPO MALL PURI 1FK02",
       "area": "JKT BU",
       "headstore": "HERRU ILYASA",
-      "total_qty": 0,
-      "total_qty_prev": 0,
-      "total_value": 0,
-      "total_value_prev": 0,
-      "by_type": []
+      "total_qty": 1,
+      "total_qty_prev": 4,
+      "total_value": 2099000,
+      "total_value_prev": 40896000,
+      "by_type": [
+        {
+          "model": "Y05e",
+          "qty": 1,
+          "qty_prev": 0,
+          "qty_delta": 1,
+          "value": 2099000,
+          "value_prev": 0,
+          "value_delta": 2099000
+        },
+        {
+          "model": "Y05",
+          "qty": 0,
+          "qty_prev": 1,
+          "qty_delta": -1,
+          "value": 0,
+          "value_prev": 2599000,
+          "value_delta": -2599000
+        },
+        {
+          "model": "Y11d",
+          "qty": 0,
+          "qty_prev": 1,
+          "qty_delta": -1,
+          "value": 0,
+          "value_prev": 2799000,
+          "value_delta": -2799000
+        },
+        {
+          "model": "Y500",
+          "qty": 0,
+          "qty_prev": 1,
+          "qty_delta": -1,
+          "value": 0,
+          "value_prev": 5499000,
+          "value_delta": -5499000
+        },
+        {
+          "model": "X300 Ultra",
+          "qty": 0,
+          "qty_prev": 1,
+          "qty_delta": -1,
+          "value": 0,
+          "value_prev": 29999000,
+          "value_delta": -29999000
+        }
+      ]
     },
     {
       "store_id": 6180706,
       "store_name": "MALL CCM VIVO STORE",
       "area": "BOGOR",
       "headstore": "DANDI SURYA",
-      "total_qty": 4,
-      "total_qty_prev": 0,
-      "total_value": 14096000,
-      "total_value_prev": 0,
+      "total_qty": 6,
+      "total_qty_prev": 12,
+      "total_value": 20494000,
+      "total_value_prev": 41088000,
       "by_type": [
         {
           "model": "Y31d Pro",
@@ -1141,6 +1583,51 @@
           "value": 4898000,
           "value_prev": 0,
           "value_delta": 4898000
+        },
+        {
+          "model": "Y11d (3mio>)",
+          "qty": 1,
+          "qty_prev": 0,
+          "qty_delta": 1,
+          "value": 3599000,
+          "value_prev": 0,
+          "value_delta": 3599000
+        },
+        {
+          "model": "Y11d",
+          "qty": 1,
+          "qty_prev": 3,
+          "qty_delta": -2,
+          "value": 2799000,
+          "value_prev": 8397000,
+          "value_delta": -5598000
+        },
+        {
+          "model": "Y05e",
+          "qty": 0,
+          "qty_prev": 7,
+          "qty_delta": -7,
+          "value": 0,
+          "value_prev": 14693000,
+          "value_delta": -14693000
+        },
+        {
+          "model": "V70",
+          "qty": 0,
+          "qty_prev": 1,
+          "qty_delta": -1,
+          "value": 0,
+          "value_prev": 9999000,
+          "value_delta": -9999000
+        },
+        {
+          "model": "V70 FE",
+          "qty": 0,
+          "qty_prev": 1,
+          "qty_delta": -1,
+          "value": 0,
+          "value_prev": 7999000,
+          "value_delta": -7999000
         }
       ]
     },
@@ -1150,27 +1637,27 @@
       "area": "BEKASI",
       "headstore": "M RIZKI",
       "total_qty": 3,
-      "total_qty_prev": 2,
+      "total_qty_prev": 6,
       "total_value": 20097000,
-      "total_value_prev": 4498000,
+      "total_value_prev": 25994000,
       "by_type": [
         {
           "model": "IQOO 15R",
           "qty": 1,
-          "qty_prev": 0,
-          "qty_delta": 1,
+          "qty_prev": 1,
+          "qty_delta": 0,
           "value": 11999000,
-          "value_prev": 0,
-          "value_delta": 11999000
+          "value_prev": 11999000,
+          "value_delta": 0
         },
         {
           "model": "Y31d Pro",
           "qty": 1,
-          "qty_prev": 0,
-          "qty_delta": 1,
+          "qty_prev": 1,
+          "qty_delta": 0,
           "value": 5499000,
-          "value_prev": 0,
-          "value_delta": 5499000
+          "value_prev": 4299000,
+          "value_delta": 1200000
         },
         {
           "model": "Y05",
@@ -1184,11 +1671,11 @@
         {
           "model": "Y11d",
           "qty": 0,
-          "qty_prev": 1,
-          "qty_delta": -1,
+          "qty_prev": 3,
+          "qty_delta": -3,
           "value": 0,
-          "value_prev": 2399000,
-          "value_delta": -2399000
+          "value_prev": 7597000,
+          "value_delta": -7597000
         },
         {
           "model": "Y05e",
@@ -1206,10 +1693,10 @@
       "store_name": "MBH-VIP VIVO STORE-DD284",
       "area": "BEKASI",
       "headstore": "M RIZKI",
-      "total_qty": 5,
-      "total_qty_prev": 1,
-      "total_value": 15895000,
-      "total_value_prev": 2799000,
+      "total_qty": 6,
+      "total_qty_prev": 3,
+      "total_value": 19494000,
+      "total_value_prev": 7897000,
       "by_type": [
         {
           "model": "Y31d Pro",
@@ -1223,11 +1710,20 @@
         {
           "model": "Y05",
           "qty": 2,
-          "qty_prev": 0,
-          "qty_delta": 2,
+          "qty_prev": 1,
+          "qty_delta": 1,
           "value": 5198000,
+          "value_prev": 2299000,
+          "value_delta": 2899000
+        },
+        {
+          "model": "Y31d (v1)",
+          "qty": 1,
+          "qty_prev": 0,
+          "qty_delta": 1,
+          "value": 3599000,
           "value_prev": 0,
-          "value_delta": 5198000
+          "value_delta": 3599000
         },
         {
           "model": "Y05e",
@@ -1241,11 +1737,11 @@
         {
           "model": "Y11d",
           "qty": 0,
-          "qty_prev": 1,
-          "qty_delta": -1,
+          "qty_prev": 2,
+          "qty_delta": -2,
           "value": 0,
-          "value_prev": 2799000,
-          "value_delta": -2799000
+          "value_prev": 5598000,
+          "value_delta": -5598000
         }
       ]
     },
@@ -1254,19 +1750,28 @@
       "store_name": "QUEENCITY 2F027",
       "area": "Semarang",
       "headstore": "VICKY DINDA INEZ",
-      "total_qty": 3,
-      "total_qty_prev": 0,
-      "total_value": 33097000,
-      "total_value_prev": 0,
+      "total_qty": 4,
+      "total_qty_prev": 4,
+      "total_value": 40096000,
+      "total_value_prev": 48596000,
       "by_type": [
         {
           "model": "X300 Ultra",
           "qty": 1,
+          "qty_prev": 1,
+          "qty_delta": 0,
+          "value": 25999000,
+          "value_prev": 25999000,
+          "value_delta": 0
+        },
+        {
+          "model": "V70 FE",
+          "qty": 1,
           "qty_prev": 0,
           "qty_delta": 1,
-          "value": 25999000,
+          "value": 6999000,
           "value_prev": 0,
-          "value_delta": 25999000
+          "value_delta": 6999000
         },
         {
           "model": "Y31d Pro",
@@ -1285,6 +1790,33 @@
           "value": 2799000,
           "value_prev": 0,
           "value_delta": 2799000
+        },
+        {
+          "model": "V70",
+          "qty": 0,
+          "qty_prev": 1,
+          "qty_delta": -1,
+          "value": 0,
+          "value_prev": 9999000,
+          "value_delta": -9999000
+        },
+        {
+          "model": "IQOO Z11x",
+          "qty": 0,
+          "qty_prev": 1,
+          "qty_delta": -1,
+          "value": 0,
+          "value_prev": 5699000,
+          "value_delta": -5699000
+        },
+        {
+          "model": "IQOO Z11",
+          "qty": 0,
+          "qty_prev": 1,
+          "qty_delta": -1,
+          "value": 0,
+          "value_prev": 6899000,
+          "value_delta": -6899000
         }
       ]
     },
@@ -1294,9 +1826,9 @@
       "area": "Purwokerto",
       "headstore": "FRISKA FAJAR",
       "total_qty": 1,
-      "total_qty_prev": 0,
+      "total_qty_prev": 1,
       "total_value": 2099000,
-      "total_value_prev": 0,
+      "total_value_prev": 2299000,
       "by_type": [
         {
           "model": "Y05e",
@@ -1306,6 +1838,15 @@
           "value": 2099000,
           "value_prev": 0,
           "value_delta": 2099000
+        },
+        {
+          "model": "Y05",
+          "qty": 0,
+          "qty_prev": 1,
+          "qty_delta": -1,
+          "value": 0,
+          "value_prev": 2299000,
+          "value_delta": -2299000
         }
       ]
     },
@@ -1314,28 +1855,55 @@
       "store_name": "ROXY PAMERAN SELATAN",
       "area": "JKT BU",
       "headstore": "NUR IRAWATI",
-      "total_qty": 10,
-      "total_qty_prev": 12,
-      "total_value": 27090000,
-      "total_value_prev": 25688000,
+      "total_qty": 18,
+      "total_qty_prev": 23,
+      "total_value": 57982000,
+      "total_value_prev": 53377000,
       "by_type": [
         {
           "model": "Y05e",
-          "qty": 4,
-          "qty_prev": 11,
-          "qty_delta": -7,
-          "value": 8396000,
-          "value_prev": 23089000,
-          "value_delta": -14693000
+          "qty": 7,
+          "qty_prev": 15,
+          "qty_delta": -8,
+          "value": 14693000,
+          "value_prev": 31485000,
+          "value_delta": -16792000
         },
         {
           "model": "Y11d",
-          "qty": 3,
+          "qty": 4,
+          "qty_prev": 4,
+          "qty_delta": 0,
+          "value": 10396000,
+          "value_prev": 10796000,
+          "value_delta": -400000
+        },
+        {
+          "model": "V70",
+          "qty": 1,
           "qty_prev": 0,
-          "qty_delta": 3,
-          "value": 7997000,
+          "qty_delta": 1,
+          "value": 9999000,
           "value_prev": 0,
-          "value_delta": 7997000
+          "value_delta": 9999000
+        },
+        {
+          "model": "Y05",
+          "qty": 3,
+          "qty_prev": 3,
+          "qty_delta": 0,
+          "value": 7797000,
+          "value_prev": 7497000,
+          "value_delta": 300000
+        },
+        {
+          "model": "IQOO Z11x",
+          "qty": 1,
+          "qty_prev": 0,
+          "qty_delta": 1,
+          "value": 5699000,
+          "value_prev": 0,
+          "value_delta": 5699000
         },
         {
           "model": "Y500",
@@ -1347,13 +1915,22 @@
           "value_delta": 5499000
         },
         {
-          "model": "Y05",
-          "qty": 2,
-          "qty_prev": 1,
+          "model": "Y31d Pro",
+          "qty": 1,
+          "qty_prev": 0,
           "qty_delta": 1,
-          "value": 5198000,
-          "value_prev": 2599000,
-          "value_delta": 2599000
+          "value": 3899000,
+          "value_prev": 0,
+          "value_delta": 3899000
+        },
+        {
+          "model": "Y31d (v1)",
+          "qty": 0,
+          "qty_prev": 1,
+          "qty_delta": -1,
+          "value": 0,
+          "value_prev": 3599000,
+          "value_delta": -3599000
         }
       ]
     },
@@ -1362,28 +1939,28 @@
       "store_name": "ROXY PAMERAN TIMUR",
       "area": "JKT BU",
       "headstore": "ANGGARIA",
-      "total_qty": 14,
-      "total_qty_prev": 25,
-      "total_value": 41386000,
-      "total_value_prev": 62375000,
+      "total_qty": 22,
+      "total_qty_prev": 44,
+      "total_value": 60978000,
+      "total_value_prev": 110356000,
       "by_type": [
         {
           "model": "Y11d",
-          "qty": 5,
-          "qty_prev": 7,
+          "qty": 11,
+          "qty_prev": 13,
           "qty_delta": -2,
-          "value": 13995000,
-          "value_prev": 18393000,
-          "value_delta": -4398000
+          "value": 29189000,
+          "value_prev": 34787000,
+          "value_delta": -5598000
         },
         {
           "model": "Y05e",
-          "qty": 6,
-          "qty_prev": 10,
-          "qty_delta": -4,
-          "value": 12594000,
-          "value_prev": 20990000,
-          "value_delta": -8396000
+          "qty": 7,
+          "qty_prev": 19,
+          "qty_delta": -12,
+          "value": 14693000,
+          "value_prev": 39881000,
+          "value_delta": -25188000
         },
         {
           "model": "IQOO Z11",
@@ -1414,12 +1991,21 @@
         },
         {
           "model": "Y05",
+          "qty": 1,
+          "qty_prev": 9,
+          "qty_delta": -8,
+          "value": 2299000,
+          "value_prev": 21591000,
+          "value_delta": -19292000
+        },
+        {
+          "model": "Y500",
           "qty": 0,
-          "qty_prev": 6,
-          "qty_delta": -6,
+          "qty_prev": 1,
+          "qty_delta": -1,
           "value": 0,
-          "value_prev": 14394000,
-          "value_delta": -14394000
+          "value_prev": 5499000,
+          "value_delta": -5499000
         }
       ]
     },
@@ -1428,28 +2014,46 @@
       "store_name": "ROXY PAMERAN UTARA",
       "area": "JKT BU",
       "headstore": "NUR IRAWATI",
-      "total_qty": 19,
-      "total_qty_prev": 10,
-      "total_value": 64981000,
-      "total_value_prev": 28290000,
+      "total_qty": 30,
+      "total_qty_prev": 47,
+      "total_value": 92870000,
+      "total_value_prev": 127853000,
       "by_type": [
         {
-          "model": "V60 Lite",
-          "qty": 3,
-          "qty_prev": 0,
-          "qty_delta": 3,
-          "value": 17697000,
-          "value_prev": 0,
-          "value_delta": 17697000
+          "model": "Y05",
+          "qty": 9,
+          "qty_prev": 7,
+          "qty_delta": 2,
+          "value": 22791000,
+          "value_prev": 16393000,
+          "value_delta": 6398000
         },
         {
           "model": "Y11d",
-          "qty": 5,
-          "qty_prev": 3,
+          "qty": 7,
+          "qty_prev": 11,
+          "qty_delta": -4,
+          "value": 18393000,
+          "value_prev": 28389000,
+          "value_delta": -9996000
+        },
+        {
+          "model": "V60 Lite",
+          "qty": 3,
+          "qty_prev": 1,
           "qty_delta": 2,
-          "value": 13595000,
-          "value_prev": 7197000,
-          "value_delta": 6398000
+          "value": 17697000,
+          "value_prev": 5899000,
+          "value_delta": 11798000
+        },
+        {
+          "model": "Y05e",
+          "qty": 7,
+          "qty_prev": 20,
+          "qty_delta": -13,
+          "value": 14693000,
+          "value_prev": 41980000,
+          "value_delta": -27287000
         },
         {
           "model": "Y500",
@@ -1461,40 +2065,40 @@
           "value_delta": 11798000
         },
         {
-          "model": "Y05e",
-          "qty": 5,
-          "qty_prev": 1,
-          "qty_delta": 4,
-          "value": 10495000,
-          "value_prev": 2099000,
-          "value_delta": 8396000
-        },
-        {
-          "model": "Y05",
-          "qty": 3,
-          "qty_prev": 2,
+          "model": "Y31d Pro",
+          "qty": 1,
+          "qty_prev": 0,
           "qty_delta": 1,
-          "value": 7797000,
-          "value_prev": 4598000,
-          "value_delta": 3199000
+          "value": 3899000,
+          "value_prev": 0,
+          "value_delta": 3899000
         },
         {
           "model": "Y31d (v2)",
           "qty": 1,
-          "qty_prev": 2,
-          "qty_delta": -1,
+          "qty_prev": 4,
+          "qty_delta": -3,
           "value": 3599000,
-          "value_prev": 7198000,
-          "value_delta": -3599000
+          "value_prev": 14396000,
+          "value_delta": -10797000
+        },
+        {
+          "model": "V70",
+          "qty": 0,
+          "qty_prev": 1,
+          "qty_delta": -1,
+          "value": 0,
+          "value_prev": 9999000,
+          "value_delta": -9999000
         },
         {
           "model": "Y31d (v1)",
           "qty": 0,
-          "qty_prev": 2,
-          "qty_delta": -2,
+          "qty_prev": 3,
+          "qty_delta": -3,
           "value": 0,
-          "value_prev": 7198000,
-          "value_delta": -7198000
+          "value_prev": 10797000,
+          "value_delta": -10797000
         }
       ]
     },
@@ -1503,19 +2107,28 @@
       "store_name": "ROXY SHOWROOM 21",
       "area": "JKT BU",
       "headstore": "ANGGARIA",
-      "total_qty": 8,
-      "total_qty_prev": 19,
-      "total_value": 30992000,
-      "total_value_prev": 56881000,
+      "total_qty": 17,
+      "total_qty_prev": 34,
+      "total_value": 65183000,
+      "total_value_prev": 111366000,
       "by_type": [
         {
+          "model": "Y11d",
+          "qty": 9,
+          "qty_prev": 7,
+          "qty_delta": 2,
+          "value": 24391000,
+          "value_prev": 18393000,
+          "value_delta": 5998000
+        },
+        {
           "model": "V70",
-          "qty": 1,
+          "qty": 2,
           "qty_prev": 1,
-          "qty_delta": 0,
-          "value": 9999000,
+          "qty_delta": 1,
+          "value": 19998000,
           "value_prev": 9999000,
-          "value_delta": 0
+          "value_delta": 9999000
         },
         {
           "model": "Y31d Pro",
@@ -1527,31 +2140,31 @@
           "value_delta": 8598000
         },
         {
-          "model": "Y11d",
-          "qty": 3,
-          "qty_prev": 3,
-          "qty_delta": 0,
-          "value": 7997000,
-          "value_prev": 7597000,
-          "value_delta": 400000
+          "model": "Y500",
+          "qty": 1,
+          "qty_prev": 2,
+          "qty_delta": -1,
+          "value": 5499000,
+          "value_prev": 12598000,
+          "value_delta": -7099000
         },
         {
           "model": "Y05",
-          "qty": 1,
+          "qty": 2,
           "qty_prev": 6,
-          "qty_delta": -5,
-          "value": 2299000,
+          "qty_delta": -4,
+          "value": 4598000,
           "value_prev": 13794000,
-          "value_delta": -11495000
+          "value_delta": -9196000
         },
         {
           "model": "Y05e",
           "qty": 1,
-          "qty_prev": 6,
-          "qty_delta": -5,
+          "qty_prev": 12,
+          "qty_delta": -11,
           "value": 2099000,
-          "value_prev": 12594000,
-          "value_delta": -10495000
+          "value_prev": 25188000,
+          "value_delta": -23089000
         },
         {
           "model": "Y11d (3mio>)",
@@ -1565,11 +2178,179 @@
         {
           "model": "Y31d (v1)",
           "qty": 0,
+          "qty_prev": 2,
+          "qty_delta": -2,
+          "value": 0,
+          "value_prev": 7198000,
+          "value_delta": -7198000
+        },
+        {
+          "model": "V70 FE",
+          "qty": 0,
           "qty_prev": 1,
           "qty_delta": -1,
           "value": 0,
-          "value_prev": 3599000,
-          "value_delta": -3599000
+          "value_prev": 7999000,
+          "value_delta": -7999000
+        },
+        {
+          "model": "IQOO Z11x",
+          "qty": 0,
+          "qty_prev": 1,
+          "qty_delta": -1,
+          "value": 0,
+          "value_prev": 5699000,
+          "value_delta": -5699000
+        },
+        {
+          "model": "IQOO Z11",
+          "qty": 0,
+          "qty_prev": 1,
+          "qty_delta": -1,
+          "value": 0,
+          "value_prev": 6899000,
+          "value_delta": -6899000
+        }
+      ]
+    },
+    {
+      "store_id": 6010703,
+      "store_name": "ROXY VS WINSHOP",
+      "area": "JKT BU",
+      "headstore": "NUR IRAWATI",
+      "total_qty": 5,
+      "total_qty_prev": 8,
+      "total_value": 13595000,
+      "total_value_prev": 21792000,
+      "by_type": [
+        {
+          "model": "Y11d",
+          "qty": 3,
+          "qty_prev": 2,
+          "qty_delta": 1,
+          "value": 7597000,
+          "value_prev": 4798000,
+          "value_delta": 2799000
+        },
+        {
+          "model": "Y31d Pro",
+          "qty": 1,
+          "qty_prev": 0,
+          "qty_delta": 1,
+          "value": 3899000,
+          "value_prev": 0,
+          "value_delta": 3899000
+        },
+        {
+          "model": "Y05e",
+          "qty": 1,
+          "qty_prev": 4,
+          "qty_delta": -3,
+          "value": 2099000,
+          "value_prev": 8396000,
+          "value_delta": -6297000
+        },
+        {
+          "model": "Y05",
+          "qty": 0,
+          "qty_prev": 1,
+          "qty_delta": -1,
+          "value": 0,
+          "value_prev": 2299000,
+          "value_delta": -2299000
+        },
+        {
+          "model": "Y500",
+          "qty": 0,
+          "qty_prev": 1,
+          "qty_delta": -1,
+          "value": 0,
+          "value_prev": 6299000,
+          "value_delta": -6299000
+        }
+      ]
+    },
+    {
+      "store_id": 6040703,
+      "store_name": "SAWANGAN 1F1-0320",
+      "area": "JKT TS",
+      "headstore": "Erlangga Praditya",
+      "total_qty": 1,
+      "total_qty_prev": 9,
+      "total_value": 5899000,
+      "total_value_prev": 56691000,
+      "by_type": [
+        {
+          "model": "V60 Lite",
+          "qty": 1,
+          "qty_prev": 0,
+          "qty_delta": 1,
+          "value": 5899000,
+          "value_prev": 0,
+          "value_delta": 5899000
+        },
+        {
+          "model": "Y05",
+          "qty": 0,
+          "qty_prev": 1,
+          "qty_delta": -1,
+          "value": 0,
+          "value_prev": 2599000,
+          "value_delta": -2599000
+        },
+        {
+          "model": "Y11d",
+          "qty": 0,
+          "qty_prev": 2,
+          "qty_delta": -2,
+          "value": 0,
+          "value_prev": 5198000,
+          "value_delta": -5198000
+        },
+        {
+          "model": "Watch GT 2",
+          "qty": 0,
+          "qty_prev": 1,
+          "qty_delta": -1,
+          "value": 0,
+          "value_prev": 1799000,
+          "value_delta": -1799000
+        },
+        {
+          "model": "Y05e",
+          "qty": 0,
+          "qty_prev": 1,
+          "qty_delta": -1,
+          "value": 0,
+          "value_prev": 2099000,
+          "value_delta": -2099000
+        },
+        {
+          "model": "V70 FE",
+          "qty": 0,
+          "qty_prev": 1,
+          "qty_delta": -1,
+          "value": 0,
+          "value_prev": 6999000,
+          "value_delta": -6999000
+        },
+        {
+          "model": "Y500",
+          "qty": 0,
+          "qty_prev": 1,
+          "qty_delta": -1,
+          "value": 0,
+          "value_prev": 6299000,
+          "value_delta": -6299000
+        },
+        {
+          "model": "X300 Ultra",
+          "qty": 0,
+          "qty_prev": 1,
+          "qty_delta": -1,
+          "value": 0,
+          "value_prev": 25999000,
+          "value_delta": -25999000
         },
         {
           "model": "IQOO Z11x",
@@ -1583,73 +2364,13 @@
       ]
     },
     {
-      "store_id": 6010703,
-      "store_name": "ROXY VS WINSHOP",
-      "area": "JKT BU",
-      "headstore": "NUR IRAWATI",
-      "total_qty": 2,
-      "total_qty_prev": 2,
-      "total_value": 6298000,
-      "total_value_prev": 4498000,
-      "by_type": [
-        {
-          "model": "Y31d Pro",
-          "qty": 1,
-          "qty_prev": 0,
-          "qty_delta": 1,
-          "value": 3899000,
-          "value_prev": 0,
-          "value_delta": 3899000
-        },
-        {
-          "model": "Y11d",
-          "qty": 1,
-          "qty_prev": 1,
-          "qty_delta": 0,
-          "value": 2399000,
-          "value_prev": 2399000,
-          "value_delta": 0
-        },
-        {
-          "model": "Y05e",
-          "qty": 0,
-          "qty_prev": 1,
-          "qty_delta": -1,
-          "value": 0,
-          "value_prev": 2099000,
-          "value_delta": -2099000
-        }
-      ]
-    },
-    {
-      "store_id": 6040703,
-      "store_name": "SAWANGAN 1F1-0320",
-      "area": "JKT TS",
-      "headstore": "Erlangga Praditya",
-      "total_qty": 1,
-      "total_qty_prev": 0,
-      "total_value": 5899000,
-      "total_value_prev": 0,
-      "by_type": [
-        {
-          "model": "V60 Lite",
-          "qty": 1,
-          "qty_prev": 0,
-          "qty_delta": 1,
-          "value": 5899000,
-          "value_prev": 0,
-          "value_delta": 5899000
-        }
-      ]
-    },
-    {
       "store_id": 6170706,
       "store_name": "TANGCITY CHARLES",
       "area": "BANTEN",
       "headstore": "DHANI EKO NUGROHO",
-      "total_qty": 5,
+      "total_qty": 7,
       "total_qty_prev": 11,
-      "total_value": 18995000,
+      "total_value": 26093000,
       "total_value_prev": 27989000,
       "by_type": [
         {
@@ -1663,12 +2384,21 @@
         },
         {
           "model": "Y11d",
-          "qty": 1,
+          "qty": 2,
           "qty_prev": 5,
-          "qty_delta": -4,
-          "value": 2799000,
+          "qty_delta": -3,
+          "value": 5598000,
           "value_prev": 13995000,
-          "value_delta": -11196000
+          "value_delta": -8397000
+        },
+        {
+          "model": "Y31d Pro",
+          "qty": 1,
+          "qty_prev": 0,
+          "qty_delta": 1,
+          "value": 4299000,
+          "value_prev": 0,
+          "value_delta": 4299000
         },
         {
           "model": "Y05",
@@ -1695,37 +2425,37 @@
       "store_name": "TANGCITY LG BLOK A-B NO. 12",
       "area": "BANTEN",
       "headstore": "DHANI EKO NUGROHO",
-      "total_qty": 8,
-      "total_qty_prev": 11,
-      "total_value": 23692000,
-      "total_value_prev": 28689000,
+      "total_qty": 9,
+      "total_qty_prev": 16,
+      "total_value": 29591000,
+      "total_value_prev": 41684000,
       "by_type": [
+        {
+          "model": "V60 Lite",
+          "qty": 2,
+          "qty_prev": 0,
+          "qty_delta": 2,
+          "value": 11798000,
+          "value_prev": 0,
+          "value_delta": 11798000
+        },
         {
           "model": "Y05",
           "qty": 4,
-          "qty_prev": 2,
-          "qty_delta": 2,
+          "qty_prev": 3,
+          "qty_delta": 1,
           "value": 9796000,
-          "value_prev": 5198000,
-          "value_delta": 4598000
+          "value_prev": 7797000,
+          "value_delta": 1999000
         },
         {
           "model": "Y11d",
           "qty": 3,
-          "qty_prev": 5,
-          "qty_delta": -2,
+          "qty_prev": 9,
+          "qty_delta": -6,
           "value": 7997000,
-          "value_prev": 13595000,
-          "value_delta": -5598000
-        },
-        {
-          "model": "V60 Lite",
-          "qty": 1,
-          "qty_prev": 0,
-          "qty_delta": 1,
-          "value": 5899000,
-          "value_prev": 0,
-          "value_delta": 5899000
+          "value_prev": 23991000,
+          "value_delta": -15994000
         },
         {
           "model": "Y05e",
@@ -1752,10 +2482,10 @@
       "store_name": "TANGCITY LG BLOK B NO. 01B",
       "area": "BANTEN",
       "headstore": "ARIES FITRIYANTO",
-      "total_qty": 4,
-      "total_qty_prev": 7,
-      "total_value": 25796000,
-      "total_value_prev": 27893000,
+      "total_qty": 7,
+      "total_qty_prev": 8,
+      "total_value": 37293000,
+      "total_value_prev": 30192000,
       "by_type": [
         {
           "model": "V70",
@@ -1776,6 +2506,24 @@
           "value_delta": 7999000
         },
         {
+          "model": "V60 Lite",
+          "qty": 1,
+          "qty_prev": 0,
+          "qty_delta": 1,
+          "value": 5899000,
+          "value_prev": 0,
+          "value_delta": 5899000
+        },
+        {
+          "model": "Y11d",
+          "qty": 2,
+          "qty_prev": 2,
+          "qty_delta": 0,
+          "value": 5598000,
+          "value_prev": 5598000,
+          "value_delta": 0
+        },
+        {
           "model": "Y31d Pro",
           "qty": 1,
           "qty_prev": 0,
@@ -1787,20 +2535,11 @@
         {
           "model": "Y05",
           "qty": 1,
-          "qty_prev": 1,
-          "qty_delta": 0,
-          "value": 2299000,
-          "value_prev": 2599000,
-          "value_delta": -300000
-        },
-        {
-          "model": "Y11d",
-          "qty": 0,
           "qty_prev": 2,
-          "qty_delta": -2,
-          "value": 0,
-          "value_prev": 5598000,
-          "value_delta": -5598000
+          "qty_delta": -1,
+          "value": 2299000,
+          "value_prev": 4898000,
+          "value_delta": -2599000
         },
         {
           "model": "Y05e",
@@ -1827,11 +2566,20 @@
       "store_name": "TANGCITY LG BLOK D NO. 01D",
       "area": "BANTEN",
       "headstore": "ARIES FITRIYANTO",
-      "total_qty": 4,
-      "total_qty_prev": 8,
-      "total_value": 17696000,
-      "total_value_prev": 21192000,
+      "total_qty": 8,
+      "total_qty_prev": 9,
+      "total_value": 33892000,
+      "total_value_prev": 23991000,
       "by_type": [
+        {
+          "model": "V60 Lite",
+          "qty": 2,
+          "qty_prev": 0,
+          "qty_delta": 2,
+          "value": 11798000,
+          "value_prev": 0,
+          "value_delta": 11798000
+        },
         {
           "model": "V70",
           "qty": 1,
@@ -1843,21 +2591,30 @@
         },
         {
           "model": "Y05",
-          "qty": 2,
+          "qty": 3,
           "qty_prev": 2,
-          "qty_delta": 0,
-          "value": 4898000,
+          "qty_delta": 1,
+          "value": 7197000,
           "value_prev": 5198000,
-          "value_delta": -300000
+          "value_delta": 1999000
         },
         {
           "model": "Y11d",
           "qty": 1,
-          "qty_prev": 6,
-          "qty_delta": -5,
+          "qty_prev": 7,
+          "qty_delta": -6,
           "value": 2799000,
-          "value_prev": 15994000,
-          "value_delta": -13195000
+          "value_prev": 18793000,
+          "value_delta": -15994000
+        },
+        {
+          "model": "Y05e",
+          "qty": 1,
+          "qty_prev": 0,
+          "qty_delta": 1,
+          "value": 2099000,
+          "value_prev": 0,
+          "value_delta": 2099000
         }
       ]
     },
@@ -1866,10 +2623,10 @@
       "store_name": "TANGCITY LG009",
       "area": "BANTEN",
       "headstore": "DHANI EKO NUGROHO",
-      "total_qty": 2,
-      "total_qty_prev": 7,
-      "total_value": 9998000,
-      "total_value_prev": 24793000,
+      "total_qty": 3,
+      "total_qty_prev": 9,
+      "total_value": 13597000,
+      "total_value_prev": 29891000,
       "by_type": [
         {
           "model": "IQOO Z11x",
@@ -1890,22 +2647,31 @@
           "value_delta": 4299000
         },
         {
+          "model": "Y31d (v2)",
+          "qty": 1,
+          "qty_prev": 0,
+          "qty_delta": 1,
+          "value": 3599000,
+          "value_prev": 0,
+          "value_delta": 3599000
+        },
+        {
           "model": "Y05",
           "qty": 0,
-          "qty_prev": 3,
-          "qty_delta": -3,
+          "qty_prev": 4,
+          "qty_delta": -4,
           "value": 0,
-          "value_prev": 7497000,
-          "value_delta": -7497000
+          "value_prev": 9796000,
+          "value_delta": -9796000
         },
         {
           "model": "Y11d",
           "qty": 0,
-          "qty_prev": 2,
-          "qty_delta": -2,
+          "qty_prev": 3,
+          "qty_delta": -3,
           "value": 0,
-          "value_prev": 5198000,
-          "value_delta": -5198000
+          "value_prev": 7997000,
+          "value_delta": -7997000
         },
         {
           "model": "Y05e",
@@ -1933,12 +2699,51 @@
       "area": "BANTEN",
       "headstore": "ARIES FITRIYANTO",
       "total_qty": 1,
-      "total_qty_prev": 1,
+      "total_qty_prev": 2,
       "total_value": 3599000,
-      "total_value_prev": 2099000,
+      "total_value_prev": 4198000,
       "by_type": [
         {
           "model": "Y11d (3mio>)",
+          "qty": 1,
+          "qty_prev": 0,
+          "qty_delta": 1,
+          "value": 3599000,
+          "value_prev": 0,
+          "value_delta": 3599000
+        },
+        {
+          "model": "Y05e",
+          "qty": 0,
+          "qty_prev": 2,
+          "qty_delta": -2,
+          "value": 0,
+          "value_prev": 4198000,
+          "value_delta": -4198000
+        }
+      ]
+    },
+    {
+      "store_id": 6040702,
+      "store_name": "TRAN STUDIO MALL 2F059",
+      "area": "JKT TS",
+      "headstore": "Erlangga Praditya",
+      "total_qty": 3,
+      "total_qty_prev": 3,
+      "total_value": 8797000,
+      "total_value_prev": 15297000,
+      "by_type": [
+        {
+          "model": "Y11d",
+          "qty": 2,
+          "qty_prev": 0,
+          "qty_delta": 2,
+          "value": 5198000,
+          "value_prev": 0,
+          "value_delta": 5198000
+        },
+        {
+          "model": "Y31d (v1)",
           "qty": 1,
           "qty_prev": 0,
           "qty_delta": 1,
@@ -1954,27 +2759,24 @@
           "value": 0,
           "value_prev": 2099000,
           "value_delta": -2099000
-        }
-      ]
-    },
-    {
-      "store_id": 6040702,
-      "store_name": "TRAN STUDIO MALL 2F059",
-      "area": "JKT TS",
-      "headstore": "Erlangga Praditya",
-      "total_qty": 1,
-      "total_qty_prev": 0,
-      "total_value": 3599000,
-      "total_value_prev": 0,
-      "by_type": [
+        },
         {
-          "model": "Y31d (v1)",
-          "qty": 1,
-          "qty_prev": 0,
-          "qty_delta": 1,
-          "value": 3599000,
-          "value_prev": 0,
-          "value_delta": 3599000
+          "model": "Y500",
+          "qty": 0,
+          "qty_prev": 1,
+          "qty_delta": -1,
+          "value": 0,
+          "value_prev": 6299000,
+          "value_delta": -6299000
+        },
+        {
+          "model": "IQOO Z11",
+          "qty": 0,
+          "qty_prev": 1,
+          "qty_delta": -1,
+          "value": 0,
+          "value_prev": 6899000,
+          "value_delta": -6899000
         }
       ]
     }

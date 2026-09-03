@@ -47,6 +47,10 @@ def format_updated_at():
     return f"{now.day} {BULAN_ID[now.month]} {now.year}, {now.strftime('%H:%M')} WIB"
 
 
+def safe_ratio(a, b):
+    return (a / b) if b else 0
+
+
 def clean_area(s):
     m = re.findall(r"[A-Za-z][A-Za-z\s]*$", str(s))
     return m[-1].strip() if m else str(s)
@@ -86,14 +90,56 @@ def find_promoter_sheet(wb):
     return None
 
 
+def find_promoter_columns(ws):
+    """Cari posisi kolom kunci di sheet promotor lewat teks header (row 1/3/4),
+    bukan hardcode posisi -- formatnya sudah berubah beberapa kali (dulu unit
+    yang di depan, sekarang value; target 3MIO+/ALL TYPE juga sempat dihapus).
+    Kalau strukturnya berubah lagi, ini tetap coba cari daripada langsung
+    salah baca kolom."""
+    def label(row, col):
+        return str(ws.cell(row, col).value or "").strip().upper()
+
+    cols = {}
+    max_c = ws.max_column
+    for c in range(7, max_c + 1):
+        r1, r3 = label(1, c), label(3, c)
+        if r3 in ("TARGET (RP)", "TARGET") and "target_value" not in cols:
+            cols["target_value"] = c
+        elif r3 == "ACH (RP)" and "ach_value" not in cols:
+            cols["ach_value"] = c
+        elif r3 == "ASP" and "asp" not in cols:
+            cols["asp"] = c
+        elif r3 == "EST" and "target_value" in cols and "est_value" not in cols:
+            cols["est_value"] = c
+        elif r1 == "3MIO+" and r3 == "ACH" and "mio3_ach" not in cols:
+            cols["mio3_ach"] = c
+        elif r1 == "ALL TYPE" and r3 == "ACH" and "all_ach" not in cols:
+            cols["all_ach"] = c
+        elif ("MIX" in r3 or ("3MIO+" in r3 and "ALL" in r3)) and "mix_pct" not in cols:
+            cols["mix_pct"] = c
+        if "3MIO" in r1 and "BULAN LALU" in r1 and "mio3_growth" not in cols:
+            cols["mio3_growth"] = c
+        if "ALL TYPE" in r1 and "BULAN LALU" in r1 and "all_growth" not in cols:
+            cols["all_growth"] = c
+    return cols
+
+
 def parse_promoters(wb):
     ws = find_promoter_sheet(wb)
     if ws is None:
         return None
 
     def v(row, col):
+        if col is None:
+            return 0
         val = ws.cell(row, col).value
         return val if val is not None else 0
+
+    C = find_promoter_columns(ws)
+    v_perf_p = Validator("Sheet Promotor")
+    for key in ("target_value", "ach_value", "asp", "mio3_ach", "all_ach", "mix_pct", "mio3_growth", "all_growth"):
+        v_perf_p.check(key in C, f"Kolom '{key}' gak ketemu di header sheet promotor -- field itu bakal kosong/0")
+    v_perf_p.report()
 
     promoters = []
     for r in range(5, ws.max_row + 1):
@@ -104,31 +150,29 @@ def parse_promoters(wb):
         if not isinstance(store_id, (int, float)):
             continue  # skip baris TOTAL / bukan data promotor
 
+        mg, ag = C.get("mio3_growth"), C.get("all_growth")
         promoters.append({
             "area": clean_area(ws.cell(r, 1).value),
             "store_id": store_id,
             "headstore": ws.cell(r, 3).value,
             "store_name": clean_store_name(ws.cell(r, 5).value),
             "promoter_name": str(promoter_name).strip(),
-            "mio3_target": v(r, 7),
-            "mio3_ach": v(r, 8),
-            "mio3_pct": v(r, 9),
-            "mio3_est": v(r, 10),
-            "all_target": v(r, 11),
-            "all_ach": v(r, 12),
-            "all_pct": v(r, 13),
-            "all_est": v(r, 14),
-            "mix_pct": v(r, 15),
-            "value": v(r, 16),
-            "asp": v(r, 17),
-            "mio3_qty_prev": v(r, 18),
-            "mio3_qty_curr": v(r, 19),
-            "mio3_qty_gap": v(r, 20),
-            "mio3_qty_pct": v(r, 21),
-            "all_qty_prev": v(r, 22),
-            "all_qty_curr": v(r, 23),
-            "all_qty_gap": v(r, 24),
-            "all_qty_pct": v(r, 25),
+            "target_value": v(r, C.get("target_value")),
+            "ach_value": v(r, C.get("ach_value")),
+            "ach_value_pct": safe_ratio(v(r, C.get("ach_value")), v(r, C.get("target_value"))),
+            "est_value": v(r, C.get("est_value")),
+            "asp": v(r, C.get("asp")),
+            "mio3_ach": v(r, C.get("mio3_ach")),
+            "all_ach": v(r, C.get("all_ach")),
+            "mix_pct": v(r, C.get("mix_pct")),
+            "mio3_qty_prev": v(r, mg),
+            "mio3_qty_curr": v(r, mg + 1 if mg else None),
+            "mio3_qty_gap": v(r, mg + 2 if mg else None),
+            "mio3_qty_pct": v(r, mg + 3 if mg else None),
+            "all_qty_prev": v(r, ag),
+            "all_qty_curr": v(r, ag + 1 if ag else None),
+            "all_qty_gap": v(r, ag + 2 if ag else None),
+            "all_qty_pct": v(r, ag + 3 if ag else None),
         })
 
     return promoters

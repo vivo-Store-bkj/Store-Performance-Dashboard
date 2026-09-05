@@ -2,7 +2,7 @@
   "period_key": "2026-09",
   "period_label": "September 2026",
   "updated_by": "Michael Fumar",
-  "updated_at": "4 September 2026, 00:23 WIB",
+  "updated_at": "5 September 2026, 12:10 WIB",
   "totals_by_type": [
     {
       "model": "Y11d",
@@ -104,15 +104,6 @@
       "value_delta": 14396000
     },
     {
-      "model": "Y11d (3mio>)",
-      "qty": 5,
-      "qty_prev": 2,
-      "qty_delta": 3,
-      "value": 17995000,
-      "value_prev": 7198000,
-      "value_delta": 10797000
-    },
-    {
       "model": "Y31d (v1)",
       "qty": 5,
       "qty_prev": 9,
@@ -147,6 +138,15 @@
       "value": 0,
       "value_prev": 1799000,
       "value_delta": -1799000
+    },
+    {
+      "model": "Y11d (3mio>)",
+      "qty": 0,
+      "qty_prev": 0,
+      "qty_delta": 0,
+      "value": 0,
+      "value_prev": 0,
+      "value_delta": 0
     },
     {
       "model": "IQOO 15",
@@ -194,7 +194,7 @@
       "value_delta": 0
     },
     {
-      "model": "9",
+      "model": "#REF!",
       "qty": 0,
       "qty_prev": 0,
       "qty_delta": 0,
@@ -204,12 +204,12 @@
     }
   ],
   "network_total": {
-    "qty": 258,
-    "qty_prev": 366,
-    "qty_delta": -108,
-    "value": 975642000,
-    "value_prev": 1249534000,
-    "value_delta": -273892000
+    "qty": 253,
+    "qty_prev": 364,
+    "qty_delta": -111,
+    "value": 957647000,
+    "value_prev": 1242336000,
+    "value_delta": -284689000
   },
   "stores": [
     {
@@ -217,9 +217,9 @@
       "store_name": "23 SEMARANG MALL 1F065-66",
       "area": "Semarang",
       "headstore": "VICKY DINDA INEZ",
-      "total_qty": 2,
+      "total_qty": 1,
       "total_qty_prev": 3,
-      "total_value": 13598000,
+      "total_value": 9999000,
       "total_value_prev": 38797000,
       "by_type": [
         {
@@ -230,15 +230,6 @@
           "value": 9999000,
           "value_prev": 9999000,
           "value_delta": 0
-        },
-        {
-          "model": "Y11d (3mio>)",
-          "qty": 1,
-          "qty_prev": 0,
-          "qty_delta": 1,
-          "value": 3599000,
-          "value_prev": 0,
-          "value_delta": 3599000
         },
         {
           "model": "Y11d",
@@ -634,9 +625,9 @@
       "store_name": "BEC VIVO STORE LU",
       "area": "BDG KOTA",
       "headstore": "NENG TOTOH",
-      "total_qty": 12,
+      "total_qty": 11,
       "total_qty_prev": 14,
-      "total_value": 44288000,
+      "total_value": 40689000,
       "total_value_prev": 39186000,
       "by_type": [
         {
@@ -665,15 +656,6 @@
           "value": 6299000,
           "value_prev": 0,
           "value_delta": 6299000
-        },
-        {
-          "model": "Y11d (3mio>)",
-          "qty": 1,
-          "qty_prev": 0,
-          "qty_delta": 1,
-          "value": 3599000,
-          "value_prev": 0,
-          "value_delta": 3599000
         },
         {
           "model": "Y31d (v2)",
@@ -922,9 +904,9 @@
       "store_name": "CENTRAL PARK SHOWROOM",
       "area": "JKT BU",
       "headstore": "NANDI FEBRIANA",
-      "total_qty": 7,
+      "total_qty": 6,
       "total_qty_prev": 7,
-      "total_value": 22393000,
+      "total_value": 18794000,
       "total_value_prev": 31293000,
       "by_type": [
         {
@@ -944,15 +926,6 @@
           "value": 5899000,
           "value_prev": 0,
           "value_delta": 5899000
-        },
-        {
-          "model": "Y11d (3mio>)",
-          "qty": 1,
-          "qty_prev": 0,
-          "qty_delta": 1,
-          "value": 3599000,
-          "value_prev": 0,
-          "value_delta": 3599000
         },
         {
           "model": "Y31d (v1)",
@@ -1178,9 +1151,9 @@
       "area": "BANTEN",
       "headstore": "ARIES FITRIYANTO",
       "total_qty": 3,
-      "total_qty_prev": 4,
+      "total_qty_prev": 3,
       "total_value": 7397000,
-      "total_value_prev": 17196000,
+      "total_value_prev": 13597000,
       "by_type": [
         {
           "model": "Y05",
@@ -1199,15 +1172,6 @@
           "value": 2799000,
           "value_prev": 5598000,
           "value_delta": -2799000
-        },
-        {
-          "model": "Y11d (3mio>)",
-          "qty": 0,
-          "qty_prev": 1,
-          "qty_delta": -1,
-          "value": 0,
-          "value_prev": 3599000,
-          "value_delta": -3599000
         },
         {
           "model": "V70 FE",
@@ -1561,9 +1525,9 @@
       "store_name": "MALL CCM VIVO STORE",
       "area": "BOGOR",
       "headstore": "DANDI SURYA",
-      "total_qty": 6,
+      "total_qty": 5,
       "total_qty_prev": 12,
-      "total_value": 20494000,
+      "total_value": 16895000,
       "total_value_prev": 41088000,
       "by_type": [
         {
@@ -1583,15 +1547,6 @@
           "value": 4898000,
           "value_prev": 0,
           "value_delta": 4898000
-        },
-        {
-          "model": "Y11d (3mio>)",
-          "qty": 1,
-          "qty_prev": 0,
-          "qty_delta": 1,
-          "value": 3599000,
-          "value_prev": 0,
-          "value_delta": 3599000
         },
         {
           "model": "Y11d",
@@ -2108,9 +2063,9 @@
       "area": "JKT BU",
       "headstore": "ANGGARIA",
       "total_qty": 17,
-      "total_qty_prev": 34,
+      "total_qty_prev": 33,
       "total_value": 65183000,
-      "total_value_prev": 111366000,
+      "total_value_prev": 107767000,
       "by_type": [
         {
           "model": "Y11d",
@@ -2165,15 +2120,6 @@
           "value": 2099000,
           "value_prev": 25188000,
           "value_delta": -23089000
-        },
-        {
-          "model": "Y11d (3mio>)",
-          "qty": 0,
-          "qty_prev": 1,
-          "qty_delta": -1,
-          "value": 0,
-          "value_prev": 3599000,
-          "value_delta": -3599000
         },
         {
           "model": "Y31d (v1)",
@@ -2698,20 +2644,11 @@
       "store_name": "TANGCITY LG017",
       "area": "BANTEN",
       "headstore": "ARIES FITRIYANTO",
-      "total_qty": 1,
+      "total_qty": 0,
       "total_qty_prev": 2,
-      "total_value": 3599000,
+      "total_value": 0,
       "total_value_prev": 4198000,
       "by_type": [
-        {
-          "model": "Y11d (3mio>)",
-          "qty": 1,
-          "qty_prev": 0,
-          "qty_delta": 1,
-          "value": 3599000,
-          "value_prev": 0,
-          "value_delta": 3599000
-        },
         {
           "model": "Y05e",
           "qty": 0,

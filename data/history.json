@@ -17264,11 +17264,11 @@
         },
         "6020706": {
           "target_unit": 100,
-          "ach_unit": 62,
-          "ach_pct": 0.62,
+          "ach_unit": 61,
+          "ach_pct": 0.61,
           "target_value": 400000000,
-          "ach_value": 232038000,
-          "ach_value_pct": 0.580095
+          "ach_value": 226139000,
+          "ach_value_pct": 0.5653475
         },
         "6020704": {
           "target_unit": 50,
@@ -17561,11 +17561,11 @@
       },
       "network": {
         "target_unit": 3400,
-        "ach_unit": 1810,
-        "ach_pct": 0.5323529411764706,
+        "ach_unit": 1809,
+        "ach_pct": 0.5320588235294118,
         "target_value": 14520000000,
-        "ach_value": 7158790000,
-        "ach_value_pct": 0.49302961432506887
+        "ach_value": 7152891000,
+        "ach_value_pct": 0.492623347107438
       }
     },
     {
@@ -17640,11 +17640,11 @@
         },
         "6020706": {
           "target_unit": 100,
-          "ach_unit": 66,
-          "ach_pct": 0.66,
+          "ach_unit": 65,
+          "ach_pct": 0.65,
           "target_value": 400000000,
-          "ach_value": 247134000,
-          "ach_value_pct": 0.617835
+          "ach_value": 241235000,
+          "ach_value_pct": 0.6030875
         },
         "6020704": {
           "target_unit": 50,
@@ -17856,11 +17856,11 @@
         },
         "6190704": {
           "target_unit": 110,
-          "ach_unit": 64,
-          "ach_pct": 0.5818181818181818,
+          "ach_unit": 63,
+          "ach_pct": 0.5727272727272728,
           "target_value": 500000000,
-          "ach_value": 272736000,
-          "ach_value_pct": 0.545472
+          "ach_value": 269937000,
+          "ach_value_pct": 0.539874
         },
         "6190707": {
           "target_unit": 120,
@@ -17937,11 +17937,11 @@
       },
       "network": {
         "target_unit": 3400,
-        "ach_unit": 1947,
-        "ach_pct": 0.5726470588235294,
+        "ach_unit": 1945,
+        "ach_pct": 0.5720588235294117,
         "target_value": 14520000000,
-        "ach_value": 7772053000,
-        "ach_value_pct": 0.5352653581267217
+        "ach_value": 7763355000,
+        "ach_value_pct": 0.5346663223140495
       }
     },
     {
@@ -18008,19 +18008,19 @@
         },
         "6010711": {
           "target_unit": 50,
-          "ach_unit": 20,
-          "ach_pct": 0.4,
+          "ach_unit": 19,
+          "ach_pct": 0.38,
           "target_value": 350000000,
-          "ach_value": 109780000,
-          "ach_value_pct": 0.31365714285714286
+          "ach_value": 104981000,
+          "ach_value_pct": 0.29994571428571426
         },
         "6020706": {
           "target_unit": 100,
-          "ach_unit": 72,
-          "ach_pct": 0.72,
+          "ach_unit": 70,
+          "ach_pct": 0.7,
           "target_value": 400000000,
-          "ach_value": 267428000,
-          "ach_value_pct": 0.66857
+          "ach_value": 259230000,
+          "ach_value_pct": 0.648075
         },
         "6020704": {
           "target_unit": 50,
@@ -18232,11 +18232,11 @@
         },
         "6190704": {
           "target_unit": 110,
-          "ach_unit": 66,
-          "ach_pct": 0.6,
+          "ach_unit": 65,
+          "ach_pct": 0.5909090909090909,
           "target_value": 500000000,
-          "ach_value": 283034000,
-          "ach_value_pct": 0.566068
+          "ach_value": 280235000,
+          "ach_value_pct": 0.56047
         },
         "6190707": {
           "target_unit": 120,
@@ -18313,11 +18313,1139 @@
       },
       "network": {
         "target_unit": 3400,
-        "ach_unit": 2104,
-        "ach_pct": 0.6188235294117647,
+        "ach_unit": 2100,
+        "ach_pct": 0.6176470588235294,
         "target_value": 14520000000,
-        "ach_value": 8406796000,
-        "ach_value_pct": 0.5789804407713499
+        "ach_value": 8391000000,
+        "ach_value_pct": 0.577892561983471
+      }
+    },
+    {
+      "date": "2026-09-21",
+      "period_key": "2026-09",
+      "to_date_day": 21,
+      "source": "daily_sales",
+      "stores": {
+        "6010708": {
+          "target_unit": 110,
+          "ach_unit": 62,
+          "ach_pct": 0.5636363636363636,
+          "target_value": 600000000,
+          "ach_value": 353638000,
+          "ach_value_pct": 0.5893966666666667
+        },
+        "6010701": {
+          "target_unit": 240,
+          "ach_unit": 158,
+          "ach_pct": 0.6583333333333333,
+          "target_value": 1050000000,
+          "ach_value": 564342000,
+          "ach_value_pct": 0.5374685714285714
+        },
+        "6010702": {
+          "target_unit": 240,
+          "ach_unit": 173,
+          "ach_pct": 0.7208333333333333,
+          "target_value": 950000000,
+          "ach_value": 617027000,
+          "ach_value_pct": 0.6495021052631579
+        },
+        "6010703": {
+          "target_unit": 120,
+          "ach_unit": 84,
+          "ach_pct": 0.7,
+          "target_value": 450000000,
+          "ach_value": 260316000,
+          "ach_value_pct": 0.57848
+        },
+        "6010709": {
+          "target_unit": 320,
+          "ach_unit": 247,
+          "ach_pct": 0.771875,
+          "target_value": 1100000000,
+          "ach_value": 806553000,
+          "ach_value_pct": 0.73323
+        },
+        "6010710": {
+          "target_unit": 110,
+          "ach_unit": 78,
+          "ach_pct": 0.7090909090909091,
+          "target_value": 400000000,
+          "ach_value": 255222000,
+          "ach_value_pct": 0.638055
+        },
+        "6020711": {
+          "target_unit": 110,
+          "ach_unit": 59,
+          "ach_pct": 0.5363636363636364,
+          "target_value": 620000000,
+          "ach_value": 296541000,
+          "ach_value_pct": 0.47829193548387094
+        },
+        "6010711": {
+          "target_unit": 50,
+          "ach_unit": 19,
+          "ach_pct": 0.38,
+          "target_value": 350000000,
+          "ach_value": 104981000,
+          "ach_value_pct": 0.29994571428571426
+        },
+        "6020706": {
+          "target_unit": 100,
+          "ach_unit": 71,
+          "ach_pct": 0.71,
+          "target_value": 400000000,
+          "ach_value": 261529000,
+          "ach_value_pct": 0.6538225
+        },
+        "6020704": {
+          "target_unit": 50,
+          "ach_unit": 35,
+          "ach_pct": 0.7,
+          "target_value": 200000000,
+          "ach_value": 125765000,
+          "ach_value_pct": 0.628825
+        },
+        "6040701": {
+          "target_unit": 60,
+          "ach_unit": 42,
+          "ach_pct": 0.7,
+          "target_value": 250000000,
+          "ach_value": 201958000,
+          "ach_value_pct": 0.807832
+        },
+        "6080712": {
+          "target_unit": 70,
+          "ach_unit": 35,
+          "ach_pct": 0.5,
+          "target_value": 300000000,
+          "ach_value": 153565000,
+          "ach_value_pct": 0.5118833333333334
+        },
+        "6040702": {
+          "target_unit": 50,
+          "ach_unit": 15,
+          "ach_pct": 0.3,
+          "target_value": 200000000,
+          "ach_value": 63685000,
+          "ach_value_pct": 0.318425
+        },
+        "6040703": {
+          "target_unit": 50,
+          "ach_unit": 14,
+          "ach_pct": 0.28,
+          "target_value": 200000000,
+          "ach_value": 61586000,
+          "ach_value_pct": 0.30793
+        },
+        "6050701": {
+          "target_unit": 60,
+          "ach_unit": 45,
+          "ach_pct": 0.75,
+          "target_value": 280000000,
+          "ach_value": 205755000,
+          "ach_value_pct": 0.7348392857142857
+        },
+        "6220701": {
+          "target_unit": 70,
+          "ach_unit": 54,
+          "ach_pct": 0.7714285714285715,
+          "target_value": 300000000,
+          "ach_value": 223746000,
+          "ach_value_pct": 0.74582
+        },
+        "6050705": {
+          "target_unit": 30,
+          "ach_unit": 22,
+          "ach_pct": 0.7333333333333333,
+          "target_value": 120000000,
+          "ach_value": 99478000,
+          "ach_value_pct": 0.8289833333333333
+        },
+        "6050706": {
+          "target_unit": 30,
+          "ach_unit": 22,
+          "ach_pct": 0.7333333333333333,
+          "target_value": 170000000,
+          "ach_value": 98578000,
+          "ach_value_pct": 0.5798705882352941
+        },
+        "6180706": {
+          "target_unit": 120,
+          "ach_unit": 74,
+          "ach_pct": 0.6166666666666667,
+          "target_value": 550000000,
+          "ach_value": 310526000,
+          "ach_value_pct": 0.5645927272727272
+        },
+        "6180707": {
+          "target_unit": 30,
+          "ach_unit": 15,
+          "ach_pct": 0.5,
+          "target_value": 120000000,
+          "ach_value": 65385000,
+          "ach_value_pct": 0.544875
+        },
+        "6170707": {
+          "target_unit": 90,
+          "ach_unit": 70,
+          "ach_pct": 0.7777777777777778,
+          "target_value": 300000000,
+          "ach_value": 242130000,
+          "ach_value_pct": 0.8071
+        },
+        "6240702": {
+          "target_unit": 90,
+          "ach_unit": 69,
+          "ach_pct": 0.7666666666666667,
+          "target_value": 400000000,
+          "ach_value": 304631000,
+          "ach_value_pct": 0.7615775
+        },
+        "6240704": {
+          "target_unit": 30,
+          "ach_unit": 13,
+          "ach_pct": 0.43333333333333335,
+          "target_value": 100000000,
+          "ach_value": 66487000,
+          "ach_value_pct": 0.66487
+        },
+        "6240701": {
+          "target_unit": 90,
+          "ach_unit": 53,
+          "ach_pct": 0.5888888888888889,
+          "target_value": 350000000,
+          "ach_value": 187947000,
+          "ach_value_pct": 0.5369914285714286
+        },
+        "6170706": {
+          "target_unit": 90,
+          "ach_unit": 47,
+          "ach_pct": 0.5222222222222223,
+          "target_value": 310000000,
+          "ach_value": 156553000,
+          "ach_value_pct": 0.5050096774193549
+        },
+        "6240703": {
+          "target_unit": 90,
+          "ach_unit": 53,
+          "ach_pct": 0.5888888888888889,
+          "target_value": 400000000,
+          "ach_value": 180647000,
+          "ach_value_pct": 0.4516175
+        },
+        "6170703": {
+          "target_unit": 30,
+          "ach_unit": 6,
+          "ach_pct": 0.2,
+          "target_value": 120000000,
+          "ach_value": 42394000,
+          "ach_value_pct": 0.35328333333333334
+        },
+        "6240705": {
+          "target_unit": 40,
+          "ach_unit": 20,
+          "ach_pct": 0.5,
+          "target_value": 210000000,
+          "ach_value": 92280000,
+          "ach_value_pct": 0.43942857142857145
+        },
+        "6240709": {
+          "target_unit": 30,
+          "ach_unit": 12,
+          "ach_pct": 0.4,
+          "target_value": 100000000,
+          "ach_value": 59088000,
+          "ach_value_pct": 0.59088
+        },
+        "6240708": {
+          "target_unit": 30,
+          "ach_unit": 9,
+          "ach_pct": 0.3,
+          "target_value": 120000000,
+          "ach_value": 34591000,
+          "ach_value_pct": 0.28825833333333334
+        },
+        "6240707": {
+          "target_unit": 30,
+          "ach_unit": 10,
+          "ach_pct": 0.3333333333333333,
+          "target_value": 160000000,
+          "ach_value": 36790000,
+          "ach_value_pct": 0.2299375
+        },
+        "6240706": {
+          "target_unit": 30,
+          "ach_unit": 20,
+          "ach_pct": 0.6666666666666666,
+          "target_value": 120000000,
+          "ach_value": 101580000,
+          "ach_value_pct": 0.8465
+        },
+        "6190701": {
+          "target_unit": 50,
+          "ach_unit": 26,
+          "ach_pct": 0.52,
+          "target_value": 170000000,
+          "ach_value": 102074000,
+          "ach_value_pct": 0.6004352941176471
+        },
+        "6190706": {
+          "target_unit": 120,
+          "ach_unit": 108,
+          "ach_pct": 0.9,
+          "target_value": 620000000,
+          "ach_value": 446292000,
+          "ach_value_pct": 0.7198258064516129
+        },
+        "6190705": {
+          "target_unit": 50,
+          "ach_unit": 31,
+          "ach_pct": 0.62,
+          "target_value": 150000000,
+          "ach_value": 133269000,
+          "ach_value_pct": 0.88846
+        },
+        "6190704": {
+          "target_unit": 110,
+          "ach_unit": 69,
+          "ach_pct": 0.6272727272727273,
+          "target_value": 500000000,
+          "ach_value": 302231000,
+          "ach_value_pct": 0.604462
+        },
+        "6190707": {
+          "target_unit": 120,
+          "ach_unit": 103,
+          "ach_pct": 0.8583333333333333,
+          "target_value": 500000000,
+          "ach_value": 379997000,
+          "ach_value_pct": 0.759994
+        },
+        "6190708": {
+          "target_unit": 20,
+          "ach_unit": 20,
+          "ach_pct": 1.0,
+          "target_value": 80000000,
+          "ach_value": 91080000,
+          "ach_value_pct": 1.1385
+        },
+        "6150702": {
+          "target_unit": 20,
+          "ach_unit": 8,
+          "ach_pct": 0.4,
+          "target_value": 50000000,
+          "ach_value": 45292000,
+          "ach_value_pct": 0.90584
+        },
+        "6130702": {
+          "target_unit": 60,
+          "ach_unit": 29,
+          "ach_pct": 0.48333333333333334,
+          "target_value": 300000000,
+          "ach_value": 121871000,
+          "ach_value_pct": 0.4062366666666667
+        },
+        "6100702": {
+          "target_unit": 50,
+          "ach_unit": 18,
+          "ach_pct": 0.36,
+          "target_value": 300000000,
+          "ach_value": 81682000,
+          "ach_value_pct": 0.2722733333333333
+        },
+        "6140706": {
+          "target_unit": 50,
+          "ach_unit": 11,
+          "ach_pct": 0.22,
+          "target_value": 200000000,
+          "ach_value": 55889000,
+          "ach_value_pct": 0.279445
+        },
+        "6140705": {
+          "target_unit": 60,
+          "ach_unit": 30,
+          "ach_pct": 0.5,
+          "target_value": 350000000,
+          "ach_value": 242970000,
+          "ach_value_pct": 0.6942
+        },
+        "6140703": {
+          "target_unit": 0,
+          "ach_unit": 9,
+          "ach_pct": 0,
+          "target_value": 0,
+          "ach_value": 37091000,
+          "ach_value_pct": 0
+        },
+        "6130703": {
+          "target_unit": 0,
+          "ach_unit": 2,
+          "ach_pct": 0,
+          "target_value": 0,
+          "ach_value": 4898000,
+          "ach_value_pct": 0
+        }
+      },
+      "network": {
+        "target_unit": 3400,
+        "ach_unit": 2170,
+        "ach_pct": 0.638235294117647,
+        "target_value": 14520000000,
+        "ach_value": 8679930000,
+        "ach_value_pct": 0.5977913223140496
+      }
+    },
+    {
+      "date": "2026-09-22",
+      "period_key": "2026-09",
+      "to_date_day": 22,
+      "source": "daily_sales",
+      "stores": {
+        "6010708": {
+          "target_unit": 110,
+          "ach_unit": 63,
+          "ach_pct": 0.5727272727272728,
+          "target_value": 600000000,
+          "ach_value": 356237000,
+          "ach_value_pct": 0.5937283333333333
+        },
+        "6010701": {
+          "target_unit": 240,
+          "ach_unit": 165,
+          "ach_pct": 0.6875,
+          "target_value": 1050000000,
+          "ach_value": 587435000,
+          "ach_value_pct": 0.5594619047619047
+        },
+        "6010702": {
+          "target_unit": 240,
+          "ach_unit": 176,
+          "ach_pct": 0.7333333333333333,
+          "target_value": 950000000,
+          "ach_value": 635824000,
+          "ach_value_pct": 0.6692884210526315
+        },
+        "6010703": {
+          "target_unit": 120,
+          "ach_unit": 86,
+          "ach_pct": 0.7166666666666667,
+          "target_value": 450000000,
+          "ach_value": 268514000,
+          "ach_value_pct": 0.5966977777777778
+        },
+        "6010709": {
+          "target_unit": 320,
+          "ach_unit": 256,
+          "ach_pct": 0.8,
+          "target_value": 1100000000,
+          "ach_value": 839044000,
+          "ach_value_pct": 0.7627672727272727
+        },
+        "6010710": {
+          "target_unit": 110,
+          "ach_unit": 80,
+          "ach_pct": 0.7272727272727273,
+          "target_value": 400000000,
+          "ach_value": 260820000,
+          "ach_value_pct": 0.65205
+        },
+        "6020711": {
+          "target_unit": 110,
+          "ach_unit": 61,
+          "ach_pct": 0.5545454545454546,
+          "target_value": 620000000,
+          "ach_value": 302639000,
+          "ach_value_pct": 0.4881274193548387
+        },
+        "6010711": {
+          "target_unit": 50,
+          "ach_unit": 20,
+          "ach_pct": 0.4,
+          "target_value": 350000000,
+          "ach_value": 109780000,
+          "ach_value_pct": 0.31365714285714286
+        },
+        "6020706": {
+          "target_unit": 100,
+          "ach_unit": 74,
+          "ach_pct": 0.74,
+          "target_value": 400000000,
+          "ach_value": 275626000,
+          "ach_value_pct": 0.689065
+        },
+        "6020704": {
+          "target_unit": 50,
+          "ach_unit": 35,
+          "ach_pct": 0.7,
+          "target_value": 200000000,
+          "ach_value": 125765000,
+          "ach_value_pct": 0.628825
+        },
+        "6040701": {
+          "target_unit": 60,
+          "ach_unit": 44,
+          "ach_pct": 0.7333333333333333,
+          "target_value": 250000000,
+          "ach_value": 208456000,
+          "ach_value_pct": 0.833824
+        },
+        "6080712": {
+          "target_unit": 70,
+          "ach_unit": 35,
+          "ach_pct": 0.5,
+          "target_value": 300000000,
+          "ach_value": 153565000,
+          "ach_value_pct": 0.5118833333333334
+        },
+        "6040702": {
+          "target_unit": 50,
+          "ach_unit": 15,
+          "ach_pct": 0.3,
+          "target_value": 200000000,
+          "ach_value": 63685000,
+          "ach_value_pct": 0.318425
+        },
+        "6040703": {
+          "target_unit": 50,
+          "ach_unit": 16,
+          "ach_pct": 0.32,
+          "target_value": 200000000,
+          "ach_value": 72384000,
+          "ach_value_pct": 0.36192
+        },
+        "6050701": {
+          "target_unit": 60,
+          "ach_unit": 47,
+          "ach_pct": 0.7833333333333333,
+          "target_value": 280000000,
+          "ach_value": 218553000,
+          "ach_value_pct": 0.7805464285714285
+        },
+        "6220701": {
+          "target_unit": 70,
+          "ach_unit": 54,
+          "ach_pct": 0.7714285714285715,
+          "target_value": 300000000,
+          "ach_value": 223746000,
+          "ach_value_pct": 0.74582
+        },
+        "6050705": {
+          "target_unit": 30,
+          "ach_unit": 22,
+          "ach_pct": 0.7333333333333333,
+          "target_value": 120000000,
+          "ach_value": 99478000,
+          "ach_value_pct": 0.8289833333333333
+        },
+        "6050706": {
+          "target_unit": 30,
+          "ach_unit": 23,
+          "ach_pct": 0.7666666666666667,
+          "target_value": 170000000,
+          "ach_value": 104477000,
+          "ach_value_pct": 0.6145705882352941
+        },
+        "6180706": {
+          "target_unit": 120,
+          "ach_unit": 76,
+          "ach_pct": 0.6333333333333333,
+          "target_value": 550000000,
+          "ach_value": 315124000,
+          "ach_value_pct": 0.5729527272727273
+        },
+        "6180707": {
+          "target_unit": 30,
+          "ach_unit": 16,
+          "ach_pct": 0.5333333333333333,
+          "target_value": 120000000,
+          "ach_value": 71284000,
+          "ach_value_pct": 0.5940333333333333
+        },
+        "6170707": {
+          "target_unit": 90,
+          "ach_unit": 76,
+          "ach_pct": 0.8444444444444444,
+          "target_value": 300000000,
+          "ach_value": 259024000,
+          "ach_value_pct": 0.8634133333333334
+        },
+        "6240702": {
+          "target_unit": 90,
+          "ach_unit": 70,
+          "ach_pct": 0.7777777777777778,
+          "target_value": 400000000,
+          "ach_value": 307930000,
+          "ach_value_pct": 0.769825
+        },
+        "6240704": {
+          "target_unit": 30,
+          "ach_unit": 15,
+          "ach_pct": 0.5,
+          "target_value": 100000000,
+          "ach_value": 73085000,
+          "ach_value_pct": 0.73085
+        },
+        "6240701": {
+          "target_unit": 90,
+          "ach_unit": 53,
+          "ach_pct": 0.5888888888888889,
+          "target_value": 350000000,
+          "ach_value": 187947000,
+          "ach_value_pct": 0.5369914285714286
+        },
+        "6170706": {
+          "target_unit": 90,
+          "ach_unit": 47,
+          "ach_pct": 0.5222222222222223,
+          "target_value": 310000000,
+          "ach_value": 156553000,
+          "ach_value_pct": 0.5050096774193549
+        },
+        "6240703": {
+          "target_unit": 90,
+          "ach_unit": 53,
+          "ach_pct": 0.5888888888888889,
+          "target_value": 400000000,
+          "ach_value": 180647000,
+          "ach_value_pct": 0.4516175
+        },
+        "6170703": {
+          "target_unit": 30,
+          "ach_unit": 6,
+          "ach_pct": 0.2,
+          "target_value": 120000000,
+          "ach_value": 42394000,
+          "ach_value_pct": 0.35328333333333334
+        },
+        "6240705": {
+          "target_unit": 40,
+          "ach_unit": 20,
+          "ach_pct": 0.5,
+          "target_value": 210000000,
+          "ach_value": 92280000,
+          "ach_value_pct": 0.43942857142857145
+        },
+        "6240709": {
+          "target_unit": 30,
+          "ach_unit": 12,
+          "ach_pct": 0.4,
+          "target_value": 100000000,
+          "ach_value": 59088000,
+          "ach_value_pct": 0.59088
+        },
+        "6240708": {
+          "target_unit": 30,
+          "ach_unit": 9,
+          "ach_pct": 0.3,
+          "target_value": 120000000,
+          "ach_value": 34591000,
+          "ach_value_pct": 0.28825833333333334
+        },
+        "6240707": {
+          "target_unit": 30,
+          "ach_unit": 10,
+          "ach_pct": 0.3333333333333333,
+          "target_value": 160000000,
+          "ach_value": 36790000,
+          "ach_value_pct": 0.2299375
+        },
+        "6240706": {
+          "target_unit": 30,
+          "ach_unit": 20,
+          "ach_pct": 0.6666666666666666,
+          "target_value": 120000000,
+          "ach_value": 101580000,
+          "ach_value_pct": 0.8465
+        },
+        "6190701": {
+          "target_unit": 50,
+          "ach_unit": 28,
+          "ach_pct": 0.56,
+          "target_value": 170000000,
+          "ach_value": 108672000,
+          "ach_value_pct": 0.6392470588235294
+        },
+        "6190706": {
+          "target_unit": 120,
+          "ach_unit": 110,
+          "ach_pct": 0.9166666666666666,
+          "target_value": 620000000,
+          "ach_value": 453190000,
+          "ach_value_pct": 0.7309516129032259
+        },
+        "6190705": {
+          "target_unit": 50,
+          "ach_unit": 32,
+          "ach_pct": 0.64,
+          "target_value": 150000000,
+          "ach_value": 143268000,
+          "ach_value_pct": 0.95512
+        },
+        "6190704": {
+          "target_unit": 110,
+          "ach_unit": 71,
+          "ach_pct": 0.6454545454545455,
+          "target_value": 500000000,
+          "ach_value": 307429000,
+          "ach_value_pct": 0.614858
+        },
+        "6190707": {
+          "target_unit": 120,
+          "ach_unit": 105,
+          "ach_pct": 0.875,
+          "target_value": 500000000,
+          "ach_value": 385895000,
+          "ach_value_pct": 0.77179
+        },
+        "6190708": {
+          "target_unit": 20,
+          "ach_unit": 21,
+          "ach_pct": 1.05,
+          "target_value": 80000000,
+          "ach_value": 93379000,
+          "ach_value_pct": 1.1672375
+        },
+        "6150702": {
+          "target_unit": 20,
+          "ach_unit": 9,
+          "ach_pct": 0.45,
+          "target_value": 50000000,
+          "ach_value": 57291000,
+          "ach_value_pct": 1.14582
+        },
+        "6130702": {
+          "target_unit": 60,
+          "ach_unit": 32,
+          "ach_pct": 0.5333333333333333,
+          "target_value": 300000000,
+          "ach_value": 138068000,
+          "ach_value_pct": 0.4602266666666667
+        },
+        "6100702": {
+          "target_unit": 50,
+          "ach_unit": 19,
+          "ach_pct": 0.38,
+          "target_value": 300000000,
+          "ach_value": 89381000,
+          "ach_value_pct": 0.2979366666666667
+        },
+        "6140706": {
+          "target_unit": 50,
+          "ach_unit": 11,
+          "ach_pct": 0.22,
+          "target_value": 200000000,
+          "ach_value": 55889000,
+          "ach_value_pct": 0.279445
+        },
+        "6140705": {
+          "target_unit": 60,
+          "ach_unit": 30,
+          "ach_pct": 0.5,
+          "target_value": 350000000,
+          "ach_value": 242970000,
+          "ach_value_pct": 0.6942
+        },
+        "6140703": {
+          "target_unit": 0,
+          "ach_unit": 9,
+          "ach_pct": 0,
+          "target_value": 0,
+          "ach_value": 37091000,
+          "ach_value_pct": 0
+        },
+        "6130703": {
+          "target_unit": 0,
+          "ach_unit": 4,
+          "ach_pct": 0,
+          "target_value": 0,
+          "ach_value": 15196000,
+          "ach_value_pct": 0
+        }
+      },
+      "network": {
+        "target_unit": 3400,
+        "ach_unit": 2236,
+        "ach_pct": 0.6576470588235294,
+        "target_value": 14520000000,
+        "ach_value": 8952064000,
+        "ach_value_pct": 0.6165333333333334
+      }
+    },
+    {
+      "date": "2026-09-23",
+      "period_key": "2026-09",
+      "to_date_day": 23,
+      "source": "daily_sales",
+      "stores": {
+        "6010708": {
+          "target_unit": 110,
+          "ach_unit": 66,
+          "ach_pct": 0.6,
+          "target_value": 600000000,
+          "ach_value": 390434000,
+          "ach_value_pct": 0.6507233333333333
+        },
+        "6010701": {
+          "target_unit": 240,
+          "ach_unit": 168,
+          "ach_pct": 0.7,
+          "target_value": 1050000000,
+          "ach_value": 596932000,
+          "ach_value_pct": 0.5685066666666667
+        },
+        "6010702": {
+          "target_unit": 240,
+          "ach_unit": 181,
+          "ach_pct": 0.7541666666666667,
+          "target_value": 950000000,
+          "ach_value": 652819000,
+          "ach_value_pct": 0.6871778947368421
+        },
+        "6010703": {
+          "target_unit": 120,
+          "ach_unit": 87,
+          "ach_pct": 0.725,
+          "target_value": 450000000,
+          "ach_value": 270813000,
+          "ach_value_pct": 0.6018066666666667
+        },
+        "6010709": {
+          "target_unit": 320,
+          "ach_unit": 269,
+          "ach_pct": 0.840625,
+          "target_value": 1100000000,
+          "ach_value": 879931000,
+          "ach_value_pct": 0.7999372727272728
+        },
+        "6010710": {
+          "target_unit": 110,
+          "ach_unit": 80,
+          "ach_pct": 0.7272727272727273,
+          "target_value": 400000000,
+          "ach_value": 260820000,
+          "ach_value_pct": 0.65205
+        },
+        "6020711": {
+          "target_unit": 110,
+          "ach_unit": 65,
+          "ach_pct": 0.5909090909090909,
+          "target_value": 620000000,
+          "ach_value": 322335000,
+          "ach_value_pct": 0.5198951612903225
+        },
+        "6010711": {
+          "target_unit": 50,
+          "ach_unit": 21,
+          "ach_pct": 0.42,
+          "target_value": 350000000,
+          "ach_value": 113379000,
+          "ach_value_pct": 0.32394
+        },
+        "6020706": {
+          "target_unit": 100,
+          "ach_unit": 75,
+          "ach_pct": 0.75,
+          "target_value": 400000000,
+          "ach_value": 278225000,
+          "ach_value_pct": 0.6955625
+        },
+        "6020704": {
+          "target_unit": 50,
+          "ach_unit": 37,
+          "ach_pct": 0.74,
+          "target_value": 200000000,
+          "ach_value": 132263000,
+          "ach_value_pct": 0.661315
+        },
+        "6040701": {
+          "target_unit": 60,
+          "ach_unit": 46,
+          "ach_pct": 0.7666666666666667,
+          "target_value": 250000000,
+          "ach_value": 213054000,
+          "ach_value_pct": 0.852216
+        },
+        "6080712": {
+          "target_unit": 70,
+          "ach_unit": 35,
+          "ach_pct": 0.5,
+          "target_value": 300000000,
+          "ach_value": 153565000,
+          "ach_value_pct": 0.5118833333333334
+        },
+        "6040702": {
+          "target_unit": 50,
+          "ach_unit": 15,
+          "ach_pct": 0.3,
+          "target_value": 200000000,
+          "ach_value": 63685000,
+          "ach_value_pct": 0.318425
+        },
+        "6040703": {
+          "target_unit": 50,
+          "ach_unit": 17,
+          "ach_pct": 0.34,
+          "target_value": 200000000,
+          "ach_value": 74683000,
+          "ach_value_pct": 0.373415
+        },
+        "6050701": {
+          "target_unit": 60,
+          "ach_unit": 47,
+          "ach_pct": 0.7833333333333333,
+          "target_value": 280000000,
+          "ach_value": 218553000,
+          "ach_value_pct": 0.7805464285714285
+        },
+        "6220701": {
+          "target_unit": 70,
+          "ach_unit": 54,
+          "ach_pct": 0.7714285714285715,
+          "target_value": 300000000,
+          "ach_value": 223746000,
+          "ach_value_pct": 0.74582
+        },
+        "6050705": {
+          "target_unit": 30,
+          "ach_unit": 22,
+          "ach_pct": 0.7333333333333333,
+          "target_value": 120000000,
+          "ach_value": 99478000,
+          "ach_value_pct": 0.8289833333333333
+        },
+        "6050706": {
+          "target_unit": 30,
+          "ach_unit": 23,
+          "ach_pct": 0.7666666666666667,
+          "target_value": 170000000,
+          "ach_value": 104477000,
+          "ach_value_pct": 0.6145705882352941
+        },
+        "6180706": {
+          "target_unit": 120,
+          "ach_unit": 78,
+          "ach_pct": 0.65,
+          "target_value": 550000000,
+          "ach_value": 323222000,
+          "ach_value_pct": 0.5876763636363637
+        },
+        "6180707": {
+          "target_unit": 30,
+          "ach_unit": 17,
+          "ach_pct": 0.5666666666666667,
+          "target_value": 120000000,
+          "ach_value": 76183000,
+          "ach_value_pct": 0.6348583333333333
+        },
+        "6170707": {
+          "target_unit": 90,
+          "ach_unit": 77,
+          "ach_pct": 0.8555555555555555,
+          "target_value": 300000000,
+          "ach_value": 262923000,
+          "ach_value_pct": 0.87641
+        },
+        "6240702": {
+          "target_unit": 90,
+          "ach_unit": 71,
+          "ach_pct": 0.7888888888888889,
+          "target_value": 400000000,
+          "ach_value": 314929000,
+          "ach_value_pct": 0.7873225
+        },
+        "6240704": {
+          "target_unit": 30,
+          "ach_unit": 15,
+          "ach_pct": 0.5,
+          "target_value": 100000000,
+          "ach_value": 73085000,
+          "ach_value_pct": 0.73085
+        },
+        "6240701": {
+          "target_unit": 90,
+          "ach_unit": 57,
+          "ach_pct": 0.6333333333333333,
+          "target_value": 350000000,
+          "ach_value": 203443000,
+          "ach_value_pct": 0.5812657142857143
+        },
+        "6170706": {
+          "target_unit": 90,
+          "ach_unit": 48,
+          "ach_pct": 0.5333333333333333,
+          "target_value": 310000000,
+          "ach_value": 162052000,
+          "ach_value_pct": 0.5227483870967742
+        },
+        "6240703": {
+          "target_unit": 90,
+          "ach_unit": 55,
+          "ach_pct": 0.6111111111111112,
+          "target_value": 400000000,
+          "ach_value": 186245000,
+          "ach_value_pct": 0.4656125
+        },
+        "6170703": {
+          "target_unit": 30,
+          "ach_unit": 7,
+          "ach_pct": 0.23333333333333334,
+          "target_value": 120000000,
+          "ach_value": 44993000,
+          "ach_value_pct": 0.3749416666666667
+        },
+        "6240705": {
+          "target_unit": 40,
+          "ach_unit": 20,
+          "ach_pct": 0.5,
+          "target_value": 210000000,
+          "ach_value": 92280000,
+          "ach_value_pct": 0.43942857142857145
+        },
+        "6240709": {
+          "target_unit": 30,
+          "ach_unit": 12,
+          "ach_pct": 0.4,
+          "target_value": 100000000,
+          "ach_value": 59088000,
+          "ach_value_pct": 0.59088
+        },
+        "6240708": {
+          "target_unit": 30,
+          "ach_unit": 12,
+          "ach_pct": 0.4,
+          "target_value": 120000000,
+          "ach_value": 46188000,
+          "ach_value_pct": 0.3849
+        },
+        "6240707": {
+          "target_unit": 30,
+          "ach_unit": 10,
+          "ach_pct": 0.3333333333333333,
+          "target_value": 160000000,
+          "ach_value": 36790000,
+          "ach_value_pct": 0.2299375
+        },
+        "6240706": {
+          "target_unit": 30,
+          "ach_unit": 22,
+          "ach_pct": 0.7333333333333333,
+          "target_value": 120000000,
+          "ach_value": 111078000,
+          "ach_value_pct": 0.92565
+        },
+        "6190701": {
+          "target_unit": 50,
+          "ach_unit": 28,
+          "ach_pct": 0.56,
+          "target_value": 170000000,
+          "ach_value": 108672000,
+          "ach_value_pct": 0.6392470588235294
+        },
+        "6190706": {
+          "target_unit": 120,
+          "ach_unit": 111,
+          "ach_pct": 0.925,
+          "target_value": 620000000,
+          "ach_value": 459089000,
+          "ach_value_pct": 0.7404661290322581
+        },
+        "6190705": {
+          "target_unit": 50,
+          "ach_unit": 34,
+          "ach_pct": 0.68,
+          "target_value": 150000000,
+          "ach_value": 149466000,
+          "ach_value_pct": 0.99644
+        },
+        "6190704": {
+          "target_unit": 110,
+          "ach_unit": 73,
+          "ach_pct": 0.6636363636363637,
+          "target_value": 500000000,
+          "ach_value": 312527000,
+          "ach_value_pct": 0.625054
+        },
+        "6190707": {
+          "target_unit": 120,
+          "ach_unit": 107,
+          "ach_pct": 0.8916666666666667,
+          "target_value": 500000000,
+          "ach_value": 394393000,
+          "ach_value_pct": 0.788786
+        },
+        "6190708": {
+          "target_unit": 20,
+          "ach_unit": 21,
+          "ach_pct": 1.05,
+          "target_value": 80000000,
+          "ach_value": 93379000,
+          "ach_value_pct": 1.1672375
+        },
+        "6150702": {
+          "target_unit": 20,
+          "ach_unit": 9,
+          "ach_pct": 0.45,
+          "target_value": 50000000,
+          "ach_value": 57291000,
+          "ach_value_pct": 1.14582
+        },
+        "6130702": {
+          "target_unit": 60,
+          "ach_unit": 34,
+          "ach_pct": 0.5666666666666667,
+          "target_value": 300000000,
+          "ach_value": 144666000,
+          "ach_value_pct": 0.48222
+        },
+        "6100702": {
+          "target_unit": 50,
+          "ach_unit": 21,
+          "ach_pct": 0.42,
+          "target_value": 300000000,
+          "ach_value": 103979000,
+          "ach_value_pct": 0.34659666666666666
+        },
+        "6140706": {
+          "target_unit": 50,
+          "ach_unit": 13,
+          "ach_pct": 0.26,
+          "target_value": 200000000,
+          "ach_value": 65187000,
+          "ach_value_pct": 0.325935
+        },
+        "6140705": {
+          "target_unit": 60,
+          "ach_unit": 32,
+          "ach_pct": 0.5333333333333333,
+          "target_value": 350000000,
+          "ach_value": 255568000,
+          "ach_value_pct": 0.7301942857142857
+        },
+        "6140703": {
+          "target_unit": 0,
+          "ach_unit": 10,
+          "ach_pct": 0,
+          "target_value": 0,
+          "ach_value": 39690000,
+          "ach_value_pct": 0
+        },
+        "6130703": {
+          "target_unit": 0,
+          "ach_unit": 5,
+          "ach_pct": 0,
+          "target_value": 0,
+          "ach_value": 18495000,
+          "ach_value_pct": 0
+        }
+      },
+      "network": {
+        "target_unit": 3400,
+        "ach_unit": 2307,
+        "ach_pct": 0.6785294117647059,
+        "target_value": 14520000000,
+        "ach_value": 9244093000,
+        "ach_value_pct": 0.6366455234159779
       }
     }
   ]
